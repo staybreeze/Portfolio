@@ -24,13 +24,20 @@
 
     body {
         border-top: 10px solid #8bafb4;
-        background-color:rgb(254, 254, 241);
+        background-color: rgb(254, 254, 247);
     }
 
     .container {
         width: 100vw;
         height: 100%;
         display: flex;
+    }
+
+    .box {
+        width: 58%;
+        height: 100%;
+        margin: auto;
+
     }
 
     .start {
@@ -52,12 +59,14 @@
     /* .aside-top,
     .aside-bottom,
     .main-top,
-    .main-bottom {
+    .main-bottom,
+    .box,
+    .box>.section {
         border: 1px solid black
     } */
-.aside-bottom{
-  
-}
+
+    .aside-bottom {}
+
     .test:hover {
         & .col-2 .circle {
             background-color: #8bafb4;
@@ -97,9 +106,7 @@
 
     }
 
-    .td4 {
-    
-    }
+    .td4 {}
 
     table,
     td {
@@ -121,10 +128,10 @@
         /* font-size: large; */
         border-radius: 30px;
         height: 30px;
-        width:100%;
+        width: 100%;
         padding-top: 2px;
         text-align: center;
-     
+
     }
 
     .aside-top>img {
@@ -157,6 +164,13 @@
         font-family: DotGothic16
     }
 
+    .section>div>h4,  .section>h4 {
+
+        color: goldenrod;
+        font-size: 23px;
+        font-family: DotGothic16
+    }
+
     a {
         text-decoration: none;
         color: rgba(128, 128, 128, 0.763);
@@ -173,26 +187,45 @@
 
     p,
     td {}
-    .top{
+
+    .top {
         position: fixed;
-        right:50px;
-        bottom:30px;
-        
+        right: 50px;
+        bottom: 30px;
+
         color: #00707f;
         font-weight: bold;
         font-size: 20px;
         font-family: Rubik scribble;
         /* border-bottom: 1px solid#00707f;   */
     }
-    a>img:hover{
-        width: 120%;
+
+
+    a>img:hover {
+        width: 210%;
+    }
+
+    .calendar_pic:hover {
+        width: 150%;
+    }
+
+    .section img:hover {
+        z-index: 1;
+    }
+
+    .section img {
+        position: relative;
+        z-index: 0;
+        /* transition: z-index 0.3s ease; */
     }
 </style>
 
+</style>
+
 <body>
-<div class="top"><a href="#">TOP</a></div>
+    <div class="top"><a href="#">TOP</a></div>
     <div class="container">
-        
+
         <div class="start"></div>
         <div class="aside">
             <div class="aside-top text-center pt-10">
@@ -261,11 +294,11 @@
                             <div style="width:70%;margin: auto;" rowspan="4">Skills</div>
                         </td>
                         <td class="td2">前端</td>
-                           <!-- <td class="td3" colspan="2">
+                        <!-- <td class="td3" colspan="2">
                             <div>Education</div>
                         </td> -->
                         <td class="td4 align-items-sm-center" colspan="2">HTML、CSS、Javascript、Bootstrap、RWD
-                        </td> 
+                        </td>
                     </tr>
                     <tr>
                         <td class="td1">
@@ -276,7 +309,7 @@
                             <div>Education</div>
                         </td> -->
                         <td class="td4 align-items-sm-center" colspan="2">Git版本控制、Ajax、CRUD、Laravel
-                        </td> 
+                        </td>
                     </tr>
                     <tr>
                         <td class="td1">
@@ -287,7 +320,7 @@
                             <div>Education</div>
                         </td> -->
                         <td class="td4 align-items-sm-center" colspan="2">PHP、MySQL、jQuery
-                        </td> 
+                        </td>
                     </tr>
                     <tr>
                         <td class="td1">
@@ -298,7 +331,7 @@
                             <div>Education</div>
                         </td> -->
                         <td class="td4 align-items-sm-center" colspan="2">Photoshop、Illustrator
-                        </td> 
+                        </td>
                     </tr>
                     <tr>
                         <td class="td1">
@@ -310,7 +343,7 @@
                         </td>
                         <td class="td4 align-items-sm-center">國立臺灣大學
                             戲劇研究所 碩士
-                        </td> --> 
+                        </td> -->
                     </tr>
                     <tr>
                         <td></td>
@@ -326,26 +359,40 @@
                     </tr> -->
                 </table>
             </div>
-            <div class="section mt-5" id="web">
-                <h3><span>W</span>eb Design</h3>
+
+        </div>
+
+    </div>
+    <div class="box">
+
+
+        <h3><span>W</span>eb Design</h3>
+        <div class="section" id="web" style="display: flex;">
+
+            <div>
+
                 <h4>購物商城網站</h4>
 
-               <a href="./online_store/index.php" target="_blank"><img class="mt-2" src="./img/online_store2.jpg" width="100%" alt=""></a>
-               
-               <h4 class="mt-5">萬年曆</h4>
-
-               <a href="./calendar/index.php" target="_blank"><img src="./img/calendar.jpg" width="100%" alt=""></a>
+                <a href="./online_store/index.php" target="_blank">
+                    <img class="mt-2" src="./img/online_store2.jpg" width="100%" alt=""></a>
             </div>
-            <div class="section mt-5" id="graphic">
-                <h3><span>G</span>raphic Design</h3>
-                <h4>海報</h4>
+            <div></div>
+            <div class="ms-5" style="margin-top:50px">
+                <h4>萬年暦</h4>
 
-                <p class="mt-5">安安安</p>
+                <a href="./calendar/index.php" target="_blank"><img src="./img/calendar.jpg" width="100%" alt=""
+                        class="calendar_pic"></a>
             </div>
         </div>
+        <h3 class="mt-5"><span>G</span>raphic Design</h3>
+        <div class="section" id="graphic">
+
+            <h4>海報</h4>
+
+            <p class="mt-5">安安安</p>
+        </div>
     </div>
-
-
+    </div>
 </body>
 
 </html>
