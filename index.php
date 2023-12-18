@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Sans+JP&family=Josefin+Slab&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC:wght@300&family=Orbitron&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&family=Zen+Old+Mincho&display=swap');
@@ -208,15 +212,16 @@
         z-index: 1;
     }
 
-    .remind{
-        margin-top:80px;
-        color:crimson;
+    .remind {
+        margin-top: 80px;
+        color: crimson;
         font-size: 25px;
         font-family: DotGothic16
     }
+
     .calendar_pic:hover {
         width: 170%;
-    
+
     }
 
 
@@ -239,6 +244,7 @@
         height: 10vh;
         border-bottom: 10px solid #8bafb4;
     }
+
     .top {
         position: fixed;
         right: 50px;
@@ -249,6 +255,10 @@
         font-size: 30px;
         font-family: Rubik scribble;
         /* border-bottom: 1px solid#00707f;   */
+    }
+    .myBtn{
+        background-color: #7cbcc4;
+        color: #fff;
     }
 </style>
 
@@ -289,7 +299,7 @@
                     </div>
                 </div>
                 <div class="row test">
-                    <div class="col-10 text-start font-river mt-1"><a href="http://">Contact</a></div>
+                    <div class="col-10 text-start font-river mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">Contact</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
@@ -333,7 +343,8 @@
                         <!-- <td class="td3" colspan="2">
                             <div>Education</div>
                         </td> -->
-                        <td class="td4 align-items-sm-center skills fw-bold" colspan="2">HTML、CSS、Javascript、Bootstrap、RWD
+                        <td class="td4 align-items-sm-center skills fw-bold" colspan="2">
+                            HTML、CSS、Javascript、Bootstrap、RWD
                         </td>
                     </tr>
                     <tr>
@@ -377,7 +388,7 @@
                         <td class="td1">
                             <div>Languages</div>
                         </td>
-                        <td class="td2 me-5 fw-bold" colspan="3">中文、英文、台語、日文</td>
+                        <td class="td2 me-5 fw-bold" colspan="3">中文(母語)、英文(精通)、台語(精通)、日文(初學)</td>
                         <!-- <td class="td3">
                             <div>Education</div>
                         </td>
@@ -426,7 +437,7 @@
                     <img src="./img/calendar.jpg" width="100%" alt="" class="calendar_pic"></a>
             </div>
         </div>
-<div class="remind">點選圖片可以直接到網頁～～</div>
+        <div class="remind">點圖片可以直接到網站～～</div>
         <h3 style="margin-top:40px" id="graphic"><span>G</span>raphic Design</h3>
         <div class="section" style="display: flex;">
 
@@ -436,30 +447,150 @@
 
                 <h4>海報</h4>
 
-                <a href="./poster.html">
-                    <img class="mt-2" src="./img/poster.jpg" width="100%" alt="">
-                </a>
+                    <img class="mt-2" src="./img/poster.jpg" width="100%" alt="" data-bs-toggle="modal"
+                    data-bs-target="#poster">
+             
 
             </div>
             <div></div>
             <div class="ms-5">
                 <h4>年暦</h4>
 
-                <a href="./calendar.html">
-                    <img src="./img/calendar1.jpg" class="mt-2" width="100%" alt=""></a>
+                <img src="./img/calendar1.jpg" class="mt-2" width="100%" alt="" data-bs-toggle="modal"
+                    data-bs-target="#calendar_pic">
             </div>
 
         </div>
-        <div class="section" id="graphic" style="display: flex;">
+        <div class="section mt-3" id="graphic" style="display: flex;">
             <div style="margin-top:50px">
                 <h4>Banner</h4>
-                <a href="./banner.html">
-                    <img src="./img/banner.jpg" width="53%" alt=""></a>
+
+                <img src="./img/banner.jpg" width="53%" alt="" data-bs-toggle="modal" data-bs-target="#banner">
             </div>
         </div>
     </div>
-    <footer></footer>
+    <footer id="footer"></footer>
 
+<!-- contact Modal -->
+<div class="modal" id="contact">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">歡迎留下消息～(*´∀`)~♥</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+      <form action="./message.php" method="post">
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <span class="input-group-text bold">寄信人</span>
+                    <input type="text" class="form-control" placeholder="e-mail" name="sender">
+                
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bold">收件人</span>
+                    <input type="text" class="form-control" disabled placeholder="wunshengliao@gmail.com">
+                
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bold">主旨</span>
+                    <input type="text" class="form-control" name="subject">
+                
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="bold mt-3">信件內容</p>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="comment" name="text"
+                                placeholder="Comment goes here"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input class="btn myBtn mt-3" style="margin-left:400px" type="submit" value="送出">
+      </form>
+        </div>
+  
+
+  
+      </div>
+    </div>
+  </div>
+  
+  
+
+<!-- Poster Modal -->
+<div class="modal" id="poster">
+    <div class="modal-dialog" style="right:300px">
+
+
+
+        <!-- Modal body -->
+
+        <img src="./img/poster.jpg" width="201%"alt="">
+
+
+        <!-- Modal footer -->
+
+        <button type="button" class="btn btn-danger class mt-2" style="margin-left:934px"
+            data-bs-dismiss="modal">Close</button>
+
+
+
+    </div>
+</div>
+
+
+
+    <!-- Calendar_pic Modal -->
+    <div class="modal" id="calendar_pic">
+        <div class="modal-dialog" style="right:300px">
+
+
+
+            <!-- Modal body -->
+
+            <img src="./img/calendar1.jpg" width="200%"alt="">
+
+
+            <!-- Modal footer -->
+
+            <button type="button" class="btn btn-danger class mt-2" style="margin-left:934px"
+                data-bs-dismiss="modal">Close</button>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- Banner Modal -->
+    <div class="modal" id="banner">
+        <div class="modal-dialog" style="right:300px;top:100px">
+
+
+
+            <!-- Modal body -->
+
+            <img src="./img/banner.jpg" alt="">
+
+
+            <!-- Modal footer -->
+
+            <button type="button" class="btn btn-danger class mt-2" style="margin-left:934px"
+                data-bs-dismiss="modal">Close</button>
+
+
+
+        </div>
+    </div>
 </body>
 
 
