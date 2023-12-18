@@ -23,7 +23,8 @@
     }
 
     body {
-        border-top: 10px solid #8bafb4
+        border-top: 10px solid #8bafb4;
+        background-color:rgb(254, 254, 241);
     }
 
     .container {
@@ -33,7 +34,7 @@
     }
 
     .start {
-        width: 10%;
+        width: 8%;
     }
 
     .aside {
@@ -174,19 +175,22 @@
     td {}
     .top{
         position: fixed;
-        right:280px;
-        top:81px;
+        right:50px;
+        bottom:30px;
         
         color: #00707f;
         font-weight: bold;
         font-size: 20px;
-        font-family: Rubik Doodle Shadow;
-        border-bottom: 1px solid#00707f;  
+        font-family: Rubik scribble;
+        /* border-bottom: 1px solid#00707f;   */
+    }
+    a>img:hover{
+        width: 120%;
     }
 </style>
 
 <body>
-<div class="top">TOP</div>
+<div class="top"><a href="#">TOP</a></div>
     <div class="container">
         
         <div class="start"></div>
@@ -196,25 +200,25 @@
             </div>
             <div class="aside-bottom mt-5">
                 <div class="row test mt-3">
-                    <div class="col-10 text-start font-river mt-1"><a href="http://">Story</a></div>
+                    <div class="col-10 text-start font-river mt-1"><a href="#">Story</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
                 </div>
                 <div class="row test">
-                    <div class="col-10 text-start font-river mt-1"><a href="http://">About WSL</a></div>
+                    <div class="col-10 text-start font-river mt-1"><a href="#about">About WSL</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
                 </div>
                 <div class="row test">
-                    <div class="col-10 text-start  font-river mt-1"><a href="http://">Web Design</a></div>
+                    <div class="col-10 text-start  font-river mt-1"><a href="#web">Web Design</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
                 </div>
                 <div class="row test">
-                    <div class="col-10 text-start  font-river mt-1"><a href="http://">Graphic Design</a></div>
+                    <div class="col-10 text-start  font-river mt-1"><a href="#graphic">Graphic Design</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
@@ -229,13 +233,13 @@
         </div>
         <div class="middle"></div>
         <div class="main mt-5">
-            <div class="section">
+            <div class="section" id="story">
                 <h3><span>S</span>tory</h3>
                 <h4>從此踏上軟體工程師道路的藝術人...</h4>
 
                 <p class="mt-5">安安安</p>
             </div>
-            <div class="section" style="margin-top:100px">
+            <div class="section" style="margin-top:100px" id="about">
                 <h3><span>A</span>bout</h3>
 
                 <table>
@@ -254,15 +258,47 @@
 
                     <tr>
                         <td class="td1">
-                            <div style="width:70%;margin: auto;">Skills</div>
+                            <div style="width:70%;margin: auto;" rowspan="4">Skills</div>
                         </td>
-                        <td class="td2" colspan="3"></td>
-                        <!-- <td class="td3">
+                        <td class="td2">前端</td>
+                           <!-- <td class="td3" colspan="2">
                             <div>Education</div>
+                        </td> -->
+                        <td class="td4 align-items-sm-center" colspan="2">HTML、CSS、Javascript、Bootstrap、RWD
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td class="td1">
+                            <!-- <div style="width:70%;margin: auto">Skills</div> -->
                         </td>
-                        <td class="td4 align-items-sm-center">國立臺灣大學
-                            戲劇研究所 碩士
-                        </td> --> 
+                        <td class="td2">後端</td>
+                        <!-- <td class="td3" colspan="2">
+                            <div>Education</div>
+                        </td> -->
+                        <td class="td4 align-items-sm-center" colspan="2">Git版本控制、Ajax、CRUD、Laravel
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td class="td1">
+                            <!-- <div style="width:70%;margin: auto">Skills</div> -->
+                        </td>
+                        <td class="td2"></td>
+                        <!-- <td class="td3" colspan="2">
+                            <div>Education</div>
+                        </td> -->
+                        <td class="td4 align-items-sm-center" colspan="2">PHP、MySQL、jQuery
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td class="td1">
+                            <!-- <div style="width:70%;margin: auto">Skills</div> -->
+                        </td>
+                        <td class="td2">平面</td>
+                        <!-- <td class="td3" colspan="2">
+                            <div>Education</div>
+                        </td> -->
+                        <td class="td4 align-items-sm-center" colspan="2">Photoshop、Illustrator
+                        </td> 
                     </tr>
                     <tr>
                         <td class="td1">
@@ -282,23 +318,27 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
-            <div class="section">
+            <div class="section mt-5" id="web">
                 <h3><span>W</span>eb Design</h3>
-                <h4>從此踏上軟體工程師道路的藝術人...</h4>
+                <h4>購物商城網站</h4>
 
-                <p class="mt-5">安安安</p>
+               <a href="./online_store/index.php" target="_blank"><img class="mt-2" src="./img/online_store2.jpg" width="100%" alt=""></a>
+               
+               <h4 class="mt-5">萬年曆</h4>
+
+               <a href="./calendar/index.php" target="_blank"><img src="./img/calendar.jpg" width="100%" alt=""></a>
             </div>
-            <div class="section">
+            <div class="section mt-5" id="graphic">
                 <h3><span>G</span>raphic Design</h3>
-                <h4>從此踏上軟體工程師道路的藝術人...</h4>
+                <h4>海報</h4>
 
                 <p class="mt-5">安安安</p>
             </div>
