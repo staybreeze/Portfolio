@@ -18,25 +18,12 @@
 
         <ul>
           <li class="nav-item me-3">
-            <a href="aboutUs.php">關於我們</a>
+            <a href="index.php">回首頁</a>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>
-          <li class="nav-item  me-3" style="margin-left:36px">
-            <a href="./articles.php">文章</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item me-3" style="margin-left:36px">
-            <a href="#store">商城</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item me-3" style="margin-left:36px">
-            <span>聯絡我們</span>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
+
+
           <li class="nav-item" style="margin-left:36px">
 
 
