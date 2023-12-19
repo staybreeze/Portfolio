@@ -102,13 +102,26 @@ header .page-link-min li:hover span {
   width: 350px;
   left: 400px
 }
+@media screen and (max-width: 450px) {
+  .contact {
 
+display:none;
+  }
+}
 @media screen and (max-width: 550px) {
   .header-title {
 
 margin-top: 2px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .header-title {
+
+display:none;
+  }
+}
+
 
 @media screen and (max-width: 550px) {
   .page-link {
@@ -790,7 +803,16 @@ a:hover {
   position: fixed;
   z-index: 2;
 }
-
+.line .menu::before{
+  margin-top: 53px;
+  
+}
+.line .menu{
+  margin-top: 102.45px;
+}
+.line .menu::after{
+  margin-top: 55px;
+}
 .line .menu,
 .line .menu::before,
 .line .menu::after {
@@ -798,15 +820,27 @@ a:hover {
   content: '';
   display: block;
   height: 2px;
-  position: absolute;
+  position: fixed;
   transition: background ease .3s, top ease .3s .3s, transform ease .3s;
   width: 30px;
+  z-index: 99;
+
+
 }
 
 .line .menu {
   left: 400px;
   top: -48px;
+
 }
+@media screen and (max-width: 450px) {
+  .line .menu {
+    left: 335px;
+    /* top: 200px; */
+ 
+  }
+}
+
 
 .line .menu::before {
   top: -6px;
@@ -867,6 +901,8 @@ a:hover {
   overflow: hidden;
 }
 
+
+
 /*
 選單向外推
 */
@@ -915,3 +951,10 @@ input#menu {
 left:60px
   }
 }
+@media screen and (min-width: 450px) {
+  body {
+
+overflow-x: hidden;
+  }
+}
+

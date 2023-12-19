@@ -67,7 +67,7 @@
 
     <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:37px">
       <a class="shopping-cart-a" target="_blank" href="">
-       <a href="./cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
+        <a href="./cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
         <p class="mt-1 shopping-cart-p">Buy it !</p>
       </a>
 
@@ -195,38 +195,37 @@
 
   <div class="header-title2">
 
-  <a class="shopping-cart-a" target="_blank" href="">
-  <a href="./cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
+    <a class="shopping-cart-a" target="_blank" href="">
+      <a href="./cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
       <p class=" shopping-cart-p ps-1">Buy it !</p>
     </a>
   </div>
-</div>
+  </div>
 
 
 
-<div class="header-title3 ms-2 pb-2 ps-3 pt-1">
+  <div class="header-title3 ms-2 pb-2 ps-3 pt-1">
 
 
 
-  
-
-<?php
-
-if (isset($_SESSION['user'])) {
-  echo '<a href="./member.php"><i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"></i></a>';
-  
-  }else{
-    echo '<i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"  data-bs-toggle="modal" data-bs-target="#myModal"></i>';
-}
-?>
 
 
+    <?php
 
-  <p class="mt-1 me-5 shopping-cart-p">Menbership</p>
+    if (isset($_SESSION['user'])) {
+      echo '<a href="./member.php"><i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"></i></a>';
+    } else {
+      echo '<i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"  data-bs-toggle="modal" data-bs-target="#myModal"></i>';
+    }
+    ?>
 
-</div>
 
-</div>
+
+    <p class="mt-1 me-5 shopping-cart-p">Menbership</p>
+
+  </div>
+
+  </div>
 
 
   <nav class="nav-box">
@@ -239,7 +238,7 @@ if (isset($_SESSION['user'])) {
       <div class="page-link ">
 
         <ul>
-          <li class="nav-item me-3" >
+          <li class="nav-item me-3">
             <a href="aboutUs.php">關於我們</a>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
@@ -255,7 +254,7 @@ if (isset($_SESSION['user'])) {
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item me-3" style="margin-left:36px">
-          <span data-bs-toggle="modal" data-bs-target="#contact">聯絡我們</span>
+            <span data-bs-toggle="modal" data-bs-target="#contact">聯絡我們</span>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>
@@ -287,7 +286,7 @@ if (isset($_SESSION['user'])) {
       <div class="page-link-min">
 
         <ul>
-          <li class="nav-item me-3" >
+          <li class="nav-item me-3">
             <a href="aboutUs.php">關於我們</a>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
@@ -329,9 +328,5 @@ if (isset($_SESSION['user'])) {
 
       </div>
   </nav>
-  
+
 </header>
-
-
-
-
