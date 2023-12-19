@@ -110,8 +110,7 @@ display:none;
 }
 @media screen and (max-width: 550px) {
   .header-title {
-
-margin-top: 2px;
+display: none;
   }
 }
 
@@ -789,6 +788,16 @@ a:hover {
   height: 104px;
 }
 
+@media screen and (max-width: 550px) {
+  .logo2 {
+    padding-top: 8px;
+    padding-left: 8px;
+    width: 107px;
+    height: 104px;
+  }
+}
+
+
 /*
 選單線
 */
@@ -845,13 +854,14 @@ a:hover {
 }
 
 .line .menu {
-  left: 430px;
+  left: 410px;
   top: -48px;
 
 }
+
 @media screen and (max-width: 450px) {
   .line .menu {
-    left: 335px;
+    left: 358px;
     /* top: 200px; */
  
   }
