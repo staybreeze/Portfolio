@@ -803,6 +803,10 @@ a:hover {
   position: fixed;
   z-index: 2;
 }
+
+
+@media screen and (max-width: 450px) {
+
 .line .menu::before{
   margin-top: 53px;
   
@@ -812,6 +816,18 @@ a:hover {
 }
 .line .menu::after{
   margin-top: 55px;
+}
+}
+
+.line .menu::before{
+  margin-top: 57px;
+  
+}
+.line .menu{
+  margin-top: 106.45px;
+}
+.line .menu::after{
+  margin-top: 59px;
 }
 .line .menu,
 .line .menu::before,
@@ -829,7 +845,7 @@ a:hover {
 }
 
 .line .menu {
-  left: 400px;
+  left: 430px;
   top: -48px;
 
 }

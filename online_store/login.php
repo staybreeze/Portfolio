@@ -86,11 +86,13 @@ if (isset($_GET['error'])) {
             <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
             <input class="form-control" type="password" name="pw" id="pw">
         </div>
-
         <div>
+        <a href="./add.php" style="padding-left:180px;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
+        </div><div>
             <input class="btn btn-primary mx-2 mt-4" type="submit" value="送出">
             <input class="btn btn-success mx-2 mt-4" type="reset" value="重置">
         </div>
+        
         <br>    <br>    <br>    <br>
     
     
@@ -146,7 +148,8 @@ if (isset($_GET['error'])) {
                     <div class="d-flex gap-2">
                       <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
                       <button type="submit" class="btn btn-primary btn-warning  col-6">送出</button>
-                    <br>
+                    
+                      <br>
                     </div>
                   </div>
                 </div>
@@ -154,6 +157,7 @@ if (isset($_GET['error'])) {
             </form>
           </div>
         </div>
+     
         <!-- Modal body container end -->
 
 
