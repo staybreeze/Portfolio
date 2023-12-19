@@ -42,6 +42,12 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+    @media screen and (max-width: 550px) {
+  .section {
+width:72%;
+/* padding-right: 50px; */
+  }
+}
   </style>
 </head>
 
@@ -71,9 +77,9 @@ if (isset($_GET['error'])) {
    <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員登入</p>
                     
       
-    <form action="./api/login.php" method="post" class="col-4 m-auto">
+    <form action="./api/login.php" method="post" class=" col-12 col-sm-4 m-auto">
         <div class="input-group my-1">
-            <label class="col-4  input-group-text w-100">帳號:</label>
+            <label class="col-xs-12 col-sm-4  input-group-text w-100">帳號:</label>
             <input class="form-control"  type="text" name="acc" id="acc">
         </div>
         <div class="input-group my-1">

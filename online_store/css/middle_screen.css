@@ -129,7 +129,14 @@ display: none;
   }
 }
 
+@media screen and (max-width: 550px) {
+  .modal {
 
+    top: 20px;
+ 
+    padding-right: 70px
+  }
+}
 
 
 
@@ -890,4 +897,21 @@ input#menu {
 .myBtn:hover{
   background-color: rgb(216, 162, 90);
   color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+  .modal {
+
+    top: 20px;
+ 
+    padding-right: 70px
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .modal {
+
+    top: 20px;
+left:60px
+  }
 }

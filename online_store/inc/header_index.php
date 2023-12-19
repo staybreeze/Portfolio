@@ -298,7 +298,7 @@ if (isset($_SESSION['user'])) {
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item me-3" style="margin-left:-25px">
-            <a href="#store">購物車</a>
+            <a href="cart.php">購物車</a>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>

@@ -40,6 +40,12 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+    @media screen and (max-width: 550px) {
+  .section {
+/* width:72%; */
+padding-right: 100px;
+  }
+}
   </style>
 </head>
 
@@ -61,7 +67,7 @@ include_once "./api/db.php";
 
       </div>
 
-      <div class="col-6 section ms-5 ps-5">
+      <div class="col-12 col-sm-6  section ms-5 ps-5">
         <br>
         <div class="box mt-5 text-center">
 
