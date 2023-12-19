@@ -290,6 +290,75 @@
         background-color: #7cbcc4;
         color: #fff;
     }
+
+    @media screen and (max-width: 767px) {
+  .online_store_pic:hover {
+    width: 230%;
+        z-index: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  .calendar_pic:hover {
+    width: 218%;
+        z-index: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  .poster-modal img {
+    width: 50%;
+    height:50%;
+
+    margin-left:300px
+  }
+  .poster-modal>.modal-dialog>img{
+    width:485px;
+
+  }
+}
+@media screen and (max-width: 767px) {
+  .calendar-modal img {
+    width: 50%;
+    height:50%;
+
+    margin-left:300px
+  }
+  .calendar-modal>.modal-dialog>img{
+    width:485px;
+
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner-modal img {
+    width: 50%;
+    height:50%;
+
+    margin-left:300px
+  }moda
+  .banner-modal>.modal-dialog>img{
+    width:485px;
+
+  }
+}
+
+@media screen and (max-width: 767px) {
+    .poster-modal>.modal-dialog>img{
+    width:412px;
+
+  }
+  .calendar-modal>.modal-dialog>img{
+    width:412px;
+
+  }
+  .banner-modal>.modal-dialog>img{
+    width:412px;
+
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+overflow-x: hidden;
+}}
+
 </style>
 
 </style>
@@ -557,7 +626,7 @@
   
 
 <!-- Poster Modal -->
-<div class="modal" id="poster" >
+<div class="modal poster-modal" id="poster" >
     <div class="modal-dialog" style="right:300px">
 
 
@@ -580,7 +649,7 @@
 
 
     <!-- Calendar_pic Modal -->
-    <div class="modal" id="calendar_pic">
+    <div class="modal calendar-modal" id="calendar_pic">
         <div class="modal-dialog" style="right:300px">
 
 
@@ -602,7 +671,7 @@
 
 
     <!-- Banner Modal -->
-    <div class="modal" id="banner">
+    <div class="modal banner-modal" id="banner">
         <div class="modal-dialog" style="right:300px;top:100px">
 
 
