@@ -33,11 +33,11 @@ body {
 
 
 
-header .page-link>ul {
+header .page-link>ul,header .page-link-min>ul {
   display: flex
 }
 
-header .page-link>ul>li {
+header .page-link>ul>li,header .page-link-min>ul>li {
   position: relative;
   width: 130px;
   height: 50.5px;
@@ -47,23 +47,23 @@ header .page-link>ul>li {
 
 }
 
-header .page-link>ul>li:last-child {
+header .page-link>ul>li:last-child,header .page-link-min>ul>li:last-child {
   margin-right: 10px
 }
 
-header .page-link>ul>li>span {
+header .page-link>ul>li>span,header .page-link-min>ul>li>span {
   color: #fff;
   transition: .4s
 }
 
-header .page-link>ul>li>a {
+header .page-link>ul>li>a,header .page-link-min>ul>li>a {
   text-decoration: none;
   color: #fff;
   transition: .4s;
 
 }
 
-header .page-link .unloading-bar {
+header .page-link .unloading-bar,header .page-link-min .unloading-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -73,7 +73,7 @@ header .page-link .unloading-bar {
 
 }
 
-header .page-link .loading-bar {
+header .page-link .loading-bar,header .page-link-min .loading-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -86,12 +86,13 @@ header .page-link .loading-bar {
 
 
 
-header .page-link li:hover {
+header .page-link li:hover,header .page-link-min li:hover {
   cursor: pointer
 }
 
 header .page-link li:hover a,
-header .page-link li:hover span {
+header .page-link li:hover span,header .page-link-min li:hover a,
+header .page-link-min li:hover span {
   color: #ffb71b
 }
 
@@ -102,7 +103,23 @@ header .page-link li:hover span {
   left: 400px
 }
 
+@media screen and (max-width: 550px) {
+  .header-title {
 
+margin-top: 2px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .page-link {
+display: none;
+  }
+}
+@media screen and (min-width: 550px) {
+  .page-link-min {
+display: none;
+  }
+}
 @media screen and (min-width: 550px) {
   .contact {
     position: absolute;
@@ -111,6 +128,8 @@ header .page-link li:hover span {
     left: 280px
   }
 }
+
+
 
 
 
@@ -183,7 +202,8 @@ header .page-link li:hover span {
   color: #ffb71b
 }
 
-header .page-link li:hover .loading-bar {
+header .page-link li:hover .loading-bar,
+header .page-link-min li:hover .loading-bar {
   width: 80px
 }
 
@@ -704,7 +724,7 @@ a:hover {
   .join-us {
     top: 110px;
     left:800px;
-    left: 800px;
+
   }
 }
 
@@ -818,6 +838,13 @@ a:hover {
 */
 #menu:checked~.menu-list {
   width: 620px;
+}
+
+@media screen and (max-width: 550px) {
+  #menu:checked~.menu-list {
+
+    width: 460px;
+  }
 }
 
 .menu-list {

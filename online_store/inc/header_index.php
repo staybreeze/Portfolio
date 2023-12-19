@@ -199,7 +199,7 @@
   <a href="./cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
       <p class=" shopping-cart-p ps-1">Buy it !</p>
     </a>
-
+  </div>
 </div>
 
 
@@ -260,6 +260,50 @@ if (isset($_SESSION['user'])) {
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item" style="margin-left:36px">
+
+
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">
+
+              <?php
+              if (isset($_SESSION['user'])) {
+                echo "<span> <a href='./api/logout.php'>登出</a></span>
+    <div class='unloading-bar'></div>
+    <div class='loading-bar'></div>";
+              } else {
+
+
+                echo '<span> 會員登入</span>
+      <div class="unloading-bar"></div>
+      <div class="loading-bar"></div>';
+              }
+              ?>
+
+            </a>
+
+          </li>
+        </ul>
+
+      </div>
+      <div class="page-link-min">
+
+        <ul>
+          <li class="nav-item me-3" >
+            <a href="aboutUs.php">關於我們</a>
+            <div class="unloading-bar"></div>
+            <div class="loading-bar"></div>
+          </li>
+          <li class="nav-item  me-3" style="margin-left:-25px">
+            <a href="./articles.php">文章</a>
+            <div class="unloading-bar"></div>
+            <div class="loading-bar"></div>
+          </li>
+          <li class="nav-item me-3" style="margin-left:-25px">
+            <a href="#store">購物車</a>
+            <div class="unloading-bar"></div>
+            <div class="loading-bar"></div>
+          </li>
+
+          <li class="nav-item" style="margin-left:-25px">
 
 
             <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">

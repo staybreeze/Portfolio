@@ -1,5 +1,3 @@
-
-
 <header class="h-11 bg-gray container-fluid header">
   <div class="row bg-gray">
 
@@ -60,7 +58,7 @@
 
     <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:37px">
       <a class="shopping-cart-a" target="_blank" href="">
-       <a href="../cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
+        <a href="../cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
         <p class="mt-1 shopping-cart-p">Buy it !</p>
       </a>
 
@@ -188,38 +186,37 @@
 
   <div class="header-title2">
 
-  <a class="shopping-cart-a" target="_blank" href="">
-  <a href="../cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
+    <a class="shopping-cart-a" target="_blank" href="">
+      <a href="../cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
       <p class=" shopping-cart-p ps-1">Buy it !</p>
     </a>
 
-</div>
+  </div>
 
 
 
-<div class="header-title3 ms-2 pb-2 ps-3 pt-1">
+  <div class="header-title3 ms-2 pb-2 ps-3 pt-1">
 
 
 
-  
-
-<?php
-
-if (isset($_SESSION['user'])) {
-  echo '<a href="../member.php"><i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"></i></a>';
-  
-  }else{
-    echo '<i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"  data-bs-toggle="modal" data-bs-target="#myModal"></i>';
-}
-?>
 
 
+    <?php
 
-  <p class="mt-1 me-5 shopping-cart-p">Menbership</p>
+    if (isset($_SESSION['user'])) {
+      echo '<a href="../member.php"><i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"></i></a>';
+    } else {
+      echo '<i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"  data-bs-toggle="modal" data-bs-target="#myModal"></i>';
+    }
+    ?>
 
-</div>
 
-</div>
+
+    <p class="mt-1 me-5 shopping-cart-p">Menbership</p>
+
+  </div>
+
+  </div>
 
 
   <nav class="nav-box">
@@ -231,7 +228,7 @@ if (isset($_SESSION['user'])) {
     <div class="menu-list">
       <div class="page-link ">
 
-      <ul>
+        <ul>
           <li class="nav-item me-3">
             <a href="../index.php">回首頁</a>
             <div class="unloading-bar"></div>
@@ -254,12 +251,44 @@ if (isset($_SESSION['user'])) {
 
           ?>
 
-            </a>
+          </a>
 
           </li>
         </ul>
 
       </div>
+      <div class="page-link-min">
+
+        <ul>
+          <li class="nav-item me-3">
+            <a href="../index.php">回首頁</a>
+            <div class="unloading-bar"></div>
+            <div class="loading-bar"></div>
+          </li>
+          <li class="nav-item me-3">
+            <a href="../articles.php">回上一頁</a>
+            <div class="unloading-bar"></div>
+            <div class="loading-bar"></div>
+          </li>
+          <?php
+          if (isset($_SESSION['user'])) {
+            echo "<li>
+          <span> <a href='../api/logout.php'>登出</a></span>
+      <div class='unloading-bar'></div>
+      <div class='loading-bar'></div>
+ </li>
+ ";
+          }
+
+          ?>
+
+          </a>
+
+          </li>
+        </ul>
+
+      </div>
+    </div>
   </nav>
-  
+
 </header>

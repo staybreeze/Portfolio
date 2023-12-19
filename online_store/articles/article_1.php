@@ -37,6 +37,17 @@ include_once "../api/db.php";
     .footer{
       margin-top:0px;
     }
+
+    @media screen and (max-width: 550px) {
+  .aside {
+margin-left: 100px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .aside>img {
+width:250px;
+  }
+}
   </style>
 </head>
 
