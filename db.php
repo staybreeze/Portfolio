@@ -5,7 +5,7 @@ session_start();
 class db
 {
 
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=portfolio";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=s1120421";
     protected $pdo;
     protected $table;
 
@@ -15,7 +15,7 @@ class db
         $this->table = $table;
 
         // 類別中，要吃到自己所處{}外的變數，需要加上$this->
-        $this->pdo = new PDO($this->dsn, 'root', '');
+        $this->pdo = new PDO($this->dsn, 's1120421', 's1120421');
     }
 
 
@@ -263,4 +263,4 @@ function dd($array)
 
 // 使用物件導向要先實例化(new)
 // 物件的變數建議用大寫的方式做區隔，以便未來設其他變數時不會強碰
-$Message=new DB('messages');
+$Message=new DB('portfolio_messages');

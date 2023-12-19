@@ -31,9 +31,14 @@
     .container {
         width: 100vw;
         height: 100%;
-        display: flex;
-    }
+    
 
+    }
+@media screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+  }
+}
     .box {
         width: 58%;
         height: 100%;
@@ -49,6 +54,20 @@
         width: 22.5%;
     }
 
+    @media screen and (max-width: 1000px) {
+  .aside {
+    margin-right: auto;
+   display: flex;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .aside-bottom>.row {
+    position: relative;
+    top:100px;
+   width:200px
+  }
+}
     .middle {
         width: 8%;
     }
@@ -56,7 +75,18 @@
     .main {
         width: 50%;
     }
-
+    @media screen and (max-width: 1000px) {
+  .main {
+    margin: auto;
+    width:100%
+  }
+}
+@media screen and (max-width: 1000px) {
+  .box {
+    margin: auto;
+    width:90%
+  }
+}
     /* .aside-top,
     .aside-bottom,
     .main-top,

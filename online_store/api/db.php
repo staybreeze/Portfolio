@@ -5,7 +5,7 @@ session_start();
 class db
 {
 
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=s1120421";
     protected $pdo;
     protected $table;
 
@@ -15,7 +15,7 @@ class db
         $this->table = $table;
 
         // 類別中，要吃到自己所處{}外的變數，需要加上$this->
-        $this->pdo = new PDO($this->dsn, 'root', '');
+        $this->pdo = new PDO($this->dsn, 's1120421', 's1120421');
     }
 
 
@@ -266,4 +266,4 @@ function dd($array)
 $User=new DB('users');
 $Good=new DB('goods');
 $Customer=new DB('customers');
-$Message=new DB('messages');
+$Message=new DB('store_messages');
