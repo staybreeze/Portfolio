@@ -597,3 +597,15 @@ right:160px
 .header2{
   display: none;
 }
+
+.modal-title{
+  color:#ffb71b
+}
+.myBtn{
+  background-color: rgb(107, 62, 2);
+  color: #fff;
+}
+.myBtn:hover{
+  background-color: rgb(216, 162, 90);
+  color: #fff;
+}

@@ -527,14 +527,14 @@
   
 
 <!-- Poster Modal -->
-<div class="modal" id="poster">
+<div class="modal" id="poster" >
     <div class="modal-dialog" style="right:300px">
 
 
 
         <!-- Modal body -->
 
-        <img src="./img/poster.jpg" width="201%"alt="">
+        <img  src="./img/poster.jpg" width="201%"alt="">
 
 
         <!-- Modal footer -->

@@ -32,7 +32,7 @@
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item me-3" style="margin-left:36px">
-            <span>聯絡我們</span>
+            <span data-bs-toggle="modal" data-bs-target="#contact">聯絡我們</span>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>
@@ -255,7 +255,7 @@ if (isset($_SESSION['user'])) {
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item me-3" style="margin-left:36px">
-            <span>聯絡我們</span>
+          <span data-bs-toggle="modal" data-bs-target="#contact">聯絡我們</span>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>

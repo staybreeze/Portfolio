@@ -1,6 +1,6 @@
 <<a class="footer-header pt-1 text-center join-us" 
        
-        href="">Join Us!</a>
+        href=""data-bs-toggle="modal" data-bs-target="#contact">Join Us!</a>
 
       </div>
     

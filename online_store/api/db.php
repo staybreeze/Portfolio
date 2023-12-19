@@ -266,3 +266,4 @@ function dd($array)
 $User=new DB('users');
 $Good=new DB('goods');
 $Customer=new DB('customers');
+$Message=new DB('messages');
