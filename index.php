@@ -26,6 +26,7 @@
     body {
         border-top: 10px solid #8bafb4;
         background-color: beige;
+        overflow-x: auto;
     }
 
     .container {
@@ -59,12 +60,15 @@
     margin-right: auto;
    display: flex;
   }
+  .aside-top>img{
+  width: 200px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .aside-bottom>.row {
     position: relative;
-    top:100px;
+    top:65px;
    width:200px
   }
 }
@@ -314,6 +318,7 @@
     width:485px;
 
   }
+
 }
 @media screen and (max-width: 767px) {
   .calendar-modal img {
@@ -333,7 +338,7 @@
     height:50%;
 
     margin-left:300px
-  }moda
+  }
   .banner-modal>.modal-dialog>img{
     width:485px;
 
