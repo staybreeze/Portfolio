@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WSL Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -32,14 +30,16 @@
     .container {
         width: 100vw;
         height: 100%;
-    
+
 
     }
-@media screen and (min-width: 1000px) {
-  .container {
-    display: flex;
-  }
-}
+
+    @media screen and (min-width: 1000px) {
+        .container {
+            display: flex;
+        }
+    }
+
     .box {
         width: 58%;
         height: 100%;
@@ -56,22 +56,24 @@
     }
 
     @media screen and (max-width: 1000px) {
-  .aside {
-    margin-right: auto;
-   display: flex;
-  }
-  .aside-top>img{
-  width: 200px;
-  }
-}
+        .aside {
+            margin-right: auto;
+            display: flex;
+        }
 
-@media screen and (max-width: 1000px) {
-  .aside-bottom>.row {
-    position: relative;
-    top:65px;
-   width:200px
-  }
-}
+        .aside-top>img {
+            width: 200px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .aside-bottom>.row {
+            position: relative;
+            top: 65px;
+            width: 200px
+        }
+    }
+
     .middle {
         width: 8%;
     }
@@ -79,18 +81,21 @@
     .main {
         width: 50%;
     }
+
     @media screen and (max-width: 1000px) {
-  .main {
-    margin: auto;
-    width:100%
-  }
-}
-@media screen and (max-width: 1000px) {
-  .box {
-    margin: auto;
-    width:90%
-  }
-}
+        .main {
+            margin: auto;
+            width: 100%
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .box {
+            margin: auto;
+            width: 90%
+        }
+    }
+
     /* .aside-top,
     .aside-bottom,
     .main-top,
@@ -290,79 +295,86 @@
         font-family: Rubik scribble;
         /* border-bottom: 1px solid#00707f;   */
     }
-    .myBtn{
+
+    .myBtn {
         background-color: #7cbcc4;
         color: #fff;
     }
 
     @media screen and (max-width: 767px) {
-  .online_store_pic:hover {
-    width: 230%;
-        z-index: 1;
-  }
-}
-@media screen and (max-width: 767px) {
-  .calendar_pic:hover {
-    width: 218%;
-        z-index: 1;
-  }
-}
-@media screen and (max-width: 767px) {
-  .poster-modal img {
-    width: 50%;
-    height:50%;
+        .online_store_pic:hover {
+            width: 230%;
+            z-index: 1;
+        }
+    }
 
-    margin-left:300px
-  }
-  .poster-modal>.modal-dialog>img{
-    width:485px;
+    @media screen and (max-width: 767px) {
+        .calendar_pic:hover {
+            width: 218%;
+            z-index: 1;
+        }
+    }
 
-  }
+    @media screen and (max-width: 767px) {
+        .poster-modal img {
+            width: 50%;
+            height: 50%;
 
-}
-@media screen and (max-width: 767px) {
-  .calendar-modal img {
-    width: 50%;
-    height:50%;
+            margin-left: 300px
+        }
 
-    margin-left:300px
-  }
-  .calendar-modal>.modal-dialog>img{
-    width:485px;
+        .poster-modal>.modal-dialog>img {
+            width: 485px;
 
-  }
-}
-@media screen and (max-width: 767px) {
-  .banner-modal img {
-    width: 50%;
-    height:50%;
+        }
 
-    margin-left:300px
-  }
-  .banner-modal>.modal-dialog>img{
-    width:485px;
+    }
 
-  }
-}
+    @media screen and (max-width: 767px) {
+        .calendar-modal img {
+            width: 50%;
+            height: 50%;
 
-@media screen and (max-width: 767px) {
-    .poster-modal>.modal-dialog>img{
-    width:412px;
+            margin-left: 300px
+        }
 
-  }
-  .calendar-modal>.modal-dialog>img{
-    width:412px;
+        .calendar-modal>.modal-dialog>img {
+            width: 485px;
 
-  }
-  .banner-modal>.modal-dialog>img{
-    width:412px;
+        }
+    }
 
-  }
-}
-@media screen and (max-width: 767px) {
-  body {
-overflow-x: hidden;
-}}
+    @media screen and (max-width: 767px) {
+        .banner-modal img {
+            width: 50%;
+            height: 50%;
+
+            margin-left: 300px
+        }
+
+        .banner-modal>.modal-dialog>img {
+            width: 485px;
+
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .poster-modal>.modal-dialog>img {
+            width: 412px;
+
+        }
+
+        .calendar-modal>.modal-dialog>img {
+            width: 412px;
+
+        }
+
+        .banner-modal>.modal-dialog>img {
+            width: 412px;
+
+        }
+    }
+
 
 </style>
 
@@ -551,17 +563,15 @@ overflow-x: hidden;
 
                 <h4>海報</h4>
 
-                    <img class="mt-2" src="./img/poster.jpg" width="100%" alt="" data-bs-toggle="modal"
-                    data-bs-target="#poster">
-             
+                <img class="mt-2" src="./img/poster.jpg" width="100%" alt="" data-bs-toggle="modal" data-bs-target="#poster">
+
 
             </div>
             <div></div>
             <div class="ms-5">
                 <h4>年暦</h4>
 
-                <img src="./img/calendar1.jpg" class="mt-2" width="100%" alt="" data-bs-toggle="modal"
-                    data-bs-target="#calendar_pic">
+                <img src="./img/calendar1.jpg" class="mt-2" width="100%" alt="" data-bs-toggle="modal" data-bs-target="#calendar_pic">
             </div>
 
         </div>
@@ -575,99 +585,96 @@ overflow-x: hidden;
     </div>
     <footer id="footer"></footer>
 
-<!-- contact Modal -->
-<div class="modal" id="contact">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">歡迎留下消息～(*´∀`)~♥</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-      <form action="./message.php" method="post">
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                    <span class="input-group-text bold">寄信人</span>
-                    <input type="text" class="form-control" placeholder="e-mail" name="sender">
-                
+    <!-- contact Modal -->
+    <div class="modal" id="contact">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">歡迎留下消息～(*´∀`)~♥</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text bold">收件人</span>
-                    <input type="text" class="form-control" disabled placeholder="wunshengliao@gmail.com">
-                
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text bold">主旨</span>
-                    <input type="text" class="form-control" name="subject">
-                
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="bold mt-3">信件內容</p>
-                        <div class="form-floating">
-                            <textarea class="form-control" id="comment" name="text"
-                                placeholder="Comment goes here"></textarea>
-                            <label for="comment"></label>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="./message.php" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bold">寄信人</span>
+                                    <input type="text" class="form-control" placeholder="e-mail" name="sender">
+
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bold">收件人</span>
+                                    <input type="text" class="form-control" disabled placeholder="wunshengliao@gmail.com">
+
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bold">主旨</span>
+                                    <input type="text" class="form-control" name="subject">
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="bold mt-3">信件內容</p>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+                                            <label for="comment"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <input class="btn myBtn mt-3" style="margin-left:400px" type="submit" value="送出">
+                    </form>
                 </div>
+
+
+
             </div>
         </div>
-        <input class="btn myBtn mt-3" style="margin-left:400px" type="submit" value="送出">
-      </form>
-        </div>
-  
-
-  
-      </div>
     </div>
-  </div>
-  
-  
-
-<!-- Poster Modal -->
-<div class="modal poster-modal" id="poster" >
-    <div class="modal-dialog" style="right:300px">
 
 
 
-        <!-- Modal body -->
-
-        <img  src="./img/poster.jpg" width="201%"alt="">
-
-
-        <!-- Modal footer -->
-
-        <button type="button" class="btn btn-danger class mt-2" style="margin-left:934px"
-            data-bs-dismiss="modal">Close</button>
-
-
-
-    </div>
-</div>
-
-
-
-    <!-- Calendar_pic Modal -->
-    <div class="modal calendar-modal" id="calendar_pic">
-        <div class="modal-dialog" style="right:300px">
+    <!-- Poster Modal -->
+    <div class="modal poster-modal" id="poster">
+        <div class="modal-dialog" style="right:302px">
 
 
 
             <!-- Modal body -->
 
-            <img src="./img/calendar1.jpg" width="200%"alt="">
+            <img src="./img/poster.jpg" width="221%" alt="">
 
 
             <!-- Modal footer -->
 
-            <button type="button" class="btn btn-danger class mt-2" style="margin-left:934px"
-                data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger class mt-2" style="margin-left:1039px" data-bs-dismiss="modal">Close</button>
+
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Calendar_pic Modal -->
+    <div class="modal calendar-modal" id="calendar_pic">
+        <div class="modal-dialog" style="right:302px">
+
+
+
+            <!-- Modal body -->
+
+            <img src="./img/calendar1.jpg" width="221%" alt="">
+
+
+            <!-- Modal footer -->
+
+            <button type="button" class="btn btn-danger class mt-2" style="margin-left:1039px" data-bs-dismiss="modal">Close</button>
 
 
 
@@ -677,19 +684,18 @@ overflow-x: hidden;
 
     <!-- Banner Modal -->
     <div class="modal banner-modal" id="banner">
-        <div class="modal-dialog" style="right:300px;top:100px">
+        <div class="modal-dialog" style="right:310px;top:100px">
 
 
 
             <!-- Modal body -->
 
-            <img src="./img/banner.jpg" alt="">
+            <img src="./img/banner.jpg" width="221%" alt="">
 
 
             <!-- Modal footer -->
 
-            <button type="button" class="btn btn-danger class mt-2" style="margin-left:934px"
-                data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger class mt-2" style="margin-left:1039px" data-bs-dismiss="modal">Close</button>
 
 
 
