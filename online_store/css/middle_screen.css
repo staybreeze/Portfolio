@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+
 }
 
 body {
@@ -102,12 +103,7 @@ header .page-link-min li:hover span {
   width: 350px;
   left: 400px
 }
-@media screen and (max-width: 450px) {
-  .contact {
 
-display:none;
-  }
-}
 @media screen and (max-width: 550px) {
   .header-title {
 display: none;
@@ -979,3 +975,12 @@ left:60px
 }
 
 
+@media screen and (max-width: 450px) {
+  .contact,.header-title2,.header-title3,.font-awesome {
+
+display:none;
+  }
+  .footer {
+    height: 93vh;
+  }
+}
