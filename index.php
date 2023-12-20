@@ -70,7 +70,7 @@
         .aside-bottom>.row {
             position: relative;
             top: 75px;
-            left:15px;
+            left: 15px;
             width: 200px
         }
     }
@@ -78,12 +78,13 @@
     @media screen and (max-width: 450px) {
         .aside-top>img {
             width: 200px;
-            left:45px;
+            left: 45px;
         }
+
         .aside-bottom>.row {
             position: relative;
             top: 75px;
-            left:10px;
+            left: 10px;
             width: 200px
         }
     }
@@ -199,17 +200,23 @@
     }
 
     @media screen and (max-width: 767px) {
-        .skill-box,td>div {
-          padding-top: 4px;
+
+        .skill-box,
+        td>div {
+            padding-top: 4px;
         }
 
     }
+
     @media screen and (max-width: 450px) {
-        .skill-box,td>div {
-          padding-top: 6px;
+
+        .skill-box,
+        td>div {
+            padding-top: 6px;
         }
 
     }
+
     .skills {
         text-align: left;
     }
@@ -326,11 +333,13 @@
         background-color: #7cbcc4;
         color: #fff;
     }
+
     @media screen and (max-width: 767px) {
         .circle {
-        margin-top:5px;
+            margin-top: 5px;
         }
-        td{
+
+        td {
             font-size: smaller;
         }
     }
@@ -384,7 +393,7 @@
             height: 50%;
 
             margin-left: 300px;
-    
+
         }
 
         .banner-modal>.modal-dialog>img {
@@ -410,6 +419,24 @@
         }
     }
 
+    @media screen and (min-width: 767px) {
+        .abbr {
+            display: none;
+        }
+
+    }
+  
+    @media screen and (max-width: 767px) {
+        .none-abbr {
+            display: none;
+        }
+        .abbr-td {
+
+            width:13.5%;
+            margin: auto;
+        text-align: center;
+        }
+    }
 
 </style>
 
@@ -476,8 +503,9 @@
                         <td class="td2 fw-bold">廖文聖
 
                         </td>
-                        <td class="td3">
-                            <div>Education</div>
+                        <td class="td3 abbr-td">
+                            <div class="none-abbr">Education</div>
+                            <div class="abbr">Edu.</div>
                         </td>
                         <td class="td4 align-items-sm-center fw-bold">國立臺灣大學
                             戲劇研究所 碩士
@@ -537,7 +565,8 @@
                     </tr>
                     <tr>
                         <td class="td1">
-                            <div>Languages</div>
+                            <div class="none-abbr">Languages</div>
+                            <div class="abbr">Langs.</div>
                         </td>
                         <td class="td2 me-5 fw-bold" colspan="3">中文(母語)、英文(精通)、台語(精通)、日文(初學)</td>
                         <!-- <td class="td3">
