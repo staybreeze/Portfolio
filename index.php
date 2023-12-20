@@ -62,14 +62,28 @@
         }
 
         .aside-top>img {
-            width: 200px;
+            width: 250px;
         }
     }
 
     @media screen and (max-width: 1000px) {
         .aside-bottom>.row {
             position: relative;
-            top: 65px;
+            top: 75px;
+            left:15px;
+            width: 200px
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .aside-top>img {
+            width: 200px;
+            left:45px;
+        }
+        .aside-bottom>.row {
+            position: relative;
+            top: 75px;
+            left:10px;
             width: 200px
         }
     }
@@ -184,6 +198,18 @@
         margin: auto;
     }
 
+    @media screen and (max-width: 767px) {
+        .skill-box,td>div {
+          padding-top: 4px;
+        }
+
+    }
+    @media screen and (max-width: 450px) {
+        .skill-box,td>div {
+          padding-top: 6px;
+        }
+
+    }
     .skills {
         text-align: left;
     }
@@ -300,6 +326,14 @@
         background-color: #7cbcc4;
         color: #fff;
     }
+    @media screen and (max-width: 767px) {
+        .circle {
+        margin-top:5px;
+        }
+        td{
+            font-size: smaller;
+        }
+    }
 
     @media screen and (max-width: 767px) {
         .online_store_pic:hover {
@@ -349,7 +383,8 @@
             width: 50%;
             height: 50%;
 
-            margin-left: 300px
+            margin-left: 300px;
+    
         }
 
         .banner-modal>.modal-dialog>img {
@@ -360,17 +395,17 @@
 
     @media screen and (max-width: 767px) {
         .poster-modal>.modal-dialog>img {
-            width: 412px;
+            width: 415px;
 
         }
 
         .calendar-modal>.modal-dialog>img {
-            width: 412px;
+            width: 415px;
 
         }
 
         .banner-modal>.modal-dialog>img {
-            width: 412px;
+            width: 430px;
 
         }
     }
