@@ -14,7 +14,7 @@
       </div>
       <div class="font-awesome mt-5 col-md-1 col ps-4">
         <a aria-label="instagram" target="_blank" href="">
-          <i class="fa-brands fa-instagram  fa-2xl  mt-4 " style="padding-left:25px;font-size: 40px;padding-top:3px"></i>
+          <i class="fa-brands fa-instagram  fa-2xl  mt-3 " style="padding-left:25px;font-size: 40px;padding-top:3px"></i>
         </a>
         <br>
         <br>

@@ -217,16 +217,24 @@ if(!isset($_SESSION['user'])){
             <li>
               <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
             </li>
-            <li>
-              <a href="add.php">加入會員</a>
-            </li>
-            <li>
-              <a href="member.php">修改密碼</a>
-            </li>
+            <?php
+            if(isset($_SESSION['user'])){
+              echo            '<li>';
+             echo  '<a href="member.php">修改密碼</a>';
+            echo '</li>';
+            }else{
+              echo            '<li>';
+             echo  '<a href="add.php">加入會員</a>';
+            echo '</li>';
+            }
+            ?>
+    
             <li>
               <a href="cart.php">訂單查詢</a>
             </li>
             <li>
+              <a href="back_login.php">管理員登入</a>
+            </li>
 
           </ul>
 

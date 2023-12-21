@@ -49,87 +49,13 @@ include_once "./api/db.php";
 
     @media screen and (max-width: 550px) {
       .section {
-        width: 100%;
-        margin: auto !important;
-        /* border: 1px solid black; */
+        width: 80%;
+        margin: auto;
       }
-
-      .box {
-        margin-left: -160px !important;
-
-      }
-
-      .input-group {
-
-        width: 360px !important;
-        margin-left: 175px !important;
-      }
-
-      .box>p,
-      .box>span {
-        margin-left: 130px !important;
-        margin-bottom: 30px !important;
-      }
-
-      .btn {
-        margin-left: 130px !important;
-      }
-
-      .add {
-        margin-left: 235px !important;
-      }
-
-      .input-group {
-        display: flex;
-        justify-content: space-between;
-
-      }
-
-      .btn-primary {
-        margin-left: 235px !important;
-      }
-    }
-
-    @media screen and (max-width: 450px) {
-      .section {
-        width: 100%;
-        margin: auto !important;
-        /* border: 1px solid black; */
-      }
-
-      .box {
-        margin-left: -160px !important;
-
-      }
-
-      .input-group {
-
-        width: 300px !important;
-        margin-left: 175px !important;
-      }
-
-      .box>p,
-      .box>span {
-        margin-left: 130px !important;
-        margin-bottom: 30px !important;
-      }
-
-      .btn {
-        margin-left: 130px !important;
-      }
-
-      .add {
-        margin-left: 170px !important;
-      }
-
-      .input-group {
-        display: flex;
-        justify-content: space-between;
-
-      }
-
-      .btn-primary {
-        margin-left: 175px !important;
+      .input-group{
+position: relative;
+width: 250px;
+left:100px
       }
     }
   </style>
@@ -137,6 +63,12 @@ include_once "./api/db.php";
 
 
 <body>
+  <?php
+  if (isset($_SESSION['user'])) {
+
+    header("location:member.php");
+  }
+  ?>
   <?php
   include "./inc/header_aboutUs_articles.php"
   ?>
@@ -151,36 +83,37 @@ include_once "./api/db.php";
         <br>
         <div class="box mt-5 text-center">
 
-          <?php
-          if (isset($_GET['error'])) {
 
-            echo "<span style='color:red'>請先登入會員再購買商品喔！</span>";
-          }
-
-          ?>
-          <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員登入</p>
+          <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員註冊</p>
 
 
-          <form action="./api/login.php" method="post" class=" col-12 col-sm-4 m-auto">
+          <form action="./api/add_user.php" method="post" class="col-4 m-auto">
             <div class="input-group my-1">
-              <label class="col-xs-12 col-sm-4  input-group-text w-100">帳號:</label>
+              <label class="col-4  input-group-text w-100">帳號:</label>
               <input class="form-control" type="text" name="acc" id="acc">
             </div>
             <div class="input-group my-1">
               <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">姓名:</label>
+              <input class="form-control" type="text" name="name" id="name">
+            </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">電子郵件:</label>
+              <input class="form-control" type="text" name="email" id="email">
+            </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">居住地:</label>
+              <input class="form-control" type="text" name="address" id="address">
+            </div>
             <div>
-              <a href="./add.php" class="add" style="padding-left:180px;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
-            </div>
-            <div class="btn-group">
-
-              <input class="btn btn-success mx-2 mt-4" type="reset" value="重置">
               <input class="btn btn-primary mx-2 mt-4" type="submit" value="送出">
+              <input class="btn btn-success mx-2 mt-4" type="reset" value="重置">
             </div>
 
-            <br> <br> <br> <br>
-
+            <br> <br> <br>
 
           </form>
 
@@ -234,8 +167,6 @@ include_once "./api/db.php";
                     <div class="d-flex gap-2">
                       <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
                       <button type="submit" class="btn btn-primary btn-warning  col-6">送出</button>
-
-                      <br>
                     </div>
                   </div>
                 </div>
@@ -243,7 +174,6 @@ include_once "./api/db.php";
             </form>
           </div>
         </div>
-
         <!-- Modal body container end -->
 
 
@@ -314,29 +244,22 @@ include_once "./api/db.php";
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <li>
+        <a href="add.php">加入會員</a>
+      </li>
+      <li>
+        <a href="member.php">修改密碼</a>
+      </li>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
 
-          </ul>
+    </ul>
+
 
 
   </div>

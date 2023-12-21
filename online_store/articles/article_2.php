@@ -36,15 +36,25 @@ include_once "../api/db.php";
       margin-top: 0px;
     }
     @media screen and (max-width: 550px) {
-  .aside {
-margin-left: 100px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .aside>img {
-width:250px;
-  }
-}
+      .aside {
+        margin-left: 110px;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      .aside>img {
+        width: 250px;
+      }
+      .box{
+        width: 300px;
+      }
+    }
+    @media screen and (max-width: 450px) {
+
+      .aside>img, .box{
+        margin-left: -30px;
+      }
+    }
   </style>
 </head>
 
