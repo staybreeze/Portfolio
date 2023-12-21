@@ -47,7 +47,7 @@ include_once "../api/db.php"
 
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
 
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3"  href="../back.php"><img src="../img/logo1.png" width="60px" alt="">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../back.php"><img src="../img/logo1.png" width="60px" alt="">
     <h3 style="font-weight:bold">奇多喵合作社</h3>
     </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,10 +63,10 @@ include_once "../api/db.php"
 
   <div class="container-fluid">
     <div class="row">
-      <?php
-      include_once "../inc/back_nav.php"
-      ?>
-
+     
+    <?php
+include_once "../inc/back_nav.php"
+?>
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <!-- content -->
 
@@ -75,7 +75,7 @@ include_once "../api/db.php"
 
           <form action="../api/back_aboutUs.php" method="post" class="mt-5">
             <h4 class="mt-5">起源</h4>
-            <textarea id="comment" name="origin" style="overflow: hidden;">
+            <textarea  id="comment" name="origin" style="overflow: hidden;">
 
 <?php
 $about = $About->find(1);
@@ -102,7 +102,7 @@ $about = $About->find(1);
             <h4 class="mt-5">選擇新圖片</h4>
             <input type="file" name="img" id="">
 
-
+          
             <input class="btn myBtn mt-2 px-end" type="submit" value="送出">
           </form>
 
@@ -120,7 +120,6 @@ $about = $About->find(1);
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="../js/back.js"></script>
-  
 </body>
 
 </html>

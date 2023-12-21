@@ -45,7 +45,7 @@
 
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><img src="./img/logo1.png" width="60px"alt=""><h3>奇多喵合作社</h3></a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3"  href="back.php"><img src="./img/logo1.png" width="60px"alt=""><h3 style="font-weight:bold">奇多喵合作社</h3></a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
       data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
         <div class="position-sticky pt-5">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./back/aboutUs.php">
+            <a class="nav-link" href="./back/aboutUs.php?do=aboutUs">
                 <span data-feather="home"></span>
                 關於我們
               </a>
@@ -76,7 +76,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="./back/goods.php?do=goods">
                 <span data-feather="shopping-cart"></span>
                 商品管理
               </a>
