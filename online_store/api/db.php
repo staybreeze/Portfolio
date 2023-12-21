@@ -267,3 +267,4 @@ $User=new DB('users');
 $Good=new DB('goods');
 $Customer=new DB('customers');
 $Message=new DB('store_messages');
+$Admin=new DB('admins');
