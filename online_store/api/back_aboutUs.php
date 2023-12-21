@@ -12,9 +12,17 @@ if(isset($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],"../img/".$_FILES['img']['name']);
     
     $_POST['img']=$_FILES['img']['name'];
+
 }
-$about['img']=$_POST['img'];
+
+if(!empty($_POST['img'])){
+    $about['img']=$_POST['img'];
+}else{
+        $about['img'];
+    }
+
+
 $About->save($about);
 
-header("location:../back.php")
+header("location:../back/aboutUs.php")
 ?>

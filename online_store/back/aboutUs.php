@@ -147,33 +147,34 @@ include_once "../api/db.php"
 
           <form action="../api/back_aboutUs.php" method="post" class="mt-5">
             <h4 class="mt-5">起源</h4>
-            <textarea class="form-control" id="comment" name="origin" style="overflow: hidden;">
+            <textarea  id="comment" name="origin" style="overflow: hidden;">
 
 <?php
 $about = $About->find(1);
 ?>
 
-<?= $about['origin'];; ?>
+<?= trim($about['origin']); ?>
 </textarea>
 
 
             <h4 class="mt-5">目標</h4>
-            <textarea class="form-control" id="comment" name="goal">
-            <?= $about['goal'];; ?>
+            <textarea id="comment" name="goal">
+            <?= trim($about['goal']);; ?>
 
             </textarea>
 
 
             <h4 class="mt-5">店貓－奇多（Cheetos）</h4>
-            <textarea class="form-control" id="comment" name="cheetos">
+            <textarea id="comment" name="cheetos">
 
-            <?= $about['cheetos'];; ?>
+            <?= trim($about['cheetos']);; ?>
             </textarea>
             <h4 class="mt-5">上架中的圖片</h4>
             <img src="../img/<?= $about['img']; ?>" width="50%" height="50%">
             <h4 class="mt-5">選擇新圖片</h4>
             <input type="file" name="img" id="">
 
+          
             <input class="btn myBtn mt-2 px-end" type="submit" value="送出">
           </form>
 
