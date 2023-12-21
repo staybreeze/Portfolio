@@ -204,7 +204,7 @@ include_once "./api/db.php";
         <!-- Modal body -->
         <div class="modal-body">
           <!-- 插入程式碼要有頭跟END，方便日後維護及辨識 -->
-          <!-- Modal body container.. -->
+          <!-- Modal body container. -->
           <div class="container mt-3">
 
 
@@ -270,16 +270,16 @@ include_once "./api/db.php";
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
     <ul class="pages">
       <li>
-        <a class="footer-header" href="#">關於我們</a>
+        <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>
       <li>
-        <a href="#">起源</a>
+        <a href="./aboutUs.php">起源</a>
       </li>
       <li>
-        <a href="#origin">目標</a>
+        <a href="./aboutUs.php#origin">目標</a>
       </li>
       <li>
-        <a href="#cheetos">店貓－奇多（Cheetos）</a>
+        <a href="./aboutUs.php#cheetos">店貓－奇多（Cheetos）</a>
       </li>
 
     </ul>
@@ -319,17 +319,17 @@ include_once "./api/db.php";
             <?php
             if(isset($_SESSION['user'])){
               echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
+             echo  '<a href="./member.php">修改密碼</a>';
             echo '</li>';
             }else{
               echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
+             echo  '<a href="./add.php">加入會員</a>';
             echo '</li>';
             }
             ?>
     
             <li>
-              <a href="cart.php">訂單查詢</a>
+              <a href="./cart.php">訂單查詢</a>
             </li>
             <li>
               <a href="back_login.php">管理員登入</a>

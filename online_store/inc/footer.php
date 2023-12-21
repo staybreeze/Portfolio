@@ -36,7 +36,7 @@
 
 
       <!-- contact Modal -->
-      <div class="modal" id="contact">
+      <div class="modal contact-modal" id="contact">
         <div class="modal-dialog">
           <div class="modal-content">
 
