@@ -34,11 +34,13 @@ body {
 
 
 
-header .page-link>ul,header .page-link-min>ul {
+header .page-link>ul,
+header .page-link-min>ul {
   display: flex
 }
 
-header .page-link>ul>li,header .page-link-min>ul>li {
+header .page-link>ul>li,
+header .page-link-min>ul>li {
   position: relative;
   width: 130px;
   height: 50.5px;
@@ -48,23 +50,27 @@ header .page-link>ul>li,header .page-link-min>ul>li {
 
 }
 
-header .page-link>ul>li:last-child,header .page-link-min>ul>li:last-child {
+header .page-link>ul>li:last-child,
+header .page-link-min>ul>li:last-child {
   margin-right: 10px
 }
 
-header .page-link>ul>li>span,header .page-link-min>ul>li>span {
+header .page-link>ul>li>span,
+header .page-link-min>ul>li>span {
   color: #fff;
   transition: .4s
 }
 
-header .page-link>ul>li>a,header .page-link-min>ul>li>a {
+header .page-link>ul>li>a,
+header .page-link-min>ul>li>a {
   text-decoration: none;
   color: #fff;
   transition: .4s;
 
 }
 
-header .page-link .unloading-bar,header .page-link-min .unloading-bar {
+header .page-link .unloading-bar,
+header .page-link-min .unloading-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,7 +80,8 @@ header .page-link .unloading-bar,header .page-link-min .unloading-bar {
 
 }
 
-header .page-link .loading-bar,header .page-link-min .loading-bar {
+header .page-link .loading-bar,
+header .page-link-min .loading-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -87,12 +94,14 @@ header .page-link .loading-bar,header .page-link-min .loading-bar {
 
 
 
-header .page-link li:hover,header .page-link-min li:hover {
+header .page-link li:hover,
+header .page-link-min li:hover {
   cursor: pointer
 }
 
 header .page-link li:hover a,
-header .page-link li:hover span,header .page-link-min li:hover a,
+header .page-link li:hover span,
+header .page-link-min li:hover a,
 header .page-link-min li:hover span {
   color: #ffb71b
 }
@@ -106,28 +115,30 @@ header .page-link-min li:hover span {
 
 @media screen and (max-width: 550px) {
   .header-title {
-display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 450px) {
   .header-title {
 
-display:none;
+    display: none;
   }
 }
 
 
 @media screen and (max-width: 550px) {
   .page-link {
-display: none;
+    display: none;
   }
 }
+
 @media screen and (min-width: 550px) {
   .page-link-min {
-display: none;
+    display: none;
   }
 }
+
 @media screen and (min-width: 550px) {
   .contact {
     position: absolute;
@@ -141,7 +152,7 @@ display: none;
   .modal {
 
     top: 20px;
- 
+
     padding-right: 70px
   }
 }
@@ -382,8 +393,8 @@ footer .contact p {
   padding: 0 15px
 }
 
-.footer-pages{
-  margin-left:20px
+.footer-pages {
+  margin-left: 20px
 }
 
 footer .pages {
@@ -738,7 +749,7 @@ a:hover {
 @media screen and (min-width: 1100px) {
   .join-us {
     top: 110px;
-    left:800px;
+    left: 800px;
 
   }
 }
@@ -812,28 +823,33 @@ a:hover {
 
 @media screen and (max-width: 450px) {
 
-.line .menu::before{
-  margin-top: 53px;
-  
-}
-.line .menu{
-  margin-top: 102.45px;
-}
-.line .menu::after{
-  margin-top: 55px;
-}
+  .line .menu::before {
+    margin-top: 53px;
+
+  }
+
+  .line .menu {
+    margin-top: 102.45px;
+  }
+
+  .line .menu::after {
+    margin-top: 55px;
+  }
 }
 
-.line .menu::before{
+.line .menu::before {
   margin-top: 57px;
-  
+
 }
-.line .menu{
+
+.line .menu {
   margin-top: 106.45px;
 }
-.line .menu::after{
+
+.line .menu::after {
   margin-top: 59px;
 }
+
 .line .menu,
 .line .menu::before,
 .line .menu::after {
@@ -859,7 +875,7 @@ a:hover {
   .line .menu {
     left: 358px;
     /* top: 200px; */
- 
+
   }
 }
 
@@ -871,6 +887,7 @@ a:hover {
 .line .menu::after {
   top: 6px;
 }
+
 .line .menu::after {
   top: 6px;
 }
@@ -945,14 +962,17 @@ a:hover {
 input#menu {
   display: none;
 }
-.modal-title{
-  color:rgb(216, 162, 90)
+
+.modal-title {
+  color: rgb(216, 162, 90)
 }
-.myBtn{
+
+.myBtn {
   background-color: rgb(107, 62, 2);
   color: #fff;
 }
-.myBtn:hover{
+
+.myBtn:hover {
   background-color: rgb(216, 162, 90);
   color: #fff;
 }
@@ -961,7 +981,7 @@ input#menu {
   .modal {
 
     top: 20px;
- 
+
     padding-right: 70px
   }
 }
@@ -970,17 +990,23 @@ input#menu {
   .modal {
 
     top: 20px;
-left:60px
+    left: 60px
   }
 }
 
 
 @media screen and (max-width: 450px) {
-  .contact,.header-title2,.header-title3,.font-awesome {
 
-display:none;
+  .contact,
+  .header-title2,
+  .header-title3,
+  .font-awesome {
+
+    display: none;
   }
+
   .footer {
     height: 93vh;
   }
 }
+

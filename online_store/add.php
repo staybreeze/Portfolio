@@ -1,7 +1,7 @@
-<?php 
+<?php
 include_once "./api/db.php";
 ?>
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,12 +11,10 @@ include_once "./api/db.php";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
-<link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
-<link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
+  <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
+  <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
   <style>
     .aside {
       background-image: url(./img/18-2500x1667.jpg);
@@ -42,20 +40,80 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+
+    @media screen and (max-width: 550px) {
+      .aside {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      .section {
+        width: 100%;
+        margin: auto !important;
+        /* border: 1px solid black; */
+      }
+
+      .box {
+        margin-left: -160px !important;
+
+      }
+
+      .input-group {
+
+        width: 325px !important;
+      }
+
+      .box>p {
+        margin-left: 130px !important;
+        margin-bottom: 30px !important;
+      }
+
+      .btn-group {
+        margin-left: 183px !important;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      .section {
+        width: 100%;
+        margin: auto !important;
+        /* border: 1px solid black; */
+      }
+
+      .box {
+        margin-left: -160px !important;
+
+      }
+
+      .input-group {
+
+        width: 300px !important;
+      }
+
+      .box>p {
+        margin-left: 130px !important;
+        margin-bottom: 30px !important;
+      }
+
+      .btn-group {
+        margin-left: 158px !important;
+      }
+    }
   </style>
 </head>
 
 
 <body>
-<?php
-            if (isset($_SESSION['user'])) {
+  <?php
+  if (isset($_SESSION['user'])) {
 
-              header("location:member.php");
-            }
+    header("location:member.php");
+  }
   ?>
-<?php
-include "./inc/header_aboutUs_articles.php"
-?>
+  <?php
+  include "./inc/header_aboutUs_articles.php"
+  ?>
   <!-- ---- -->
   <div class="container-fluid">
     <div class="row d-flex main">
@@ -68,45 +126,46 @@ include "./inc/header_aboutUs_articles.php"
         <div class="box mt-5 text-center">
 
 
-   <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員註冊</p>
-                    
-      
-    <form action="./api/add_user.php" method="post" class="col-4 m-auto">
-        <div class="input-group my-1">
-            <label class="col-4  input-group-text w-100">帳號:</label>
-            <input class="form-control"  type="text" name="acc" id="acc">
-        </div>
-        <div class="input-group my-1">
-            <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
-            <input class="form-control" type="password" name="pw" id="pw">
-        </div>
-        <div class="input-group my-1">
-            <label class="col-4  input-group-text w-100 mt-3">姓名:</label>
-            <input class="form-control" type="text" name="name" id="name">
-        </div>
-        <div class="input-group my-1">
-            <label class="col-4  input-group-text w-100 mt-3">電子郵件:</label>
-            <input class="form-control" type="text" name="email" id="email">
-        </div>
-        <div class="input-group my-1">
-            <label class="col-4  input-group-text w-100 mt-3">居住地:</label>
-            <input class="form-control" type="text" name="address" id="address">
-        </div>
-        <div>
-            <input class="btn btn-primary mx-2 mt-4" type="submit" value="送出">
-            <input class="btn btn-success mx-2 mt-4" type="reset" value="重置">
-        </div>
-    
-        <br>    <br>    <br>
-    
-    </form>
+          <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員註冊</p>
 
-          </div>
 
-          <div class="col-1"></div>
+          <form action="./api/add_user.php" method="post" class="col-4 m-auto">
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100">帳號:</label>
+              <input class="form-control" type="text" name="acc" id="acc">
+            </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
+              <input class="form-control" type="password" name="pw" id="pw">
+            </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">姓名:</label>
+              <input class="form-control" type="text" name="name" id="name">
+            </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">電子郵件:</label>
+              <input class="form-control" type="text" name="email" id="email">
+            </div>
+            <div class="input-group my-1">
+              <label class="col-4  input-group-text w-100 mt-3">居住地:</label>
+              <input class="form-control" type="text" name="address" id="address">
+            </div>
+            <div class=btn-group>
+
+              <input class="btn btn-success mx-2 mt-4" type="reset" value="重置">
+              <input class="btn btn-primary mx-2 mt-4" type="submit" value="送出">
+            </div>
+
+            <br> <br> <br>
+
+          </form>
+
         </div>
+
+        <div class="col-1"></div>
       </div>
     </div>
+  </div>
   </div>
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -180,76 +239,76 @@ include "./inc/header_aboutUs_articles.php"
   </div>
 
   <?php
-      include "./inc/footer.php"
-      ?>
-        <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
-          <ul class="pages">
-            <li>
-              <a class="footer-header" href="#">關於我們</a>
-            </li>
-            <li>
-              <a href="#">起源</a>
-            </li>
-            <li>
-              <a href="#origin">目標</a>
-            </li>
-            <li>
-              <a href="#cheetos">店貓－奇多（Cheetos）</a>
-            </li>
+  include "./inc/footer.php"
+  ?>
+  <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
+    <ul class="pages">
+      <li>
+        <a class="footer-header" href="#">關於我們</a>
+      </li>
+      <li>
+        <a href="#">起源</a>
+      </li>
+      <li>
+        <a href="#origin">目標</a>
+      </li>
+      <li>
+        <a href="#cheetos">店貓－奇多（Cheetos）</a>
+      </li>
 
-          </ul>
+    </ul>
 
-          <ul class="pages">
-            <li>
-              <a class="footer-header" href="./articles.php#">貓咪文章</a>
-            </li>
-            <li>
-              <a class="" href="./articles.php#">幼貓</a>
-            </li>
-            <li>
-              <a class="" href="./articles.php#">成貓</a>
-            </li>
-            <li>
-              <a class="" href="./articles.php#">老貓</a>
-            </li>
-          </ul>
-          <ul class="pages">
-            <li>
-              <a class="footer-header" href="./index.php#store">購物商城</a>
-            </li>
-            <li>
-              <a class="" href="./index.php#store">食物</a>
-            </li>
-            <li>
-              <a class="" href="./index.php#store">玩具</a>
-            </li>
-            <li>
-              <a class="" href="./index.php#store">生活用品</a>
-            </li>
-          </ul>
-          <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <li>
-              <a href="add.php">加入會員</a>
-            </li>
-            <li>
-              <a href="member.php">修改密碼</a>
-            </li>
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
+    <ul class="pages">
+      <li>
+        <a class="footer-header" href="./articles.php#">貓咪文章</a>
+      </li>
+      <li>
+        <a class="" href="./articles.php#">幼貓</a>
+      </li>
+      <li>
+        <a class="" href="./articles.php#">成貓</a>
+      </li>
+      <li>
+        <a class="" href="./articles.php#">老貓</a>
+      </li>
+    </ul>
+    <ul class="pages">
+      <li>
+        <a class="footer-header" href="./index.php#store">購物商城</a>
+      </li>
+      <li>
+        <a class="" href="./index.php#store">食物</a>
+      </li>
+      <li>
+        <a class="" href="./index.php#store">玩具</a>
+      </li>
+      <li>
+        <a class="" href="./index.php#store">生活用品</a>
+      </li>
+    </ul>
+    <ul class="pages">
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <li>
+        <a href="add.php">加入會員</a>
+      </li>
+      <li>
+        <a href="member.php">修改密碼</a>
+      </li>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
 
-          </ul>
+    </ul>
 
 
 
-        </div>
-        <?php
-      include "./inc/copyright.php"
-      ?>
+  </div>
+  <?php
+  include "./inc/copyright.php"
+  ?>
 </body>
 
-  </html>
+</html>

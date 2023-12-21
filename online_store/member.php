@@ -40,22 +40,48 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+
     @media screen and (max-width: 550px) {
-  .section {
-/* width:72%; */
-padding-right: 100px;
-  }
-}
+      .section {
+        width: 100%;
+        margin: auto !important;
+        /* border: 1px solid black; */
+      }
+
+      .box {
+        margin-left: -160px !important;
+
+      }
+
+      .input-group {
+
+        width: 325px !important;
+      }
+
+      .box>p {
+        margin-left: 130px !important;
+        margin-bottom: 30px !important;
+      }
+
+      .btn-group {
+        margin-left: 110px !important;
+      }
+      .logout{
+        
+        width: 325px !important;
+        margin-left: -1px !important;
+      }
+    }
   </style>
 </head>
 
 
 <body>
   <?php
-            if (!isset($_SESSION['user'])) {
+  if (!isset($_SESSION['user'])) {
 
-              header("location:add.php");
-            }
+    header("location:add.php");
+  }
   ?>
   <?php
   include "./inc/header_aboutUs_articles.php"
@@ -111,7 +137,7 @@ padding-right: 100px;
               <label class="col-4  input-group-text mt-3 w-100">居住地:</label>
               <input class="form-control" type="text" name="address" id="address" value="<?= $user['address']; ?>">
             </div>
-            <div>
+            <div class="btn-group">
               <!-- 加入ID傳值以便update-php能在資料庫抓到對應的ID進行修改 -->
               <input class="form-control" type="hidden" name="id" id="id" value="<?= $user['id']; ?>">
               <input class="btn btn-primary mx-2 mt-5" type="submit" value="更新" onclick="submitInnerData()">
@@ -119,7 +145,7 @@ padding-right: 100px;
               <!-- 比較進階的做法 -->
               <input class="btn btn-danger mx-2 mt-5" type="button" value="刪除" onclick="location.href='./api/del_user.php?id=<?= $user['id']; ?>'">
             </div>
-            <a href='./api/logout.php' class='btn btn-warning mt-4 col-9 mx-2'>登出</a>
+            <a href='./api/logout.php' class='btn logout btn-warning mt-4 col-9 mx-2'>登出</a>
           </form>
           <br><br><br>
         </div>
@@ -249,21 +275,21 @@ padding-right: 100px;
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <li>
-              <a href="add.php">加入會員</a>
-            </li>
-            <li>
-              <a href="member.php">修改密碼</a>
-            </li>
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <li>
+        <a href="add.php">加入會員</a>
+      </li>
+      <li>
+        <a href="member.php">修改密碼</a>
+      </li>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
 
-          </ul>
+    </ul>
 
 
 

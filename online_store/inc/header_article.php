@@ -175,7 +175,8 @@
 
 
 
-  <img class="logo2" src="../img/logo1.png" alt="">
+<a href="../index.php">
+  <img class="logo2" src="../img/logo1.png" alt=""></a>
   <div class="header-title">
 
     <a href="../index.php">
