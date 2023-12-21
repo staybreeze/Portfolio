@@ -938,6 +938,7 @@ a:hover {
   z-index: 1;
   transition: all .6s;
   overflow: hidden;
+  top:100px;
 }
 
 
@@ -1055,3 +1056,4 @@ display: none;
     height: 93vh;
   }
 }
+
