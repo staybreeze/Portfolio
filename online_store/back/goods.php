@@ -161,7 +161,7 @@ include_once "../api/db.php"
 
       </div>
     </div>
-    <input class="btn myBtn mt-2" style="margin-left:1350px " type="submit" value="送出">
+    <input class="btn myBtn-gold mt-2" style="margin-left:1350px " type="submit" value="送出">
 
 </form>
           <h4 class="mt-5 color-gray" style="margin-left:95px">編輯</h4>

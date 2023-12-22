@@ -151,3 +151,13 @@ form>h4,.color-gray{
   font-weight: bold;
   color: #727272;
 }
+
+.myBtn-gold:hover {
+  background-color: rgb(107, 62, 2);
+  color: #fff;
+}
+
+.myBtn-gold {
+  background-color: rgb(216, 162, 90);
+  color: #fff;
+}

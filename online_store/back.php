@@ -86,7 +86,7 @@ include_once "./api/db.php"
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="./back/users.php?do=users">
                 <i class="fa-solid fa-people-group"></i>
                 &nbsp;會員管理
                 </a>

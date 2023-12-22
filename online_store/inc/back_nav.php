@@ -37,7 +37,20 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class=
+                
+                <li class="nav-item">
+                <a class="
+              
+              <?php
+                if ($_GET['do'] == 'users') {
+                    echo "nav-link active";
+                } else {
+                    echo "nav-link";
+                }
+                ?>"
+                
+                href="users.php?do=users">
                 <i class="fa-solid fa-people-group"></i>
                 &nbsp;會員管理
                 </a>
