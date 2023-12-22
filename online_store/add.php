@@ -40,7 +40,9 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
-
+    .btn-group {
+        margin-left: 156px !important;
+      }
     @media screen and (max-width: 550px) {
       .aside {
         display: none;

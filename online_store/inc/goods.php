@@ -37,7 +37,7 @@ if (($good['new'])>0) {
                         <ul>
                              <li><a href="./cart.php"><i class="fas fa-shopping-cart"></i></a></li>
                             <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="./api/add_good.php?id=6"><i class="fas fa-plus"></i></a></li>
+                            <li><a href="./api/add_good.php?id=<?=$good['id'];?>"><i class="fas fa-plus"></i></a></li>
                             <li><a href="#"><i class="fas fa-expand"></i></a></li>
                         </ul>
                     </div>

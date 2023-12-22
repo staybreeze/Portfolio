@@ -90,10 +90,11 @@ if(!isset($_SESSION['user'])){
       <table class="table">
         <tr>
           <th style="width:8%;background-color:#f8ede0">ID</th>
+          <th style="width:10% ;background-color:#f8ede0">圖片</th>
           <th style="width:40% ;background-color:#f8ede0">商品</th>
-          <th style="width:15%;background-color:#f8ede0">單價</th>
-          <th style="width:15%;background-color:#f8ede0">數量</th>
-          <th style="width:15%;background-color:#f8ede0">小計</th>
+          <th style="width:10%;background-color:#f8ede0">單價</th>
+          <th style="width:10%;background-color:#f8ede0">數量</th>
+          <th style="width:10%;background-color:#f8ede0">小計</th>
           <th style="background-color:#f8ede0">刪除</th>
         </tr>
 
@@ -115,14 +116,15 @@ if(!isset($_SESSION['user'])){
           <tr>
 
 
-            <td  class="pt-3" ><?= $row['id'];?></td>
-            <td class="pt-3"><?= $row['name'];?></td>
-            <td class="pt-3"><?= $row['price'];?></td>
-            <td class="pt-3"><?= $row['quatity'];?></td>
-            <td class="pt-3"><?= $total=($row['quatity'] * $row['price'])?></td>
+            <td style="padding-top:23px" ><?= $row['id'];?></td>
+            <td style=""><img src="./img/<?= $row['img'];?>"  width="50px" alt=""></td>
+            <td style="padding-top:23px"><?= $row['name'];?></td>
+            <td style="padding-top:23px"><?= $row['price'];?></td>
+            <td style="padding-top:23px"><?= $row['quatity'];?></td>
+            <td style="padding-top:23px"><?= $total=($row['quatity'] * $row['price'])?></td>
 
             <td>
-              <a href="./api/del_good.php?id=<?=$row['id'];?>"><input class="btn btn-danger" type="button" value="刪除"></a>
+              <a href="./api/del_good.php?id=<?=$row['id'];?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
             </td>
           </tr>
           <?php
