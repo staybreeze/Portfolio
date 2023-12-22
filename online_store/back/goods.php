@@ -171,7 +171,7 @@ include_once "../api/db.php"
             foreach ($goods as  $good) {
 
             ?>
-          <form action="../api/back_goods.php" method="post" class="mt-5" enctype="multipart/form-data">
+          <form action="../api/back_goods.php" method="post" class="mt-5 mb-5" enctype="multipart/form-data">
     
               <div class="container good-border">
                 <div class="row mt-3">
