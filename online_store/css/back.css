@@ -147,7 +147,7 @@ height:20vh;
 
 }
 
-form>h4{
+form>h4,.color-gray{
   font-weight: bold;
   color: #727272;
 }

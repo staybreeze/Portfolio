@@ -1,6 +1,10 @@
 <?php
 include_once "db.php";
 
+if(isset($_GET['del'])){
+    $Good->del($_GET['del']);
+}else{
+
 $id=intval($_POST['id']);
 $good=$Good->find($id);
 
@@ -19,8 +23,12 @@ $good['price'] = is_array($price) ? implode(', ', $price) : $price;
 
 
 
-if(isset($_POST['new'])){
-    $good['new']=$_POST['new'];
+if (isset($_POST['new'])) {
+  
+    $good['new'] = 1;
+} else {
+  
+    $good['new'] = 0;
 }
 
 if(isset($_FILES['img']['tmp_name'])){
@@ -38,6 +46,6 @@ if(!empty($_POST['img'])){
 
 
 $Good->save($good);
-
+}
 header("location:../back/goods.php?do=goods")
 ?>
