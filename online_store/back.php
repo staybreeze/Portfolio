@@ -65,38 +65,38 @@
           <ul class="nav flex-column">
             <li class="nav-item">
             <a class="nav-link" href="./back/aboutUs.php?do=aboutUs">
-                <span data-feather="home"></span>
-                關於我們
+            <i class="fa-solid fa-cat"></i>
+            &nbsp;  關於我們
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                文章管理
+              <i class="fa-solid fa-book-open"></i>
+              &nbsp;文章管理
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./back/goods.php?do=goods">
-                <span data-feather="shopping-cart"></span>
-                商品管理
+              <i class="fa-solid fa-cart-shopping"></i>
+              &nbsp;商品管理
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                會員管理
+              <i class="fa-solid fa-people-group"></i>
+              &nbsp;會員管理
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                訂單管理
+              <i class="fa-solid fa-comments-dollar"></i>
+              &nbsp; 訂單管理
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-               留言管理
+              <i class="fa-regular fa-envelope"></i>
+               &nbsp;留言管理
               </a>
             </li>
           </ul>

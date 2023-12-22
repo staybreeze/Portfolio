@@ -12,13 +12,13 @@
                 }
                 ?>" href="aboutUs.php?do=aboutUs">
                   <i class="fa-solid fa-cat"></i>
-                    關於我們
+                  &nbsp;關於我們
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                 <i class="fa-solid fa-book-open"></i>
-                    文章管理
+                &nbsp;文章管理
                 </a>
             </li>
             <li class="nav-item">
@@ -33,25 +33,25 @@
                 ?>" href="goods.php?do=goods">
                     <!-- <span data-feather="shopping-cart"></span> -->
                     <i class="fa-solid fa-cart-shopping"></i>
-                    商品管理
+                    &nbsp;商品管理
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                 <i class="fa-solid fa-people-group"></i>
-                    會員管理
+                &nbsp;會員管理
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                 <i class="fa-solid fa-comments-dollar"></i>
-                    訂單管理
+                &nbsp;訂單管理
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                 <i class="fa-regular fa-envelope"></i>
-                    留言管理
+                &nbsp;留言管理
                 </a>
             </li>
         </ul>
