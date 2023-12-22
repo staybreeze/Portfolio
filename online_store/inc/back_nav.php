@@ -67,6 +67,12 @@
                 &nbsp;留言管理
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admins.php?do=admins">
+                <i class="fa-solid fa-user-tie"></i>
+                &nbsp;管理員們
+                </a>
+            </li>
         </ul>
 
         <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

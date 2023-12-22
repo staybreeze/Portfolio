@@ -115,7 +115,7 @@ include_once "../api/db.php"
           <h2 class="title">會員管理</h2>
           <h4 class="mt-5 color-gray" style="margin-left:95px">新增</h4>
 
-          <form method="post" action="../api/back_users.php" style="margin-left:95px">
+          <form method="post" action="../api/back_users_add.php" style="margin-left:95px">
             <table>
 
               <tr class="th-add">
@@ -124,15 +124,15 @@ include_once "../api/db.php"
                 <td style="width:10%">名字</td>
                 <td style="width:30%">地址</td>
                 <td style="width:30%">信箱</td>
-       
+
               </tr>
 
               <tr>
                 <td>
 
-                  <input type="text" name="acc[]" value="">
+                  <input type="text" name="acc" value="">
                 </td>
-        <input type="hidden" name="id[]">
+    
                 <td>
                   <!-- 
                                 $_POST['sh'][0] => "1"
@@ -141,22 +141,22 @@ include_once "../api/db.php"
 
                   <!-- 生成一個checked的陣列 -->
 
-                  <input type="password" name="pw[]" value="">
+                  <input type="password" name="pw" value="">
                 </td>
                 <td>
 
-                  <input type="text" name="name[]" value="">
+                  <input type="text" name="name" value="">
                 </td>
                 <td>
 
-                  <input type="text" name="address[]" value="">
+                  <input type="text" name="address" value="">
                 </td>
 
                 <td>
 
-                  <input type="text" name="email[]" value="">
+                  <input type="text" name="email" value="">
                 </td>
-    
+
               </tr>
 
 
@@ -167,7 +167,7 @@ include_once "../api/db.php"
 
 
                 <div class="d-flex">
-
+                  <input type="hidden" name="user" value="user">
                   <input class="btn myBtn-gold mt-5" style="margin-left:1335px " type="submit" value="送出">
                 </div>
               </tr>
@@ -178,7 +178,7 @@ include_once "../api/db.php"
 
 
           <h4 class="mt-5 color-gray" style="margin-left:95px">編輯</h4>
-          <form method="post" action="../api/back_users.php" style="margin-left:95px">
+          <form method="post" action="../api/back_users_update.php" style="margin-left:95px">
             <table>
 
               <tr class="th-update">
@@ -240,7 +240,7 @@ include_once "../api/db.php"
 
 
                 <div class="d-flex">
-             
+
                   <input class="btn myBtn mt-5" style="margin-left:1335px " type="submit" value="送出">
                 </div>
                 <hr>
