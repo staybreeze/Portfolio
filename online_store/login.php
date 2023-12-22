@@ -85,7 +85,7 @@ include_once "./api/db.php";
 
       }
 
-      .btn-primary {
+      .btn-warning {
         margin-left: 235px !important;
       }
     }
@@ -128,7 +128,7 @@ include_once "./api/db.php";
 
       }
 
-      .btn-primary {
+      .btn-warning {
         margin-left: 175px !important;
       }
     }
@@ -175,8 +175,8 @@ include_once "./api/db.php";
             </div>
             <div class="btn-group">
 
-              <input class="btn btn-success mx-2 mt-4" type="reset" value="重置">
-              <input class="btn btn-primary mx-2 mt-4" type="submit" value="送出">
+              <input class="btn btn-secondary mx-2 mt-4 sec" type="reset" value="重置">
+              <input class="btn btn-warning mx-2 mt-4" type="submit" value="送出">
             </div>
 
             <br> <br> <br> <br>
@@ -232,8 +232,8 @@ include_once "./api/db.php";
                 <div class="col-12">
                   <div class="mb-3">
                     <div class="d-flex gap-2">
-                      <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
-                      <button type="submit" class="btn btn-primary btn-warning  col-6">送出</button>
+                      <button type="reset" class="btn btn-secondary btn-secondary col-6">重置</button>
+                      <button type="submit" class="btn btn-warning btn-warning  col-6">送出</button>
 
                       <br>
                     </div>

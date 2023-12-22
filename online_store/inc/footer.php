@@ -77,7 +77,7 @@
                     </div>
                   </div>
                 </div>
-                <input class="btn myBtn mt-3" style="margin-left:400px" type="submit" value="送出">
+                <input class="btn myBtn mt-3" style="margin-left:345px" type="submit" value="送出">
               </form>
             </div>
 

@@ -140,8 +140,8 @@ include_once "./api/db.php";
             <div class="btn-group">
               <!-- 加入ID傳值以便update-php能在資料庫抓到對應的ID進行修改 -->
               <input class="form-control" type="hidden" name="id" id="id" value="<?= $user['id']; ?>">
-              <input class="btn btn-primary mx-2 mt-5" type="submit" value="更新" onclick="submitInnerData()">
-              <input class="btn btn-success mx-2 mt-5" type="reset" value="重置">
+              <input class="btn btn-secondary mx-2 mt-5 " type="reset" value="重置">
+              <input class="btn btn-warning mx-2 mt-5  myBtn-brown" type="submit" value="更新" onclick="submitInnerData()">
               <!-- 比較進階的做法 -->
               <input class="btn btn-danger mx-2 mt-5" type="button" value="刪除" onclick="location.href='./api/del_user.php?id=<?= $user['id']; ?>'">
             </div>
@@ -196,8 +196,8 @@ include_once "./api/db.php";
                 <div class="col-12">
                   <div class="mb-3">
                     <div class="d-flex gap-2">
-                      <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
-                      <button type="submit" class="btn btn-primary btn-warning  col-6">送出</button>
+                      <button type="reset" class="btn btn-secondary  myBtn-gold btn-secondary col-6">重置</button>
+                      <button type="submit" class="btn btn-warning myBtn-brown btn-warning  col-6">送出</button>
                     </div>
                   </div>
                 </div>

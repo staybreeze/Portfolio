@@ -1057,3 +1057,10 @@ display: none;
   }
 }
 
+.myBtn-brown{
+  background-color: rgb(107, 62, 2);
+}
+
+.myBtn-gold{
+  background-color: goldenrod;
+}
