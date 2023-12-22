@@ -68,7 +68,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admins.php?do=admins">
+                <a class="
+                <?php
+                if ($_GET['do'] == 'admins') {
+                    echo "nav-link active";
+                } else {
+                    echo "nav-link";
+                }
+                ?>"
+                href="admins.php?do=admins">
                 <i class="fa-solid fa-user-tie"></i>
                 &nbsp;管理員們
                 </a>
