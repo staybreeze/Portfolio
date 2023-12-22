@@ -24,5 +24,5 @@ if(!empty($_POST['img'])){
 
 $About->save($about);
 
-header("location:../back/aboutUs.php")
+header("location:../back/aboutUs.php?do=aboutUs")
 ?>

@@ -11,7 +11,7 @@ include_once "../api/db.php"
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
-  <title>Dashboard Template · Bootstrap v5.0</title>
+  <title>奇多喵合作社/後台/商品管理</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -36,6 +36,12 @@ include_once "../api/db.php"
         font-size: 3.5rem;
       }
     }
+
+    .good-border {
+      border: 1px dotted brown;
+    }
+  </style>
+
   </style>
 
 
@@ -48,7 +54,7 @@ include_once "../api/db.php"
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
 
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../back.php"><img src="../img/logo1.png" width="60px" alt="">
-    <h3 style="font-weight:bold">奇多喵合作社</h3>
+      <h3 style="font-weight:bold">奇多喵合作社</h3>
     </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -63,55 +69,117 @@ include_once "../api/db.php"
 
   <div class="container-fluid">
     <div class="row">
-     
-    <?php
-include_once "../inc/back_nav.php"
-?>
+
+      <?php
+      include_once "../inc/back_nav.php"
+      ?>
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <!-- content -->
 
         <div class="container-fluid mt-3">
-          <h2 class="title">關於我們</h2>
+          <h2 class="title">商品管理</h2>
 
-          <form action="../api/back_aboutUs.php" method="post" class="mt-5">
-            <h4 class="mt-5">起源</h4>
-            <textarea  id="comment" name="origin" style="overflow: hidden;">
+        <?php
 
-<?php
-$about = $About->find(1);
-?>
+            $goods = $Good->all();
+            foreach ($goods as  $good) {
 
-<?= trim($about['origin']); ?>
-</textarea>
+            ?>
+          <form action="../api/back_goods.php" method="post" class="mt-5" enctype="multipart/form-data">
+    
+              <div class="container good-border">
+                <div class="row">
+                  <div class="col-1"></div>
+                  <div class="col-6">
+                    <h5 class="">上架中的圖片</h5>
+                    <img src="../img/<?= $good['img']; ?>" width="100px" height="60%">
+                  </div>
+                  <div class="col-5">
+                    <h5 class="">選擇新圖片</h5>
+                    <input type="file" name="img" id="">
+                  </div>
+                </div>
 
+                <div class="row">
+                  <div class="col-1">
+                    <div class="input-group mb-3">
 
-            <h4 class="mt-5">目標</h4>
-            <textarea id="comment" name="goal">
-            <?= trim($about['goal']);; ?>
+                      <span class="input-group-text bold">ID</span>
+                      <input type="text" class="form-control" name="id" value="<?= $good['id']; ?>" disabled>
+<input type="hidden" name="id" value="<?= $good['id']; ?>">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group mb-3">
 
-            </textarea>
+                      <span class="input-group-text bold">商品名稱</span>
+                      <input type="text" class="form-control" name="name[]" value="<?= $good['name']; ?>">
 
+                    </div>
+                  </div>
 
-            <h4 class="mt-5">店貓－奇多（Cheetos）</h4>
-            <textarea id="comment" name="cheetos">
+                  <div class="col-3">
+                    <div class="input-group mb-3">
 
-            <?= trim($about['cheetos']);; ?>
-            </textarea>
-            <h4 class="mt-5">上架中的圖片</h4>
-            <img src="../img/<?= $about['img']; ?>" width="50%" height="50%">
-            <h4 class="mt-5">選擇新圖片</h4>
-            <input type="file" name="img" id="">
+                      <span class="input-group-text bold">數量</span>
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quatity[]" id="" value="<?= $good['quatity']; ?>">
 
-          
-            <input class="btn myBtn mt-2 px-end" type="submit" value="送出">
-          </form>
+                    </div>
+                  </div>
 
+                  <div class="col-2 pe-5">
+                    <div class="input-group mb-3 mt-2">
+
+                      <label for="" class="fs-6">是否為新品</label>
+                      <input type="checkbox" style="border:1px solid gray;margin-left:20px" name="new[]" value="<?= $good['id']; ?>" <?= ($good['new'] == 1) ? 'checked' : ''; ?>>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-1"></div>
+                  <div class="col-3">
+                    <div class="input-group mb-3">
+
+                      <span class="input-group-text bold">舊價格</span>
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="old_price[]" id="" value="<?= $good['old_price']; ?>">
+
+                    </div>
+                  </div>
+
+                  <div class="col-3 pe-2">
+                    <div class="input-group mb-3 discount">
+
+                      <span class="input-group-text bold">折扣數</span>
+                      <input type="number" style="border:1px solid lightgray; " placeholder="" name="discount[]" id="" value="<?= $good['discount']; ?>">
+                      <span style="padding: 8px; background-color: lightgray;border-radius:0px 5px 5px 0px">%</span>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="input-group mb-3">
+
+                      <span class="input-group-text bold">新價格</span>
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="<?= $good['price']; ?>" id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <input class="btn myBtn mt-2" style="margin-left:1350px " type="submit" value="送出">
+
+          </form> <?php
+                }
+                  ?>
         </div>
 
     </div>
 
-    <!-- content end -->
-    </main>
+  </div>
+
+  <!-- content end -->
+  </main>
   </div>
   </div>
 
