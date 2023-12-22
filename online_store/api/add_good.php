@@ -10,7 +10,7 @@ $good = $Good->find($_GET['id']);
 
 
 $customerResult = $Customer->save([
-    'customer_id' => $_SESSION['user'],
+    'customer_acc' => $_SESSION['user'],
     'product_id' => $good['id'],
     'quantity' => 1
 ]);

@@ -56,7 +56,16 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="
+                <?php
+                if ($_GET['do'] == 'orders') {
+                    echo "nav-link active";
+                } else {
+                    echo "nav-link";
+                }
+                ?>"
+                
+                href="orders.php?do=orders">
                 <i class="fa-solid fa-comments-dollar"></i>
                 &nbsp;訂單管理
                 </a>

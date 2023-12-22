@@ -116,7 +116,7 @@ include_once "../api/db.php"
           <div class="input-group mb-3">
 
             <span class="input-group-text bold">數量</span>
-            <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quatity[]" id="" value="">
+            <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quantity[]" id="" value="">
 
           </div>
         </div>
@@ -208,7 +208,7 @@ include_once "../api/db.php"
                     <div class="input-group mb-3">
 
                       <span class="input-group-text bold">數量</span>
-                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quatity[]" id="" value="<?= $good['quatity']; ?>">
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quantity[]" id="" value="<?= $good['quantity']; ?>">
 
                     </div>
                   </div>

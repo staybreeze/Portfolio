@@ -92,7 +92,7 @@ include_once "./api/db.php"
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="./back/orders.php?do=orders">
                 <i class="fa-solid fa-comments-dollar"></i>
                 &nbsp;訂單管理
                 </a>

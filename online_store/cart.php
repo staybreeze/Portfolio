@@ -106,7 +106,7 @@ if(!isset($_SESSION['user'])){
         // // $rows = $Image->all();
         // foreach ($rows as $row) {
           $totalPrice=0;
-          $cart = $Customer->all(['customer_id' => $_SESSION['user']]);
+          $cart = $Customer->all(['customer_acc' => $_SESSION['user']]);
           foreach ($cart as $cartItem) {
               $rows = $Good->all(['id' => $cartItem['product_id']]);
               foreach ($rows as $row) {
@@ -120,8 +120,8 @@ if(!isset($_SESSION['user'])){
             <td style=""><img src="./img/<?= $row['img'];?>"  width="50px" alt=""></td>
             <td style="padding-top:23px"><?= $row['name'];?></td>
             <td style="padding-top:23px"><?= $row['price'];?></td>
-            <td style="padding-top:23px"><?= $row['quatity'];?></td>
-            <td style="padding-top:23px"><?= $total=($row['quatity'] * $row['price'])?></td>
+            <td style="padding-top:23px"><?= $row['quantity'];?></td>
+            <td style="padding-top:23px"><?= $total=($row['quantity'] * $row['price'])?></td>
 
             <td>
               <a href="./api/del_good.php?id=<?=$row['id'];?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
