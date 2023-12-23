@@ -17,47 +17,47 @@
 
             <!-- Single Product -->
             <?php
-            $goods=$Good->all();
-                    foreach($goods as $good) {   ?>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-<?=$good['id'];?>" class="single-product">
-                    <div class="part-1">
-<?php
+            $goods = $Good->all();
+            foreach ($goods as $good) {   ?>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div id="product-<?= $good['id']; ?>" class="single-product">
+                        <div class="part-1">
+                            <?php
 
-if (!empty($good['discount'])) {
-    echo '<span class="discount">' . $good["discount"] . '% off</span>';
-}
-if (($good['new'])>0) {
-    echo '<span class="new">new</span>';
-}
+                            if (!empty($good['discount'])) {
+                                echo '<span class="discount">' . $good["discount"] . '% off</span>';
+                            }
+                            if (($good['new']) > 0) {
+                                echo '<span class="new">new</span>';
+                            }
 
-?>
-                 
-                        
-                        <ul>
-                             <li><a href="./cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="./api/add_good.php?id=<?=$good['id'];?>"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <h3 class="product-title"><?=$good['name'];?></h3>
+                            ?>
 
-                        <?php
-                                 if (!empty($good['old_price'])) {
-                                    echo '<span class="product-old-price">NTD  '.$good["old_price"].'</span>';
-                                }
-                        ?>
-                   
-                        <h4 class="product-price">NTD <?=$good['price'];?></h4>
+
+                            <ul>
+                                <li><a href="./cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
+                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title"><?= $good['name']; ?></h3>
+
+                            <?php
+                            if (!empty($good['old_price'])) {
+                                echo '<span class="product-old-price">NTD  ' . $good["old_price"] . '</span>';
+                            }
+                            ?>
+
+                            <h4 class="product-price">NTD <?= $good['price']; ?></h4>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <?php
-            
-                    }?>
+
+            } ?>
             <!-- Single Product -->
             <!-- <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-7" class="single-product">

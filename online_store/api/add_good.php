@@ -1,28 +1,32 @@
 <?php
 include_once "./db.php";
 
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
+    $goodId = $_GET['id'];
 
+    $existingCartItem = $Customer->find(['customer_acc' => $_SESSION['user'], 'product_id' => $goodId]);
 
-$good = $Good->find($_GET['id']);
+    if (!$existingCartItem) {
+        $customerResult = $Customer->save([
+            'customer_acc' => $_SESSION['user'],
+            'product_id' => $goodId,
+            'quantity' => 1,
+        ]);
+    } elseif(isset($existingCartItem)) {
+        $newQuantity = $existingCartItem['quantity'] + 1;
+        $customerResult = $Customer->update(
+            
+            $existingCartItem['id'],
+            ['quantity' => $newQuantity]
+        );
+    }
 
+    echo "<pre>";
+    print_r($customerResult);
+    echo "</pre>";
 
-
-
-$customerResult = $Customer->save([
-    'customer_acc' => $_SESSION['user'],
-    'product_id' => $good['id'],
-    'quantity' => 1
-]);
-
-
-
-
-echo "<pre>";
-print_r($customerResult);
-echo "</pre>";
-
-header("location:../index.php#store");}
-else{
+    header("location:../index.php#store");
+} else {
     header("location:../login.php?error=請先登入會員");
 }
+?>

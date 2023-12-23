@@ -114,89 +114,93 @@ include_once "../api/db.php"
         <div class="container-fluid mt-3">
           <h2 class="title">訂單管理</h2>
 
+          <form method="post" action="../api/back_orders.php" style="margin-left:95px">
+            <table>
+
+
+
+              <tr>
+                <?php
+                $totalPrice = 0;
+                $users = $User->all();
+
+                foreach ($users as $user) {
+                  // 獲得當前USER的CART
+                  $cart = $Customer->all(['customer_acc' => $user['acc']]);
+
+                  // 初始化
+                  $userTotalPrice = 0;
+
+
+                  echo "<p style='font-size:20px;text-decoration:underline'>訂單帳號: {$user['acc']}</p>";
+
+
+                  echo '<table>';
+                  echo '<tr class="th-update text-center" style="height:30px">
+            <th style="width:8%;background-color:#f8ede0">ID</th>
+            <th style="width:10% ;background-color:#f8ede0">圖片</th>
+            <th style="width:30% ;background-color:#f8ede0">商品</th>
+            <th style="width:10%;background-color:#f8ede0">單價</th>
+            <th style="width:10%;background-color:#f8ede0">數量</th>
+            <th style="width:10%;background-color:#f8ede0">小計</th>
+            <th style="width:10%;background-color:#f8ede0">刪除</th>
+          </tr>';
+
+                  foreach ($cart as $cartItem) {
+
+                    $row = $Good->find(['id' => $cartItem['product_id']]);
+
+
+                    echo '<tr>';
+                    echo "<td style='padding-top:23px'>{$row['id']}</td>";
+                    echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='50px' alt=''></td>";
+                    echo "<td style='padding-top:23px'>{$row['name']}</td>";
+                    echo "<td style='padding-top:23px'>{$row['price']}</td>";
+                    echo "<td><input type='number' style='text-align:center' name='number[]' value='{$cartItem['quantity']}'></td>";
+                    echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
+                 
+                    $total = $cartItem['quantity'] * $row['price'];
+                    echo "<td style='padding-top:23px'>{$total}</td>";
+                    echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
+
+                    echo '</tr>';
+           
+                    $userTotalPrice += $total;
+                  }
+
+
+                  echo '</table>';
+
+
+                  echo "<p style='margin-left:1130px;font-size:20px;text-decoration:underline;margin-top:50px'>總價: {$userTotalPrice}</p>";
+
+
+                  $totalPrice += $userTotalPrice;
+                ?>
+
+
+
+            </table>
+            <table>
+
+              <tr>
+
+
+                <div class="d-flex">
+
+                  <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改">
+                </div>
+                <hr>
+              </tr>
+
+            </table>
           <?php
-          // 先從資料庫撈資料
-          // $DB=${ucfirst($do)};->已在DB設變數，因此可刪
-          $totalPrice = 0;
-          $cart = $Customer->all();
-          $user = $User->all();
-          foreach ($cart as $cartItem) {
-            $rows = $Good->all(['id' => $cartItem['product_id']]);
-            foreach ($rows as $row) {
+                }
+
+
+                echo "<p style='font-size:20px;text-decoration:underline;color:darkred'>總訂單總價: {$totalPrice}元</p>";
           ?>
-              ?>
-
-              <form method="post" action="../api/back_users_update.php" style="margin-left:95px">
-
-                <table>
-                  <h4 class="mt-5 color-gray" style="margin-left:95px">訂單編號:<?= $row['id']; ?>
-                    <br>
-                    訂單帳號:<?= $user['acc']; ?>
-                  </h4>
-                  <tr class="th-update">
-                    <td style="width:10%">帳號</td>
-                    <td style="width:10%">密碼</td>
-                    <td style="width:10%">名字</td>
-                    <td style="width:30%">地址</td>
-                    <td style="width:30%">信箱</td>
-                    <td style="width:10%">刪除</td>
-                  </tr>
-
-
-                  <tr>
-                    <td>
-
-                      <input type="text" name="acc[]" value="<?= $row['acc']; ?>">
-                    </td>
-                    <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-                    <td>
-                      <!-- 
-                                $_POST['sh'][0] => "1"
-                                $_POST['sh'][1] => "3" 
-                            -->
-
-                      <!-- 生成一個checked的陣列 -->
-
-                      <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
-                    </td>
-                    <td>
-
-                      <input type="text" name="name[]" value="<?= $row['name']; ?>">
-                    </td>
-                    <td>
-
-                      <input type="text" name="address[]" value="<?= $row['address']; ?>">
-                    </td>
-
-                    <td>
-
-                      <input type="text" name="email[]" value="<?= $row['email']; ?>">
-                    </td>
-                    <td>
-                      <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                    </td>
-                  </tr>
-              <?php
-            }
-          }
-              ?>
-
-                </table>
-                <table>
-
-                  <tr>
-
-
-                    <div class="d-flex">
-
-                      <input class="btn myBtn mt-5" style="margin-left:1335px " type="submit" value="送出">
-                    </div>
-                    <hr>
-                  </tr>
-
-                </table>
-
-              </form>
+          </form>
         </div>
 
     </div>

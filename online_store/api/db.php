@@ -148,39 +148,39 @@ class db
 
 
     // // 使用protected 保護update跟insert，使其修改只能透過SAVE -> 最後已合併至SAVE，因此不需要了
-    // protected function update( $id, $cols)
-    // {
+    function update( $id, $cols)
+    {
 
 
-    //     $sql = "update `$this->table` set ";
-    //     // 因為要填入兩個變數，因此要分別判斷兩個變數
-    //     // 判斷$cols
-    //     if (!empty($cols)) {
-    //         foreach ($cols as $col => $value) {
-    //             $tmp[] = "`$col`='$value'";
-    //         }
-    //     } else {
-    //         echo "錯誤:缺少要編輯的欄位陣列";
-    //     }
+        $sql = "update `$this->table` set ";
+        // 因為要填入兩個變數，因此要分別判斷兩個變數
+        // 判斷$cols
+        if (!empty($cols)) {
+            foreach ($cols as $col => $value) {
+                $tmp[] = "`$col`='$value'";
+            }
+        } else {
+            echo "錯誤:缺少要編輯的欄位陣列";
+        }
 
-    //     $sql .= join(",", $tmp);
+        $sql .= join(",", $tmp);
 
-    //     if (is_array($id)) {
-    //         foreach ($id as $col => $value) {
-    //             $tmp[] = "`$col`='$value'";
-    //         }
-    //         $sql .= " where " . join(" && ", $tmp);
-    //     } else if (is_numeric($id)) {
-    //         $sql .= " where `id`='$id'";
-    //     } else {
-    //         echo "錯誤:參數的資料型態比須是數字或陣列";
-    //     }
+        if (is_array($id)) {
+            foreach ($id as $col => $value) {
+                $tmp[] = "`$col`='$value'";
+            }
+            $sql .= " where " . join(" && ", $tmp);
+        } else if (is_numeric($id)) {
+            $sql .= " where `id`='$id'";
+        } else {
+            echo "錯誤:參數的資料型態比須是數字或陣列";
+        }
 
 
-    //     echo $sql;
-    //     return $this->pdo->exec($sql);
+        echo $sql;
+        return $this->pdo->exec($sql);
 
-    // }
+    }
 
     // -----delete-----
 
