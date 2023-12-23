@@ -31,6 +31,7 @@ $pw = $_POST['pw'];
 $admin=$Admin->count(['acc'=>$acc,'pw'=>$pw]);
 
 
+
 if (empty($_POST['acc']) || empty($_POST['pw'])) {
     header('location:../back_login.php?error=請輸入帳號和密碼');
     exit(); 
@@ -43,8 +44,12 @@ if (empty($_POST['acc']) || empty($_POST['pw'])) {
 //     header('location:../login_form.php?error=帳號密碼錯誤');
 // }
 // echo $res;
+
+
+
 if($admin){
-    $_SESSION['user']=$acc;
+    $_SESSION['user_role'] = 'admin';
+    $_SESSION['admin']=$acc;
     header("location:../back.php");
 
   

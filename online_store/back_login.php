@@ -1,6 +1,11 @@
 <?php
 include_once "./api/db.php";
 
+if(isset($_SESSION['admin'])){
+  header('location:back.php');
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

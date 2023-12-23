@@ -1,6 +1,6 @@
 <?php
 include_once "./api/db.php";
-if (empty($_SESSION['user'])) {
+if (empty($_SESSION['admin'])) {
   header('Location: index.php');
   exit; 
 }
