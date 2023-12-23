@@ -109,6 +109,12 @@ include_once "./api/db.php"
                 &nbsp;管理員們
                 </a>
             </li>
+            <li class="nav-item mt-5" >
+                <a class="nav-link fs-4 mx-auto" href="./index.php">
+                
+                <div style="width:200px;height:50px;padding-top:5px;  border:3px dotted#ffb71b;margin:auto"><i class="fa-solid fa-paw"></i>&nbsp;回首頁</div>
+                </a>
+            </li>
         </ul>
 
         <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

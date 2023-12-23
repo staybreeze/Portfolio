@@ -110,7 +110,7 @@
         </div>
 
 
-        <<a class="footer-header pt-1 text-center join-us" 
+        <a class="footer-header pt-1 text-center join-us" 
        
        href=""data-bs-toggle="modal" data-bs-target="#contact">Join Us!</a>
 

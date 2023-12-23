@@ -23,6 +23,7 @@ include_once "../api/db.php"
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -37,9 +38,7 @@ include_once "../api/db.php"
       }
     }
 
-    .good-border {
-      border: 1px dotted brown;
-    }
+
 
     table,
     tr {
@@ -75,6 +74,7 @@ include_once "../api/db.php"
     td>input {
       width: 100%;
     }
+
   </style>
 
   </style>
@@ -85,29 +85,28 @@ include_once "../api/db.php"
 </head>
 
 <body>
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
 
-  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3"  href="../back.php"><img src="../img/logo1.png" width="60px" alt="">
+<h3 style="font-weight:bold">奇多喵合作社</h3>
+</a>
+<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<input class="form-control form-control-dark w-90" type="text" placeholder="Search" aria-label="Search">
+<div class="navbar-nav">
+  <div class="nav-item text-nowrap">
+    <a class="nav-link px-3" href="../api/logout.php">Sign out</a>
+  </div>
+</div>
+</header>
 
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../back.php"><img src="../img/logo1.png" width="60px" alt="">
-      <h3 style="font-weight:bold">奇多喵合作社</h3>
-    </a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <input class="form-control form-control-dark w-90" type="text" placeholder="Search" aria-label="Search">
-    <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="../api/logout.php">Sign out</a>
-      </div>
-    </div>
-  </header>
+<div class="container-fluid">
+<div class="row">
+  <?php
+  include_once "../inc/back_nav.php"
+  ?>
 
-  <div class="container-fluid">
-    <div class="row">
-
-      <?php
-      include_once "../inc/back_nav.php"
-      ?>
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <!-- content -->
 
@@ -270,3 +269,6 @@ include_once "../api/db.php"
 </body>
 
 </html>
+
+
+
