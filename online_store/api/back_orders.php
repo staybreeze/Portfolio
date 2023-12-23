@@ -42,4 +42,6 @@ echo "</pre>";
 echo "<pre>";
 print_r($_POST['name']);
 echo "</pre>";
+
+header('location:../back/orders.php?do=orders')
 ?>
