@@ -114,13 +114,7 @@ include_once "../api/db.php"
         <div class="container-fluid mt-3">
           <h2 class="title">訂單管理</h2>
 
-          <form method="post" action="../api/back_orders.php" style="margin-left:95px">
-            <table>
-
-
-
-              <tr>
-                <?php
+          <?php
                 $totalPrice = 0;
                 $users = $User->all();
 
@@ -130,7 +124,14 @@ include_once "../api/db.php"
 
                   // 初始化
                   $userTotalPrice = 0;
+?>
+          <form method="post" action="../api/back_orders.php" style="margin-left:95px">
+            <table>
 
+
+            
+              <tr>
+<?php
 
                   echo "<p style='font-size:20px;text-decoration:underline'>訂單帳號: {$user['acc']}</p>";
 
@@ -182,25 +183,28 @@ include_once "../api/db.php"
 
             </table>
             <table>
-
+<br>
               <tr>
 
 
                 <div class="d-flex">
-
-                  <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改">
+                <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改">
+                  
                 </div>
                 <hr>
               </tr>
 
             </table>
-          <?php
+  
+
+          </form>
+
+                <?php
                 }
 
 
                 echo "<p style='font-size:20px;text-decoration:underline;color:darkred'>總訂單總價: {$totalPrice}元</p>";
-          ?>
-          </form>
+          ?>  
         </div>
 
     </div>

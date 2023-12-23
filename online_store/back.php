@@ -108,7 +108,7 @@ if (empty($_SESSION['admin'])) {
                 </div></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admins.php?do=admins">
+                <a class="nav-link" href="./back/admins.php?do=admins">
                 <div class="nav-border"><i class="fa-solid fa-user-tie"></i>
                 &nbsp;管理員們
                 </div></a>
