@@ -1,5 +1,6 @@
 <?php
 include_once "./api/db.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

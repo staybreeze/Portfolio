@@ -1,5 +1,9 @@
 <?php
-include_once "./api/db.php"
+include_once "./api/db.php";
+if (empty($_SESSION['user'])) {
+  header('Location: index.php');
+  exit; 
+}
 ?>
 
 <!doctype html>
