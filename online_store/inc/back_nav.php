@@ -91,9 +91,9 @@
                 </div> </a>
             </li>
             <li class="nav-item mt-5" >
-                <a class="nav-link fs-4 mx-auto" href="../index.php">
+                <a class="nav-link fs-5 mx-auto" href="../index.php">
                 
-                <div style="width:200px;height:50px;padding-top:5px;  border:3px dotted#ffb71b;margin:auto"><i class="fa-solid fa-paw"></i>&nbsp;回首頁</div>
+                <div style="width:200px;height:50px;padding-top:8px;  border:3px dotted#ffb71b;margin:auto"><i class="fa-solid fa-paw"></i>&nbsp;回首頁</div>
                 </a>
             </li>
         </ul>

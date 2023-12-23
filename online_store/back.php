@@ -68,49 +68,49 @@ include_once "./api/db.php"
         <ul class="nav flex-column">
         <li class="nav-item">
                 <a class="nav-link" href="./back/aboutUs.php?do=aboutUs">
-                  <i class="fa-solid fa-cat"></i>
+                <div class="nav-border"><i class="fa-solid fa-cat"></i>
                   &nbsp;關於我們
-                </a>
+                </div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                <i class="fa-solid fa-book-open"></i>
+                <div class="nav-border"><i class="fa-solid fa-book-open"></i>
                 &nbsp;文章管理
-                </a>
+                </div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./back/goods.php?do=goods">
                     <!-- <span data-feather="shopping-cart"></span> -->
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="nav-border"><i class="fa-solid fa-cart-shopping"></i>
                     &nbsp;商品管理
-                </a>
+                    </div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./back/users.php?do=users">
-                <i class="fa-solid fa-people-group"></i>
+                <div class="nav-border"><i class="fa-solid fa-people-group"></i>
                 &nbsp;會員管理
-                </a>
+                </div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./back/orders.php?do=orders">
-                <i class="fa-solid fa-comments-dollar"></i>
+                <div class="nav-border"><i class="fa-solid fa-comments-dollar"></i>
                 &nbsp;訂單管理
-                </a>
+                </div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                <i class="fa-regular fa-envelope"></i>
+                <div class="nav-border"><i class="fa-regular fa-envelope"></i>
                 &nbsp;留言管理
-                </a>
+                </div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admins.php?do=admins">
-                <i class="fa-solid fa-user-tie"></i>
+                <div class="nav-border"><i class="fa-solid fa-user-tie"></i>
                 &nbsp;管理員們
-                </a>
+                </div></a>
             </li>
             <li class="nav-item mt-5" >
-                <a class="nav-link fs-4 mx-auto" href="./index.php">
+                <a class="nav-link fs-5 mx-auto" href="./index.php">
                 
                 <div style="width:200px;height:50px;padding-top:5px;  border:3px dotted#ffb71b;margin:auto"><i class="fa-solid fa-paw"></i>&nbsp;回首頁</div>
                 </a>
