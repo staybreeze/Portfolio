@@ -136,7 +136,7 @@ include_once "../api/db.php"
         <div class="col-3">
           <div class="input-group mb-3">
 
-            <span class="input-group-text bold">舊價格</span>
+            <span class="input-group-text bold">原價</span>
             <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="old_price[]" id="" value="">
 
           </div>
@@ -145,7 +145,7 @@ include_once "../api/db.php"
         <div class="col-3 pe-2">
           <div class="input-group mb-3 discount">
 
-            <span class="input-group-text bold">折扣數</span>
+            <span class="input-group-text bold">折扣</span>
             <input type="number" style="border:1px solid lightgray; " placeholder="" name="discount[]" id="" value="">
             <span style="padding: 8px; background-color: lightgray;border-radius:0px 5px 5px 0px">%</span>
           </div>
@@ -153,7 +153,7 @@ include_once "../api/db.php"
         <div class="col-3">
           <div class="input-group mb-3">
 
-            <span class="input-group-text bold">新價格</span>
+            <span class="input-group-text bold">售價</span>
             <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="" id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
 
           </div>
@@ -228,7 +228,7 @@ include_once "../api/db.php"
                   <div class="col-3">
                     <div class="input-group mb-3">
 
-                      <span class="input-group-text bold">舊價格</span>
+                      <span class="input-group-text bold">原價</span>
                       <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="old_price[]" id="" value="<?= $good['old_price']; ?>">
 
                     </div>
@@ -237,7 +237,7 @@ include_once "../api/db.php"
                   <div class="col-3 pe-2">
                     <div class="input-group mb-3 discount">
 
-                      <span class="input-group-text bold">折扣數</span>
+                      <span class="input-group-text bold">折扣</span>
                       <input type="number" style="border:1px solid lightgray; " placeholder="" name="discount[]" id="" value="<?= $good['discount']; ?>">
                       <span style="padding: 8px; background-color: lightgray;border-radius:0px 5px 5px 0px">%</span>
                     </div>
@@ -245,8 +245,8 @@ include_once "../api/db.php"
                   <div class="col-3">
                     <div class="input-group mb-3">
 
-                      <span class="input-group-text bold">新價格</span>
-                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="<?= $good['price']; ?>" id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
+                      <span class="input-group-text bold">售價</span>
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="<?= $good['old_price'] * (1 - $good['discount'] / 100); ?>"  id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
 
                     </div>
                   </div>
