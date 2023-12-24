@@ -123,7 +123,7 @@ include_once "../api/db.php"
 
 
 ?>
-          <form method="post" action="../api/message.php" style="margin-left:95px">
+          <form method="post" action="../api/message.php" style="margin-left:95px;margin-top:50px">
             <table>
 
 

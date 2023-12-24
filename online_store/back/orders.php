@@ -125,7 +125,7 @@ include_once "../api/db.php"
                   // 初始化
                   $userTotalPrice = 0;
 ?>
-          <form method="post" action="../api/back_orders.php" style="margin-left:95px">
+          <form method="post" action="../api/back_orders.php" style="margin-left:95px;margin-top:50px">
             <table>
 
 
@@ -147,30 +147,7 @@ include_once "../api/db.php"
             <th style="width:10%;background-color:#f8ede0">刪除</th>
           </tr>';
 
-                  foreach ($cart as $cartItem) {
 
-                    $row = $Good->find(['id' => $cartItem['product_id']]);
-
-
-                    echo '<tr>';
-                    echo "<td style='padding-top:23px'>{$row['id']}</td>";
-                    echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='50px' alt=''></td>";
-                    echo "<td style='padding-top:23px'>{$row['name']}</td>";
-                    echo "<td style='padding-top:23px'>{$row['price']}</td>";
-                    echo "<td><input type='number' style='text-align:center' name='number[]' value='{$cartItem['quantity']}'></td>";
-                    echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
-                 
-                    $total = $cartItem['quantity'] * $row['price'];
-                    echo "<td style='padding-top:23px'>{$total}</td>";
-                    echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
-
-                    echo '</tr>';
-           
-                    $userTotalPrice += $total;
-                  }
-
-
-                  echo '</table>';
 
 
                   echo "<p style='margin-left:1130px;font-size:20px;text-decoration:underline;margin-top:50px'>總價: {$userTotalPrice}</p>";
