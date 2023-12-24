@@ -444,50 +444,12 @@ footer> .row{
     transition: all 0.3s;
   }
 
-  .section-products .single-product:hover .part-1::before {
+ .img-rotate:hover  {
     transform: scale(1.2, 1.2) rotate(5deg);
+    transition: all 0.5s;
   }
 
-  .section-products #product-1 .part-1::before {
-    background: url("../img/good1.webp") no-repeat center;
-    background-size: cover;
-    transition: all 0.3s;
-  }
 
-  .section-products #product-2 .part-1::before {
-    background: url("../img/good2.webp") no-repeat center;
-    background-size: cover;
-  }
-
-  .section-products #product-3 .part-1::before {
-    background: url("../img/good3.webp") no-repeat center;
-    background-size: cover;
-  }
-
-  .section-products #product-4 .part-1::before {
-    background: url("../img/good4.webp") no-repeat center;
-    background-size: cover;
-  }
-
-  .section-products #product-5 .part-1::before {
-    background: url("../img/good5.webp") no-repeat center;
-    background-size: cover;
-  }
-
-  .section-products #product-6 .part-1::before {
-    background: url("../img/good6.webp") no-repeat center;
-    background-size: cover;
-  }
-
-  .section-products #product-7 .part-1::before {
-    background: url("../img/good7.webp") no-repeat center;
-    background-size: cover;
-  }
-
-  .section-products #product-8 .part-1::before {
-    background: url("../img/good8.webp") no-repeat center;
-    background-size: cover;
-  }
 
   .section-products .single-product .part-1 .discount,
   .section-products .single-product .part-1 .new {

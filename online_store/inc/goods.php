@@ -20,8 +20,10 @@
             $goods = $Good->all();
             foreach ($goods as $good) {   ?>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-<?= $good['id']; ?>" class="single-product">
+                    <div id="product" class="single-product">
+
                         <div class="part-1">
+                            <img class="img-rotate"src="./img/<?= $good['img']; ?>" alt="" width="100%">
                             <?php
 
                             if (!empty($good['discount'])) {
@@ -45,7 +47,7 @@
                             <h3 class="product-title"><?= $good['name']; ?></h3>
 
                             <?php
-                            if (!empty($good['old_price'])) {
+                            if (($good['old_price']) != ($good['price'])) {
                                 echo '<span class="product-old-price">NTD  ' . $good["old_price"] . '</span>';
                             }
                             ?>
