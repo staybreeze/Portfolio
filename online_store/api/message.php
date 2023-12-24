@@ -1,6 +1,11 @@
 <?php
 include_once "db.php";
 
+if (isset($_GET['id'])) {
+    $Message->del($_GET['id']);
+    header("location: ../back/messages.php?do=messages");
+    exit;
+}
 
 
 $message = [
