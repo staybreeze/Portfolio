@@ -255,7 +255,7 @@ include_once "../api/db.php"
               </div>
    
                 <div class="d-flex">
-              <a href="../api/back_goods.php?del=<?=$good['id'];?>"><input class="btn btn-danger mt-2" type="button"style="margin-left:1280px " value="刪除"></a>
+              <a href="../api/back_goods.php?del=<?=$good['id'];?>"><input class="btn btn-danger mt-2" type="button"style="margin-left:1272px " value="刪除"></a>
               <input class="btn myBtn mt-2" style="margin-left:20px " type="submit" value="送出">
 </div>
           </form> <?php

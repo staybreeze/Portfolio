@@ -44,7 +44,7 @@ body {
 .sidebar .nav-link {
   font-weight: 600;
   color: gray;
-margin-top: 30px;
+margin-top: 10px;
 text-align: center;
 font-size: large;
 }
@@ -56,12 +56,12 @@ font-size: large;
 
 .nav-border{
 
-width:200px;height:50px;padding-top:8px;}
+width:200px;height:50px;padding-top:8px;margin:auto}
 
 .nav-border:hover{
 
-  width:200px;height:50px;padding-top:8px;  border:3px dotted#ffb71b;margin:auto
-  }
+ border:3px dotted#ffb71b;margin:auto
+  } 
 
 .sidebar .nav-link .feather {
   margin-right: 4px;
