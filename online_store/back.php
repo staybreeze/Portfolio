@@ -97,6 +97,12 @@ if (empty($_SESSION['admin'])) {
                 </div></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="./back/messages.php?do=messages">
+                <div class="nav-border"><i class="fa-regular fa-envelope"></i>
+                &nbsp;留言管理
+                </div></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="./back/users.php?do=users">
                 <div class="nav-border"><i class="fa-solid fa-people-group"></i>
                 &nbsp;會員管理
@@ -108,12 +114,7 @@ if (empty($_SESSION['admin'])) {
                 &nbsp;管理員們
                 </div></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./back/messages.php?do=messages">
-                <div class="nav-border"><i class="fa-regular fa-envelope"></i>
-                &nbsp;留言管理
-                </div></a>
-            </li>
+
             <li class="nav-item mt-5" >
                 <a class="nav-link fs-5 mx-auto" href="./index.php">
                 

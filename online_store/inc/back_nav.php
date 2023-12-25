@@ -51,6 +51,19 @@
                 <div class="nav-border"><i class="fa-solid fa-comments-dollar"></i>
                 &nbsp;訂單管理
                 </div></a>
+                <li class="nav-item">
+                <a class="
+                <?php
+                if ($_GET['do'] == 'messages') {
+                    echo "nav-link active";
+                } else {
+                    echo "nav-link";
+                }
+                ?>"href="messages.php?do=messages">
+                <div class="nav-border"><i class="fa-regular fa-envelope"></i>
+                &nbsp;留言管理
+               </div> </a>
+            </li>
             </li>
    
                 
@@ -85,19 +98,7 @@
                 &nbsp;管理員們
                 </div> </a>
             </li>
-            <li class="nav-item">
-                <a class="
-                <?php
-                if ($_GET['do'] == 'messages') {
-                    echo "nav-link active";
-                } else {
-                    echo "nav-link";
-                }
-                ?>"href="messages.php?do=messages">
-                <div class="nav-border"><i class="fa-regular fa-envelope"></i>
-                &nbsp;留言管理
-               </div> </a>
-            </li>
+
             <li class="nav-item mt-5" >
                 <a class="nav-link fs-5 mx-auto" href="../index.php">
                 
