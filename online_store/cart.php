@@ -165,7 +165,7 @@ if(!isset($_SESSION['user'])){
           <td></td>
       
           <td></td> -->
-          <td colspan="5">
+          <td colspan="6">
 
           </td>
           <td>
