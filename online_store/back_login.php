@@ -81,7 +81,7 @@ if(isset($_SESSION['admin'])){
       }
 
       .btn {
-        margin-left: 130px !important;
+        margin-left: 208px !important;
       }
 
       .add {
@@ -95,7 +95,7 @@ if(isset($_SESSION['admin'])){
       }
 
       .btn-warning {
-        margin-left: 235px !important;
+        margin-left: 5px !important;
       }
     }
 
@@ -122,13 +122,12 @@ if(isset($_SESSION['admin'])){
         margin-left: 130px !important;
         margin-bottom: 30px !important;
       }
-
-      .btn {
-        margin-left: 130px !important;
+     .btn {
+        margin-left: 140px !important;
       }
 
       .add {
-        margin-left: 170px !important;
+        margin-left: 235px !important;
       }
 
       .input-group {
@@ -138,7 +137,7 @@ if(isset($_SESSION['admin'])){
       }
 
       .btn-warning {
-        margin-left: 175px !important;
+        margin-left: 5px !important;
       }
     }
   </style>
