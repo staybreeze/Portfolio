@@ -41,9 +41,11 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+
     .modal input[type='submit'] {
-margin-left: 408px !important;
-}
+      margin-left: 408px !important;
+    }
+
     @media screen and (max-width: 550px) {
       .section {
         width: 100%;
@@ -69,18 +71,22 @@ margin-left: 408px !important;
       .btn-group {
         margin-left: 110px !important;
       }
-      .logout{
-        
+
+      .logout {
+
         width: 325px !important;
         margin-left: -1px !important;
       }
-      .modal     .input-group {
 
-width: 330px !important;
+
+      .modal .input-group {
+
+width: 450px !important;
 
 }
+
 .modal input[type='submit'] {
-margin-left: 270px !important;
+margin-left: 350px !important;
 }
     }
 
@@ -97,7 +103,7 @@ margin-left: 270px !important;
       }
 
       .input-group {
-        margin-left:-13px !important;
+        margin-left: -13px !important;
         width: 325px !important;
       }
 
@@ -108,21 +114,24 @@ margin-left: 270px !important;
 
       .btn-group {
         margin-left: 110px !important;
-        margin-left:96px !important;
+        margin-left: 96px !important;
       }
-      .logout{
-        
+
+      .logout {
+
         width: 325px !important;
         margin-left: -14px !important;
       }
-      .modal     .input-group {
 
-width: 330px !important;
+      .modal .input-group {
 
-}
-.modal input[type='submit'] {
-margin-left: 270px !important;
-}
+        width: 330px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 270px !important;
+      }
     }
   </style>
 </head>
@@ -192,7 +201,7 @@ margin-left: 270px !important;
             <div class="btn-group">
               <!-- 加入ID傳值以便update-php能在資料庫抓到對應的ID進行修改 -->
               <input class="form-control" type="hidden" name="id" id="id" value="<?= $user['id']; ?>">
-              <input class="btn btn-secondary mx-2 mt-5 " style="border-radius:5px 0 0 5px"type="reset" value="重置">
+              <input class="btn btn-secondary mx-2 mt-5 " style="border-radius:5px 0 0 5px" type="reset" value="重置">
               <input class="btn btn-warning mx-2 mt-5  myBtn" type="submit" value="更新" onclick="submitInnerData()">
               <!-- 比較進階的做法 -->
               <input class="btn btn-danger mx-2 mt-5" type="button" value="刪除" onclick="location.href='./api/del_user.php?id=<?= $user['id']; ?>'">
@@ -327,29 +336,29 @@ margin-left: 270px !important;
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <?php
+      if (isset($_SESSION['user'])) {
+        echo            '<li>';
+        echo  '<a href="member.php">修改密碼</a>';
+        echo '</li>';
+      } else {
+        echo            '<li>';
+        echo  '<a href="add.php">加入會員</a>';
+        echo '</li>';
+      }
+      ?>
 
-          </ul>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
+        <a href="back_login.php">管理員登入</a>
+      </li>
+
+    </ul>
 
 
 

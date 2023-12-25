@@ -17,7 +17,7 @@ include_once "./api/db.php";
   <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
   <style>
-    .aside {
+   .aside {
       background-image: url(./img/18-2500x1667.jpg);
       opacity: 0.9;
 
@@ -41,12 +41,15 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+
     .btn-group {
-        margin-left: 156px !important;
-      }
-      .modal input[type='submit'] {
-margin-left: 408px !important;
-}
+      margin-left: 156px !important;
+    }
+
+    .modal input[type='submit'] {
+      margin-left: 408px !important;
+    }
+
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -68,6 +71,7 @@ margin-left: 408px !important;
       .input-group {
 
         width: 325px !important;
+        /* margin-left: 190px !important; */
       }
 
       .box>p {
@@ -78,21 +82,26 @@ margin-left: 408px !important;
       .btn-group {
         margin-left: 183px !important;
       }
-      .box>span{
-  margin-left: 130px !important;
-}
 
-}
-.modal .input-group {
+      .box>span {
+        margin-left: 130px !important;
+      }
 
-width: 405px !important;
-margin-left: 00px !important;
-}
+      .add {
+        margin-left: 150px !important;
 
-.modal input[type='submit'] {
-margin-left: 345px !important;
-}
-    
+      }
+
+      .modal .input-group {
+
+        width: 405px !important;
+        margin-left: 00px !important;
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 345px !important;
+      }
+    }
 
     @media screen and (max-width: 450px) {
       .section {
@@ -108,7 +117,8 @@ margin-left: 345px !important;
 
       .input-group {
 
-        width: 300px !important;
+        width: 325px !important;
+        margin-left: 160px !important;
       }
 
       .box>p {
@@ -117,19 +127,28 @@ margin-left: 345px !important;
       }
 
       .btn-group {
-        margin-left: 158px !important;
+        margin-left: 310px !important;
       }
-      .box>span{
-  margin-left: 130px !important;
-}
-.modal     .input-group {
 
-width: 330px !important;
+      .box>span {
+        margin-left: 130px !important;
+      }
 
-}
-.modal input[type='submit'] {
-margin-left: 270px !important;
-}
+      .add {
+        margin-left: 150px !important;
+
+      }
+
+      .modal .input-group {
+
+        width: 330px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 270px !important;
+      }
+
     }
   </style>
 </head>
@@ -318,29 +337,29 @@ margin-left: 270px !important;
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <?php
+      if (isset($_SESSION['user'])) {
+        echo            '<li>';
+        echo  '<a href="member.php">修改密碼</a>';
+        echo '</li>';
+      } else {
+        echo            '<li>';
+        echo  '<a href="add.php">加入會員</a>';
+        echo '</li>';
+      }
+      ?>
 
-          </ul>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
+        <a href="back_login.php">管理員登入</a>
+      </li>
+
+    </ul>
 
 
 
