@@ -57,7 +57,12 @@ include_once "./api/db.php";
         width: 300px;
       }
     }
+    @media screen and (max-width: 450px) {
 
+.modal input[type='submit'] {
+margin-left: 270px !important;
+}
+    }
     @media screen and (max-width: 450px) {
 
       .aside>img,

@@ -1,7 +1,7 @@
 <?php
 include_once "./api/db.php";
 
-if(isset($_SESSION['admin'])){
+if (isset($_SESSION['admin'])) {
   header('location:back.php');
 }
 
@@ -47,9 +47,13 @@ if(isset($_SESSION['admin'])){
       margin-top: 0px;
 
     }
+
     .btn-group {
-        margin-left: 156px !important;
-      }
+      margin-left: 156px !important;
+    }
+    .modal input[type='submit'] {
+margin-left: 408px !important;
+}
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -82,6 +86,15 @@ if(isset($_SESSION['admin'])){
       .btn-group {
         margin-left: 310px !important;
       }
+      .modal     .input-group {
+
+width: 405px !important;
+margin-left: 00px !important;
+}
+.modal input[type='submit'] {
+margin-left: 345px !important;
+}
+
     }
 
     @media screen and (max-width: 450px) {
@@ -98,17 +111,25 @@ if(isset($_SESSION['admin'])){
 
       .input-group {
 
-width: 325px !important;
-margin-left: 190px !important;
-}
+        width: 325px !important;
+        margin-left: 160px !important;
+      }
 
-.box>p {
-margin-left: 130px !important;
-margin-bottom: 30px !important;
-}
+      .box>p {
+        margin-left: 130px !important;
+        margin-bottom: 30px !important;
+      }
 
-.btn-group {
-margin-left: 310px !important;
+      .btn-group {
+        margin-left: 310px !important;
+      }
+      .modal     .input-group {
+
+width: 330px !important;
+
+}
+.modal input[type='submit'] {
+margin-left: 270px !important;
 }
     }
   </style>
@@ -135,14 +156,14 @@ margin-left: 310px !important;
 
 
           <form action="./api/back_login.php" method="post" class=" col-12 col-sm-4 m-auto">
-          <?php
+            <?php
             if (isset($_GET['error'])) {
               echo "<span style='color:red'>";
               echo $_GET['error'];
               echo "</span>";
-            }?>
-  
-          <div class="input-group my-1">
+            } ?>
+
+            <div class="input-group my-1">
               <label class="col-xs-12 col-sm-4  input-group-text w-100">帳號:</label>
               <input class="form-control" type="text" name="acc" id="acc">
             </div>
@@ -150,7 +171,7 @@ margin-left: 310px !important;
               <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
-     
+
             <div class="btn-group">
 
               <input class="btn btn-secondary mx-2 mt-4" type="reset" value="重置">
@@ -292,29 +313,29 @@ margin-left: 310px !important;
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="./member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="./add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="./cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <?php
+      if (isset($_SESSION['user'])) {
+        echo            '<li>';
+        echo  '<a href="./member.php">修改密碼</a>';
+        echo '</li>';
+      } else {
+        echo            '<li>';
+        echo  '<a href="./add.php">加入會員</a>';
+        echo '</li>';
+      }
+      ?>
 
-          </ul>
+      <li>
+        <a href="./cart.php">訂單查詢</a>
+      </li>
+      <li>
+        <a href="back_login.php">管理員登入</a>
+      </li>
+
+    </ul>
 
 
   </div>

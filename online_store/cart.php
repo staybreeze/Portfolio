@@ -66,6 +66,19 @@ include_once "./api/db.php";
 
       background-color:#f8ede0
     }
+
+    @media screen and (max-width: 450px) {
+
+.modal     .input-group {
+
+width: 330px !important;
+
+}
+.modal input[type='submit'] {
+margin-left: 270px !important;
+}
+      
+    }
   </style>
 </head>
 

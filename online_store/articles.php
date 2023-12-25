@@ -52,7 +52,12 @@ include_once "./api/db.php";
 
     }
 
+    @media screen and (max-width: 450px) {
 
+.modal input[type='submit'] {
+margin-left: 270px !important;
+}
+    }
   </style>
 </head>
 

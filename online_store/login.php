@@ -46,6 +46,10 @@ include_once "./api/db.php";
       margin-left: 156px !important;
     }
 
+    .modal input[type='submit'] {
+      margin-left: 408px !important;
+    }
+
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -78,13 +82,25 @@ include_once "./api/db.php";
       .btn-group {
         margin-left: 310px !important;
       }
-      .box>span{
-  margin-left: 130px !important;
-}
-.add{
-  margin-left: 150px !important;
 
-}
+      .box>span {
+        margin-left: 130px !important;
+      }
+
+      .add {
+        margin-left: 150px !important;
+
+      }
+
+      .modal .input-group {
+
+        width: 405px !important;
+        margin-left: 00px !important;
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 345px !important;
+      }
     }
 
     @media screen and (max-width: 450px) {
@@ -102,7 +118,7 @@ include_once "./api/db.php";
       .input-group {
 
         width: 325px !important;
-        margin-left: 190px !important;
+        margin-left: 160px !important;
       }
 
       .box>p {
@@ -113,14 +129,26 @@ include_once "./api/db.php";
       .btn-group {
         margin-left: 310px !important;
       }
-      .box>span{
-  margin-left: 130px !important;
-}
-.add{
-  margin-left: 150px !important;
 
-}
-      
+      .box>span {
+        margin-left: 130px !important;
+      }
+
+      .add {
+        margin-left: 150px !important;
+
+      }
+
+      .modal .input-group {
+
+        width: 330px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 270px !important;
+      }
+
     }
   </style>
 </head>

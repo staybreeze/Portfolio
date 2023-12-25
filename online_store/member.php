@@ -41,7 +41,9 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
-
+    .modal input[type='submit'] {
+margin-left: 408px !important;
+}
     @media screen and (max-width: 550px) {
       .section {
         width: 100%;
@@ -72,6 +74,55 @@ include_once "./api/db.php";
         width: 325px !important;
         margin-left: -1px !important;
       }
+      .modal     .input-group {
+
+width: 330px !important;
+
+}
+.modal input[type='submit'] {
+margin-left: 270px !important;
+}
+    }
+
+    @media screen and (max-width: 450px) {
+      .section {
+        width: 100%;
+        margin: auto !important;
+        /* border: 1px solid black; */
+      }
+
+      .box {
+        margin-left: -160px !important;
+
+      }
+
+      .input-group {
+        margin-left:-13px !important;
+        width: 325px !important;
+      }
+
+      .box>p {
+        margin-left: 130px !important;
+        margin-bottom: 30px !important;
+      }
+
+      .btn-group {
+        margin-left: 110px !important;
+        margin-left:96px !important;
+      }
+      .logout{
+        
+        width: 325px !important;
+        margin-left: -14px !important;
+      }
+      .modal     .input-group {
+
+width: 330px !important;
+
+}
+.modal input[type='submit'] {
+margin-left: 270px !important;
+}
     }
   </style>
 </head>

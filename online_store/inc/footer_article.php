@@ -123,56 +123,53 @@
  </div>
 
  <!-- contact Modal -->
-<div class="modal" id="contact">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">歡迎留下消息～(*´∀`)~♥</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-      <form action="../api/message.php" method="post">
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                    <span class="input-group-text bold">寄信人</span>
-                    <input type="text" class="form-control" placeholder="e-mail" name="sender">
-                
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text bold">收件人</span>
-                    <input type="text" class="form-control" disabled placeholder="wunshengliao@gmail.com">
-                
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text bold">主旨</span>
-                    <input type="text" class="form-control" name="subject">
-                
-                </div>
+ <div class="modal contact-modal" id="contact">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">歡迎留下消息～(*´∀`)~♥</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form action="./api/message.php" method="post">
                 <div class="row">
-                    <div class="col">
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text bold">寄信人</span>
+                      <input type="text" class="form-control" placeholder="e-mail" name="sender">
+
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text bold">收件人</span>
+                      <input type="text" class="form-control" disabled placeholder="wunshengliao@gmail.com">
+
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text bold">主旨</span>
+                      <input type="text" class="form-control" name="subject">
+
+                    </div>
+                    <div class="row">
+                      <div class="col">
                         <p class="bold mt-3">信件內容</p>
                         <div class="form-floating">
-                            <textarea class="form-control" id="comment" name="text"
-                                placeholder="Comment goes here"></textarea>
-                            <label for="comment"></label>
+                          <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+                          <label for="comment"></label>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+                <input class="btn myBtn mt-3" type="submit" value="送出">
+              </form>
             </div>
-        </div>
-        <input class="btn myBtn mt-3" style="margin-left:408px" type="submit" value="送出">
-      </form>
-        </div>
-  
 
-  
+
+
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  
-  

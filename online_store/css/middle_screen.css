@@ -952,6 +952,9 @@ input#menu {
     width:105%;
 
   }
+  .modal input[type='submit'] {
+    margin-left: 345px !important;
+    }
 }
 
 @media screen and (min-width: 550px) {
@@ -960,6 +963,7 @@ input#menu {
     top: 20px;
     left: 60px
   }
+
 }
 
 
@@ -1016,6 +1020,9 @@ display: none;
   .footer {
     height: 93vh;
   }
+  .modal input[type='submit'] {
+    margin-left: 345x !important;
+    }
 }
 
 .myBtn-brown{

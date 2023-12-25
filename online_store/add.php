@@ -44,6 +44,9 @@ include_once "./api/db.php";
     .btn-group {
         margin-left: 156px !important;
       }
+      .modal input[type='submit'] {
+margin-left: 408px !important;
+}
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -78,7 +81,18 @@ include_once "./api/db.php";
       .box>span{
   margin-left: 130px !important;
 }
-    }
+
+}
+.modal .input-group {
+
+width: 405px !important;
+margin-left: 00px !important;
+}
+
+.modal input[type='submit'] {
+margin-left: 345px !important;
+}
+    
 
     @media screen and (max-width: 450px) {
       .section {
@@ -107,6 +121,14 @@ include_once "./api/db.php";
       }
       .box>span{
   margin-left: 130px !important;
+}
+.modal     .input-group {
+
+width: 330px !important;
+
+}
+.modal input[type='submit'] {
+margin-left: 270px !important;
 }
     }
   </style>
@@ -253,16 +275,16 @@ include_once "./api/db.php";
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
     <ul class="pages">
       <li>
-        <a class="footer-header" href="#">關於我們</a>
+        <a class="footer-header" href="./aboutUs.php#">關於我們</a>
       </li>
       <li>
-        <a href="#">起源</a>
+        <a href="./aboutUs.php#">起源</a>
       </li>
       <li>
-        <a href="#origin">目標</a>
+        <a href="./aboutUs.php#origin">目標</a>
       </li>
       <li>
-        <a href="#cheetos">店貓－奇多（Cheetos）</a>
+        <a href="./aboutUs.php#cheetos">店貓－奇多（Cheetos）</a>
       </li>
 
     </ul>

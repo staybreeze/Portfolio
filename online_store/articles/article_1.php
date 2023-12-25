@@ -54,6 +54,9 @@ include_once "../api/db.php";
       .aside>img, .box{
         margin-left: -30px;
       }
+      .modal input[type='submit'] {
+margin-left: 283px !important;
+}
     }
   </style>
 </head>

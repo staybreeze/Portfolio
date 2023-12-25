@@ -19,9 +19,7 @@ include_once "../api/db.php";
 <link rel="stylesheet" media="screen and (max-width:1600px)" href="../css/middle_screen.css">
 <link rel="stylesheet" media="screen and (min-width: 1600px)" href="../css/big_screen.css">
   <style>
-
-
-    .main {
+   .main {
       height: 100%;
     }
 
@@ -35,9 +33,10 @@ include_once "../api/db.php";
       line-height: 40px;
     }
 
-    .footer{
-      margin-top:0px;
+    .footer {
+      margin-top: 0px;
     }
+
     @media screen and (max-width: 550px) {
       .aside {
         margin-left: 110px;
@@ -57,6 +56,9 @@ include_once "../api/db.php";
       .aside>img, .box{
         margin-left: -30px;
       }
+      .modal input[type='submit'] {
+margin-left: 283px !important;
+}
     }
   </style>
 </head>
