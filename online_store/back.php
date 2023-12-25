@@ -1,10 +1,12 @@
 <?php
+
 include_once "./api/db.php";
-if (empty($_SESSION['admin'])) {
+if (empty($_SESSION['admin']) && (!isset($_GET['profile']))) {
   header('Location: index.php');
-  exit; 
+  exit;
 }
 ?>
+
 
 <!doctype html>
 <html lang="en">

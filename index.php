@@ -258,7 +258,13 @@
         font-size: 23px;
         font-family: DotGothic16
     }
+    .section>div>h5,
+    .section>h5 {
 
+        color: crimson;
+        font-size: 18px;
+        font-family: DotGothic16
+    }
     a {
         text-decoration: none;
         color: rgba(128, 128, 128, 0.763);
@@ -279,11 +285,14 @@
 
 
 
-    .online_store_pic:hover {
-        width: 210%;
+    .online_store_pic1:hover {
+        width: 202%;
         z-index: 1;
     }
-
+    .online_store_pic2:hover {
+        width: 171%;
+        z-index: 1;
+    }
     .remind {
         margin-top: 80px;
         color: crimson;
@@ -345,8 +354,14 @@
     }
 
     @media screen and (max-width: 767px) {
-        .online_store_pic:hover {
+        .online_store_pic1:hover {
             width: 230%;
+            z-index: 1;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .online_store_pic2:hover {
+            width: 170%;
             z-index: 1;
         }
     }
@@ -425,19 +440,19 @@
         }
 
     }
-  
+
     @media screen and (max-width: 767px) {
         .none-abbr {
             display: none;
         }
+
         .abbr-td {
 
-            width:13.5%;
+            width: 13.5%;
             margin: auto;
-        text-align: center;
+            text-align: center;
         }
     }
-
 </style>
 
 </style>
@@ -603,12 +618,28 @@
             <div>
 
                 <h4>購物商城網站</h4>
-
+                <h5>前台</h5>
                 <a href="./online_store/index.php">
-                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="100%" alt="">
+                    <img class="mt-2 online_store_pic1" src="./img/online_store2.jpg" width="100%" alt="">
                 </a>
 
             </div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+            <div>
+
+                <h4>&nbsp;</h4>
+                <h5>後台</h5>
+                <a href="./online_store/back.php?profile">
+                    <img class="mt-2 online_store_pic2" src="./img/online_store3.jpg" width="100%" alt="">
+                </a>
+
+            </div>
+  
+        </div>
+        <div class="section" id="web" style="display: flex;">
+
+
             <div></div>
             <div class="ms-5" style="margin-top:50px">
                 <h4>萬年暦</h4>
