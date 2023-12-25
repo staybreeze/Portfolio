@@ -12,7 +12,7 @@ include_once "../api/db.php"
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
   <title>奇多喵合作社/後台/商品管理</title>
-
+  <link rel="icon" href="../img/logo3.jpg" type="image/x-icon">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
   <!-- Font Awesome CSS -->

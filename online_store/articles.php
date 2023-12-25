@@ -6,6 +6,7 @@ include_once "./api/db.php";
 
 <head>
   <title>奇多喵合作社>文章</title>
+  <link rel="icon" href="./img/logo3.jpg" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
