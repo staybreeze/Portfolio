@@ -75,6 +75,9 @@ include_once "./api/db.php";
       .btn-group {
         margin-left: 183px !important;
       }
+      .box>span{
+  margin-left: 130px !important;
+}
     }
 
     @media screen and (max-width: 450px) {
@@ -102,6 +105,9 @@ include_once "./api/db.php";
       .btn-group {
         margin-left: 158px !important;
       }
+      .box>span{
+  margin-left: 130px !important;
+}
     }
   </style>
 </head>

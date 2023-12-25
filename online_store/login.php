@@ -43,8 +43,9 @@ include_once "./api/db.php";
     }
 
     .btn-group {
-        margin-left: 156px !important;
-      }
+      margin-left: 156px !important;
+    }
+
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -65,33 +66,25 @@ include_once "./api/db.php";
 
       .input-group {
 
-        width: 360px !important;
-        margin-left: 175px !important;
+        width: 325px !important;
+        margin-left: 190px !important;
       }
 
-      .box>p,
-      .box>span {
+      .box>p {
         margin-left: 130px !important;
         margin-bottom: 30px !important;
       }
 
-      .btn {
-        margin-left: 130px !important;
+      .btn-group {
+        margin-left: 310px !important;
       }
+      .box>span{
+  margin-left: 130px !important;
+}
+.add{
+  margin-left: 150px !important;
 
-      .add {
-        margin-left: 235px !important;
-      }
-
-      .input-group {
-        display: flex;
-        justify-content: space-between;
-
-      }
-
-      .btn-warning {
-        margin-left: 235px !important;
-      }
+}
     }
 
     @media screen and (max-width: 450px) {
@@ -108,33 +101,26 @@ include_once "./api/db.php";
 
       .input-group {
 
-        width: 300px !important;
-        margin-left: 175px !important;
+        width: 325px !important;
+        margin-left: 190px !important;
       }
 
-      .box>p,
-      .box>span {
+      .box>p {
         margin-left: 130px !important;
         margin-bottom: 30px !important;
       }
 
-      .btn {
-        margin-left: 130px !important;
+      .btn-group {
+        margin-left: 310px !important;
       }
+      .box>span{
+  margin-left: 130px !important;
+}
+.add{
+  margin-left: 150px !important;
 
-      .add {
-        margin-left: 170px !important;
-      }
-
-      .input-group {
-        display: flex;
-        justify-content: space-between;
-
-      }
-
-      .btn-warning {
-        margin-left: 175px !important;
-      }
+}
+      
     }
   </style>
 </head>
@@ -175,7 +161,7 @@ include_once "./api/db.php";
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
             <div>
-              <a href="./add.php" class="add" style="padding-left:180px;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
+              <a href="./add.php" class="add" style="padding-left:230px;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
             </div>
             <div class="btn-group">
 
@@ -318,29 +304,29 @@ include_once "./api/db.php";
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <?php
+      if (isset($_SESSION['user'])) {
+        echo            '<li>';
+        echo  '<a href="member.php">修改密碼</a>';
+        echo '</li>';
+      } else {
+        echo            '<li>';
+        echo  '<a href="add.php">加入會員</a>';
+        echo '</li>';
+      }
+      ?>
 
-          </ul>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
+        <a href="back_login.php">管理員登入</a>
+      </li>
+
+    </ul>
 
 
   </div>

@@ -70,32 +70,17 @@ if(isset($_SESSION['admin'])){
 
       .input-group {
 
-        width: 360px !important;
-        margin-left: 175px !important;
+        width: 325px !important;
+        margin-left: 190px !important;
       }
 
-      .box>p,
-      .box>span {
+      .box>p {
         margin-left: 130px !important;
         margin-bottom: 30px !important;
       }
 
-      .btn {
-        margin-left: 208px !important;
-      }
-
-      .add {
-        margin-left: 235px !important;
-      }
-
-      .input-group {
-        display: flex;
-        justify-content: space-between;
-
-      }
-
-      .btn-warning {
-        margin-left: 5px !important;
+      .btn-group {
+        margin-left: 310px !important;
       }
     }
 
@@ -113,32 +98,18 @@ if(isset($_SESSION['admin'])){
 
       .input-group {
 
-        width: 300px !important;
-        margin-left: 175px !important;
-      }
+width: 325px !important;
+margin-left: 190px !important;
+}
 
-      .box>p,
-      .box>span {
-        margin-left: 130px !important;
-        margin-bottom: 30px !important;
-      }
-     .btn {
-        margin-left: 140px !important;
-      }
+.box>p {
+margin-left: 130px !important;
+margin-bottom: 30px !important;
+}
 
-      .add {
-        margin-left: 235px !important;
-      }
-
-      .input-group {
-        display: flex;
-        justify-content: space-between;
-
-      }
-
-      .btn-warning {
-        margin-left: 5px !important;
-      }
+.btn-group {
+margin-left: 310px !important;
+}
     }
   </style>
 </head>
