@@ -198,6 +198,7 @@ $about = $About->find(1);
 
           
             <input class="btn myBtn mt-2 px-end" type="submit" value="送出">
+            <div class="mt-3">&nbsp;</div>
           </form>
 
         </div>
