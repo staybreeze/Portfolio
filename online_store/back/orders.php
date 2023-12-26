@@ -120,7 +120,7 @@ include_once "../api/db.php"
 
                 foreach ($users as $user) {
                   // 獲得當前USER的CART
-                  $cart = $Customer->all(['customer_acc' => $user['acc']]);
+                  $cart = $Customer->all(['customer_acc' => $user['acc']],'ORDER BY product_id ASC');
 
                   // 初始化
                   $userTotalPrice = 0;

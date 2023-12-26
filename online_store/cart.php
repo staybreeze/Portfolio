@@ -120,7 +120,7 @@ if(!isset($_SESSION['user'])){
         // // $rows = $Image->all();
         // foreach ($rows as $row) {
           $totalPrice=0;
-          $cart = $Customer->all(['customer_acc' => $_SESSION['user']]);
+          $cart = $Customer->all(['customer_acc' => $_SESSION['user']],'ORDER BY product_id ASC');
           foreach ($cart as $cartItem) {
         
             $row = $Good->find(['id' => $cartItem['product_id']]);
