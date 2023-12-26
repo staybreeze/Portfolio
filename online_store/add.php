@@ -118,7 +118,7 @@ include_once "./api/db.php";
       .input-group {
 
         width: 325px !important;
-        margin-left: 160px !important;
+        margin-left: -13px !important;
       }
 
       .box>p {
@@ -127,7 +127,7 @@ include_once "./api/db.php";
       }
 
       .btn-group {
-        margin-left: 310px !important;
+        margin-left: 171px !important;
       }
 
       .box>span {
