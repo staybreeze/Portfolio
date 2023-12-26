@@ -75,6 +75,12 @@ include_once "../api/db.php"
     td>input {
       width: 100%;
     }
+    .total-price{
+      margin-left: 92px;
+    }
+    .underline{
+      text-decoration: underline;
+    }
   </style>
 
   </style>
@@ -133,8 +139,8 @@ include_once "../api/db.php"
               <tr>
 <?php
 
-                  echo "<p style='font-size:20px;text-decoration:underline'>訂單帳號: {$user['acc']}</p>";
-
+                  echo "<p style='font-size:20px'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
+                  echo "<input type='hidden' name='acc' value='{$user['acc']}'>";
 
                   echo '<table>';
                   echo '<tr class="th-update text-center" style="height:30px">
@@ -173,7 +179,7 @@ include_once "../api/db.php"
                   echo '</table>';
 
 
-                  echo "<p style='margin-left:1130px;font-size:20px;text-decoration:underline;margin-top:50px'>總價: {$userTotalPrice}</p>";
+                  echo "<p style='margin-left:1130px;font-size:20px;margin-top:50px'>總價：<span class='underline'>{$userTotalPrice}</span>元</p>";
 
 
                   $totalPrice += $userTotalPrice;
@@ -203,7 +209,7 @@ include_once "../api/db.php"
                 }
 
 
-                echo "<p style='font-size:20px;text-decoration:underline;color:darkred'>總訂單總價: {$totalPrice}元</p>";
+                echo "<p class='total-price' style='font-size:20px;color:darkred'><b>總訂單總價：<span class='underline'>{$totalPrice}</span>元</p>";
           ?>  
         </div>
 
