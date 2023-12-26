@@ -8,10 +8,10 @@ $productNames = $_POST['name'];  // 產品名稱的陣列
 foreach ($users as $user) {
     $cartItems = $Customer->all(['customer_acc' => $user['acc']]);
     echo "<br>";
-    echo "<br>";
-    echo "<pre>";
-    print_r($cartItems);
-    echo "</pre>";
+    // echo "<br>";
+    // echo "<pre>";
+    // print_r($cartItems);
+    // echo "</pre>";
     foreach ($cartItems as $cartItem) {
         $productName = $cartItem['product_id'];
 if($cartItem['customer_acc']==$_POST['acc']){
