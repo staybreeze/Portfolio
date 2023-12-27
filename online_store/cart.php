@@ -105,7 +105,7 @@ text-align:end;
   <!-- ---- -->
   <div class="container mt-5">
 
-    <form action="" method="post">
+    <form action="./api/cart_add_good.php" method="post">
       <table class="table">
         <tr>
           <th style="width:8%;background-color:#f8ede0">ID</th>
@@ -128,18 +128,20 @@ text-align:end;
         $cart = $Customer->all(['customer_acc' => $_SESSION['user']], 'ORDER BY product_id ASC');
         foreach ($cart as $index => $cartItem) {
           $row = $Good->find(['id' => $cartItem['product_id']]);
-          $uniqueId = 'item_' . $index;
+       
 
           echo '<tr>';
           echo "<td style='padding-top:23px'>{$row['id']}</td>";
+          echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
+
           echo "<td style='padding-top:23px'><img src='./img/{$row['img']}' width='50px' alt=''></td>";
           echo "<td style='padding-top:23px'>{$row['name']}</td>";
           echo "<td style='padding-top:23px' class='price'>{$row['price']}</td>";
           echo "<td style='padding-top:23px'>
-                    <input type='number' name='items[{$uniqueId}][quantity]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
+                    <input type='number' name='quantity[]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
           $total = $cartItem['quantity'] * $row['price'];
 
-          echo "<td style='padding-top:23px' class='subtotal' id='{$uniqueId}_total'>{$total}</td>";
+          echo "<td style='padding-top:23px' class='subtotal' id='total'>{$total}</td>";
         ?>
           <td>
             <a href="./api/del_good.php?id=<?= $row['id']; ?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
