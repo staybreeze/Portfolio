@@ -41,6 +41,12 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
+    .logout{
+   
+      width: 295px !important;
+        margin-left: 0px !important;
+
+    }
 
     .modal input[type='submit'] {
       margin-left: 408px !important;
@@ -73,8 +79,7 @@ include_once "./api/db.php";
       }
 
       .logout {
-
-        width: 325px !important;
+   width: 325px !important;
         margin-left: -1px !important;
       }
 
