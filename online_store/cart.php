@@ -276,49 +276,54 @@ text-align:end;
 
 
 <script>
-  // script.js
-  document.addEventListener('DOMContentLoaded', function () {
-    const numberInputs = document.querySelectorAll('.quantity-input');
-    const priceElements = document.querySelectorAll('.price');
-    const totalElements = document.querySelectorAll('.subtotal');
-    const totalPriceElement = document.getElementById('totalPrice'); // 新增這一行
+document.addEventListener('DOMContentLoaded', function () {
+  const numberInputs = document.querySelectorAll('.quantity-input');
+  const priceElements = document.querySelectorAll('.price');
+  const totalElements = document.querySelectorAll('.subtotal');
+  const totalPriceElement = document.getElementById('totalPrice');
+  const userPriceElement = document.getElementById('total'); // 將 ID 更改為 'total'
 
-    let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
-    let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
+  let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
+  let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
 
-    function updateTotals(index) {
-      // 檢查數量和價格是否是有效數字
-      if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
-        let itemTotal = itemPrices[index] * itemNumbers[index];
-        totalElements[index].innerText = itemTotal;
-        updateGrandTotal();
-      }
+  function updateTotals(index) {
+    // 檢查數量和價格是否是有效數字
+    if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
+      let itemTotal = itemPrices[index] * itemNumbers[index];
+      totalElements[index].innerText = itemTotal;
+      updateGrandTotal();
+  
     }
+  }
 
-    function updateGrandTotal() {
-      // 使用parseFloat過濾出有效數字，並排除NaN
-      let grandTotal = Array.from(totalElements)
-        .map(element => parseFloat(element.innerText))
-        .filter(value => !isNaN(value))
-        .reduce((acc, value) => acc + value, 0);
+  function updateGrandTotal() {
+    // 使用 parseFloat 過濾出有效數字，並排除 NaN
+    let grandTotal = Array.from(totalElements)
+      .map(element => parseFloat(element.innerText))
+      .filter(value => !isNaN(value))
+      .reduce((acc, value) => acc + value, 0);
 
-      totalPriceElement.innerText = 'NTD  ' + grandTotal+'  元'; // 更新totalPrice的內容
-    }
+    totalPriceElement.innerText = 'NTD ' + grandTotal + ' 元'; // 更新 totalPrice 的內容
+  }
 
-    numberInputs.forEach((input, index) => {
-      input.addEventListener('input', function () {
-        // 檢查數量是否小於1，如果是，將其設置為1
-        itemNumbers[index] = Math.max(1, parseInt(input.value));
-        input.value = itemNumbers[index]; // 更新輸入欄位的值
-        updateTotals(index);
-      });
-    });
 
-    // 最初更新總計
-    Array.from(totalElements).forEach((element, index) => {
+
+  numberInputs.forEach((input, index) => {
+    input.addEventListener('input', function () {
+      // 檢查數量是否小於1，如果是，將其設置為1
+      itemNumbers[index] = Math.max(1, parseInt(input.value));
+      input.value = itemNumbers[index]; // 更新輸入欄位的值
       updateTotals(index);
     });
   });
+
+  // 最初更新總計
+  Array.from(totalElements).forEach((element, index) => {
+    updateTotals(index);
+  });
+});
+
+
 </script>
 
 
