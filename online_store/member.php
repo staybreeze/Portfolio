@@ -41,15 +41,22 @@ include_once "./api/db.php";
       margin-top: 0px;
 
     }
-    .logout{
-   
+
+    .logout {
+
       width: 295px !important;
-        margin-left: 0px !important;
+      margin-left: 0px !important;
 
     }
 
     .modal input[type='submit'] {
       margin-left: 408px !important;
+    }
+    .modal-body>.delete{
+      font-size: large;
+      font-weight: bold;
+      color:crimson;
+      margin-top:28px;
     }
 
     @media screen and (max-width: 550px) {
@@ -79,20 +86,20 @@ include_once "./api/db.php";
       }
 
       .logout {
-   width: 325px !important;
+        width: 325px !important;
         margin-left: -1px !important;
       }
 
 
       .modal .input-group {
 
-width: 450px !important;
+        width: 450px !important;
 
-}
+      }
 
-.modal input[type='submit'] {
-margin-left: 350px !important;
-}
+      .modal input[type='submit'] {
+        margin-left: 350px !important;
+      }
     }
 
     @media screen and (max-width: 450px) {
@@ -209,7 +216,7 @@ margin-left: 350px !important;
               <input class="btn btn-secondary mx-2 mt-5 " style="border-radius:5px 0 0 5px" type="reset" value="重置">
               <input class="btn btn-warning mx-2 mt-5  myBtn" type="submit" value="更新" onclick="submitInnerData()">
               <!-- 比較進階的做法 -->
-              <input class="btn btn-danger mx-2 mt-5" type="button" value="刪除" onclick="location.href='./api/del_user.php?id=<?= $user['id']; ?>'">
+              <input class="btn btn-danger mx-2 mt-5" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" type="button" value="刪除">
             </div>
             <a href='./api/logout.php' class='btn logout btn-warning mt-4 col-9 mx-2'>登出</a>
           </form>
@@ -371,6 +378,47 @@ margin-left: 350px !important;
   <?php
   include "./inc/copyright.php"
   ?>
+
+<script>
+  function showDeleteConfirmModal() {
+    var modal = new bootstrap.Modal(document.getElementById('deleteConfirmModal'), {
+      keyboard: false
+    });
+
+    modal.show();
+
+    document.getElementById('confirmDeleteButton').addEventListener('click', function() {
+     
+      location.href = './api/del_user.php?id=<?= $user['id']; ?>';
+      modal.hide();
+    });
+  }
+</script>
+
+
+<div class="modal" id="deleteConfirmModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <!-- <div class="modal-header">
+        <h5 class="modal-title">確認刪除</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div> -->
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p class="delete">確定要刪除嗎？資料會一去不復返喔！</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+        <a href='./api/del_user.php?id=<?= $user['id']; ?>'><button type="button" id="confirmDeleteButton" class="btn btn-danger">確認</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 </html>
