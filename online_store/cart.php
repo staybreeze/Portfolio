@@ -62,22 +62,27 @@ include_once "./api/db.php";
       text-align: center;
     }
 
-    .bg-myColor{
+    .bg-myColor {
 
-      background-color:#f8ede0
+      background-color: #f8ede0
     }
 
+    .quantity-input{
+      width: 100px;
+text-align:end;
+    }
     @media screen and (max-width: 450px) {
 
-.modal     .input-group {
+      .modal .input-group {
 
-width: 330px !important;
+        width: 330px !important;
 
-}
-.modal input[type='submit'] {
-margin-left: 270px !important;
-}
-      
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 270px !important;
+      }
+
     }
   </style>
 </head>
@@ -86,13 +91,13 @@ margin-left: 270px !important;
 <body>
 
 
-<?php
+  <?php
 
-if(!isset($_SESSION['user'])){
-  header("location:./login.php?error=請先登入會員");
-}
+  if (!isset($_SESSION['user'])) {
+    header("location:./login.php?error=請先登入會員");
+  }
 
-?>
+  ?>
   <?php
   include "./inc/header_aboutUs_articles.php"
   ?>
@@ -119,38 +124,41 @@ if(!isset($_SESSION['user'])){
 
         // // $rows = $Image->all();
         // foreach ($rows as $row) {
-          $totalPrice=0;
-          $cart = $Customer->all(['customer_acc' => $_SESSION['user']],'ORDER BY product_id ASC');
-          foreach ($cart as $cartItem) {
-        
-            $row = $Good->find(['id' => $cartItem['product_id']]);
-    
-     
-            echo '<tr>';
-            echo "<td style='padding-top:23px'>{$row['id']}</td>";
-            echo "<td style='padding-top:23px'><img src='./img/{$row['img']}' width='50px' alt=''></td>";
-            echo "<td style='padding-top:23px'>{$row['name']}</td>";
-            echo "<td style='padding-top:23px'>{$row['price']}</td>";
-            echo "<td style='padding-top:23px'>{$cartItem['quantity']}</td>";
-            $total = $cartItem['quantity'] * $row['price'];
-            echo "<td style='padding-top:23px'>{$total}</td>";
-      
+        $totalPrice = 0;
+        $cart = $Customer->all(['customer_acc' => $_SESSION['user']], 'ORDER BY product_id ASC');
+        foreach ($cart as $index => $cartItem) {
+          $row = $Good->find(['id' => $cartItem['product_id']]);
+          $uniqueId = 'item_' . $index;
 
-            ?>
-            <td>
-              <a href="./api/del_good.php?id=<?=$row['id'];?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
-            </td>
+          echo '<tr>';
+          echo "<td style='padding-top:23px'>{$row['id']}</td>";
+          echo "<td style='padding-top:23px'><img src='./img/{$row['img']}' width='50px' alt=''></td>";
+          echo "<td style='padding-top:23px'>{$row['name']}</td>";
+          echo "<td style='padding-top:23px' class='price'>{$row['price']}</td>";
+          echo "<td style='padding-top:23px'>
+                    <input type='number' name='items[{$uniqueId}][quantity]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
+          $total = $cartItem['quantity'] * $row['price'];
+
+          echo "<td style='padding-top:23px' class='subtotal' id='{$uniqueId}_total'>{$total}</td>";
+        ?>
+          <td>
+            <a href="./api/del_good.php?id=<?= $row['id']; ?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
+          </td>
           </tr>
-          <?php
-        $totalPrice += $total;
-    }
+        <?php
+          $totalPrice += $total;
+        }
 
 
-?>
+        ?>
+
+
+
         <tr>
-          <td colspan="4"  class="pt-3">總計</td>
+          <td colspan="4" class="pt-3">總計</td>
 
-          <td colspan="2"  class="pt-3">NTD&nbsp;&nbsp;<?= $totalPrice;?></td>
+          <td colspan="2" class="pt-3" id="totalPrice">NTD</td>
+
           <!-- <td></td> -->
           <!-- <td></td> -->
           <!-- <td></td>
@@ -230,29 +238,29 @@ if(!isset($_SESSION['user'])){
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+      </li>
+      <?php
+      if (isset($_SESSION['user'])) {
+        echo            '<li>';
+        echo  '<a href="member.php">修改密碼</a>';
+        echo '</li>';
+      } else {
+        echo            '<li>';
+        echo  '<a href="add.php">加入會員</a>';
+        echo '</li>';
+      }
+      ?>
 
-          </ul>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
+        <a href="back_login.php">管理員登入</a>
+      </li>
+
+    </ul>
 
   </div>
 
@@ -262,6 +270,59 @@ if(!isset($_SESSION['user'])){
   <?php
   include "./inc/copyright.php"
   ?>
+
+
+
+<script>
+  // script.js
+  document.addEventListener('DOMContentLoaded', function () {
+    const numberInputs = document.querySelectorAll('.quantity-input');
+    const priceElements = document.querySelectorAll('.price');
+    const totalElements = document.querySelectorAll('.subtotal');
+    const totalPriceElement = document.getElementById('totalPrice'); // 新增這一行
+
+    let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
+    let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
+
+    function updateTotals(index) {
+      // 檢查數量和價格是否是有效數字
+      if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
+        let itemTotal = itemPrices[index] * itemNumbers[index];
+        totalElements[index].innerText = itemTotal;
+        updateGrandTotal();
+      }
+    }
+
+    function updateGrandTotal() {
+      // 使用parseFloat過濾出有效數字，並排除NaN
+      let grandTotal = Array.from(totalElements)
+        .map(element => parseFloat(element.innerText))
+        .filter(value => !isNaN(value))
+        .reduce((acc, value) => acc + value, 0);
+
+      totalPriceElement.innerText = 'NTD  ' + grandTotal+'  元'; // 更新totalPrice的內容
+    }
+
+    numberInputs.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        // 檢查數量是否小於1，如果是，將其設置為1
+        itemNumbers[index] = Math.max(1, parseInt(input.value));
+        input.value = itemNumbers[index]; // 更新輸入欄位的值
+        updateTotals(index);
+      });
+    });
+
+    // 最初更新總計
+    Array.from(totalElements).forEach((element, index) => {
+      updateTotals(index);
+    });
+  });
+</script>
+
+
+
+
+
 
 </body>
 

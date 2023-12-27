@@ -407,7 +407,7 @@ include_once "./api/db.php";
 
       <!-- Modal Body -->
       <div class="modal-body">
-        <p class="delete">確定要刪除嗎？資料會一去不復返喔！</p>
+        <p class="delete">確定要刪除嗎？<br><br>資料會一去不復返喔！</p>
       </div>
 
       <!-- Modal Footer -->

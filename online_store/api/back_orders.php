@@ -28,8 +28,7 @@ if($cartItem['customer_acc']==$_POST['acc']){
                 $cartItem['id'],
                 [
                     'quantity' => $quantity,
-                    'name' => $cartItem['name'],
-                    'price' => $cartItem['price'],
+  
                     'customer_acc' => $cartItem['customer_acc'],
                     'product_id' => $cartItem['product_id']
                 ],
