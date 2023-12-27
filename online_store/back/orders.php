@@ -77,11 +77,14 @@ include_once "../api/db.php"
     }
 
     .total-price {
-      margin-left: 20px;
+      margin-left: 93px;
       font-size: 20px;
-      color: darkred;
+      color: crimson;
     }
-
+.user-total-price{
+  color:brown;
+  font-size: 20px;
+}
     .underline {
       text-decoration: underline;
     }
@@ -170,7 +173,7 @@ include_once "../api/db.php"
                   }
 
                   echo '</table>';
-                  echo "<p style='margin-left:1130px;font-size:20px;margin-top:50px' class='user-total-price' id='userTotal'>總價：<span class='underline total-price'>{$userTotalPrice}</span>元</p>";
+                  echo "<p style='margin-left:1100px;font-size:20px;margin-top:50px' class='user-total-price' id='userTotal'>總價：<span class='underline total-price'>{$userTotalPrice}</span>元</p>";
                   $totalPrice += $userTotalPrice;
                   ?>
                 </tr>
@@ -179,7 +182,7 @@ include_once "../api/db.php"
                 <br>
                 <tr>
                   <div class="d-flex">
-                    <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改">
+                    <input class="btn myBtn mt-5" style="margin-left:1310px " type="submit" value="修改">
                   </div>
                   <hr>
                 </tr>
