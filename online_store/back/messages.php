@@ -78,6 +78,9 @@ include_once "../api/db.php"
     td>input {
       width: 100%;
     }
+    .underline{
+      text-decoration: underline;
+    }
   </style>
 
   </style>
@@ -134,7 +137,7 @@ include_once "../api/db.php"
               <tr>
 <?php
 
-                  echo "<p style='font-size:20px;text-decoration:underline'>寄信人: {$row['sender']}</p>";
+                  echo "<p style='font-size:20px'>寄信人:<span class='underline'> {$row['sender']}</span></p>";
 
 
                   echo '<table>';
