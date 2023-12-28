@@ -2,8 +2,8 @@
 include_once "db.php";
 function generateHTML($title, $content, $imgFilename)
 {
-    // 生成文章的網頁內容
-    $articleContent = <<<HTML
+  // 生成文章的網頁內容
+  $articleContent = <<<HTML
 <?php
 include_once "../api/db.php";
 ?>
@@ -108,33 +108,33 @@ include "../inc/footer_article.php"
 </html>
 HTML;
 
-    return $articleContent;
+  return $articleContent;
 }
 
-if(isset($_GET['name'])){
+if (isset($_GET['name'])) {
   $article = $Article->find(['title' => $_GET['name']]);
 
-// 使用 $_POST 可能存在安全風險，建議使用適當的驗證機制，這裡僅供參考
-$title = $article['title'];
-$content = $article['content'];
-$imgFilename = $article['img'];
+$title=$article['title'];
+  $content = $article['content'];
+  $imgFilename = $article['img'];
 
-// if (!empty($title) && !empty($content)) {
-    $filename = "../articles/" . time() . ".php";
-    $articleContent = generateHTML($title, $content, $imgFilename);
-    
-    if (file_put_contents($filename, $articleContent)) {
-        echo "文章新增成功！ <a href='{$filename}'>檢視文章</a>";
-        header("Location: ../back/articles.php?do=articles&&add");
-    } else {
-        echo "文章新增失敗！";
-    }
+
+
+  // if (!empty($title) && !empty($content)) {
+  $filename = "../articles/" . time() . ".php";
+  $articleContent = generateHTML($title, $content, $imgFilename);
+
+
+  if (file_put_contents($filename, $articleContent)) {
+    echo "文章新增成功！ <a href='{$filename}'>檢視文章</a>";
+    header("Location: ../back/articles.php?do=articles&&add");
+  } else {
+    echo "文章新增失敗！";
+  }
 } else {
-    header("Location: add_article_form.php");
-    exit();
+  header("Location: add_article_form.php");
+  exit();
 }
+
+
 // }
-?>
-
-
-
