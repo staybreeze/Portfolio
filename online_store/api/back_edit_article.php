@@ -6,7 +6,7 @@ $time=$_POST['time'];
 
 $fileToDelete = "../articles/{$time}.php";
 
-$Article->del($_POST['id']);
+
 
 if (file_exists($fileToDelete)) {
 
@@ -20,10 +20,11 @@ if (file_exists($fileToDelete)) {
 }
 
 $Article->save([
+    'id'=>$_POST['id'],
     'title' => $_POST['title'],
     'content' =>$_POST['content'],
     'img' =>$_POST['img'],
-    'time'=> time()
+    'time'=> $time
   ]);
 
   header("location:back_process_article.php?name={$_POST['title']}")
