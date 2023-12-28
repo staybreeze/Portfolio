@@ -143,12 +143,12 @@ include_once "../api/db.php"
               <form method="post" action="../api/back_orders.php" style="margin-left:95px;margin-top:50px">
                 <table>
                   <tr>
-                <?php
-                echo "<p style='font-size:20px'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
-                echo "<input type='hidden' name='acc' value='{$user['acc']}'>";
+                    <?php
+                    echo "<p style='font-size:20px'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
+                    echo "<input type='hidden' name='acc' value='{$user['acc']}'>";
 
-                echo '<table class="table">';
-                echo '<tr class="th-update text-center" style="height:30px">
+                    echo '<table class="table">';
+                    echo '<tr class="th-update text-center" style="height:30px">
                           <th style="width:8%;background-color:#f8ede0">ID</th>
                           <th style="width:10% ;background-color:#f8ede0">圖片</th>
                           <th style="width:30% ;background-color:#f8ede0">商品</th>
@@ -158,48 +158,49 @@ include_once "../api/db.php"
                           <th style="width:10%;background-color:#f8ede0">刪除</th>
                         </tr>';
 
-                foreach ($cart as $cartItem) {
-                  $row = $Good->find(['id' => $cartItem['product_id']]);
+                    foreach ($cart as $cartItem) {
+                      $row = $Good->find(['id' => $cartItem['product_id']]);
 
-                  echo '<tr>';
-                  echo "<td>{$row['id']}</td>";
-                  echo "<td><img src='../img/{$row['img']}' width='50px' alt=''></td>";
-                  echo "<td>{$row['name']}</td>";
-                  echo "<td class='price'>{$row['price']}</td>";
-                  echo "<td><input type='number' style='text-align:center' class='quantity-input' name='number[]' value='{$cartItem['quantity']}'></td>";
-                  echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
-                  $total = $cartItem['quantity'] * $row['price'];
-                  echo "<td class='subtotal' id='subtotal_{$user['acc']}_{$row['id']}'>{$total}</td>";
+                      echo '<tr>';
+                      echo "<td>{$row['id']}</td>";
+                      echo "<td><img src='../img/{$row['img']}' width='50px' alt=''></td>";
+                      echo "<td>{$row['name']}</td>";
+                      echo "<td class='price'>{$row['price']}</td>";
+                      echo "<td><input type='number' style='text-align:center' class='quantity-input' name='number[]' value='{$cartItem['quantity']}'></td>";
+                      echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
+                      $total = $cartItem['quantity'] * $row['price'];
+                      echo "<td class='subtotal' id='subtotal_{$user['acc']}_{$row['id']}'>{$total}</td>";
 
-                  echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
-                  echo '</tr>';
-                  $userTotalPrice += $total;
-                }
+                      echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
+                      echo '</tr>';
+                      $userTotalPrice += $total;
+                    }
 
-                echo '</table>';
-                echo "<p style='margin-left:1100px;font-size:20px;margin-top:50px' class='user-total-price' data-username='{$user['acc']}' id='userTotal'>總價：<span class='underline total-price'>{$userTotalPrice}</span>元</p>";
+                    echo '</table>';
+                    echo "<p style='margin-left:1100px;font-size:20px;margin-top:20px' class='user-total-price' data-username='{$user['acc']}' id='userTotal'>總計：<span class='underline total-price'>{$userTotalPrice}</span>元</p>";
 
-                $totalPrice += $userTotalPrice;
-              }
-            }
-                ?>
+                    $totalPrice += $userTotalPrice;
+
+                    ?>
 
                   </tr>
                 </table>
                 <table>
+
                   <br>
                   <tr>
                     <div class="d-flex">
-                      <input class="btn myBtn mt-5" style="margin-left:1310px " type="submit" value="修改">
+                      <input class="btn myBtn" style="margin-left:1310px " type="submit" value="修改">
                     </div>
                     <hr>
                   </tr>
                 </table>
               </form>
-              <?php
-
-              echo "<p class='total-price' id='totalPrice'><b>總訂單總價：<span class='underline'>{$totalPrice}</span>元</p>";
-              ?>
+          <?php
+            }
+          }
+          echo "<p class='total-price' id='totalPrice'><b>總訂單總價：<span class='underline'>{$totalPrice}</span>元</p>";
+          ?>
         </div>
 
       </main>
@@ -232,27 +233,27 @@ include_once "../api/db.php"
       }
 
       function updateUserTotal() {
-  const userNames = Array.from(userPriceElements).map(element => {
-    return element.getAttribute('data-username');
-  });
+        const userNames = Array.from(userPriceElements).map(element => {
+          return element.getAttribute('data-username');
+        });
 
-  userPriceElements.forEach((userPriceElement, index) => {
-    let totalElementsForUser = Array.from(totalElements)
-      .filter(element => {
-        const userName = userNames[index];
-        return element.id.startsWith(`subtotal_${userName}`);
-      });
+        userPriceElements.forEach((userPriceElement, index) => {
+          let totalElementsForUser = Array.from(totalElements)
+            .filter(element => {
+              const userName = userNames[index];
+              return element.id.startsWith(`subtotal_${userName}`);
+            });
 
-    let userTotal = totalElementsForUser
-      .map(element => {
-        let value = parseFloat(element.innerText);
-        return isNaN(value) ? 0 : value;
-      })
-      .reduce((acc, value) => acc + value, 0);
+          let userTotal = totalElementsForUser
+            .map(element => {
+              let value = parseFloat(element.innerText);
+              return isNaN(value) ? 0 : value;
+            })
+            .reduce((acc, value) => acc + value, 0);
 
-    userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
-  });
-}
+          userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
+        });
+      }
 
 
 

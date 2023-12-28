@@ -1,6 +1,3 @@
-
-
-
 <?php
 include_once "../api/db.php"
 ?>
@@ -14,7 +11,7 @@ include_once "../api/db.php"
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
-  <title>奇多喵合作社/後台/留言管理</title>
+  <title>奇多喵合作社/後台/文章管理/新增</title>
   <link rel="icon" href="../img/logo3.jpg" type="image/x-icon">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -44,43 +41,36 @@ include_once "../api/db.php"
       border: 1px dotted brown;
     }
 
-    table,
-    tr {
-      width: 100%;
+    .ms-95 {
+      margin-left: 95px;
+
     }
 
-    td {
+    .color-brown {
+      color: goldenrod;
+      font-size: 20px;
+    }
+
+    .dotted-border {
+      border: 1px dotted brown;
+    }
+
+    a{
+      text-decoration: none;
+    }
+    .color-blue{
+      color:cadetblue;
+      /* border:3px dotted goldenrod; */
+      font-weight: bold;
+    }
+    .w-95{
+      width: 95%;
       text-align: center;
-      border: none;
-    }
-
-    .th {
-      height: 40px
-    }
-
-    .th-add>td {
-
-      background-color: wheat;
-      font-size: 15px;
-      font-weight: bold;
-      color: #727272;
-    }
-
-    .th-update>td {
-
-      background-color: wheat;
-      font-size: 15px;
-      font-weight: bold;
-      color: #727272;
-
-    }
-
-    td>input {
-      width: 100%;
+      margin: auto;
     }
   </style>
 
-  </style>
+
 
 
   <!-- Custom styles for this template -->
@@ -114,46 +104,61 @@ include_once "../api/db.php"
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <!-- content -->
 
-        <div class="container-fluid mt-3">
-          <h2 class="title">留言管理</h2>
+        <div class="container-fluid mt-3 ">
+          <h2 class="title">文章管理</h2>
+          <div class="d-flex">
 
+<a href="./articles.php?do=articles&&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>
+<?php
+            if(isset($_GET['edit'])){
+          echo    '<a href="./articles.php?do=articles&&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
+            }else{
+              echo    '<a href="./articles.php?do=articles&&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
+            }
+            
+            ?>
+          </div>
+          <div class="dotted-border ms-95">
+        
           <?php
-                $totalPrice = 0;
-                $rows = $Message->all();
+
+                $rows = $Article->all();
 
                 foreach ($rows as $row) {
                   // 獲得當前USER的CART
 
 
 ?>
-          <form method="post" action="../api/message.php" style="margin-left:95px;margin-top:50px">
-            <table>
+          <form method="post" action="../api/message.php" >
+            <table class="mt-3 w-95" >
 
 
             
               <tr>
 <?php
 
-                  echo "<p style='font-size:20px;text-decoration:underline'>寄信人: {$row['sender']}</p>";
+      
 
-
-                  echo '<table>';
+       
                   echo '<tr class="th-update text-center" style="height:30px">
-            <th style="width:8%;background-color:#f8ede0">主旨</th>
+     
+            <th style="width:40%;background-color:#f8ede0">圖片</th>
 
-            <th style="width:30% ;background-color:#f8ede0">內容</th>
+            <th style="width:40% ;background-color:#f8ede0">主旨</th>
 
+            <th style="width:10%;background-color:#f8ede0">編輯</th>
             <th style="width:10%;background-color:#f8ede0">刪除</th>
           </tr>';
 
 
 
                     echo '<tr>';
-                    echo "<td style='padding-top:23px'>{$row['subject']}</td>";
+                
                    
-                    echo "<td style='padding-top:23px'>{$row['text']}</td>";
-                    echo "<td><a href='../api/message.php?id={$row['id']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
-                  
+                    echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='300px' class='mb-3'></td>";
+                    echo "<td style='padding-top:23px'>{$row['content']}</td>";
+                    echo "<td><a href='article_editing.php?do=articles&&edit&&id={$row['id']}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
+                    echo "<td><a href='../api/back_del_article.php?id={$row['id']}'><input class='btn btn-danger mt-5 mb-5' type='button' value='刪除'></a></td>";
 
 
                   echo '</table>';
@@ -163,23 +168,6 @@ include_once "../api/db.php"
                 ?>
 
 
-
-            </table>
-            <table>
-<br>
-              <tr>
-
-
-                <div class="d-flex">
-                <!-- <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改"> -->
-                  
-                </div>
-                <hr>
-              </tr>
-
-            </table>
-  
-
           </form>
 
                 <?php
@@ -187,12 +175,10 @@ include_once "../api/db.php"
                 }
           ?>  
         </div>
-
+<br<br><br>
     </div>
 
   </div>
-
-
 
   <!-- content end -->
   </main>

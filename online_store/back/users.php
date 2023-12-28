@@ -1,3 +1,4 @@
+<style></style>
 <?php
 include_once "../api/db.php"
 ?>
@@ -24,7 +25,7 @@ include_once "../api/db.php"
 
   <style>
 
-    .bd-placeholder-img {
+.bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
       -webkit-user-select: none;
@@ -37,7 +38,6 @@ include_once "../api/db.php"
         font-size: 3.5rem;
       }
     }
-
 
 
     table,

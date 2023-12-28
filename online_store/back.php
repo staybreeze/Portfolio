@@ -79,7 +79,7 @@ if (empty($_SESSION['admin']) && (!isset($_GET['profile']))) {
                 </div></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="./back/articles.php?do=articles&&add">
                 <div class="nav-border"><i class="fa-solid fa-book-open"></i>
                 &nbsp;文章管理
                 </div></a>

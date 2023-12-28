@@ -37,7 +37,7 @@ include_once "../api/db.php"
       }
     }
 
-    .good-border {
+    .dotted-border {
       border: 1px dotted brown;
     }
   </style>
@@ -82,7 +82,7 @@ include_once "../api/db.php"
 
           <form action="../api/back_goods.php" method="post" class="mt-5" enctype="multipart/form-data">
     
-    <div class="container good-border">
+    <div class="container dotted-border">
       <div class="row mt-3">
         <div class="col-1"></div>
         <div class="col-6">
@@ -94,7 +94,7 @@ include_once "../api/db.php"
         </div>
       </div>
 
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-1">
           <div class="input-group mb-3">
 
@@ -173,7 +173,7 @@ include_once "../api/db.php"
             ?>
           <form action="../api/back_goods.php" method="post" class="mt-5 mb-5" enctype="multipart/form-data">
     
-              <div class="container good-border">
+              <div class="container dotted-border">
                 <div class="row mt-3">
                   <div class="col-1"></div>
                   <div class="col-6">
