@@ -71,57 +71,30 @@ include "./inc/header_aboutUs_articles.php"
   <!-- ---- -->
   <div class="container">
     <div class="d-flex flex-wrap row" >
+    <?php
+      $articles=$Article->all();
+
+      foreach($articles as $article){
+      ?>
       <div class="col-md-8 col-lg-6  col-xl-4 mt-5">
-        <h3 class="h3">&nbsp;幼貓照護指南：啟蒙與關愛的開始</h3>
-        <a href="./articles/article_1.php"><img class="pt-3" src="./img/kitten.jpg" alt="" width="375px"
+
+
+        <h3 class="h3">&nbsp;<?=$article['title'];?></h3>
+        <a href="./articles/<?=$article['time'];?>.php"><img class="pt-3" src="./img/<?=$article['img'];?>" alt="" width="375px"
             height="300px"></a>
 
-        <a href="./articles/article_1.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
-
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 mt-5">
-        <h3 class="h3">&nbsp;成貓照護指南：健康與活力的秘訣</h3>
-        <a href="./articles/article_2.php"><img class="pt-3" src="./img/adult.jpg" alt="" width="375px" height="300px"></a>
-
-        <a href="./articles/article_2.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
-
-
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 mt-5">
-        <h3 class="h3">&nbsp;老貓照護指南：柔情伴隨，溫馨陪伴</h3>
-        <a href="./articles/article_3.php"><img class="pt-3" src="./img/cat4.jpg" alt="" width="375px" height="300px"></a>
-
-        <a href="./articles/article_3.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
-
-        </div>
-      <div class="col-md-8 col-lg-6  col-xl-4 mt-5">
-        <h3 class="h3">&nbsp;從幼到老：貓咪生命的三個重要階段</h3>
-        <a href="./articles/article_4.php"><img class="pt-3" src="./img/cat11.webp" alt="" width="375px" height="300px"></a>
-
-        <a href="./articles/article_4.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
-
-
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 mt-5">
-        <h3 class="h3">&nbsp;探索貓咪的時光隧道</h3>
-        <a href="./articles/article_5.php"><img class="pt-3" src="./img/cat2.jpeg" alt="" width="375px" height="300px"></a>
-
-        <a href="./articles/article_5.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
-
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 mt-5">
-        <h3 class="h3">&nbsp;貓咪的皮膚護理學問</h3>
-        <a href="./articles/article_6.php"><img class="pt-3" src="./img/cat3.webp" alt="" width="375px" height="300px"></a>
-
-        <a href="./articles/article_6.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
-
+        <a href="./articles/<?=$article['time'];?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
 
       </div>
 
+<?php
+      }
+      ?>
     </div>
   </div>
-
+      
   <?php
+      
 include "./inc/login_form.php"
 ?>
   
