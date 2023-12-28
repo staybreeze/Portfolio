@@ -81,10 +81,12 @@ include_once "../api/db.php"
       font-size: 20px;
       color: crimson;
     }
-.user-total-price{
-  color:brown;
-  font-size: 20px;
-}
+
+    .user-total-price {
+      color: brown;
+      font-size: 20px;
+    }
+
     .underline {
       text-decoration: underline;
     }
@@ -130,21 +132,23 @@ include_once "../api/db.php"
           $users = $User->all();
 
           foreach ($users as $user) {
-            // 獲得當前USER的CART
+            // 尋找符合條件的資料
             $cart = $Customer->all(['customer_acc' => $user['acc']], 'ORDER BY product_id ASC');
 
-            // 初始化
-            $userTotalPrice = 0;
+            // 檢查是否找到資料
+            if ($cart) {
+              // 初始化
+              $userTotalPrice = 0;
           ?>
-            <form method="post" action="../api/back_orders.php" style="margin-left:95px;margin-top:50px">
-              <table>
-                <tr>
-                  <?php
-                  echo "<p style='font-size:20px'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
-                  echo "<input type='hidden' name='acc' value='{$user['acc']}'>";
+              <form method="post" action="../api/back_orders.php" style="margin-left:95px;margin-top:50px">
+                <table>
+                  <tr>
+                <?php
+                echo "<p style='font-size:20px'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
+                echo "<input type='hidden' name='acc' value='{$user['acc']}'>";
 
-                  echo '<table class="table">';
-                  echo '<tr class="th-update text-center" style="height:30px">
+                echo '<table class="table">';
+                echo '<tr class="th-update text-center" style="height:30px">
                           <th style="width:8%;background-color:#f8ede0">ID</th>
                           <th style="width:10% ;background-color:#f8ede0">圖片</th>
                           <th style="width:30% ;background-color:#f8ede0">商品</th>
@@ -154,116 +158,136 @@ include_once "../api/db.php"
                           <th style="width:10%;background-color:#f8ede0">刪除</th>
                         </tr>';
 
-                  foreach ($cart as $cartItem) {
-                    $row = $Good->find(['id' => $cartItem['product_id']]);
+                foreach ($cart as $cartItem) {
+                  $row = $Good->find(['id' => $cartItem['product_id']]);
 
-                    echo '<tr>';
-                    echo "<td>{$row['id']}</td>";
-                    echo "<td><img src='../img/{$row['img']}' width='50px' alt=''></td>";
-                    echo "<td>{$row['name']}</td>";
-                    echo "<td class='price'>{$row['price']}</td>";
-                    echo "<td><input type='number' style='text-align:center' class='quantity-input' name='number[]' value='{$cartItem['quantity']}'></td>";
-                    echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
-                    $total = $cartItem['quantity'] * $row['price'];
-                    echo "<td class='subtotal' id='subtotal_{$user['acc']}_{$row['id']}'>{$total}</td>";
+                  echo '<tr>';
+                  echo "<td>{$row['id']}</td>";
+                  echo "<td><img src='../img/{$row['img']}' width='50px' alt=''></td>";
+                  echo "<td>{$row['name']}</td>";
+                  echo "<td class='price'>{$row['price']}</td>";
+                  echo "<td><input type='number' style='text-align:center' class='quantity-input' name='number[]' value='{$cartItem['quantity']}'></td>";
+                  echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
+                  $total = $cartItem['quantity'] * $row['price'];
+                  echo "<td class='subtotal' id='subtotal_{$user['acc']}_{$row['id']}'>{$total}</td>";
 
-                    echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
-                    echo '</tr>';
-                    $userTotalPrice += $total;
-                  }
+                  echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
+                  echo '</tr>';
+                  $userTotalPrice += $total;
+                }
 
-                  echo '</table>';
-                  echo "<p style='margin-left:1100px;font-size:20px;margin-top:50px' class='user-total-price' id='userTotal'>總價：<span class='underline total-price'>{$userTotalPrice}</span>元</p>";
-                  $totalPrice += $userTotalPrice;
-                  ?>
-                </tr>
-              </table>
-              <table>
-                <br>
-                <tr>
-                  <div class="d-flex">
-                    <input class="btn myBtn mt-5" style="margin-left:1310px " type="submit" value="修改">
-                  </div>
-                  <hr>
-                </tr>
-              </table>
-            </form>
-          <?php
-          }
-          echo "<p class='total-price' id='totalPrice'><b>總訂單總價：<span class='underline'>{$totalPrice}</span>元</p>";
-          ?>
+                echo '</table>';
+                echo "<p style='margin-left:1100px;font-size:20px;margin-top:50px' class='user-total-price' data-username='{$user['acc']}' id='userTotal'>總價：<span class='underline total-price'>{$userTotalPrice}</span>元</p>";
+
+                $totalPrice += $userTotalPrice;
+              }
+            }
+                ?>
+
+                  </tr>
+                </table>
+                <table>
+                  <br>
+                  <tr>
+                    <div class="d-flex">
+                      <input class="btn myBtn mt-5" style="margin-left:1310px " type="submit" value="修改">
+                    </div>
+                    <hr>
+                  </tr>
+                </table>
+              </form>
+              <?php
+
+              echo "<p class='total-price' id='totalPrice'><b>總訂單總價：<span class='underline'>{$totalPrice}</span>元</p>";
+              ?>
         </div>
 
       </main>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const numberInputs = document.querySelectorAll('.quantity-input');
+      const priceElements = document.querySelectorAll('.price');
+      const totalElements = document.querySelectorAll('.subtotal');
+      const userPriceElements = document.querySelectorAll('.user-total-price'); // 使用者總價元素的類別
+      const totalPriceElement = document.getElementById('totalPrice');
+      const userNames = Array.from(userPriceElements).map(element => {
+        return element.getAttribute('data-username');
+      });
 
+      let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
+      let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
+
+      function updateTotals(index) {
+        // 檢查數量和價格是否是有效數字
+        if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
+          let itemTotal = itemPrices[index] * itemNumbers[index];
+
+          totalElements[index].innerText = itemTotal;
+
+          updateGrandTotal();
+          updateUserTotal();
+        }
+      }
+
+      function updateUserTotal() {
+  const userNames = Array.from(userPriceElements).map(element => {
+    return element.getAttribute('data-username');
+  });
+
+  userPriceElements.forEach((userPriceElement, index) => {
+    let totalElementsForUser = Array.from(totalElements)
+      .filter(element => {
+        const userName = userNames[index];
+        return element.id.startsWith(`subtotal_${userName}`);
+      });
+
+    let userTotal = totalElementsForUser
+      .map(element => {
+        let value = parseFloat(element.innerText);
+        return isNaN(value) ? 0 : value;
+      })
+      .reduce((acc, value) => acc + value, 0);
+
+    userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
+  });
+}
+
+
+
+
+
+
+      function updateGrandTotal() {
+        // 使用 parseFloat 過濾出有效數字，並排除 NaN
+        let grandTotal = Array.from(totalElements)
+          .map(element => parseFloat(element.innerText))
+          .filter(value => !isNaN(value))
+          .reduce((acc, value) => acc + value, 0);
+
+        // console.log(`Grand Total: ${grandTotal}`); // 新增這行用於輸出總訂單總價
+        totalPriceElement.innerHTML = `<b>總訂單總價：<span class='underline'>${grandTotal}</span>元</b>`;
+      }
+
+      numberInputs.forEach((input, index) => {
+        input.addEventListener('input', function() {
+          // 檢查數量是否小於1，如果是，將其設置為1
+          itemNumbers[index] = Math.max(1, parseInt(input.value));
+          input.value = itemNumbers[index]; // 更新輸入欄位的值
+          updateTotals(index);
+        });
+      });
+
+      // 最初更新總計
+      Array.from(totalElements).forEach((element, index) => {
+        updateTotals(index);
+      });
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="../js/back.js"></script>
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const numberInputs = document.querySelectorAll('.quantity-input');
-  const priceElements = document.querySelectorAll('.price');
-  const totalElements = document.querySelectorAll('.subtotal');
-  const userPriceElements = document.querySelectorAll('.user-total-price'); // 使用者總價元素的類別
-  const totalPriceElement = document.getElementById('totalPrice');
-
-  let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
-  let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
-
-  function updateTotals(index) {
-    // 檢查數量和價格是否是有效數字
-    if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
-      let itemTotal = itemPrices[index] * itemNumbers[index];
-
-      totalElements[index].innerText = itemTotal;
-
-      updateGrandTotal();
-      updateUserTotal();
-    }
-  }
-
-  function updateUserTotal() {
-    userPriceElements.forEach((userPriceElement, index) => {
-      let userTotal = Array.from(totalElements)
-        .filter((_, i) => i % userPriceElements.length === index) // 選擇屬於特定使用者的總價元素
-        .map(element => parseFloat(element.innerText))
-        .filter(value => !isNaN(value))
-        .reduce((acc, value) => acc + value, 0);
-
-      console.log(`User ${index + 1} Total: ${userTotal}`); // 新增這行用於輸出使用者總價
-      userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
-    });
-  }
-
-  function updateGrandTotal() {
-    // 使用 parseFloat 過濾出有效數字，並排除 NaN
-    let grandTotal = Array.from(totalElements)
-      .map(element => parseFloat(element.innerText))
-      .filter(value => !isNaN(value))
-      .reduce((acc, value) => acc + value, 0);
-
-    console.log(`Grand Total: ${grandTotal}`); // 新增這行用於輸出總訂單總價
-    totalPriceElement.innerHTML = `<b>總訂單總價：<span class='underline'>${grandTotal}</span>元</b>`;
-  }
-
-  numberInputs.forEach((input, index) => {
-    input.addEventListener('input', function() {
-      // 檢查數量是否小於1，如果是，將其設置為1
-      itemNumbers[index] = Math.max(1, parseInt(input.value));
-      input.value = itemNumbers[index]; // 更新輸入欄位的值
-      updateTotals(index);
-    });
-  });
-
-  // 最初更新總計
-  Array.from(totalElements).forEach((element, index) => {
-    updateTotals(index);
-  });
-});
-
-  </script>
 </body>
 
 </html>
