@@ -130,7 +130,7 @@ $title=$article['title'];
     header("Location: ../back/articles_edit.php?do=articles&&edit");
   } else {
     echo "文章新增失敗！";
-    header("Location: ../back/articles.php?do=articles&&add");
+    header("Location:../back/articles_edit.php?do=articles&&edit");
   }
 } else {
   header("Location: add_article_form.php");
