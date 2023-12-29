@@ -40,6 +40,27 @@ include_once "../api/db.php"
     .dotted-border {
       border: 1px dotted brown;
     }
+    .pages{
+
+      margin-left:30px;
+      font-size: large;
+      border:3px dotted goldenrod;
+      color:brown;
+      text-decoration: none;
+      width:30px;
+      text-align: center;
+    }
+    .pages:hover{
+      background-color: gainsboro;
+    }
+    .ms-80{
+      margin-left:82px
+      
+    }
+    a{
+      text-decoration: none;
+      color:brown;
+    }
   </style>
 
   </style>
@@ -81,98 +102,127 @@ include_once "../api/db.php"
           <h4 class="mt-5 color-gray" style="margin-left:95px">新增</h4>
 
           <form action="../api/back_goods.php" method="post" class="mt-5" enctype="multipart/form-data">
-    
-    <div class="container dotted-border">
-      <div class="row mt-3">
-        <div class="col-1"></div>
-        <div class="col-6">
-  
-        </div>
-        <div class="col-5">
-          <h5 class="">選擇新圖片</h5>
-          <input type="file" name="img" id="">
-        </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-1">
-          <div class="input-group mb-3">
+            <div class="container dotted-border">
+              <div class="row mt-3">
+                <div class="col-1"></div>
+                <div class="col-6">
 
-            <span class="input-group-text bold">ID</span>
-            <input type="text" class="form-control" name="id" value="" disabled>
-<input type="hidden" name="id" value="">
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="input-group mb-3">
+                </div>
+                <div class="col-5">
+                  <h5 class="">選擇新圖片</h5>
+                  <input type="file" name="img" id="">
+                </div>
+              </div>
 
-            <span class="input-group-text bold">商品名稱</span>
-            <input type="text" class="form-control" name="name[]" value="">
+              <div class="row mt-3">
+                <div class="col-1">
+                  <div class="input-group mb-3">
 
-          </div>
-        </div>
+                    <span class="input-group-text bold">ID</span>
+                    <input type="text" class="form-control" name="id" value="" disabled>
+                    <input type="hidden" name="id" value="">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="input-group mb-3">
 
-        <div class="col-3">
-          <div class="input-group mb-3">
+                    <span class="input-group-text bold">商品名稱</span>
+                    <input type="text" class="form-control" name="name[]" value="">
 
-            <span class="input-group-text bold">數量</span>
-            <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quantity[]" id="" value="">
+                  </div>
+                </div>
 
-          </div>
-        </div>
+                <div class="col-3">
+                  <div class="input-group mb-3">
 
-        <div class="col-2 pe-5">
-          <div class="input-group mb-3 mt-2">
+                    <span class="input-group-text bold">數量</span>
+                    <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="quantity[]" id="" value="">
 
-            <label for="" class="fs-6">是否為新品</label>
-            <input type="checkbox" style="border:1px solid gray;margin-left:20px" name="new[]" value="" >
+                  </div>
+                </div>
 
-          </div>
-        </div>
+                <div class="col-2 pe-5">
+                  <div class="input-group mb-3 mt-2">
 
-      </div>
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-3">
-          <div class="input-group mb-3">
+                    <label for="" class="fs-6">是否為新品</label>
+                    <input type="checkbox" style="border:1px solid gray;margin-left:20px" name="new[]" value="">
 
-            <span class="input-group-text bold">原價</span>
-            <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="old_price[]" id="" value="">
+                  </div>
+                </div>
 
-          </div>
-        </div>
+              </div>
+              <div class="row">
+                <div class="col-1"></div>
+                <div class="col-3">
+                  <div class="input-group mb-3">
 
-        <div class="col-3 pe-2">
-          <div class="input-group mb-3 discount">
+                    <span class="input-group-text bold">原價</span>
+                    <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="old_price[]" id="" value="">
 
-            <span class="input-group-text bold">折扣</span>
-            <input type="number" style="border:1px solid lightgray; " placeholder="" name="discount[]" id="" value="">
-            <span style="padding: 8px; background-color: lightgray;border-radius:0px 5px 5px 0px">%</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="input-group mb-3">
+                  </div>
+                </div>
 
-            <span class="input-group-text bold">售價</span>
-            <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="" id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
+                <div class="col-3 pe-2">
+                  <div class="input-group mb-3 discount">
 
-          </div>
-        </div>
+                    <span class="input-group-text bold">折扣</span>
+                    <input type="number" style="border:1px solid lightgray; " placeholder="" name="discount[]" id="" value="">
+                    <span style="padding: 8px; background-color: lightgray;border-radius:0px 5px 5px 0px">%</span>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="input-group mb-3">
 
-      </div>
-    </div>
-    <input class="btn myBtn-gold mt-2" style="margin-left:1350px " type="submit" value="送出">
+                    <span class="input-group-text bold">售價</span>
+                    <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="" id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
 
-</form>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <input class="btn myBtn-gold mt-2" style="margin-left:1350px " type="submit" value="送出">
+
+          </form>
           <h4 class="mt-5 color-gray" style="margin-left:95px">編輯</h4>
-        <?php
+          <?php
+          $total = count($Good->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
+          $div = 5;
+          $pages = ceil($total / $div);
+          $now = $_GET['p'] ?? 1;
+          $start = ($now - 1) * $div;
+          $goods = $Good->all('', " limit $start,$div");
 
-            $goods = $Good->all();
-            foreach ($goods as  $good) {
+          
+       
+          // if ($now > 1) {
+          //   $prev = $now - 1;
+          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
+          // }
+echo "<div class='d-flex ms-80 mt-4'>";
+          for ($i = 1; $i <= $pages; $i++) {
+            // $fontsize = ($now == $i) ? '24px' : '16px';
+     
+            echo "<a href='?do=goods&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+      
+          }
+          // if ($now < $pages) {
+          //   $next = $now + 1;
+          //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
+          // }
+         
+          echo "</div>";
 
-            ?>
-          <form action="../api/back_goods.php" method="post" class="mt-5 mb-5" enctype="multipart/form-data">
-    
+          foreach ($goods as $good) {
+            // 循環內容
+
+
+
+          ?>
+     
+            <form action="../api/back_goods.php" method="post" class="mt-2 mb-5" enctype="multipart/form-data">
+
               <div class="container dotted-border">
                 <div class="row mt-3">
                   <div class="col-1"></div>
@@ -192,7 +242,7 @@ include_once "../api/db.php"
 
                       <span class="input-group-text bold">ID</span>
                       <input type="text" class="form-control" name="id" value="<?= $good['id']; ?>" disabled>
-<input type="hidden" name="id" value="<?= $good['id']; ?>">
+                      <input type="hidden" name="id" value="<?= $good['id']; ?>">
                     </div>
                   </div>
                   <div class="col-6">
@@ -246,21 +296,23 @@ include_once "../api/db.php"
                     <div class="input-group mb-3">
 
                       <span class="input-group-text bold">售價</span>
-                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="<?= $good['old_price'] * (1 - $good['discount'] / 100); ?>"  id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px" name="price" value="<?= $good['old_price'] * (1 - $good['discount'] / 100); ?>" id="" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舊價格 x 折扣數">
 
                     </div>
                   </div>
 
                 </div>
               </div>
-   
-                <div class="d-flex">
-              <a href="../api/back_goods.php?del=<?=$good['id'];?>"><input class="btn btn-danger mt-2" type="button"style="margin-left:1272px " value="刪除"></a>
-              <input class="btn myBtn mt-2" style="margin-left:20px " type="submit" value="送出">
-</div>
-          </form> <?php
-                }
-                  ?>
+
+              <div class="d-flex">
+                <a href="../api/back_goods.php?del=<?= $good['id']; ?>"><input class="btn btn-danger mt-2" type="button" style="margin-left:1272px " value="刪除"></a>
+                <input class="btn myBtn mt-2" style="margin-left:20px " type="submit" value="送出">
+              </div>
+
+            </form> <?php
+                  }
+                    ?>
+
         </div>
 
     </div>

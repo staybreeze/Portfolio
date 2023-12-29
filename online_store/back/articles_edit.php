@@ -68,6 +68,27 @@ include_once "../api/db.php"
       text-align: center;
       margin: auto;
     }
+    .pages{
+
+margin-left:30px;
+font-size: large;
+border:3px dotted goldenrod;
+color:brown;
+text-decoration: none;
+width:30px;
+text-align: center;
+}
+.pages:hover{
+background-color: gainsboro;
+}
+.ms-20{
+margin-left:21px
+
+}
+a{
+text-decoration: none;
+color:brown;
+}
   </style>
 
 
@@ -122,7 +143,35 @@ include_once "../api/db.php"
         
           <?php
 
-                $rows = $Article->all();
+    
+
+              
+                $total = count($Article->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
+                $div = 5;
+                $pages = ceil($total / $div);
+                $now = $_GET['p'] ?? 1;
+                $start = ($now - 1) * $div;
+                $rows = $Article->all('', " limit $start,$div");
+      
+                
+             
+                // if ($now > 1) {
+                //   $prev = $now - 1;
+                //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
+                // }
+      echo "<div class='d-flex ms-20 mt-4'>";
+                for ($i = 1; $i <= $pages; $i++) {
+                  // $fontsize = ($now == $i) ? '24px' : '16px';
+           
+                  echo "<a href='?do=goods&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+            
+                }
+                // if ($now < $pages) {
+                //   $next = $now + 1;
+                //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
+                // }
+               
+                echo "</div>";
 
                 foreach ($rows as $row) {
                   // 獲得當前USER的CART
