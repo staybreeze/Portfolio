@@ -51,10 +51,10 @@ include_once "../api/db.php"
       text-align: center;
     }
     .pages:hover{
-      background-color: gainsboro;
+      background-color: beige;
     }
     .currentPage{
-  background-color: gainsboro;
+      background-color: beige;
   margin-left:30px;
 font-size: large;
 border:3px dotted goldenrod;
