@@ -26,7 +26,7 @@
                     echo "nav-link";
                 }
                 ?>"
-                href="articles_edit.php?do=articles&&edit">
+                href="articles_edit.php?do=articles&edit">
                 <div class="nav-border"><i class="fa-solid fa-book-open"></i>
                 &nbsp;文章管理
                </div> </a>

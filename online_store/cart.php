@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateTotals(index) {
     // 檢查數量和價格是否是有效數字
-    if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
+    if (!isNaN(itemNumbers[index]) & !isNaN(itemPrices[index])) {
       let itemTotal = itemPrices[index] * itemNumbers[index];
       totalElements[index].innerText = itemTotal;
       updateGrandTotal();

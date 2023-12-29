@@ -7,7 +7,6 @@ $time=$_POST['time'];
 $fileToDelete = "../articles/{$time}.php";
 
 
-
 if (file_exists($fileToDelete)) {
 
     if (unlink($fileToDelete)) {

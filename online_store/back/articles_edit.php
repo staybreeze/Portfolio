@@ -129,12 +129,12 @@ color:brown;
           <h2 class="title">文章管理</h2>
           <div class="d-flex">
 
-<a href="./articles.php?do=articles&&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>
+<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>
 <?php
             if(isset($_GET['edit'])){
-          echo    '<a href="./articles.php?do=articles&&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
+          echo    '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
             }else{
-              echo    '<a href="./articles.php?do=articles&&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
+              echo    '<a href="./articles.php?do=articles&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
             }
             
             ?>
@@ -163,7 +163,7 @@ color:brown;
                 for ($i = 1; $i <= $pages; $i++) {
                   // $fontsize = ($now == $i) ? '24px' : '16px';
            
-                  echo "<a href='?do=goods&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+                  echo "<a href='articles_edit.php?do=articles&edit&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
             
                 }
                 // if ($now < $pages) {
@@ -208,8 +208,8 @@ color:brown;
                     echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='300px' class='mb-3'></td>";
                     echo "<td style='padding-top:23px'>{$row['title']}</td>";
                     echo "<td style='padding-top:23px'>{$row['content']}</td>";
-                    echo "<td><a href='article_editing.php?do=articles&&edit&&id={$row['id']}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
-                    echo "<td><a href='../api/back_del_article.php?id={$row['id']}&&time={$row['time']}'><input class='btn btn-danger mt-5 mb-5' type='button' value='刪除'></a></td>";
+                    echo "<td><a href='article_editing.php?do=articles&edit&id={$row['id']}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
+                    echo "<td><a href='../api/back_del_article.php?id={$row['id']}&time={$row['time']}'><input class='btn btn-danger mt-5 mb-5' type='button' value='刪除'></a></td>";
 
 
                   echo '</table>';

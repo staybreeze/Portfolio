@@ -117,11 +117,11 @@ if (isset($_GET['name'])) {
 $title=$article['title'];
   $content = $article['content'];
   $imgFilename = $article['img'];
-
+$time=$article['time'];
 
 
   // if (!empty($title) && !empty($content)) {
-  $filename = "../articles/" . time() . ".php";
+  $filename = "../articles/" . $time . ".php";
   $articleContent = generateHTML($title, $content, $imgFilename);
 
 

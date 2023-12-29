@@ -114,6 +114,12 @@ include_once "../api/db.php"
       text-decoration: none;
       color: brown;
     }
+    .gold-border{
+      border:2px dotted burlywood;
+      border-left:20px solid burlywood;
+      text-align: left;
+
+    }
   </style>
 
 
@@ -150,38 +156,62 @@ include_once "../api/db.php"
 
         <div class="container-fluid mt-3">
           <h2 class="title">訂單管理</h2>
-
           <?php
-          $totalPrice = 0;
-          $user = $User->all();
 
           $customerAccArray = array_column($Customer->all('customer_acc'), 'customer_acc');
           $uniqueCustomerAccArray = array_unique($customerAccArray);
-          $total = count($uniqueCustomerAccArray);
-          $div = 2;
-          $pages = ceil($total / $div);
-          $now = $_GET['p'] ?? 1;
-          $start = ($now - 1) * $div;
-          $users = $User->all('', " limit $start,$div");
+
+          $totalOrders = count($uniqueCustomerAccArray);
+          echo "<div class='gold-border mt-5'><p class='total-price mt-3'><b>訂單數：共<span class='underline'> {$totalOrders} </span>筆</b></p>";
+          echo "<p class='total-price' id='totalPrice'><b>總訂單金額：<span class='underline'></span>元</p></div>";
+          ?>
+
+          <?php
+          // $totalPrice = 0;
+          // $user = $User->all();
+
+          // $customerAccArray = array_column($Customer->all('customer_acc'), 'customer_acc');
+          // $uniqueCustomerAccArray = array_unique($customerAccArray);
+          // $total = count($uniqueCustomerAccArray);
+          $totalPrice = 0;
+          $users = $User->all();
+
+
+          //       foreach ($user as $userInfo) {
+          // if (isset($userInfo['acc'])) {
+          //     $accValue = $userInfo['acc'];
+          //     // 在這裡你可以使用 $accValue 做進一步的處理
+          //     echo "User acc: $accValue <br>";
+          // } else {
+          //     // 如果 "acc" 鍵不存在，進行相應的處理，例如給一個默認值或顯示錯誤信息
+          //     echo "Error: 'acc' key not found in user info.<br>";
+          // }}
+          //       // 獲取所有不同 customer_acc 的數量
+          //       $total = count($Customer->all(['customer_acc' => $userInfo['acc']]));
+          //       $div = 2;
+          //       $pages = ceil($total / $div);
+          //       $now = $_GET['p'] ?? 1;
+          //       $start = ($now - 1) * $div;
+          //       $users = $User->all('', " limit $start,$div");
 
 
 
-          // if ($now > 1) {
-          //   $prev = $now - 1;
-          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
-          // }
-          echo "<div class='d-flex ms-80 mt-5'>";
-          for ($i = 1; $i <= $pages; $i++) {
-            // $fontsize = ($now == $i) ? '24px' : '16px';
+          //       // if ($now > 1) {
+          //       //   $prev = $now - 1;
+          //       //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
+          //       // }
+          //       echo "<div class='d-flex ms-80 mt-5'>";
+          //       for ($i = 1; $i <= $pages; $i++) {
+          //         // $fontsize = ($now == $i) ? '24px' : '16px';
 
-            echo "<a href='?do=orders&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
-          }
-          // if ($now < $pages) {
-          //   $next = $now + 1;
-          //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
-          // }
+          //         echo "<a href='?do=orders&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+          //       }
+          //       // if ($now < $pages) {
+          //       //   $next = $now + 1;
+          //       //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
+          //       // }
 
-          echo "</div>";
+          //       echo "</div>";
 
 
           foreach ($users as $user) {
@@ -190,15 +220,15 @@ include_once "../api/db.php"
             // 尋找符合條件的資料
             $cart = $Customer->all(['customer_acc' => $user['acc']], 'ORDER BY product_id ASC');
 
-          //   if (!$cart) {
-          //     echo "Query failed.";
- 
-          // } else {
-          //     echo "<pre>";
-          //     print_r($cart);
-          //     echo "<pre>";
+            // if (!$cart) {
+            //   echo "Query failed.";}
 
-          // }
+            // } else {
+            //     echo "<pre>";
+            //     print_r($cart);
+            //     echo "<pre>";
+
+            // }
 
             if ($cart) {
 
@@ -208,7 +238,7 @@ include_once "../api/db.php"
                 <table>
                   <tr>
                     <?php
-                    echo "<p style='font-size:20px'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
+                    echo "<p style='font-size:20px;font-weight:400'>訂單帳號：<span class='underline'>{$user['acc']}</span></p>";
                     echo "<input type='hidden' name='acc' value='{$user['acc']}'>";
 
                     echo '<table class="table">';
@@ -235,7 +265,7 @@ include_once "../api/db.php"
                       $total = $cartItem['quantity'] * $row['price'];
                       echo "<td class='subtotal' id='subtotal_{$user['acc']}_{$row['id']}'>{$total}</td>";
 
-                      echo "<td><a href='../api/del_good.php?id={$row['id']}&&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
+                      echo "<td><a href='../api/del_good.php?id={$row['id']}&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
                       echo '</tr>';
                       $userTotalPrice += $total;
                     }
@@ -263,7 +293,6 @@ include_once "../api/db.php"
           <?php
             }
           }
-          echo "<p class='total-price' id='totalPrice'><b>總訂單總價：<span class='underline'>{$totalPrice}</span>元</p>";
           ?>
         </div>
 
@@ -286,7 +315,7 @@ include_once "../api/db.php"
 
       function updateTotals(index) {
         // 檢查數量和價格是否是有效數字
-        if (!isNaN(itemNumbers[index]) && !isNaN(itemPrices[index])) {
+        if (!isNaN(itemNumbers[index]) & !isNaN(itemPrices[index])) {
           let itemTotal = itemPrices[index] * itemNumbers[index];
 
           totalElements[index].innerText = itemTotal;
@@ -332,7 +361,7 @@ include_once "../api/db.php"
           .reduce((acc, value) => acc + value, 0);
 
         // console.log(`Grand Total: ${grandTotal}`); // 新增這行用於輸出總訂單總價
-        totalPriceElement.innerHTML = `<b>總訂單總價：<span class='underline'>${grandTotal}</span>元</b>`;
+        totalPriceElement.innerHTML = `<b>總訂單金額：<span class='underline'>${grandTotal}</span>元</b>`;
       }
 
       numberInputs.forEach((input, index) => {

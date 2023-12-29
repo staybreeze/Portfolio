@@ -161,7 +161,7 @@ color:brown;
                 for ($i = 1; $i <= $pages; $i++) {
                   // $fontsize = ($now == $i) ? '24px' : '16px';
            
-                  echo "<a href='?do=goods&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+                  echo "<a href='?do=messages&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
             
                 }
                 // if ($now < $pages) {

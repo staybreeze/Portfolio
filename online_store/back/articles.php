@@ -109,13 +109,13 @@ include_once "../api/db.php"
           <div class="d-flex">
             <?php
             if (isset($_GET['add'])) {
-              echo    '<a href="./articles.php?do=articles&&add"><h4 class="mt-5 color-blue ms-95 mb-4 ">新增</h4></a>';
+              echo    '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-blue ms-95 mb-4 ">新增</h4></a>';
             } else {
-              echo    '<a href="./articles.php?do=articles&&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>';
+              echo    '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>';
             }
 
             ?>
-            <a href="./articles_edit.php?do=articles&&edit">
+            <a href="./articles_edit.php?do=articles&edit">
               <h4 class="mt-5 color-gray ms-4 mb-4">編輯</h4>
             </a>
           </div>
