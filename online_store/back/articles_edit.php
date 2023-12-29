@@ -81,6 +81,17 @@ text-align: center;
 .pages:hover{
 background-color: gainsboro;
 }
+.currentPage{
+  background-color: gainsboro;
+  margin-left:30px;
+font-size: large;
+border:3px dotted goldenrod;
+color:brown;
+text-decoration: none;
+width:30px;
+text-align: center;
+
+}
 .ms-20{
 margin-left:21px
 
@@ -163,7 +174,10 @@ color:brown;
                 for ($i = 1; $i <= $pages; $i++) {
                   // $fontsize = ($now == $i) ? '24px' : '16px';
            
-                  echo "<a href='articles_edit.php?do=articles&edit&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+                  $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
+                
+                
+                  echo "<a href='?do=articles&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
             
                 }
                 // if ($now < $pages) {
@@ -193,7 +207,7 @@ color:brown;
      
             <th style="width:30%;background-color:#f8ede0">圖片</th>
 
-            <th style="width:20% ;background-color:#f8ede0">主旨</th>
+            <th style="width:20% ;background-color:#f8ede0">標題</th>
 
             <th style="width:40% ;background-color:#f8ede0">內容</th>
             <th style="width:10%;background-color:#f8ede0">編輯</th>

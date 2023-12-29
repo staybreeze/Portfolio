@@ -94,6 +94,17 @@ text-align: center;
 .pages:hover{
 background-color: gainsboro;
 }
+.currentPage{
+  background-color: gainsboro;
+  margin-left:30px;
+font-size: large;
+border:3px dotted goldenrod;
+color:brown;
+text-decoration: none;
+width:30px;
+text-align: center;
+
+}
 .ms-80{
 margin-left:80px
 
@@ -159,11 +170,15 @@ color:brown;
                 // }
       echo "<div class='d-flex ms-80 mt-5'>";
                 for ($i = 1; $i <= $pages; $i++) {
-                  // $fontsize = ($now == $i) ? '24px' : '16px';
-           
-                  echo "<a href='?do=messages&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+                  // $herePage = ($now == $i) ? '24px' : '16px';
+               
+                    $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
+                
+                
+                  echo "<a href='?do=messages&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
             
                 }
+
                 // if ($now < $pages) {
                 //   $next = $now + 1;
                 //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";

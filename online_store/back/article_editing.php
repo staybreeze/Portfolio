@@ -130,7 +130,7 @@ include_once "../api/db.php"
               <h4 class=" color-brown  ms-95 ">標題</h4>
 
 
-              <input type="text" name="title" id="" value="<?= $article['title']; ?>" class=" ms-95" style="width:50%">
+              <input type="text" name="title" id="" value="<?= trim($article['title']); ?>" class=" ms-95" style="width:50%">
 
 
               </input>
@@ -138,7 +138,7 @@ include_once "../api/db.php"
               <h4 class="mt-5 color-brown ms-95">內容</h4>
               <textarea class="ms-95" name="content" style="width:80%">
 
-                <?= $article['content']; ?>
+                <?= trim($article['content']); ?>
             </textarea>
 
               <div class="d-flex mt-5">

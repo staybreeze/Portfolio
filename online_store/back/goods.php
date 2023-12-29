@@ -53,6 +53,17 @@ include_once "../api/db.php"
     .pages:hover{
       background-color: gainsboro;
     }
+    .currentPage{
+  background-color: gainsboro;
+  margin-left:30px;
+font-size: large;
+border:3px dotted goldenrod;
+color:brown;
+text-decoration: none;
+width:30px;
+text-align: center;
+
+}
     .ms-80{
       margin-left:82px
       
@@ -203,8 +214,10 @@ include_once "../api/db.php"
 echo "<div class='d-flex ms-80 mt-4'>";
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
-     
-            echo "<a href='?do=goods&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
+            $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
+                
+                
+            echo "<a href='?do=goods&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
       
           }
           // if ($now < $pages) {
