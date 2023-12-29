@@ -90,27 +90,30 @@ include_once "../api/db.php"
     .underline {
       text-decoration: underline;
     }
-    .pages{
 
-margin-left:30px;
-font-size: large;
-border:3px dotted goldenrod;
-color:brown;
-text-decoration: none;
-width:30px;
-text-align: center;
-}
-.pages:hover{
-background-color: gainsboro;
-}
-.ms-80{
-margin-left:80px
+    .pages {
 
-}
-a{
-text-decoration: none;
-color:brown;
-}
+      margin-left: 30px;
+      font-size: large;
+      border: 3px dotted goldenrod;
+      color: brown;
+      text-decoration: none;
+      width: 30px;
+      text-align: center;
+    }
+
+    .pages:hover {
+      background-color: gainsboro;
+    }
+
+    .ms-80 {
+      margin-left: 80px
+    }
+
+    a {
+      text-decoration: none;
+      color: brown;
+    }
   </style>
 
 
@@ -150,47 +153,55 @@ color:brown;
 
           <?php
           $totalPrice = 0;
-     
+          $user = $User->all();
 
-
-    
-
-              
-          $total = count($User->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
+          $customerAccArray = array_column($Customer->all('customer_acc'), 'customer_acc');
+          $uniqueCustomerAccArray = array_unique($customerAccArray);
+          $total = count($uniqueCustomerAccArray);
           $div = 2;
           $pages = ceil($total / $div);
           $now = $_GET['p'] ?? 1;
           $start = ($now - 1) * $div;
           $users = $User->all('', " limit $start,$div");
 
-          
-       
+
+
           // if ($now > 1) {
           //   $prev = $now - 1;
           //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
           // }
-echo "<div class='d-flex ms-80 mt-5'>";
+          echo "<div class='d-flex ms-80 mt-5'>";
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
-     
-            echo "<a href='?do=goods&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
-      
+
+            echo "<a href='?do=orders&p=$i' style='font-size:'><div class='pages ms-3'> $i</div> </a>";
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
           //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
           // }
-         
+
           echo "</div>";
 
 
           foreach ($users as $user) {
+
+
             // 尋找符合條件的資料
             $cart = $Customer->all(['customer_acc' => $user['acc']], 'ORDER BY product_id ASC');
 
-            // 檢查是否找到資料
+          //   if (!$cart) {
+          //     echo "Query failed.";
+ 
+          // } else {
+          //     echo "<pre>";
+          //     print_r($cart);
+          //     echo "<pre>";
+
+          // }
+
             if ($cart) {
-              // 初始化
+
               $userTotalPrice = 0;
           ?>
               <form method="post" action="../api/back_orders.php" style="margin-left:95px;margin-top:50px">
