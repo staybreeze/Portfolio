@@ -17,20 +17,33 @@ if (file_exists($fileToDelete)) {
 } else {
     echo "檔案不存在！";
 }
+
+echo "<br>";
+echo $_POST['originImg'];
+echo "<br>";
+
 $imgFilename = $_POST['img'];
-if (isset($_FILES['img']['tmp_name'])) {
+if (isset($_FILES['img']['tmp_name'])&&(!empty($_FILES['img']['tmp_name']))) {
     $imgFilename = $_FILES['img']['name'];
     move_uploaded_file($_FILES['img']['tmp_name'], "../img/" . $imgFilename);
-}
+    $Article->save([
+        'id'=>$_POST['id'],
+        'title' => $_POST['title'],
+        'content' =>$_POST['content'],
+        'img' =>$imgFilename,
+        'time'=> $time
+      ]);
+
+}else{
 
 
 $Article->save([
     'id'=>$_POST['id'],
     'title' => $_POST['title'],
     'content' =>$_POST['content'],
-    'img' =>$imgFilename,
+    'img' =>$_POST['originImg'],
     'time'=> $time
-  ]);
+  ]);}
 
   header("location:back_process_article.php?name={$_POST['title']}")
 ?>

@@ -144,7 +144,7 @@ include_once "../api/db.php"
               <div class="d-flex mt-5">
                 <h4 class="mt-5  ms-95 color-brown">上架中的圖片</h4>
                 <img src="../img/<?= $article['img']; ?>" class="ms-95 mb-5" width="300px" height="60%">
-
+                <input type="hidden" name="originImg" value="<?= $article['img']; ?>">
 
 
                 <h4 class="mt-5  ms-95 color-brown">選擇新圖片</h4>
