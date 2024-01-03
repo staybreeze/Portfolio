@@ -17,12 +17,18 @@ if (file_exists($fileToDelete)) {
 } else {
     echo "檔案不存在！";
 }
+$imgFilename = $_POST['img'];
+if (isset($_FILES['img']['tmp_name'])) {
+    $imgFilename = $_FILES['img']['name'];
+    move_uploaded_file($_FILES['img']['tmp_name'], "../img/" . $imgFilename);
+}
+
 
 $Article->save([
     'id'=>$_POST['id'],
     'title' => $_POST['title'],
     'content' =>$_POST['content'],
-    'img' =>$_POST['img'],
+    'img' =>$imgFilename,
     'time'=> $time
   ]);
 

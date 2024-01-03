@@ -121,7 +121,7 @@ include_once "../api/db.php"
           </div>
               
           <div class="dotted-border ms-95">
-        <form action="../api/back_add_article.php" method="post" class="mt-4">
+        <form action="../api/back_add_article.php" method="post" class="mt-4" enctype="multipart/form-data">
               <h4 class=" color-brown  ms-95 ">標題</h4>
 
          

@@ -126,7 +126,7 @@ include_once "../api/db.php"
 
           ?>
           <div class="dotted-border ms-95">
-            <form action="../api/back_edit_article.php" method="post" class="mt-4">
+            <form action="../api/back_edit_article.php" method="post" class="mt-4"  enctype="multipart/form-data">
               <h4 class=" color-brown  ms-95 ">標題</h4>
 
 
@@ -138,7 +138,7 @@ include_once "../api/db.php"
               <h4 class="mt-5 color-brown ms-95">內容</h4>
               <textarea class="ms-95" name="content" style="width:80%">
 
-                <?= trim($article['content']); ?>
+                <?=  trim($article['content']); ?>
             </textarea>
 
               <div class="d-flex mt-5">

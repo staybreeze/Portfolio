@@ -192,7 +192,7 @@ color:brown;
 
 
 ?>
-          <form method="post" action="../api/message.php" >
+          <form method="post" action="../api/message.php " enctype="multipart/form-data" >
             <table class="mt-3 w-95" >
 
 
