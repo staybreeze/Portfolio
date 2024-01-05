@@ -232,7 +232,7 @@
         font-family: Josefin Slab
     }
 
-    h3 {
+    h2 {
         color: #00707f;
         font-weight: bold;
         font-size: 30px;
@@ -241,12 +241,22 @@
         border-bottom: 1px solid#00707f;
     }
 
-    h3>span {
+    h2>span {
         font-size: 40px;
     }
 
+    h3 {
+        color: lightcoral;
+        font-size: 25px;
+        font-family: DotGothic16;
+        font-weight: 600;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-left: 15px solid lightcoral
+    }
+
     h4 {
-        color: goldenrod;
+        color: darkgoldenrod;
         font-size: large;
         font-family: DotGothic16
     }
@@ -254,7 +264,8 @@
     .section>div>h4,
     .section>h4 {
 
-        color: goldenrod;
+        color: darkgoldenrod;
+        opacity: 0.8;
         font-size: 23px;
         font-family: DotGothic16
     }
@@ -279,20 +290,28 @@
 
 
 
+
     .online_store_pic:hover {
-        width: 210%;
+        /* width: 210%; */
+        width: 100%;
         z-index: 1;
+
     }
 
     .remind {
-        margin-top: 80px;
+        text-align: end;
         color: crimson;
-        font-size: 25px;
+        font-size: 18px;
         font-family: DotGothic16
     }
 
+    .remind:hover{
+        color:#8bafb4;
+        font-weight:500;
+    }
     .calendar_pic:hover {
-        width: 170%;
+        /* width: 170%; */
+        width: 100%;
 
     }
 
@@ -425,19 +444,19 @@
         }
 
     }
-  
+
     @media screen and (max-width: 767px) {
         .none-abbr {
             display: none;
         }
+
         .abbr-td {
 
-            width:13.5%;
+            width: 13.5%;
             margin: auto;
-        text-align: center;
+            text-align: center;
         }
     }
-
 </style>
 
 </style>
@@ -487,13 +506,13 @@
         <div class="middle"></div>
         <div class="main">
             <!-- <div class="section" id="story">
-                <h3><span>S</span>tory</h3>
+                <h2><span>S</span>tory</h2>
                 <h4>從此踏上軟體工程師道路的藝術人...</h4>
 
                 <p class="mt-5">安安安</p>
             </div> -->
             <div class="section" style="margin-top:100px" id="about">
-                <h3><span>A</span>bout &nbsp; &nbsp; &nbsp;Wun-Sheng &nbsp;, &nbsp;Liao &nbsp;(&nbsp;WSL&nbsp;)</h3>
+                <h2><span>A</span>bout &nbsp; &nbsp; &nbsp;Wun-Sheng &nbsp;, &nbsp;Liao &nbsp;(&nbsp;WSL&nbsp;)</h2>
 
                 <table>
                     <tr>
@@ -597,10 +616,41 @@
     <div class="box mt-5">
 
 
-        <h3 id="web"><span>W</span>eb Design</h3>
+        <h2 id="web"><span>W</span>eb Design</h2>
+        <h3 class="mb-4">&nbsp;全端（Full-stack）</h3>
+        <h4  style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
         <div class="section" id="web" style="display: flex;">
 
             <div>
+
+
+                <h4 class="mt-2">前台</h4>
+                <a href="./online_store/index.php">
+                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
+                </a>
+
+            </div>
+            <div> </div>
+            <div>
+
+                <h4 class="ms-4 mt-2">後台</h4>
+
+                <a href="./online_store/back_login.php">
+                    <img class="mt-2 online_store_pic online_store_back_pic ms-4" src="./img/online_store3.jpg" width="95%" alt="">
+                </a>
+
+                <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
+                        <div class="remind pe-1">管理員帳密由<span style="text-decoration:underline"> WSL </span>提供，歡迎留言索取</div>
+                    </a></div>
+            </div>
+
+        </div>
+
+        <h2 id="web" class="mt-3"></h2>
+        <h3>&nbsp;前端（Front-end）</h3>
+        <div class="section" id="web" style="display: flex;">
+
+            <!-- <div>
 
                 <h4>購物商城網站</h4>
 
@@ -615,10 +665,35 @@
 
                 <a href="./calendar/index.php">
                     <img src="./img/calendar.jpg" width="100%" alt="" class="calendar_pic"></a>
-            </div>
+            </div> -->
+
         </div>
-        <div class="remind">點圖片可以直接到網站～～</div>
-        <h3 style="margin-top:40px" id="graphic"><span>G</span>raphic Design</h3>
+        <h2 id="web" class="mt-3"></h2>
+        <h3>&nbsp;後端（Back-end）</h3>
+        <div class="section" id="web" style="display: flex;">
+
+            <!-- <div>
+
+                <h4>購物商城網站</h4>
+
+                <a href="./online_store/index.php">
+                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="100%" alt="">
+                </a>
+
+            </div>
+            <div></div> -->
+            <div class="" style="margin-top:0px">
+                <h4>萬年暦</h4>
+
+                <a href="./calendar/index.php">
+                    <img src="./img/calendar.jpg" width="47%" alt="" class="calendar_pic"></a>
+            </div>
+
+        </div>
+        <!-- <div class="remind">點圖片可以直接到網站～～</div> -->
+
+
+        <h2 style="margin-top:40px" id="graphic"><span>G</span>raphic Design</h2>
         <div class="section" style="display: flex;">
 
 
