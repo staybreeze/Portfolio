@@ -466,6 +466,9 @@
             margin: auto;
             text-align: center;
         }
+        .halloween{
+      display: none;
+        }
     }
 </style>
 
@@ -662,7 +665,7 @@
 
             <div>
 
-                <h4>線上課程網站（萬聖節主題）</h4>
+                <h4>線上課程網站<span class="halloween">（萬聖節主題）</span></h4>
 
                 <a href="./side_project/online_course_store">
                     <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" alt="">

@@ -22,9 +22,8 @@ body {
 }
 
 .h-11 {
-  height: 20.5vh !important;
+  height: 12.5vh !important;
 }
-
 
 .myInput {
   border: none;
@@ -878,7 +877,7 @@ a:hover {
 @media screen and (max-width: 550px) {
   #menu:checked~.menu-list {
 
-    width: 460px;
+    width: 405px;
   }
 }
 
