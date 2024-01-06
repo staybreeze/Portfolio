@@ -305,10 +305,11 @@
         font-family: DotGothic16
     }
 
-    .remind:hover{
-        color:#8bafb4;
-        font-weight:500;
+    .remind:hover {
+        color: #8bafb4;
+        font-weight: 500;
     }
+
     .calendar_pic:hover {
         /* width: 170%; */
         width: 100%;
@@ -618,7 +619,7 @@
 
         <h2 id="web"><span>W</span>eb Design</h2>
         <h3 class="mb-4">&nbsp;全端（Full-stack）</h3>
-        <h4  style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
+        <h4 style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
         <div class="section" id="web" style="display: flex;">
 
             <div>
@@ -650,21 +651,47 @@
         <h3>&nbsp;前端（Front-end）</h3>
         <div class="section" id="web" style="display: flex;">
 
-            <!-- <div>
+            <div>
 
-                <h4>購物商城網站</h4>
+                <h4>線上課程</h4>
 
-                <a href="./online_store/index.php">
-                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="100%" alt="">
+                <a href="./side_project/online_course_store">
+                    <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" alt="">
                 </a>
 
             </div>
             <div></div>
-            <div class="ms-5" style="margin-top:50px">
-                <h4>萬年暦</h4>
+            <div>
 
-                <a href="./calendar/index.php">
-                    <img src="./img/calendar.jpg" width="100%" alt="" class="calendar_pic"></a>
+                <h4 class="ms-4">學校資料庫前台</h4>
+
+                <a href="./side_project/school">
+                    <img class="mt-2 online_store_pic ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" alt="">
+                </a>
+
+            </div>
+
+        </div>
+        <div class="section" id="web" style="display: flex;">
+
+            <div>
+
+                <h4 class="mt-5">前端切版練習</h4>
+
+                <a href="./side_project/front_pra_yukigi">
+                    <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
+                </a>
+
+            </div>
+            <div></div>
+            <!-- <div>
+
+                <h4 class="ms-4">學校資料庫前台</h4>
+
+                <a href="./side_project/school">
+                    <img class="mt-2 online_store_pic ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" alt="">
+                </a>
+
             </div> -->
 
         </div>
