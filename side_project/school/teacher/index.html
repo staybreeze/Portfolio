@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            margin-top: 30px
+        }
+
+        nav {
+            text-align: center;
+            text-decoration: none;
+            background-color: darkseagreen;
+            height: 4.5VH;
+            /* line-height: 4vh; 設定行高等於元素的高度 */
+            display: flex;
+            /* Flexbox 布局 */
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        a:hover {
+            background-color: bisque;
+            text-decoration: none;
+        }
+
+        .nav>a:hover {
+            color: cadetblue;
+        }
+
+        .text-green>a {
+            text-decoration: none;
+            /* color:aliceblue; */
+            /* font-weight: bolder; */
+            padding: 5px;
+        }
+
+        .nav>a {
+            text-decoration: none;
+            color: aliceblue;
+            /* font-weight: bolder; */
+            padding: 5px;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            height: 30px;
+        }
+
+        .bg-red {
+            background-color: rgb(186, 220, 186);
+            height: 5vh;
+        }
+
+        .bg-pink {
+            background-color: lightyellow;
+        }
+
+        /* nth + odd or nth + even */
+        tr:nth-child(odd) {
+            color: blue;
+        }
+
+        tr:nth-child(1) {
+            color: black;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-right>a {
+            text-decoration: none;
+        }
+
+        .text-green>a {
+            color: green;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+
+
+        td>a {
+            text-decoration: none;
+            padding: 5px;
+            color: blue;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3>Teacher List</h3>
+    </header>
+    <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../student/index.html">Student</a>
+        <a href="./index.html">Teacher</a>
+    </nav>
+    <div class="container text-right">
+        <a href="./create.html">&nbsp;&nbsp;+&nbsp;&nbsp;</a>
+        <table>
+            <tr class="bg-red">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>E-mail</th>
+                <th>Image</th>
+                <th>Oprate</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="./edit.html?id=1">Amy</a></td>
+                <td>0911-111-111</td>
+                <td>
+                    Amy@gmail.com
+                </td>
+                <td>
+                    <img src="https://picsum.photos/id/20/100/100" alt="" srcset="">
+                    <br>
+                </td>
+                <td class="text-green">
+                    <a href="./edit.html?id=1">Edit</a>
+                    /
+                    <a href="./del.html?id=1">Delete</a>
+                </td>
+            </tr>
+            <tr class="bg-pink">
+                <td>2</td>
+                <td><a href="./edit.html?id=2">Bob</a></td>
+                <td>0922-222-222</td>
+                <td>
+                    Bob@gmail.com
+                </td>
+                <td>
+                    <img src="https://picsum.photos/id/77/100/100" alt="" srcset="">
+                </td>
+                <td class="text-green">
+                    <a href="./edit.html?id=2">Edit</a>
+                    /
+                    <a href="./del.html?id=2">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="./edit.html?id=3">Cat</a></td>
+                <td>0933-333-333</td>
+                <td>
+                    Cat@gmail.com
+                </td>
+                <td>
+                    <img src="https://picsum.photos/id/50/100/100" alt="" srcset="">
+                </td>
+                <td class="text-green">
+                    <a href="./edit.html?id=3">Edit</a>
+                    /
+                    <a href="./del.html?id=3">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

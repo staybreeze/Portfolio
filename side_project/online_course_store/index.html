@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南瓜南瓜線上學習莊園</title>
+    <style>
+        * {
+            margin: 0;
+
+        }
+
+        body {
+            background-image: url(./img/photo-1546827275-0cdce0c88847.png);
+        }
+
+        .nav1 {
+            width: 100%;
+            height: 20vh;
+            position: fixed;
+
+            text-align: center;
+            align-items: center;
+            /* border-bottom: 5px solid rgba(0, 0, 0, 0.417); */
+            background-color: rgba(128, 0, 128, 0.9);
+            color: antiquewhite;
+            background-image: url(./img/未命名2.png);
+            background-repeat: repeat-x;
+            background-position: top;
+            /* background-position: right; */
+
+            /* background-image: url(./img/未命名-41.jpg); */
+            font-size: 50px;
+            line-height: 80px;
+            border-bottom: 5vh solid rgba(255, 183, 0, 0.68);
+        }
+
+
+
+        .container1 {
+            /* background-color:rgba(218, 165, 32, 0.242); */
+            height: 65vh;
+
+
+        }
+
+        .section1 {
+            display: flex;
+            align-items: center;
+
+            margin: auto;
+            width: 80vw;
+            height: 66vh;
+            justify-content: center;
+
+            background-color: beige;
+
+            text-align: center;
+            align-items: center;
+
+            border: 5px solid rgba(128, 0, 128, 0.63);
+            /* background-color: rgba(243, 194, 69, 0.809); */
+            background-color: rgba(252, 181, 0, 0.7);
+            border-radius: 0px 50px 0px 50px;
+            box-shadow: 10px 10px rgba(128, 0, 128, 0.63);
+            background-position: bottom;
+            background-image: url(./img/pngtree-halloween-horror-troll-shadow-border-png-image_6188362.png);
+            background-repeat: repeat-x;
+            justify-content: space-between;
+        }
+
+        .container2 {
+            background-color: rgba(128, 0, 128, 0.322);
+            border-top: 5vh solid purple;
+
+        }
+
+
+
+        .section2 {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+      
+            margin: auto;
+            width: 70vw;
+            height: 90.5vh;
+            justify-content: space-between;
+
+
+            text-align: center;
+            align-items: center;
+
+            background-image: url(./img/);
+
+        }
+
+        .container3 {
+            /* background-color:rgba(0, 0, 0, 0.253); */
+            width: 100%;
+            height: 33vh;
+            /* background-color: beige; */
+        }
+
+        .container4 {
+            /* background-color:rgba(0, 0, 0, 0.253); */
+            width: 100%;
+            height: 10vh;
+            /* background-color: beige; */
+        }
+
+        .item1 {
+            width: 30%;
+            height: 40vh;
+            background-color: antiquewhite;
+            margin: 50px;
+            text-align: center;
+            align-items: center;
+
+            box-shadow: 10px 10px rgba(128, 128, 0, 0.63);
+        }
+
+        .item1:hover {
+            box-shadow: 10px 10px rgba(247, 234, 118, 0.63);
+        }
+
+        .item2 {
+            width: 26%;
+            height: 25vh;
+            background-color: blanchedalmond;
+
+            text-align: center;
+            align-items: center;
+            /* margin-top:px; */
+            border: 3px solid rgba(205, 92, 92, 0.386);
+
+
+            box-shadow: 10px 10px rgba(128, 128, 0, 0.63);
+
+        }
+
+        .item2:hover {
+            box-shadow: 10px 10px rgba(247, 234, 118, 0.63);
+        }
+
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 50px;
+        }
+
+        .p1 {
+            font-size: x-large;
+            font-weight: bold;
+
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+
+        a:hover {
+            color: beige
+        }
+
+        .p2 {
+
+            font-size: larger;
+            font-weight: bold;
+            color: black;
+            background-color: antiquewhite;
+        }
+
+        .p3 {
+
+            font-weight: bolder;
+            height: 5vh;
+            background-color: goldenrod;
+            font-size: larger;
+            color: wheat;
+            border: 1px solid rgba(255, 0, 0, );
+            text-align: center;
+            border-radius: 20px 20px 20px 20px;
+            position: fixed;
+            left: 92.5%;
+
+            top: 49%;
+        }
+
+        .p3:hover {
+            background-color: rgb(180, 36, 36);
+        }
+
+        .p4 {
+
+            font-weight: bolder;
+            height: 5vh;
+            background-color: rgba(192, 192, 192, 0.8);
+            font-size: larger;
+            color: wheat;
+            border: 1px solid rgba(255, 0, 0, );
+            text-align: center;
+            border-radius: 20px 20px 20px 20px;
+            position: fixed;
+            right: 92.5%;
+
+            bottom: 9%;
+        }
+
+        .p4:hover {
+            background-color: purple;
+        }
+
+        .hotP2 {
+
+            height: 19vh;
+            /* border: 3px solid gold; */
+        }
+
+        .hotP2:hover {
+            /* border: 5px solid rgb(128, 0, 128); */
+
+
+
+            /* background-image: url(./img/photo-1546827275-0cdce0c88847.png); */
+            /* color: gold;
+            font-size: 42px; */
+            background-color: purple;
+            background-image: url(./img/未命名2.png);
+            border-radius: 20px 20px 0px 0px;
+
+
+        }
+
+        .hotP3 {
+            /* margin: auto; */
+
+            height: 17vh;
+            background-color: purple;
+            border-radius: 0px 0px 20px 20px;
+            /* border: 5px solid gold; */
+            border-top: none;
+        }
+
+
+        .hotP3:hover {
+            /* border: 5px solid rgb(128, 0, 128); */
+
+
+
+            /* background-image: url(./img/photo-1546827275-0cdce0c88847.png); */
+            color: gold;
+            font-size: 42px;
+            background-color: rgba(180, 36, 36);
+
+        }
+
+        .buy {
+
+            border: 5px solid rgba(205, 92, 92, 0.386);
+            background-color: burlywood;
+            line-height: 40px;
+            font-size: larger;
+            color: rgba(178, 34, 34, );
+        }
+
+        .buy:hover {
+
+            font-size: x-large;
+            border: 5px solid rgba(205, 92, 92, 0.386);
+            line-height: 50px;
+            font-weight: bold;
+            border-radius: 0px 00px 15px 15px;
+            background-color: rgba(128, 0, 128, 0.494);
+            color: white;
+        }
+
+        .intro {
+            width: 70vw;
+            height: 10vh;
+            background-color: bisque;
+            margin: auto;
+            text-align: center;
+            justify-items: center;
+            border: 5px solid rgba(195, 28, 28, 0.794);
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            color: pink;
+        }
+
+        .intro0 {
+            width: 10%;
+            height: 100%;
+            background-color: rgba(128, 0, 128, 0.8);
+            ;
+            border-radius: 0 0 0 200px;
+
+            border-left: 20px solidrgba(178, 34, 34);
+            border-top: none;
+            border-bottom: none;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            color: pink;
+            position: static;
+
+
+        }
+
+        .intro1 {
+            width: 26%;
+            height: 25vh;
+            background-color: rgb(128, 0, 128);
+            ;
+            border-radius: 20px 20px 0 0;
+            /* border: 5px solid gold; */
+            border-bottom: none;
+
+            font-size: 40px;
+            font-weight: bolder;
+
+            color: pink;
+            background-image: url(./img/未命名2.png);
+            background-repeat: no-repeat;
+
+
+        }
+
+        .intro0:hover {
+
+            color: khaki;
+
+        }
+
+        .intro1:hover {
+            /* border: 5px solid rgb(128, 0, 128); */
+
+
+
+            /* background-image: url(./img/photo-1546827275-0cdce0c88847.png); */
+            color: gold;
+            font-size: 42px;
+            background-color: rgb(180, 36, 36);
+
+
+        }
+
+        .span1 {
+            color: goldenrod;
+            font-size: 100px;
+            font-weight: 1000;
+
+        }
+
+        .span1:hover {
+            /* font-size: 50px; */
+            color: pink;
+
+        }
+
+        .span2 {
+            color: goldenrod;
+            font-size: 50px;
+            font-weight: 1000;
+        }
+
+        .span2:hover {
+            /* font-size: 100px; */
+            color: pink;
+
+        }
+
+        .span3 {
+            color: goldenrod;
+            font-weight: 600;
+        }
+
+        .span4 {
+            background-color: purple;
+
+        }
+
+
+
+        .footer1 {
+
+            /* background-color: rgba(128, 0, 128, 0.584); */
+            background-color: rgb(255, 183, 0, 0.6);
+            /* width: 100%;
+            height: 10vh; */
+            background-image: url(./img/pngtree-halloween-horror-troll-shadow-border-png-image_6188362.png);
+            background-repeat: repeat-x;
+            background-position: bottom;
+
+        }
+
+        .footer2 {
+            background-color: black;
+            text-align: center;
+            color: antiquewhite;
+            position: relative;
+            top: 50px;
+
+        }
+
+        a {
+            color: rgb(192, 0, 0);
+        }
+
+        .pum {
+            margin: auto;
+            position: fixed;
+            left: 93.2%;
+
+            top: 39%;
+
+            /* transform: translateY(-50%);  */
+        }
+
+        .pum:hover {
+            transition: transform 0.4s;
+            transform: scale(1.2)
+        }
+
+        .bat {
+            margin: auto;
+            position: fixed;
+            right: 93.2%;
+
+            bottom: 2%;
+
+
+        }
+
+        .bat:hover {
+            transition: transform 0.4s;
+            transform: scale(1.3)
+        }
+
+        .home,
+        .dream,
+        .hot,
+        .buycar,
+        .member {
+            font-size: 22px;
+            font-weight: bolder;
+            display: inline-block;
+            position: fixed;
+            top: 18.5%;
+        }
+
+        .home {
+
+            left: 20%;
+        }
+
+        .dream {
+            left: 35%;
+        }
+
+        .hot {
+
+            left: 50%;
+        }
+
+        .buycar {
+            left: 65%;
+        }
+
+        .member {
+            left: 80%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav1">
+        <br>
+
+        <span class="span4"> <span class="span1">南</span><span class="span2">瓜</span><span class="span1">南</span><span
+                class="span2">瓜</span> <span class="span3">線上學習莊園</span></span>
+        <div class="home">
+            <a href="./html/about.html">關於我們 _ _</a>
+        </div>
+        <div class="dream">
+            <a href="#">夢幻課程 _ _</a>
+        </div>
+        <div class="hot">
+            <a href="#container4">熱門課程 _ _</a>
+            <div class="buycar">
+                <a href="./html/buycar.html"> 購物車 _ _</a>
+            </div>
+            <div class="member">
+                <a href="./html/login.html">會員登入 _ _</a>
+            </div>
+    </nav>
+
+
+    <div class="pum">
+        <img src="./img/PUMBKIN.png" alt="">
+
+    </div>
+    <div>
+
+        <P class="p3"><a href="#container4"> &nbsp;&nbsp;熱門課程&nbsp;&nbsp;</a> </P>
+    </div>
+    <div class="container3"></div>
+    <div class="container1" id="container1">
+
+
+        <div class="section1" id="section1">
+            <div class="intro0">
+                <br><br><span> 超<br>夢<br>幻</span><span><br>精<br>選<br>課<br>程</span><br>
+            </div>
+
+            <div class="item1">
+                <img src="./img/img1.jpg" alt="" width="100%" height="70%">
+
+                <br>
+                <br>
+                <p class="p1">HTML/CSS/Javascript</p>
+                <br><br>
+                <p class="buy">
+                    <a href="./html/buycar.html">Buy it!</a>
+                </p>
+            </div>
+            <div class="item1">
+                <img src="./img/img2.png" alt="" width="100%" height="70%">
+
+                <br>
+                <br>
+
+                <p class="p1">PHP/jQeury/Python</p>
+                <br><br>
+                <p class="buy"> <a href="./html/buycar.html">Buy it!</a></p>
+            </div>
+            <br>
+        </div>
+
+
+    </div>
+    <div class="container4" id="container4"></div>
+    <div class="bat">
+
+        <img src="./img/img7.png" alt="">
+
+    </div>
+    <div>
+        <P class="p4"><a href="#"> &nbsp;&nbsp;夢幻課程&nbsp;&nbsp;</a> </P>
+    </div>
+    <div class="container2" id="container2">
+
+        <div class="section2" id="section2">
+
+            <div class="intro1">
+                <p class="hotP"></p>
+
+                <p class="hotP2"></p>
+                <p class="hotP3">
+                    熱門課程
+
+                </p>
+            </div>
+
+            <div class="item2"><img src="./img/img3.png" alt="" width="100%" height="100%">
+                <p class="p2">大數據分析</p>
+                <p class="buy">
+                    <a href="./html/buycar.html">Buy it!</a>
+                </p>
+            </div>
+            <div class="item2"><img src="./img/img4.jpg" alt="" width="100%" height="100%">
+                <p class="p2">國際數位金融技術</p>
+                <p class="buy">
+                    <a href="./html/buycar.html">Buy it!</a>
+                </p>
+            </div>
+            <div class="item2"><img src="./img/img6.jpg" alt="" width="100%" height="100%">
+                <p class="p2">人生必學的財務自由課</p>
+                <p class="buy">
+                    <a href="./html/buycar.html">Buy it!</a>
+                </p>
+            </div>
+
+
+            <div class="item2"><img src="./img/img9.jpg" alt="" width="100%" height="100%">
+                <p class="p2">歡迎光臨AI帝國</p>
+                <p class="buy"> <a href="./html/buycar.html">Buy it!</a></p>
+            </div>
+            <div class="item2"><img src="./img/7.jpg" alt="" width="100%" height="100%">
+
+                <p class="p2">來吧!斷捨離</p>
+                <p class="buy">
+                    <a href="./html/buycar.html">Buy it!</a>
+                </p>
+            </div>
+            <!-- <div class="item2"><img src="./img/img8.jpg" alt="" width="100%" height="100%">
+                <p class="p2">一機在手，世界我有</p>
+
+                <p class="buy">
+                    <a href="http://">Buy it!</a>
+                </p>
+            </div> -->
+        </div>
+        <br> <br>
+
+    </div>
+    <div class="box"></div>
+
+    <footer class="footer1">
+        <div class="footer2">
+            <p><small>Copyright Cheetos-Soymilk Web All Rights Reserved.</small></p>
+            <a href="#">top</a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin-top: 50px;
+            background-color: rgb(227, 224, 178);
+        
+        }
+
+        table,
+        tr,
+        tr {
+            /* border: 1px solid black; */
+            /* border-collapse: collapse; */
+        }
+        a{
+            text-decoration: none;
+            color: darkkhaki;}
+        a:hover {
+            color: cadetblue;
+        }
+
+        a:hover {
+            background-color: bisque;
+            text-decoration: none;
+
+        }
+        table {
+            width: 30%;
+            margin: auto;
+
+
+        }
+
+        td{
+            height: 35px;}
+
+        .text-center {
+            text-align: center;
+        }
+
+        input[type="file"]{
+            margin-left: 30px;
+        }
+        span{
+            font-size:small;
+        }
+        
+        h4{
+            border: 3px solid white;
+            text-align: right;
+            background-color: white;
+            text-decoration: none;
+        }
+        h3{
+    background-color: burlywood;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h3>Edit_<span>(Student)</span></h3>
+        <form action="" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">&nbsp;&nbsp;Name</label>
+                        <input type="text" name="name" id="name" value="Amy">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mobile">Mobile</label>
+                        <input type="text" name="mobile" id="mobile" value="0911-111-111">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" name="file" id="file">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" id="submit">
+                    </td>
+                </tr>
+
+            </table>
+            <h4><a href="../student/index.html">Back</a></h4>
+        </form>
+    </div>
+</body>
+
+</html>

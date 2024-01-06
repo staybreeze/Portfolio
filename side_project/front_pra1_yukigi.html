@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <style>
+        header {
+            text-align: center;
+            margin: auto;
+            background-color: hsl(8, 100%, 68%, 0.9);
+            /* padding: 15px 20px 20px 20px; */
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直置中 */
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        .head {
+            line-height: 0.5;
+        }
+
+        body {
+            background-image: url(./img/img3.png);
+        }
+
+        .container {
+            background-color: beige;
+            /* opacity: 0.54; */
+            box-sizing: border-box;
+            width: 70%;
+
+            height: 50vh;
+            /* border: 1px solid #ff705b; */
+
+            margin: auto;
+            border-collapse: collapse;
+
+        }
+
+        table,
+        tr,
+        td {
+            border: 2px solid #ff705b;
+            text-align: center;
+            margin: auto;
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .noline {
+            border-top: none;
+        }
+
+        .td1 {
+            width: 33%;
+
+        }
+
+        .td2 {
+            width: 50%;
+
+
+        }
+
+
+        /* .menu li {
+            list-style-type: none;
+
+            display: inline-block;
+            width: 300px;
+            margin: 0 0px;
+            text-align: center;
+position: relative;
+            top: 65px;
+            left: 450px;} 
+
+
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            background-color: #6fbb9a;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: larger;
+
+        } */
+
+        .menu {
+            /* background-color: hsl(68, 71%, 62%, 0.2); */
+            /* width: 90%; */
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            /* 水平分散排列 */
+            align-items: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu ul {
+            display: flex;
+            width: 70%;
+            /* 让ul元素充满父容器 */
+            justify-content: space-between;
+            /* 均分三个li元素 */
+            list-style: none;
+            padding: 0;
+            margin: auto;
+        }
+
+        .menu li {
+            width: 30%;
+            /* 均分三个li元素的宽度 */
+            text-align: center;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            background-color: #6fbb9a;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: larger;
+        }
+
+        li>a:hover {
+            background-color: #90ddbb;
+        }
+
+        td>a:hover{
+            background-color: #d0e35b;
+        }
+
+        nav {
+            width: 70%;
+            height: 18vh;
+            background-color: hsl(68, 71%, 62%, 0.3);
+
+            margin: auto;
+
+
+        }
+
+        .top {
+            display: block;
+            padding: 10px;
+            background-color: hsl(8, 100%, 68%, 0.9);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: larger;
+        }
+
+        .footer {
+            /* display: block; */
+            /* padding: 0px; */
+            background-color: #6fbb9a;
+            border-radius: 8px;
+            color: #fff;
+            /* text-decoration: none; */
+            font-size: larger;
+        }
+
+        .img1 {
+            width: 70%;
+            height: auto;
+            border: 5px solid hsl(8, 100%, 68%, 0.6);
+            box-shadow: hsl(68, 71%, 62%, 0.4) 5px 10px;
+        }
+
+        .img2 {
+            width: 60%;
+            height: auto;
+            border: 5px solid hsl(8, 100%, 68%, 0.6);
+            box-shadow: hsl(68, 71%, 62%, 0.4) 5px 10px;
+            box-shadow: hsl(68, 71%, 62%, 0.4) 5px 10px;
+        }
+
+        .img3 {
+            position: relative;
+            left: 300px;
+            bottom: 310px;
+
+
+
+
+        }
+
+        iframe {
+            width: 90%;
+            height: 90%;
+            border: 5px solid #d0e35b;
+            border-radius: 30px 30px 30px 30px;
+            box-shadow: hsl(68, 71%, 62%, 0.4) 5px 10px;
+        }
+
+
+        footer {
+            text-align: center;
+        }
+
+        pre {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="head">
+            <h1><br>能幹貓今天也憂鬱</h1>
+            <h3>デキる猫は今日も憂鬱</h3>
+            <pre>                                                        by山田羊（山田ヒツジ）</pre>
+        </div>
+    </header>
+    <br>
+    <nav class="menu" id="nav">
+        <!-- <table>
+            <tr>
+                <td style="border-color: #ff705b;" class="td3"><a href="#box1">圖片</a></td>
+                <td class="td3"><a href="#box2">影片</a></td>
+                <td class="td3"><a href="#box3">地圖</a></td>
+            </tr>
+        </table> -->
+        <ul>
+            <li><a href="#box1">圖片</a></li>
+            <li><a href="#box2">影片</a></li>
+            <li><a href="#box3">地圖</a></li>
+        </ul>
+    </nav>
+    <br> <br>
+    <div class="container noline" id="box1">
+        <table>
+            <tr>
+                <td class="td1">
+                    <a
+                        href="https://zh.wikipedia.org/zh-tw/%E8%83%BD%E5%B9%B9%E8%B2%93%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%86%82%E9%AC%B1">
+                        <img src="./img/img1.jpg" alt="" class="img1"></a>
+                    <p>
+                        ❤❤ 諭吉好可愛喔 ❤❤
+                    </p>
+                </td>
+                <td class="td1">
+
+                    <a href="https://ani.gamer.com.tw/animeVideo.php?sn=34079"> <img src="./img/img2.jpg" alt=""
+                            class="img1"></a>
+                    <p>
+                        我也想要有諭吉~♥♥
+                    </p>
+                </td>
+                <td class="td1">
+
+                    <a href="https://zh.wikipedia.org/zh-tw/%E7%A6%8F%E6%B3%BD%E8%B0%95%E5%90%89"><img
+                            src="./img/img4.jpg" alt="" class="img2"></a>
+                    <p>
+                        不是這個諭吉啦!</p>
+                    <p>但要是這個諭吉也可以啦⁽⁽٩(๑˃̶͈̀ ᗨ ˂̶͈́)۶⁾⁾
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="container noline" id="box2">
+        <table>
+            <tr>
+                <td class="td2">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BBmz-B5kSO8?si=TId20Bs7Ost1Y4hu"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </td>
+                <td class="td2">
+                    <h2>劇情簡介</h2>
+                    <blockquote>
+                        福澤幸來是個辦公室女職員，在職場看似光鮮亮麗和工作能力優越，但是私人日常生活能力堪憂。她在某個反季下雪天發現躲在公園長椅的流浪小黑貓，收養後者並命名為「諭吉」。然而事態發展出乎幸來的預料：諭吉成長為體型龐大且通曉人類語言、甚至精通包含家務在內許多技能的貓，得益於諭吉協助料理生活的影響，幸來在生活獲得治癒的同時陸續接觸各界人士，但也為了掩飾諭吉的超常存在，延伸出一連串的誤會與突發事件，故事便描繪著環繞在幸來與諭吉週遭的人事物和生活。
+                    </blockquote>
+
+                    <a href="#header"> <img class="img3" src="./img/img5.png" alt="" width="30vh"></a>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="container noline" id="box3">
+        <table>
+            <tr>
+                <td class="td2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662975.6066615344!2d138.45064401641255!3d35.50429722477511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2z5pel5pys5p2x5Lqs6YO9!5e0!3m2!1szh-TW!2stw!4v1696998790195!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </td>
+                <td class="td2">
+                    <h2>東京都</h2>
+                    <blockquote>
+                        東京都是位於日本關東地方的一級行政區，也是日本實際上的首都，是日本唯一以「都」命名的行政區。面積在日本一級行政區中排名第45位，但日本最南端和最東端均位於其轄區內，因此擁有日本各一級行政區中最大的經緯度跨度。截至2022年，全境人口已超過1,400萬，是日本人口最多的一級行政區
+                    </blockquote>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <p class=footer><small> &copy; WSL Web All Rights Reserved.</small></p>
+        <a href="#header" class="top">top</a>
+
+    </footer>
+</body>
+
+</html>
