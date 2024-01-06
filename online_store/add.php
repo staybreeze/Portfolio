@@ -16,8 +16,10 @@ include_once "./api/db.php";
   <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
   <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
-  <style>
-   .aside {
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+ <style>
+    .aside {
       background-image: url(./img/18-2500x1667.jpg);
       opacity: 0.9;
 
@@ -49,7 +51,7 @@ include_once "./api/db.php";
     .modal input[type='submit'] {
       margin-left: 408px !important;
     }
-
+ 
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -149,6 +151,10 @@ include_once "./api/db.php";
         margin-left: 270px !important;
       }
 
+      .check{
+        margin-left:178px !important; 
+
+      }
     }
   </style>
 </head>
@@ -181,8 +187,13 @@ include_once "./api/db.php";
 
           <form action="./api/add_user.php" method="post" class="col-4 m-auto">
             <div class="input-group my-1">
-              <label class="col-4  input-group-text w-100">帳號:</label>
+              <label class="col-4  input-group-text w-100">帳號:
+
+                <input type="button" class="check" style="margin-left:165px;color:cadetblue;text-decoration:underline;border:none;background-color:#f8f9fa" value="檢查帳號" onclick="check()">
+              
+</label>
               <input class="form-control" type="text" name="acc" id="acc">
+
             </div>
             <div class="input-group my-1">
               <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
@@ -368,5 +379,31 @@ include_once "./api/db.php";
   include "./inc/copyright.php"
   ?>
 </body>
+
+<script>
+function check() {
+    let user = {
+        acc: $("#acc").val()
+    };
+
+    if (user.acc.trim() !== '') {
+   
+        $.post("./api/acc_check.php", { acc: user.acc }, (res) => {
+            // console.log(res);
+            if (parseInt(res) === 1) {
+                alert("帳號重覆");
+            } else {
+                alert("此帳號可以使用");
+            }
+        });
+    } else {
+        alert('帳號不可以空白');
+    }
+
+    // 防止表單提交
+    return false;
+}
+
+</script>
 
 </html>
