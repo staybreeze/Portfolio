@@ -1,3 +1,7 @@
+
+</style>
+
+
 <header class="h-11 bg-gray container-fluid header">
   <div class="row bg-gray">
 
@@ -182,16 +186,17 @@
 <header class="h-11 bg-gray container-fluid header2 ">
 
 
+  <a href="index.php">
 
-<a href="index.php">
-  <img class="logo2" src="./img/logo1.png" alt=""></a>
-  <div class="header-title">
+    <img class="logo2" src="./img/logo1.png" alt=""></a>
 
-    <a href="index.php">
-      <h2 style="font-weight:600;">奇多喵合作社</h2>
-    </a>
 
-  </div>
+
+  <h2 class="cheetos-title1" style="font-weight:600;position:relative;left:155px;bottom:62px">奇多喵合作社</h2>
+
+  <!-- <h2 class="cheetos-title2" style="font-weight:600;position:relative;left:145px;bottom:62px">奇多喵合作社</h2> -->
+
+
 
   <div class="header-title2">
 

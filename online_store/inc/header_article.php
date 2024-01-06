@@ -177,13 +177,15 @@
 
 <a href="../index.php">
   <img class="logo2" src="../img/logo1.png" alt=""></a>
-  <div class="header-title">
 
-    <a href="../index.php">
-      <h2 style="font-weight:600;">奇多喵合作社</h2>
-    </a>
 
-  </div>
+  <h2 class="cheetos-title1" style="font-weight:600;position:relative;left:155px;bottom:62px">奇多喵合作社</h2>
+
+  <!-- <h2 class="cheetos-title2" style="font-weight:600;position:relative;left:145px;bottom:62px">奇多喵合作社</h2> -->
+
+
+
+
 
   <div class="header-title2">
 

@@ -22,7 +22,7 @@ body {
 }
 
 .h-11 {
-  height: 12.5vh;
+  height: 20.5vh !important;
 }
 
 
@@ -119,12 +119,6 @@ header .page-link-min li:hover span {
   }
 }
 
-@media screen and (max-width: 450px) {
-  .header-title {
-
-    display: none;
-  }
-}
 
 
 @media screen and (max-width: 550px) {
@@ -1023,6 +1017,13 @@ display: none;
   .modal input[type='submit'] {
     margin-left: 270px !important;
     }
+
+    .cheetos-title1{
+      display: none !important;;
+    }
+    .cheetos-title2{
+      display: block !important;;
+    }
 }
 
 .myBtn-brown{
@@ -1032,3 +1033,4 @@ display: none;
 .myBtn-gold{
   background-color: goldenrod;
 }
+
