@@ -152,7 +152,7 @@ include_once "./api/db.php";
       }
 
       .check{
-        margin-left:178px !important; 
+        margin-left:160px !important; 
 
       }
     }
@@ -184,19 +184,24 @@ include_once "./api/db.php";
 
           <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員註冊</p>
 
+          <?php
+if(isset($_GET['error'])){
+  echo "<span style='color:crimson'>帳號重複或密碼空白，請重新註冊</span>";
+}
+?>
 
           <form action="./api/add_user.php" method="post" class="col-4 m-auto">
             <div class="input-group my-1">
-              <label class="col-4  input-group-text w-100">帳號:
+              <label class="col-4  input-group-text w-100">帳號<sapn style="color:crimson">&nbsp;*&nbsp; </sapn>:
 
-                <input type="button" class="check" style="margin-left:165px;color:cadetblue;text-decoration:underline;border:none;background-color:#f8f9fa" value="檢查帳號" onclick="check()">
+                <input type="button" class="check" style="margin-left:153px;color:cadetblue;text-decoration:underline;border:none;background-color:#f8f9fa" value="檢查帳號" onclick="check()">
               
 </label>
               <input class="form-control" type="text" name="acc" id="acc">
 
             </div>
             <div class="input-group my-1">
-              <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
+              <label class="col-4  input-group-text w-100 mt-3">密碼<sapn style="color:crimson"> &nbsp;*&nbsp; </sapn>:</label>
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
             <div class="input-group my-1">

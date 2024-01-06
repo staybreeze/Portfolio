@@ -178,7 +178,11 @@ include_once "./api/db.php";
           ?>
           <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員登入</p>
 
-
+          <?php
+if(isset($_GET['success'])){
+  echo "<span style='color:#1084f7'>成功註冊會員，請登入</span>";
+}
+?>
           <form action="./api/login.php" method="post" class=" col-12 col-sm-4 m-auto">
             <div class="input-group my-1">
               <label class="col-xs-12 col-sm-4  input-group-text w-100">帳號:</label>

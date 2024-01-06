@@ -17,7 +17,7 @@ include_once "./db.php";
 //     > (大於)   變成	&gt;
 $acc=htmlspecialchars(trim($_POST['acc']));
 
-
+$res=$User->count(['acc'=>$acc]);
 
 // 導入FUNCTION後不需要了
 // $sql="insert into `users`(`acc`,`pw`,`name`,`address`,`email`)
@@ -26,6 +26,11 @@ $acc=htmlspecialchars(trim($_POST['acc']));
 
 // $pdo->exec($sql);
 
+
+if($res>0 || empty($_POST['pw'])){
+    // echo "重複";
+    header("Location:../add.php?error");
+}else{
 // 確定$_POST都是會處理到的對象，且$_POST本身就是陣列，因此可以save($_POST)
 $User->save($_POST);
 //  $User->save(['acc'=>"{$acc}",
@@ -34,5 +39,10 @@ $User->save($_POST);
 //                  'email'=>"{$_POST['email']}",
 //                  'address'=>"{$_POST['address']}"]);
 
-header("Location:../index.php");
+header("Location:../login.php?success");
+}
+
+
+
+
 
