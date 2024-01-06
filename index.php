@@ -353,6 +353,9 @@
         background-color: #7cbcc4;
         color: #fff;
     }
+    .my-ms-4{
+        margin-left:22px
+    }
 
     @media screen and (max-width: 767px) {
         .circle {
@@ -362,6 +365,12 @@
         td {
             font-size: smaller;
         }
+        .remind{
+            font-size: 10px;
+        }
+        .my-ms-4{
+        margin-left:10px
+    }
     }
 
     @media screen and (max-width: 767px) {
@@ -634,10 +643,10 @@
             <div> </div>
             <div>
 
-                <h4 class="ms-4 mt-2">後台</h4>
+                <h4 class="my-ms-4 mt-2">後台</h4>
 
                 <a href="./online_store/back_login.php">
-                    <img class="mt-2 online_store_pic online_store_back_pic ms-4" src="./img/online_store3.jpg" width="95%" alt="">
+                    <img class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
                 </a>
 
                 <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
@@ -663,10 +672,10 @@
             <div></div>
             <div>
 
-                <h4 class="ms-4">學校資料庫前台</h4>
+                <h4 class="my-ms-4">學校資料庫前台</h4>
 
                 <a href="./side_project/school">
-                    <img class="mt-2 online_store_pic ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" alt="">
+                    <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" alt="">
                 </a>
 
             </div>
@@ -676,7 +685,7 @@
 
             <div>
 
-                <h4 class="mt-5">前端切版練習</h4>
+                <h4 class="mt-4">前端切版練習</h4>
 
                 <a href="./side_project/front_pra_yukigi">
                     <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
@@ -686,10 +695,10 @@
             <div></div>
             <!-- <div>
 
-                <h4 class="ms-4">學校資料庫前台</h4>
+                <h4 class="my-ms-4">學校資料庫前台</h4>
 
                 <a href="./side_project/school">
-                    <img class="mt-2 online_store_pic ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" alt="">
+                    <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" alt="">
                 </a>
 
             </div> -->
