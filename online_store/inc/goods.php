@@ -38,7 +38,7 @@
 
                             <ul>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#store"><i class="fas fa-heart like"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
                                 <li><a href="#"><i class="fas fa-expand"></i></a></li>
                             </ul>
@@ -100,3 +100,16 @@
         </div>
     </div>
 </section>
+
+<script>
+
+
+    $(document).ready(function(){
+        $(".like").click(function(event){
+
+
+            $(this).css("color", "#fe302f");
+            console.log('this', this);
+        });
+    });
+</script>
