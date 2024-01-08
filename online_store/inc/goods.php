@@ -23,7 +23,7 @@
                     <div id="product" class="single-product">
 
                         <div class="part-1">
-                            <img class="img-rotate"src="./img/<?= $good['img']; ?>" alt="" width="100%">
+                            <img class="img-rotate" src="./img/<?= $good['img']; ?>" alt="" width="100%">
                             <?php
 
                             if (!empty($good['discount'])) {
@@ -38,9 +38,10 @@
 
                             <ul>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#store"><i class="fas fa-heart like"></i></a></li>
+                                <li><a href="#store" class="like"  data-id="<?= $good['id']; ?>"><i class="fas fa-heart"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
                                 <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                               
                             </ul>
                         </div>
                         <div class="part-2">
@@ -102,14 +103,20 @@
 </section>
 
 <script>
+$(document).ready(function() {
+    $(".like").click(function(event) {
+        $(this).css("color", "#fe302f");
+        console.log('this', this);
 
+        let productId = $(this).data("id")
 
-    $(document).ready(function(){
-        $(".like").click(function(event){
-
-
-            $(this).css("color", "#fe302f");
-            console.log('this', this);
+        $.post("./api/add_like.php", {
+            'id': productId
+        }, (res) => {
+            console.log(res);
         });
     });
+});
+
+
 </script>
