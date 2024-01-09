@@ -188,20 +188,20 @@
         </div>
    
         <div class="row ms-1 abbr-name">
-            <div class="col-0 col-lg-1"></div>
-            <div class="col-3 col-lg-3  mt-3 web-tag"  id="full-abbr">
+            <div class="col-lg-1"></div>
+            <div class="col-3 col-lg-3  mt-3 web-tag ms-3"  id="full-abbr">
                 <h3 class="full-abbr">&nbsp;全端</h3>
             </div>
 
-            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="front-abbr">
+            <div class="col-3  col-lg-3 mt-3 ms-4 web-tag" id="front-abbr">
                 <h3 class="front-abbr">&nbsp;前端</h3>
             </div>
          
-            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="back-abbr">
+            <div class="col-3  col-lg-3 mt-3 ms-4 web-tag" id="back-abbr">
                 <h3 class="back-abbr">&nbsp;後端</h3>
 
             </div>
-            <div class="col-0 col-lg-1 me-1"></div>
+            <div class="col-lg-1 me-5"></div>
         </div>
 
         <div class="full-works">
