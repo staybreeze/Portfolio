@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,470 +9,11 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Sans+JP&family=Josefin+Slab&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC:wght@300&family=Orbitron&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&family=Zen+Old+Mincho&display=swap');
 
-
-    * {
-        margin: 0;
-        box-sizing: border-box;
-
-    }
-
-    body {
-        border-top: 10px solid #8bafb4;
-        background-color: beige;
-        overflow-x: auto;
-    }
-
-    .container {
-        width: 100vw;
-        height: 100%;
-
-
-    }
-
-    @media screen and (min-width: 1000px) {
-        .container {
-            display: flex;
-        }
-    }
-
-    .box {
-        width: 58%;
-        height: 100%;
-        margin: auto;
-
-    }
-
-    .start {
-        width: 8%;
-    }
-
-    .aside {
-        width: 22.5%;
-    }
-
-    @media screen and (max-width: 1000px) {
-        .aside {
-            margin-right: auto;
-            display: flex;
-        }
-
-        .aside-top>img {
-            width: 250px;
-        }
-    }
-
-    @media screen and (max-width: 1000px) {
-        .aside-bottom>.row {
-            position: relative;
-            top: 75px;
-            left: 15px;
-            width: 200px
-        }
-    }
-
-    @media screen and (max-width: 450px) {
-        .aside-top>img {
-            width: 200px;
-            left: 45px;
-        }
-
-        .aside-bottom>.row {
-            position: relative;
-            top: 75px;
-            left: 10px;
-            width: 200px
-        }
-    }
-
-    .middle {
-        width: 8%;
-    }
-
-    .main {
-        width: 50%;
-    }
-
-    @media screen and (max-width: 1000px) {
-        .main {
-            margin: auto;
-            width: 100%
-        }
-    }
-
-    @media screen and (max-width: 1000px) {
-        .box {
-            margin: auto;
-            width: 90%
-        }
-    }
-
-    /* .aside-top,
-    .aside-bottom,
-    .main-top,
-    .main-bottom,
-    .box,
-    .box>.section {
-        border: 1px solid black
-    } */
-
-    .aside-bottom {}
-
-    .test:hover {
-        & .col-2 .circle {
-            background-color: #8bafb4;
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-        }
-    }
-
-    .circle {
-        width: 10px;
-        height: 10px;
-
-        border-radius: 50%;
-        border-color: gray 2px;
-        background-color: gainsboro;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    }
-
-    table {
-        width: 100%;
-
-    }
-
-    .td1 {
-        width: 18%;
-
-    }
-
-    .td2 {
-        width: 20%
-    }
-
-    .td3 {
-        width: 18%;
-
-    }
-
-    .td4 {}
-
-    table,
-    td {
-        border: 1px dotted #00707f;
-        margin-top: 10px;
-        text-align: center;
-        padding: 5px
-    }
-
-    td {
-        height: 50px;
-        /* font-family: Noto+Sans+TC; */
-    }
-
-    td>div {
-
-        background-color: #7cbcc4;
-        color: #fff;
-        /* font-size: large; */
-        border-radius: 30px;
-        height: 30px;
-        width: 100%;
-        padding-top: 2px;
-        text-align: center;
-
-    }
-
-    .skill-box {
-        background-color: goldenrod;
-        color: #fff;
-        /* font-size: large; */
-        border-radius: 30px;
-        width: 50%;
-        text-align: center;
-        margin: auto;
-    }
-
-    @media screen and (max-width: 767px) {
-
-        .skill-box,
-        td>div {
-            padding-top: 4px;
-        }
-
-    }
-
-    @media screen and (max-width: 450px) {
-
-        .skill-box,
-        td>div {
-            padding-top: 6px;
-        }
-
-    }
-
-    .skills {
-        text-align: left;
-    }
-
-    .aside-top>img {
-        margin-top: 100px;
-        text-align: center;
-    }
-
-    .font-river {
-        color: red;
-        font-weight: bold;
-        font-family: Josefin Slab
-    }
-
-    h2 {
-        color: #00707f;
-        font-weight: bold;
-        font-size: 30px;
-        font-family: Rubik Doodle Shadow;
-        padding-bottom: 5px;
-        border-bottom: 1px solid#00707f;
-    }
-
-    h2>span {
-        font-size: 40px;
-    }
-
-    h3 {
-        color: lightcoral;
-        font-size: 25px;
-        font-family: DotGothic16;
-        font-weight: 600;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        border-left: 15px solid lightcoral
-    }
-
-    h4 {
-        color: darkgoldenrod;
-        font-size: large;
-        font-family: DotGothic16
-    }
-
-    .section>div>h4,
-    .section>h4 {
-
-        color: darkgoldenrod;
-        opacity: 0.8;
-        font-size: 23px;
-        font-family: DotGothic16
-    }
-
-    a {
-        text-decoration: none;
-        color: rgba(128, 128, 128, 0.763);
-
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: goldenrod;
-        font-size: larger;
-        font-weight: bolder;
-
-    }
-
-    p,
-    td {}
-
-
-
-
-
-    .online_store_pic:hover {
-        /* width: 210%; */
-        width: 100%;
-        z-index: 1;
-
-    }
-
-    .remind {
-        text-align: end;
-        color: crimson;
-        font-size: 18px;
-        font-family: DotGothic16
-    }
-
-    .remind:hover {
-        color: #8bafb4;
-        font-weight: 500;
-    }
-
-    .calendar_pic:hover {
-        /* width: 170%; */
-        width: 100%;
-
-    }
-
-
-    .section img {
-        position: relative;
-        /* z-index: 0; */
-        /* transition: z-index 0.3s ease; */
-    }
-
-    div>a {
-        color: lightslategray;
-    }
-
-    .fw-bold {
-        color: gray
-    }
-
-    footer {
-        width: 100%;
-        height: 10vh;
-        border-bottom: 10px solid #8bafb4;
-    }
-
-    .top {
-        position: fixed;
-        right: 50px;
-        bottom: 30px;
-
-        color: #00707f;
-        font-weight: bold;
-        font-size: 30px;
-        font-family: Rubik scribble;
-        /* border-bottom: 1px solid#00707f;   */
-    }
-
-    .myBtn {
-        background-color: #7cbcc4;
-        color: #fff;
-    }
-    .my-ms-4{
-        margin-left:22px
-    }
-
-    @media screen and (max-width: 767px) {
-        .circle {
-            margin-top: 5px;
-        }
-
-        td {
-            font-size: smaller;
-        }
-        .remind{
-            font-size: 10px;
-        }
-        .my-ms-4{
-        margin-left:10px
-    }
-    }
-
-    @media screen and (max-width: 767px) {
-        .online_store_pic:hover {
-            width: 230%;
-            z-index: 1;
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .calendar_pic:hover {
-            width: 218%;
-            z-index: 1;
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .poster-modal img {
-            width: 50%;
-            height: 50%;
-
-            margin-left: 300px
-        }
-
-        .poster-modal>.modal-dialog>img {
-            width: 485px;
-
-        }
-
-    }
-
-    @media screen and (max-width: 767px) {
-        .calendar-modal img {
-            width: 50%;
-            height: 50%;
-
-            margin-left: 300px
-        }
-
-        .calendar-modal>.modal-dialog>img {
-            width: 485px;
-
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .banner-modal img {
-            width: 50%;
-            height: 50%;
-
-            margin-left: 300px;
-
-        }
-
-        .banner-modal>.modal-dialog>img {
-            width: 485px;
-
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .poster-modal>.modal-dialog>img {
-            width: 415px;
-
-        }
-
-        .calendar-modal>.modal-dialog>img {
-            width: 415px;
-
-        }
-
-        .banner-modal>.modal-dialog>img {
-            width: 430px;
-
-        }
-    }
-
-    @media screen and (min-width: 767px) {
-        .abbr {
-            display: none;
-        }
-
-    }
-
-    @media screen and (max-width: 767px) {
-        .none-abbr {
-            display: none;
-        }
-
-        .abbr-td {
-
-            width: 13.5%;
-            margin: auto;
-            text-align: center;
-        }
-        .halloween{
-      display: none;
-        }
-    }
-</style>
-
-</style>
 
 <body>
     <div class="top"><a href="#">TOP</a></div>
@@ -629,75 +169,94 @@
     </div>
     <div class="box mt-5">
 
-
         <h2 id="web"><span>W</span>eb Design</h2>
-        <h3 class="mb-4">&nbsp;全端（Full-stack）</h3>
-        <h4 style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
-        <div class="section" id="web" style="display: flex;">
-
-            <div>
-
-
-                <h4 class="mt-2">前台</h4>
-                <a href="./online_store/index.php">
-                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
-                </a>
-
-            </div>
-            <div> </div>
-            <div>
-
-                <h4 class="my-ms-4 mt-2">後台</h4>
-
-                <a href="./online_store/back_login.php">
-                    <img class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
-                </a>
-
-                <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
-                        <div class="remind pe-1">管理員帳密由<span style="text-decoration:underline"> WSL </span>提供，歡迎留言索取</div>
-                    </a></div>
+        <div class="row ms-1">
+            <div class="col-1"></div>
+            <div class="col-3  mt-3 web-tag"  id="full">
+                <h3 class="full">&nbsp;全端（Full-stack）</h3>
             </div>
 
+            <div class="col-3 mt-3 ms-5 web-tag" id="front">
+                <h3 class="front">&nbsp;前端（Front-end）</h3>
+            </div>
+         
+            <div class="col-3 mt-3 ms-5 web-tag" id="back">
+                <h3 class="back">&nbsp;後端（Back-end）</h3>
+
+            </div>
+            <div class="col-1 me-1"></div>
+        </div>
+        <div class="full-works">
+            <!-- <h3 class="mb-4">&nbsp;全端（Full-stack）</h3> -->
+
+            <h4 class="mt-4" style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
+            <div class="section" id="web" style="display: flex;">
+
+                <div>
+
+
+                    <h4 class="mt-2">前台</h4>
+                    <a href="./online_store/index.php">
+                        <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
+                    </a>
+
+                </div>
+                <div> </div>
+                <div>
+
+                    <h4 class="my-ms-4 mt-2">後台</h4>
+
+                    <a href="./online_store/back_login.php">
+                        <img class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
+                    </a>
+
+                    <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
+                            <div class="remind pe-1">管理員帳密由<span style="text-decoration:underline"> WSL </span>提供，歡迎留言索取</div>
+                        </a></div>
+                </div>
+
+            </div>
         </div>
 
-        <h2 id="web" class="mt-3"></h2>
-        <h3>&nbsp;前端（Front-end）</h3>
-        <div class="section" id="web" style="display: flex;">
+        <div class="front-works">
+            <h2 id="web" class="mt-3"></h2>
+            <!-- <h3>&nbsp;前端（Front-end）</h3> -->
+            <div class="section" id="web" style="display: flex;">
 
-            <div>
+                <div>
 
-                <h4>線上課程網站<span class="halloween">（萬聖節主題）</span></h4>
+                    <h4>線上課程網站<span class="halloween">（萬聖節主題）</span></h4>
 
-                <a href="./side_project/online_course_store">
-                    <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" alt="">
-                </a>
+                    <a href="./side_project/online_course_store">
+                        <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" alt="">
+                    </a>
 
-            </div>
-            <div></div>
-            <div>
+                </div>
+                <div></div>
+                <div>
 
-                <h4 class="my-ms-4">學校資料庫前台</h4>
+                    <h4 class="my-ms-4">學校資料庫前台</h4>
 
-                <a href="./side_project/school">
-                    <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" alt="">
-                </a>
+                    <a href="./side_project/school">
+                        <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" alt="">
+                    </a>
 
-            </div>
-
-        </div>
-        <div class="section" id="web" style="display: flex;">
-
-            <div>
-
-                <h4 class="mt-4">前端切版練習</h4>
-
-                <a href="./side_project/front_pra_yukigi">
-                    <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
-                </a>
+                </div>
 
             </div>
-            <div></div>
-            <!-- <div>
+            <div class="section" id="web" style="display: flex;">
+
+                <div>
+
+                    <h4 class="mt-4">前端切版練習</h4>
+
+                    <a href="./side_project/front_pra_yukigi">
+                        <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
+                    </a>
+
+                </div>
+                <div></div>
+                <!-- <div>
 
                 <h4 class="my-ms-4">學校資料庫前台</h4>
 
@@ -707,12 +266,15 @@
 
             </div> -->
 
+            </div>
         </div>
-        <h2 id="web" class="mt-3"></h2>
-        <h3>&nbsp;後端（Back-end）</h3>
-        <div class="section" id="web" style="display: flex;">
 
-            <!-- <div>
+        <div class="back-works">
+            <h2 id="web" class="mt-3"></h2>
+            <!-- <h3>&nbsp;後端（Back-end）</h3> -->
+            <div class="section" id="web" style="display: flex;">
+
+                <!-- <div>
 
                 <h4>購物商城網站</h4>
 
@@ -722,16 +284,16 @@
 
             </div>
             <div></div> -->
-            <div class="" style="margin-top:0px">
-                <h4>萬年暦</h4>
+                <div class="" style="margin-top:0px">
+                    <h4>萬年暦</h4>
 
-                <a href="./calendar/index.php">
-                    <img src="./img/calendar.jpg" width="47%" alt="" class="calendar_pic"></a>
+                    <a href="./calendar/index.php">
+                        <img src="./img/calendar.jpg" width="47%" alt="" class="calendar_pic"></a>
+                </div>
+
             </div>
-
+            <!-- <div class="remind">點圖片可以直接到網站～～</div> -->
         </div>
-        <!-- <div class="remind">點圖片可以直接到網站～～</div> -->
-
 
         <h2 style="margin-top:40px" id="graphic"><span>G</span>raphic Design</h2>
         <div class="section" style="display: flex;">
@@ -884,3 +446,42 @@
 
 
 </html>
+
+
+<script>
+    $(document).ready(function() {
+        $("#full").click(function() {
+            $(".full-works").show();
+            $(".front-works").hide();
+            $(".back-works").hide();
+            $(".full").css("color", "lightcoral");
+            $(".full").css("border-left", "  15px solid lightcoral ");
+            $(".front").css("color", "gainsboro");
+            $(".front").css("border-left", "  15px solid gainsboro");
+            $(".back").css("color", "gainsboro");
+            $(".back").css("border-left", "  15px solid gainsboro");
+        });
+        $("#front").click(function() {
+            $(".full-works").hide();
+            $(".front-works").show();
+            $(".back-works").hide();
+            $(".full").css("color", "gainsboro");
+            $(".full").css("border-left", "  15px solid gainsboro");
+            $(".front").css("color", "lightcoral");
+            $(".front").css("border-left", "  15px solid lightcoral ");
+            $(".back").css("color", "gainsboro");
+            $(".back").css("border-left", "  15px solid gainsboro");
+        });
+        $("#back").click(function() {
+            $(".full-works").hide();
+            $(".front-works").hide();
+            $(".back-works").show();
+            $(".full").css("color", "gainsboro");
+            $(".full").css("border-left", "  15px solid gainsboro");
+            $(".front").css("color", "gainsboro");
+            $(".front").css("border-left", "  15px solid gainsboro");
+            $(".back").css("color", "lightcoral");
+            $(".back").css("border-left", "  15px solid lightcoral ");
+        });
+    });
+</script>
