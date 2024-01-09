@@ -225,7 +225,7 @@
                     <h4 class="my-ms-4 mt-2">後台</h4>
 
                     <a href="./online_store/back_login.php">
-                        <img class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
+                        <img id="requestAdmin"class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
                     </a>
 
                     <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
@@ -245,7 +245,7 @@
 
                     <h4>線上課程網站<span class="halloween">（萬聖節主題）</span></h4>
 
-                    <a href="./side_project/online_course_store">
+                    <a id="noPhone" href="./side_project/online_course_store">
                         <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" alt="">
                     </a>
 
@@ -253,9 +253,9 @@
                 <div></div>
                 <div>
 
-                    <h4 class="my-ms-4">學校資料庫前台</h4>
+                    <h4 class="my-ms-4" >學校資料庫前台</h4>
 
-                    <a href="./side_project/school">
+                    <a href="./side_project/school"  id="noPhone1">
                         <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" alt="">
                     </a>
 
@@ -268,7 +268,7 @@
 
                     <h4 class="mt-4">前端切版練習</h4>
 
-                    <a href="./side_project/front_pra_yukigi">
+                    <a href="./side_project/front_pra_yukigi"  id="noPhone2">
                         <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
                     </a>
 
@@ -305,7 +305,7 @@
                 <div class="" style="margin-top:0px">
                     <h4>萬年暦</h4>
 
-                    <a href="./calendar/index.php">
+                    <a href="./calendar/index.php"  id="noPhone3">
                         <img src="./img/calendar.jpg" width="47%" alt="" class="calendar_pic"></a>
                 </div>
 
@@ -538,4 +538,34 @@
             $(".back-abbr").css("border-left", "  15px solid lightcoral ");
         });
     });
+
+    document.getElementById('requestAdmin').addEventListener('click', function() {
+
+        alert('管理員帳密，歡迎來信索取～wunshengliao@gmail.com');
+
+});
+document.getElementById('noPhone').addEventListener('click', function() {
+    if (window.innerWidth < 776) {
+        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+        document.getElementById('noPhone').href = 'index.php';
+    }
+});
+document.getElementById('noPhone1').addEventListener('click', function() {
+    if (window.innerWidth < 776) {
+        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+        document.getElementById('noPhone1').href = 'index.php';
+    }
+});
+document.getElementById('noPhone2').addEventListener('click', function() {
+    if (window.innerWidth < 776) {
+        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+        document.getElementById('noPhone2').href = 'index.php';
+    }
+});
+document.getElementById('noPhone3').addEventListener('click', function() {
+    if (window.innerWidth < 776) {
+        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+        document.getElementById('noPhone3').href = 'index.php';
+    }
+});
 </script>

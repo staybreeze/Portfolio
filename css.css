@@ -284,6 +284,8 @@ td {}
 
 }
 
+
+
 .remind {
     text-align: end;
     color: crimson;
@@ -361,14 +363,14 @@ footer {
 
 @media screen and (max-width: 767px) {
     .online_store_pic:hover {
-        width: 230%;
+        /* width: 230%; */
         z-index: 1;
     }
 }
 
 @media screen and (max-width: 767px) {
     .calendar_pic:hover {
-        width: 218%;
+        /* width: 218%; */
         z-index: 1;
     }
 }
