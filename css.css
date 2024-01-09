@@ -433,6 +433,18 @@ footer {
 
     }
 }
+@media screen and (min-width: 1500px) {
+    .abbr-name {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 1500px) {
+    .full-name {
+        display: none;
+    }}
+
 
 @media screen and (min-width: 767px) {
     .abbr {
@@ -455,6 +467,18 @@ footer {
     .halloween{
   display: none;
     }
+    h3 {
+        color: lightcoral;
+        font-size: 16px;
+        font-family: DotGothic16;
+        font-weight: 600;
+        /* margin-bottom: 20px;
+        margin-top: 20px; */
+        border-left: 15px solid lightcoral 
+    }
+    
+
+
 }
 .web-tag{
 

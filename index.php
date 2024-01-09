@@ -170,22 +170,40 @@
     <div class="box mt-5">
 
         <h2 id="web"><span>W</span>eb Design</h2>
-        <div class="row ms-1">
-            <div class="col-1"></div>
-            <div class="col-3  mt-3 web-tag"  id="full">
+        <div class="row ms-1 full-name">
+            <div class="col-0 col-lg-1"></div>
+            <div class="col-3 col-lg-3  mt-3 web-tag"  id="full">
                 <h3 class="full">&nbsp;全端（Full-stack）</h3>
             </div>
 
-            <div class="col-3 mt-3 ms-5 web-tag" id="front">
+            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="front">
                 <h3 class="front">&nbsp;前端（Front-end）</h3>
             </div>
          
-            <div class="col-3 mt-3 ms-5 web-tag" id="back">
+            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="back">
                 <h3 class="back">&nbsp;後端（Back-end）</h3>
 
             </div>
-            <div class="col-1 me-1"></div>
+            <div class="col-0 col-lg-1 me-1"></div>
         </div>
+   
+        <div class="row ms-1 abbr-name">
+            <div class="col-0 col-lg-1"></div>
+            <div class="col-3 col-lg-3  mt-3 web-tag"  id="full-abbr">
+                <h3 class="full-abbr">&nbsp;全端</h3>
+            </div>
+
+            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="front-abbr">
+                <h3 class="front-abbr">&nbsp;前端</h3>
+            </div>
+         
+            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="back-abbr">
+                <h3 class="back-abbr">&nbsp;後端</h3>
+
+            </div>
+            <div class="col-0 col-lg-1 me-1"></div>
+        </div>
+
         <div class="full-works">
             <!-- <h3 class="mb-4">&nbsp;全端（Full-stack）</h3> -->
 
@@ -482,6 +500,42 @@
             $(".front").css("border-left", "  15px solid gainsboro");
             $(".back").css("color", "lightcoral");
             $(".back").css("border-left", "  15px solid lightcoral ");
+        });
+    });
+
+    $(document).ready(function() {
+        $("#full-abbr").click(function() {
+            $(".full-works").show();
+            $(".front-works").hide();
+            $(".back-works").hide();
+            $(".full-abbr").css("color", "lightcoral");
+            $(".full-abbr").css("border-left", "  15px solid lightcoral ");
+            $(".front-abbr").css("color", "gainsboro");
+            $(".front-abbr").css("border-left", "  15px solid gainsboro");
+            $(".back-abbr").css("color", "gainsboro");
+            $(".back-abbr").css("border-left", "  15px solid gainsboro");
+        });
+        $("#front-abbr").click(function() {
+            $(".full-works").hide();
+            $(".front-works").show();
+            $(".back-works").hide();
+            $(".full-abbr").css("color", "gainsboro");
+            $(".full-abbr").css("border-left", "  15px solid gainsboro");
+            $(".front-abbr").css("color", "lightcoral");
+            $(".front-abbr").css("border-left", "  15px solid lightcoral ");
+            $(".back-abbr").css("color", "gainsboro");
+            $(".back-abbr").css("border-left", "  15px solid gainsboro");
+        });
+        $("#back-abbr").click(function() {
+            $(".full-works").hide();
+            $(".front-works").hide();
+            $(".back-works").show();
+            $(".full-abbr").css("color", "gainsboro");
+            $(".full-abbr").css("border-left", "  15px solid gainsboro");
+            $(".front-abbr").css("color", "gainsboro");
+            $(".front-abbr").css("border-left", "  15px solid gainsboro");
+            $(".back-abbr").css("color", "lightcoral");
+            $(".back-abbr").css("border-left", "  15px solid lightcoral ");
         });
     });
 </script>
