@@ -313,7 +313,14 @@ echo "<div class='d-flex ms-80 mt-4'>";
 
                     </div>
                   </div>
+                  <div class="col-2">
+                    <div class="input-group mb-3">
 
+                      <span class="input-group-text bold"><i class="fas fa-heart" style="color:crimson"></i></span>
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:37%;text-align:center" disabled  value="<?= $good['like_item'];?>">
+
+                    </div>
+                  </div>
                 </div>
               </div>
 
