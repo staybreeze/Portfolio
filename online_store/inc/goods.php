@@ -1,3 +1,10 @@
+<style>
+    .liked {
+        color: #fe302f
+    }
+</style>
+
+
 <section class="section-products" id="store">
     <div class="container goods">
         <div class="row justify-content-center text-center">
@@ -17,8 +24,12 @@
 
             <!-- Single Product -->
             <?php
+
             $goods = $Good->all();
-            foreach ($goods as $good) {   ?>
+
+            foreach ($goods as $good) {
+
+            ?>
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <div id="product" class="single-product">
 
@@ -33,15 +44,17 @@
                                 echo '<span class="new">new</span>';
                             }
 
+
+                            $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
                             ?>
 
 
                             <ul>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#store" class="like"  data-id="<?= $good['id']; ?>"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#store" class="like" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
                                 <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                               
+
                             </ul>
                         </div>
                         <div class="part-2">
@@ -103,20 +116,25 @@
 </section>
 
 <script>
-$(document).ready(function() {
-    $(".like").click(function(event) {
-        $(this).css("color", "#fe302f");
-        console.log('this', this);
+    $(document).ready(function() {
+        //         $(".fa-heart").click(function() {
+        //     location.reload();
+        // });
 
-        let productId = $(this).data("id")
+        $(".like").click(function(event) {
 
-        $.post("./api/add_like.php", {
-            'id': productId
-        }, (res) => {
-            console.log(res);
+
+            let productId = $(this).data("id");
+
+
+            $.post("./api/add_like.php", {
+                'id': productId
+            }, (res) => {
+                console.log(res);
+
+                location.reload();
+            });
         });
+
     });
-});
-
-
 </script>
