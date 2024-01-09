@@ -169,35 +169,35 @@
     </div>
     <div class="box mt-5">
 
-        <h2 id="web"><span>W</span>eb Design</h2>
-        <div class="row ms-1 full-name">
-            <div class="col-0 col-lg-1"></div>
-            <div class="col-3 col-lg-3  mt-3 web-tag"  id="full">
+        <div class="d-flex ms-1 full-name" style="position:relative;left:313px;top:63px">
+
+            <div class="mt-3 web-tag" id="full">
                 <h3 class="full">&nbsp;全端（Full-stack）</h3>
             </div>
 
-            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="front">
+            <div class="mt-3 ms-5 web-tag" id="front">
                 <h3 class="front">&nbsp;前端（Front-end）</h3>
             </div>
-         
-            <div class="col-3  col-lg-3 mt-3 ms-5 web-tag" id="back">
+
+            <div class="mt-3 ms-5 web-tag" id="back">
                 <h3 class="back">&nbsp;後端（Back-end）</h3>
 
             </div>
-            <div class="col-0 col-lg-1 me-1"></div>
+
         </div>
-   
+
+        <h2 id="web" style="margin-top:10px"><span>W</span>eb Design</h2>
         <div class="row ms-1 abbr-name">
             <div class="col-lg-1"></div>
-            <div class="col-3 col-lg-3  mt-3 web-tag ms-3"  id="full-abbr">
+            <div class="col-3 col-lg-3  mt-3 web-tag-abbr ms-3" id="full-abbr">
                 <h3 class="full-abbr">&nbsp;全端</h3>
             </div>
 
-            <div class="col-3  col-lg-3 mt-3 ms-4 web-tag" id="front-abbr">
+            <div class="col-3  col-lg-3 mt-3 ms-4 web-tag-abbr" id="front-abbr">
                 <h3 class="front-abbr">&nbsp;前端</h3>
             </div>
-         
-            <div class="col-3  col-lg-3 mt-3 ms-4 web-tag" id="back-abbr">
+
+            <div class="col-3  col-lg-3 mt-3 ms-4 web-tag-abbr" id="back-abbr">
                 <h3 class="back-abbr">&nbsp;後端</h3>
 
             </div>
@@ -205,7 +205,7 @@
         </div>
 
         <div class="full-works">
-            <!-- <h3 class="mb-4">&nbsp;全端（Full-stack）</h3> -->
+            <!-- <h3 class="mb-4 ">&nbsp;全端（Full-stack）</h3> -->
 
             <h4 class="mt-4" style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
             <div class="section" id="web" style="display: flex;">
@@ -225,7 +225,7 @@
                     <h4 class="my-ms-4 mt-2">後台</h4>
 
                     <a href="./online_store/back_login.php">
-                        <img id="requestAdmin"class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
+                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
                     </a>
 
                     <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
@@ -236,8 +236,8 @@
             </div>
         </div>
 
-        <div class="front-works">
-            <h2 id="web" class="mt-3"></h2>
+        <div class="front-works mt-4">
+            <h2 id="web" class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;前端（Front-end）</h3> -->
             <div class="section" id="web" style="display: flex;">
 
@@ -253,9 +253,9 @@
                 <div></div>
                 <div>
 
-                    <h4 class="my-ms-4" >學校資料庫前台</h4>
+                    <h4 class="my-ms-4">學校資料庫前台</h4>
 
-                    <a href="./side_project/school"  id="noPhone1">
+                    <a href="./side_project/school" id="noPhone1">
                         <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" alt="">
                     </a>
 
@@ -268,7 +268,7 @@
 
                     <h4 class="mt-4">前端切版練習</h4>
 
-                    <a href="./side_project/front_pra_yukigi"  id="noPhone2">
+                    <a href="./side_project/front_pra_yukigi" id="noPhone2">
                         <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
                     </a>
 
@@ -287,8 +287,8 @@
             </div>
         </div>
 
-        <div class="back-works">
-            <h2 id="web" class="mt-3"></h2>
+        <div class="back-works mt-4">
+            <h2 id="web" class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;後端（Back-end）</h3> -->
             <div class="section" id="web" style="display: flex;">
 
@@ -305,7 +305,7 @@
                 <div class="" style="margin-top:0px">
                     <h4>萬年暦</h4>
 
-                    <a href="./calendar/index.php"  id="noPhone3">
+                    <a href="./calendar/index.php" id="noPhone3">
                         <img src="./img/calendar.jpg" width="47%" alt="" class="calendar_pic"></a>
                 </div>
 
@@ -468,12 +468,30 @@
 
 <script>
     $(document).ready(function() {
+        $(".full-works").show();
+        $(".front-works").hide();
+        $(".back-works").hide();
+        $(".full").css("color", "#00707fa0");
+        $(".full").css("border-left", "  15px solid #00707fa0");
+        $(".front").css("color", "gainsboro");
+        $(".front").css("border-left", "  15px solid gainsboro");
+        $(".back").css("color", "gainsboro");
+        $(".back").css("border-left", "  15px solid gainsboro");
+        $(".full-works").show();
+            $(".front-works").hide();
+            $(".back-works").hide();
+            $(".full-abbr").css("color", "#00707fa0");
+            $(".full-abbr").css("border-left", "  15px solid #00707fa0");
+            $(".front-abbr").css("color", "gainsboro");
+            $(".front-abbr").css("border-left", "  15px solid gainsboro");
+            $(".back-abbr").css("color", "gainsboro");
+            $(".back-abbr").css("border-left", "  15px solid gainsboro");
         $("#full").click(function() {
             $(".full-works").show();
             $(".front-works").hide();
             $(".back-works").hide();
-            $(".full").css("color", "lightcoral");
-            $(".full").css("border-left", "  15px solid lightcoral ");
+            $(".full").css("color", "#00707fa0");
+            $(".full").css("border-left", "  15px solid #00707fa0 ");
             $(".front").css("color", "gainsboro");
             $(".front").css("border-left", "  15px solid gainsboro");
             $(".back").css("color", "gainsboro");
@@ -485,8 +503,8 @@
             $(".back-works").hide();
             $(".full").css("color", "gainsboro");
             $(".full").css("border-left", "  15px solid gainsboro");
-            $(".front").css("color", "lightcoral");
-            $(".front").css("border-left", "  15px solid lightcoral ");
+            $(".front").css("color", "#00707fa0");
+            $(".front").css("border-left", "  15px solid #00707fa0 ");
             $(".back").css("color", "gainsboro");
             $(".back").css("border-left", "  15px solid gainsboro");
         });
@@ -498,8 +516,8 @@
             $(".full").css("border-left", "  15px solid gainsboro");
             $(".front").css("color", "gainsboro");
             $(".front").css("border-left", "  15px solid gainsboro");
-            $(".back").css("color", "lightcoral");
-            $(".back").css("border-left", "  15px solid lightcoral ");
+            $(".back").css("color", "#00707fa0");
+            $(".back").css("border-left", "  15px solid #00707fa0 ");
         });
     });
 
@@ -508,8 +526,8 @@
             $(".full-works").show();
             $(".front-works").hide();
             $(".back-works").hide();
-            $(".full-abbr").css("color", "lightcoral");
-            $(".full-abbr").css("border-left", "  15px solid lightcoral ");
+            $(".full-abbr").css("color", "#00707fa0");
+            $(".full-abbr").css("border-left", "  15px solid #00707fa0");
             $(".front-abbr").css("color", "gainsboro");
             $(".front-abbr").css("border-left", "  15px solid gainsboro");
             $(".back-abbr").css("color", "gainsboro");
@@ -521,8 +539,8 @@
             $(".back-works").hide();
             $(".full-abbr").css("color", "gainsboro");
             $(".full-abbr").css("border-left", "  15px solid gainsboro");
-            $(".front-abbr").css("color", "lightcoral");
-            $(".front-abbr").css("border-left", "  15px solid lightcoral ");
+            $(".front-abbr").css("color", "#00707fa0");
+            $(".front-abbr").css("border-left", "  15px solid #00707fa0 ");
             $(".back-abbr").css("color", "gainsboro");
             $(".back-abbr").css("border-left", "  15px solid gainsboro");
         });
@@ -534,8 +552,8 @@
             $(".full-abbr").css("border-left", "  15px solid gainsboro");
             $(".front-abbr").css("color", "gainsboro");
             $(".front-abbr").css("border-left", "  15px solid gainsboro");
-            $(".back-abbr").css("color", "lightcoral");
-            $(".back-abbr").css("border-left", "  15px solid lightcoral ");
+            $(".back-abbr").css("color", "#00707fa0");
+            $(".back-abbr").css("border-left", "  15px solid #00707fa0 ");
         });
     });
 
@@ -543,29 +561,29 @@
 
         alert('管理員帳密，歡迎來信索取～wunshengliao@gmail.com');
 
-});
-document.getElementById('noPhone').addEventListener('click', function() {
-    if (window.innerWidth < 776) {
-        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
-        document.getElementById('noPhone').href = 'index.php';
-    }
-});
-document.getElementById('noPhone1').addEventListener('click', function() {
-    if (window.innerWidth < 776) {
-        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
-        document.getElementById('noPhone1').href = 'index.php';
-    }
-});
-document.getElementById('noPhone2').addEventListener('click', function() {
-    if (window.innerWidth < 776) {
-        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
-        document.getElementById('noPhone2').href = 'index.php';
-    }
-});
-document.getElementById('noPhone3').addEventListener('click', function() {
-    if (window.innerWidth < 776) {
-        alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
-        document.getElementById('noPhone3').href = 'index.php';
-    }
-});
+    });
+    document.getElementById('noPhone').addEventListener('click', function() {
+        if (window.innerWidth < 776) {
+            alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+            document.getElementById('noPhone').href = 'index.php';
+        }
+    });
+    document.getElementById('noPhone1').addEventListener('click', function() {
+        if (window.innerWidth < 776) {
+            alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+            document.getElementById('noPhone1').href = 'index.php';
+        }
+    });
+    document.getElementById('noPhone2').addEventListener('click', function() {
+        if (window.innerWidth < 776) {
+            alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+            document.getElementById('noPhone2').href = 'index.php';
+        }
+    });
+    document.getElementById('noPhone3').addEventListener('click', function() {
+        if (window.innerWidth < 776) {
+            alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+            document.getElementById('noPhone3').href = 'index.php';
+        }
+    });
 </script>

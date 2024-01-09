@@ -232,13 +232,13 @@ h2>span {
 }
 
 h3 {
-    color: lightcoral;
+    color: #00707fa0;
     font-size: 18px;
     font-family: DotGothic16;
     font-weight: 600;
     margin-bottom: 20px;
     margin-top: 20px;
-    border-left: 15px solid lightcoral 
+    border-left: 15px solid #00707fa0
 }
 
 h4 {
@@ -341,8 +341,9 @@ footer {
     background-color: #7cbcc4;
     color: #fff;
 }
-.my-ms-4{
-    margin-left:22px
+
+.my-ms-4 {
+    margin-left: 22px
 }
 
 @media screen and (max-width: 767px) {
@@ -353,12 +354,14 @@ footer {
     td {
         font-size: smaller;
     }
-    .remind{
+
+    .remind {
         font-size: 10px;
     }
-    .my-ms-4{
-    margin-left:10px
-}
+
+    .my-ms-4 {
+        margin-left: 10px
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -435,6 +438,7 @@ footer {
 
     }
 }
+
 @media screen and (min-width: 1500px) {
     .abbr-name {
         display: none;
@@ -444,8 +448,9 @@ footer {
 
 @media screen and (max-width: 1500px) {
     .full-name {
-        display: none;
-    }}
+        display: none !important;
+    }
+}
 
 
 @media screen and (min-width: 767px) {
@@ -466,9 +471,11 @@ footer {
         margin: auto;
         text-align: center;
     }
-    .halloween{
-  display: none;
+
+    .halloween {
+        display: none;
     }
+
     h3 {
         color: lightcoral;
         font-size: 16px;
@@ -476,28 +483,51 @@ footer {
         font-weight: 600;
         /* margin-bottom: 20px;
         margin-top: 20px; */
-        border-left: 15px solid lightcoral 
+        border-left: 15px solid lightcoral
     }
-    
+
 
 
 }
-.web-tag{
 
-    border:3px dotted #cdcd9b;
-    background-color:#f2f2cb;
+.web-tag {
+    width: 230px;
+    height:60px;
+    /* border: 1px solid #00707f; */
+
+    background-color: rgb(230, 230, 150);
+    padding-left: 30px;
+    /* opacity: 0.5; */
+    cursor: pointer;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0
+}
+
+.web-tag-abbr {
+
+    border: 3px dotted #cdcd9b;
+    background-color: #f2f2cb;
     cursor: pointer;
 }
 
-.web-tag:hover{
+.web-tag:hover {
+    /* background-color:rgba(5, 110, 133, 0.396); */
+    /* border:3px dotted #cdcd9b; */
 
-    border:3px solid #cdcd9b;
+    /* border: 2px dotted #00707f; */
+    border-bottom: none;
+
+    & h3 {
+        color: lightcoral;
+        border-left: 15px solid lightcoral;
+
+    }
 }
 
 @media screen and (max-width: 390px) {
 
-    .circle{
-          display: none;
-          overflow-x: hidden;
+    .circle {
+        display: none;
+        overflow-x: hidden;
     }
 }
