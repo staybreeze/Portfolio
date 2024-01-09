@@ -43,9 +43,11 @@
                             if (($good['new']) > 0) {
                                 echo '<span class="new">new</span>';
                             }
+if(isset($_SESSION['liked_products'])){
+    $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
+}
 
-
-                            $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
+                           
                             ?>
 
 
