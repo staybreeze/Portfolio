@@ -493,3 +493,11 @@ footer {
 
     border:3px solid #cdcd9b;
 }
+
+@media screen and (max-width: 390px) {
+
+    .circle{
+          display: none;
+          overflow-x: hidden;
+    }
+}
