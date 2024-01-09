@@ -167,7 +167,7 @@
         </div>
 
     </div>
-    <div class="box mt-5">
+    <div id="web" class="box mt-5">
 
         <div class="d-flex ms-1 full-name" style="position:relative;left:313px;top:63px">
 
@@ -186,7 +186,7 @@
 
         </div>
 
-        <h2 id="web" style="margin-top:10px"><span>W</span>eb Design</h2>
+        <h2  style="margin-top:10px"><span>W</span>eb Design</h2>
         <div class="row ms-1 abbr-name">
             <div class="col-lg-1"></div>
             <div class="col-3 col-lg-3  mt-3 web-tag-abbr ms-3" id="full-abbr">
@@ -208,7 +208,7 @@
             <!-- <h3 class="mb-4 ">&nbsp;全端（Full-stack）</h3> -->
 
             <h4 class="mt-4" style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
-            <div class="section" id="web" style="display: flex;">
+            <div class="section"  style="display: flex;">
 
                 <div>
 
@@ -237,9 +237,9 @@
         </div>
 
         <div class="front-works mt-4">
-            <h2 id="web" class="mt-3 full-works"></h2>
+            <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;前端（Front-end）</h3> -->
-            <div class="section" id="web" style="display: flex;">
+            <div class="section"  style="display: flex;">
 
                 <div>
 
@@ -262,7 +262,7 @@
                 </div>
 
             </div>
-            <div class="section" id="web" style="display: flex;">
+            <div class="section"  style="display: flex;">
 
                 <div>
 
@@ -288,9 +288,9 @@
         </div>
 
         <div class="back-works mt-4">
-            <h2 id="web" class="mt-3 full-works"></h2>
+            <h2  class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;後端（Back-end）</h3> -->
-            <div class="section" id="web" style="display: flex;">
+            <div class="section"  style="display: flex;">
 
                 <!-- <div>
 
