@@ -69,7 +69,7 @@
 
       <div class="offcanvas offcanvas-end" id="demo">
         <div class="offcanvas-header">
-          <h1 class="offcanvas-title">會員中心<img src="../img/logo1.png" alt="" width="60px"></h1>
+          <h1 class="offcanvas-title">會員中心<img class="mb-3" src="../img/logo1.png" alt="" width="60px"></h1>
 
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>

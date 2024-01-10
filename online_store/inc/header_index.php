@@ -79,9 +79,9 @@
 
     <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:37px">
 
-      <div class="offcanvas offcanvas-end" id="demo">
+      <div class="offcanvas offcanvas-end"  data-bs-backdrop="true" id="demo">
         <div class="offcanvas-header">
-          <h1 class="offcanvas-title">會員中心<img src="./img/logo1.png" alt="" width="60px"></h1>
+          <h1 class="offcanvas-title">會員中心<img class="mb-3" src="./img/logo1.png" alt="" width="60px"></h1>
 
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>

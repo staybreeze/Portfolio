@@ -1055,3 +1055,7 @@ input#menu {
   color: #fff !important;
   background-color: goldenrod !important;
 }
+
+.offcanvas.offcanvas-end {
+  transition: transform 0.3s ease-in-out !important;
+}

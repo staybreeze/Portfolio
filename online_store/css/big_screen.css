@@ -603,3 +603,7 @@ a:hover {
   color:#fff !important;
   background-color: goldenrod !important;
 }
+
+.offcanvas.offcanvas-end {
+  transition: transform .6s ease-in-out !important;
+}
