@@ -232,7 +232,7 @@ h2>span {
 }
 
 h3 {
-    color: #00707fa0;
+    /* color: #00707fa0; */
     font-size: 18px;
     font-family: DotGothic16;
     font-weight: 600;
@@ -492,7 +492,7 @@ footer {
 
 .web-tag {
     width: 230px;
-    height:60px;
+    height:55px;
     /* border: 1px solid #00707f; */
 
     background-color: rgb(230, 230, 150);
@@ -500,7 +500,8 @@ footer {
     /* opacity: 0.5; */
     cursor: pointer;
     border-bottom: none;
-    border-radius: 20px 20px 0 0
+    border-radius: 20px 20px 0 0;
+    /* border-left: 15px solid #00707fa0 */
 }
 
 .web-tag-abbr {
@@ -508,21 +509,12 @@ footer {
     border: 3px dotted #cdcd9b;
     background-color: #f2f2cb;
     cursor: pointer;
+margin:auto
 }
 
-.web-tag:hover {
-    /* background-color:rgba(5, 110, 133, 0.396); */
-    /* border:3px dotted #cdcd9b; */
 
-    /* border: 2px dotted #00707f; */
-    border-bottom: none;
 
-    & h3 {
-        color: lightcoral;
-        border-left: 15px solid lightcoral;
 
-    }
-}
 
 @media screen and (max-width: 390px) {
 

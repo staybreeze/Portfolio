@@ -171,25 +171,25 @@
 
         <div class="d-flex ms-1 full-name" style="position:relative;left:313px;top:63px">
 
-            <div class="mt-3 web-tag" id="full">
+            <div class="mt-3 web-tag web-tag-full" id="full">
                 <h3 class="full">&nbsp;全端（Full-stack）</h3>
             </div>
 
-            <div class="mt-3 ms-5 web-tag" id="front">
+            <div class="mt-3 ms-5 web-tag web-tag-front" id="front">
                 <h3 class="front">&nbsp;前端（Front-end）</h3>
             </div>
 
-            <div class="mt-3 ms-5 web-tag" id="back">
+            <div class="mt-3 ms-5 web-tag web-tag-back" id="back">
                 <h3 class="back">&nbsp;後端（Back-end）</h3>
 
             </div>
 
         </div>
 
-        <h2  style="margin-top:10px"><span>W</span>eb Design</h2>
-        <div class="row ms-1 abbr-name">
+        <h2 style="margin-top:10px"><span>W</span>eb Design</h2>
+        <div class="row abbr-name">
             <div class="col-lg-1"></div>
-            <div class="col-3 col-lg-3  mt-3 web-tag-abbr ms-3" id="full-abbr">
+            <div class="col-3 col-lg-3  mt-3 web-tag-abbr" id="full-abbr">
                 <h3 class="full-abbr">&nbsp;全端</h3>
             </div>
 
@@ -208,7 +208,7 @@
             <!-- <h3 class="mb-4 ">&nbsp;全端（Full-stack）</h3> -->
 
             <h4 class="mt-4" style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
-            <div class="section"  style="display: flex;">
+            <div class="section" style="display: flex;">
 
                 <div>
 
@@ -239,7 +239,7 @@
         <div class="front-works mt-4">
             <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;前端（Front-end）</h3> -->
-            <div class="section"  style="display: flex;">
+            <div class="section" style="display: flex;">
 
                 <div>
 
@@ -262,7 +262,7 @@
                 </div>
 
             </div>
-            <div class="section"  style="display: flex;">
+            <div class="section" style="display: flex;">
 
                 <div>
 
@@ -288,9 +288,9 @@
         </div>
 
         <div class="back-works mt-4">
-            <h2  class="mt-3 full-works"></h2>
+            <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;後端（Back-end）</h3> -->
-            <div class="section"  style="display: flex;">
+            <div class="section" style="display: flex;">
 
                 <!-- <div>
 
@@ -471,31 +471,35 @@
         $(".full-works").show();
         $(".front-works").hide();
         $(".back-works").hide();
-        $(".full").css("color", "#00707fa0");
-        $(".full").css("border-left", "  15px solid #00707fa0");
+        $(".full").css("color", "rgb(230, 230, 150)");
+        $(".full").css("border-left", "  15px solid rgb(230, 230, 150)");
+        $(".web-tag-full").css("background-color", "#00707fa0");
         $(".front").css("color", "gainsboro");
         $(".front").css("border-left", "  15px solid gainsboro");
         $(".back").css("color", "gainsboro");
         $(".back").css("border-left", "  15px solid gainsboro");
         $(".full-works").show();
-            $(".front-works").hide();
-            $(".back-works").hide();
-            $(".full-abbr").css("color", "#00707fa0");
-            $(".full-abbr").css("border-left", "  15px solid #00707fa0");
-            $(".front-abbr").css("color", "gainsboro");
-            $(".front-abbr").css("border-left", "  15px solid gainsboro");
-            $(".back-abbr").css("color", "gainsboro");
-            $(".back-abbr").css("border-left", "  15px solid gainsboro");
+        $(".front-works").hide();
+        $(".back-works").hide();
+        $(".full-abbr").css("color", "#00707fa0");
+        $(".full-abbr").css("border-left", "  15px solid #00707fa0");
+        $(".front-abbr").css("color", "gainsboro");
+        $(".front-abbr").css("border-left", "  15px solid gainsboro");
+        $(".back-abbr").css("color", "gainsboro");
+        $(".back-abbr").css("border-left", "  15px solid gainsboro");
         $("#full").click(function() {
             $(".full-works").show();
             $(".front-works").hide();
             $(".back-works").hide();
-            $(".full").css("color", "#00707fa0");
-            $(".full").css("border-left", "  15px solid #00707fa0 ");
+            $(".full").css("color", "rgb(246, 246, 161)");
+            $(".full").css("border-left", "  15px solid rgb(246, 246, 161)");
+            $(".web-tag-full").css("background-color", "#00707fa0");
             $(".front").css("color", "gainsboro");
             $(".front").css("border-left", "  15px solid gainsboro");
+            $(".web-tag-front").css("background-color", "rgb(230, 230, 150)");
             $(".back").css("color", "gainsboro");
             $(".back").css("border-left", "  15px solid gainsboro");
+            $(".web-tag-back").css("background-color", "rgb(230, 230, 150)");
         });
         $("#front").click(function() {
             $(".full-works").hide();
@@ -503,10 +507,13 @@
             $(".back-works").hide();
             $(".full").css("color", "gainsboro");
             $(".full").css("border-left", "  15px solid gainsboro");
-            $(".front").css("color", "#00707fa0");
-            $(".front").css("border-left", "  15px solid #00707fa0 ");
+            $(".web-tag-full").css("background-color", "rgb(230, 230, 150)");
+            $(".front").css("color", "rgb(246, 246, 161)");
+            $(".front").css("border-left", "  15px solid rgb(246, 246, 161)");
+            $(".web-tag-front").css("background-color", "#00707fa0");
             $(".back").css("color", "gainsboro");
             $(".back").css("border-left", "  15px solid gainsboro");
+            $(".web-tag-back").css("background-color", "rgb(230, 230, 150)");
         });
         $("#back").click(function() {
             $(".full-works").hide();
@@ -514,10 +521,13 @@
             $(".back-works").show();
             $(".full").css("color", "gainsboro");
             $(".full").css("border-left", "  15px solid gainsboro");
+            $(".web-tag-full").css("background-color", "rgb(230, 230, 150)");
             $(".front").css("color", "gainsboro");
             $(".front").css("border-left", "  15px solid gainsboro");
-            $(".back").css("color", "#00707fa0");
-            $(".back").css("border-left", "  15px solid #00707fa0 ");
+            $(".web-tag-front").css("background-color", "rgb(230, 230, 150)");
+            $(".back").css("color", "rgb(246, 246, 161)");
+            $(".back").css("border-left", "  15px solid rgb(246, 246, 161)");
+            $(".web-tag-back").css("background-color", "#00707fa0");
         });
     });
 
