@@ -1057,5 +1057,5 @@ input#menu {
 }
 
 .offcanvas.offcanvas-end {
-  transition: transform 0.3s ease-in-out !important;
+  transition: transform .6s ease-in-out !important;
 }
