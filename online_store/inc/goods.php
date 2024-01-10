@@ -120,7 +120,7 @@
 
 
     <!-- good Modal -->
-    <div class="modal poster-modal" id="good">
+    <div class="modal fade poster-modal" id="good">
         <div class="modal-dialog" >
 
 

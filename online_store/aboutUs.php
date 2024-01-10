@@ -122,7 +122,7 @@ $about=$About->find(1);
       </div>
     </div>
   </div>
-  <div class="modal" id="myModal">
+  <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -183,7 +183,7 @@ $about=$About->find(1);
       </div>
     </div>
   </div>
-  <div class="modal" id="myModal-2">
+  <div class="modal fade" id="myModal-2">
     <div class="modal-dialog">
 
       <img src="./img/logo1.png" alt="" width="120%">

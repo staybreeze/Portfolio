@@ -346,7 +346,7 @@
     <footer id="footer"></footer>
 
     <!-- contact Modal -->
-    <div class="modal" id="contact">
+    <div class="modal fade" id="contact">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -400,7 +400,7 @@
 
 
     <!-- Poster Modal -->
-    <div class="modal poster-modal" id="poster">
+    <div class="modal fade poster-modal" id="poster">
         <div class="modal-dialog" style="right:302px">
 
 
@@ -422,7 +422,7 @@
 
 
     <!-- Calendar_pic Modal -->
-    <div class="modal calendar-modal" id="calendar_pic">
+    <div class="modal fade calendar-modal" id="calendar_pic">
         <div class="modal-dialog" style="right:302px">
 
 
@@ -443,7 +443,7 @@
 
 
     <!-- Banner Modal -->
-    <div class="modal banner-modal" id="banner">
+    <div class="modal fade banner-modal" id="banner">
         <div class="modal-dialog" style="right:310px;top:100px">
 
 
