@@ -237,7 +237,7 @@ h3 {
     font-family: Rubik scribble;
     font-weight: 600;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 17px;
     /* border-left: 15px solid #00707fa0 */
 }
 
@@ -492,7 +492,7 @@ footer {
 
 .web-tag {
     width: 230px;
-    height:55px;
+    height:48px;
     /* border: 1px solid #00707f; */
 
     background-color: rgb(230, 230, 150);
