@@ -1,3 +1,4 @@
+
 <style>
     .liked {
         color: #fe302f
@@ -43,19 +44,19 @@
                             if (($good['new']) > 0) {
                                 echo '<span class="new">new</span>';
                             }
-if(isset($_SESSION['liked_products'])){
-    $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
-}
+                            if (isset($_SESSION['liked_products'])) {
+                                $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
+                            }
 
-                           
+
                             ?>
 
 
                             <ul>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#store" class="like" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
+                                <li><a style="cursor:pointer" class="like" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                <li><a style="cursor:pointer"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
 
                             </ul>
                         </div>
@@ -115,6 +116,31 @@ if(isset($_SESSION['liked_products'])){
             </div> -->
         </div>
     </div>
+
+
+
+    <!-- good Modal -->
+    <div class="modal poster-modal" id="good">
+        <div class="modal-dialog" >
+
+
+
+            <!-- Modal body -->
+
+
+            <img id="imgModalSrc" width="100%" alt="">
+
+
+            <!-- Modal footer -->
+
+            <button type="button"  class="btn  close-btn mt-2" id="close-btn" data-bs-dismiss="modal">Close</button>
+
+
+
+        </div>
+    </div>
+
+
 </section>
 
 <script>
@@ -137,6 +163,19 @@ if(isset($_SESSION['liked_products'])){
                 location.reload();
             });
         });
+
+    });
+
+    $(document).ready(function() {
+
+
+        $('.fa-expand').click(function() {
+            let imgName = $(this).data("img");
+            console.log('ok');
+            $("#imgModalSrc").attr("src", "./img/" + imgName);
+            $('#good').modal('show');
+        });
+
 
     });
 </script>

@@ -18,6 +18,7 @@ include_once "./api/db.php";
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
     <!-- <link rel="stylesheet" media="screen and (max-width: 400px)" href="./css/7th_screen.css"> -->
     <!-- <link rel="stylesheet" media="screen and (max-width: 800px)" href="./css/6th_screen.css"> -->
     <!-- <link rel="stylesheet" media="screen and (max-width  : 1200px)" href="./css/5th_screen.css"> -->
