@@ -563,8 +563,8 @@
 
     });
     document.getElementById('noPhone').addEventListener('click', function() {
-        if (window.innerWidth < 776) {
-            alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+        if (window.innerWidth < 1200) {
+            alert('此網站不支援手機及平板瀏覽>"""<，請使用電腦開啟！');
             document.getElementById('noPhone').href = 'index.php';
         }
     });
@@ -581,8 +581,8 @@
         }
     });
     document.getElementById('noPhone3').addEventListener('click', function() {
-        if (window.innerWidth < 776) {
-            alert('此網站不支援手機瀏覽>"""<，請使用電腦開啟！');
+        if (window.innerWidth < 1200) {
+            alert('此網站不支援手機及平板瀏覽>"""<，請使用電腦開啟！');
             document.getElementById('noPhone3').href = 'index.php';
         }
     });
