@@ -9,7 +9,7 @@
     <div class="container goods">
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
-                <div class="good-header">
+                <div class="good-header"  id="onlineStore">
                     <h2><b>購物商城 ✨</b>
 
                     </h2>
@@ -20,7 +20,9 @@
                 </div>
             </div>
         </div>
-        <div class="down-arrows" style="display: none;">⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣ ⇣</div>
+      
+        <a href="#onlineStore"><button type="button" class="btn  close-btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
+
         <div class="row">
 
             <!-- Single Product -->

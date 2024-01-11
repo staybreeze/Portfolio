@@ -1035,10 +1035,10 @@ input#menu {
     ;
   }
 
-  .carousel-item img {
+  .carousel-item img,.carousel-img {
 
-    height: 284px !important;
-    ;
+    height: 341px !important;
+    background-color: #12304a !important;
   }
 
   .section-products .good-header {
@@ -1068,11 +1068,27 @@ input#menu {
 
   .down-arrows{
     display: block !important;
-    color: rgb(107, 62, 2);
+    color: gold!important;
+    background-color: rgb(107, 62, 2) !important;
     font-weight: bolder;
     font-size: 20px !important;
     margin-bottom: 20px;
     text-align: center;
+  }
+  #close-btn {
+    cursor: pointer !important;
+    background-color: rgb(107, 62, 2) !important;
+    color: #fff !important;
+    width:100%;
+  }
+
+
+  
+  #shoppingBtn {
+    cursor: pointer !important;
+    background-color: rgb(107, 62, 2) !important;
+    color: #fff !important;
+    width:100%;
   }
 }
 
@@ -1083,3 +1099,5 @@ input#menu {
 .myBtn-gold {
   background-color: goldenrod;
 }
+
+

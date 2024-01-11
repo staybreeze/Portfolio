@@ -607,3 +607,7 @@ a:hover {
 .offcanvas.offcanvas-end {
   transition: transform .6s ease-in-out !important;
 }
+
+#shoppingBtn{
+  display: none;
+}
