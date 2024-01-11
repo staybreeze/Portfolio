@@ -9,7 +9,7 @@
     <div class="container goods">
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
-                <div class="header">
+                <div class="good-header">
                     <h2><b>特色商品</b>
 
                     </h2>
