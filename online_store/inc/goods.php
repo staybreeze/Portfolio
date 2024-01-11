@@ -10,11 +10,11 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="good-header">
-                    <h2><b>特色商品</b>
+                    <h2><b>購物商城✨</b>
 
                     </h2>
                     <br>
-                    <h3>超熱銷(=^-ω-^=)</h3>
+                    <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
 
                     <br>
                 </div>

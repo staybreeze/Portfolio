@@ -411,17 +411,17 @@ a:hover {
   padding: 80px 0 54px;
 }
 
-.section-products .header {
+.section-products .good-header {
   margin-bottom: 50px;
 }
 
-.section-products .header h3 {
-  font-size: 1rem;
+.section-products .good-header h3 {
+  font-size: 1.2rem;
   color: #fe302f;
   font-weight: 500;
 }
 
-.section-products .header h2 {
+.section-products .good-header h2 {
   font-size: 2.2rem;
   font-weight: 400;
   color: #444444;
