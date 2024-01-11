@@ -608,6 +608,6 @@ a:hover {
   transition: transform .6s ease-in-out !important;
 }
 
-#shoppingBtn{
+#shoppingBtn,.hidden-div{
   display: none;
 }

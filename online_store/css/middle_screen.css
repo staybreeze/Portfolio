@@ -1089,7 +1089,9 @@ input#menu {
     background-color: rgb(107, 62, 2) !important;
     color: #fff !important;
     width:100%;
+    margin-top: 40px !important;
   }
+
 }
 
 .myBtn-brown {
@@ -1101,3 +1103,6 @@ input#menu {
 }
 
 
+.hidden-div{
+  display:none
+}
