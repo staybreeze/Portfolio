@@ -1,4 +1,3 @@
-
 <style>
     .liked {
         color: #fe302f
@@ -54,7 +53,7 @@
 
                             <ul>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a style="cursor:pointer" class="like" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
+                                <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
                                 <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
 
@@ -121,7 +120,7 @@
 
     <!-- good Modal -->
     <div class="modal fade poster-modal" id="good">
-        <div class="modal-dialog" >
+        <div class="modal-dialog">
 
 
 
@@ -133,7 +132,7 @@
 
             <!-- Modal footer -->
 
-            <button type="button"  class="btn  close-btn mt-2" id="close-btn" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn  close-btn mt-2" id="close-btn" data-bs-dismiss="modal">Close</button>
 
 
 
@@ -150,30 +149,27 @@
         // });
 
         $(".like").click(function(event) {
-
-
             let productId = $(this).data("id");
-
 
             $.post("./api/add_like.php", {
                 'id': productId
             }, (res) => {
                 console.log(res);
 
-                location.reload();
+                $("#" + productId).load(location.href + " #" + productId + " > *");
+            //   location.reload();
             });
         });
-
     });
 
     $(document).ready(function() {
 
         $('.goodImgExpand').click(function() {
-    let imgName = $(this).find("i").data("img");
-    console.log('ok');
-    $("#imgModalSrc").attr("src", "./img/" + imgName);
-    $('#good').modal('show');
-});
+            let imgName = $(this).find("i").data("img");
+            console.log('ok');
+            $("#imgModalSrc").attr("src", "./img/" + imgName);
+            $('#good').modal('show');
+        });
 
 
 

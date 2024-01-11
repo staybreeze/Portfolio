@@ -78,7 +78,7 @@ include_once "./api/db.php";
 
 
           <h3 class="h3">&nbsp;<?= $article['title']; ?></h3>
-          <a href="./articles/<?= $article['time']; ?>.php"><img class="pt-3" src="./img/<?= $article['img']; ?>" alt="" width="375px" height="300px"></a>
+          <a href="./articles/<?= $article['time']; ?>.php"><img class="pt-3" src="./img/<?= $article['img']; ?>"  style="border-radius:0px 0px 0px 0px"  alt="" width="375px" height="300px"></a>
 
           <a href="./articles/<?= $article['time']; ?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
 
