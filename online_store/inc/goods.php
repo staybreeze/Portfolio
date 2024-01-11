@@ -56,7 +56,7 @@
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
                                 <li><a style="cursor:pointer" class="like" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
-                                <li><a style="cursor:pointer"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
+                                <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
 
                             </ul>
                         </div>
@@ -168,13 +168,13 @@
 
     $(document).ready(function() {
 
+        $('.goodImgExpand').click(function() {
+    let imgName = $(this).find("i").data("img");
+    console.log('ok');
+    $("#imgModalSrc").attr("src", "./img/" + imgName);
+    $('#good').modal('show');
+});
 
-        $('.fa-expand').click(function() {
-            let imgName = $(this).data("img");
-            console.log('ok');
-            $("#imgModalSrc").attr("src", "./img/" + imgName);
-            $('#good').modal('show');
-        });
 
 
     });
