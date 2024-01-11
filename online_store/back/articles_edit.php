@@ -142,11 +142,12 @@ color:brown;
 
 <a href="./articles.php?do=articles&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>
 <?php
-            if(isset($_GET['edit'])){
-          echo    '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
-            }else{
-              echo    '<a href="./articles.php?do=articles&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
-            }
+if (isset($_GET['edit']) || isset($_GET['p'])) {
+  echo '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
+} else {
+  echo '<a href="./articles.php?do=articles&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
+}
+
             
             ?>
           </div>
