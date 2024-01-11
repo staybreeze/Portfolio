@@ -38,7 +38,7 @@ include_once "./api/db.php";
 include "./inc/header_index.php"
 ?>
   <!-- ---- -->
-  <div class="contaainer caroisel" style="background-color: 13304a;" id="carousel">
+  <div class="caroisel" style="background-color: 13304a;" id="carousel">
     <!-- data-bs-ride="carousel" 使用 自動輪播功能 -->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">

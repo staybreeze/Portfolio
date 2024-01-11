@@ -1033,6 +1033,12 @@ input#menu {
   .cheetos-title2 {
     display: block !important;
   }
+.carousel-item img{
+
+  height: 300px !important;
+
+  margin: left;
+}
 
 }
 
