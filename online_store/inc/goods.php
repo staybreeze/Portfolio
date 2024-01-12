@@ -142,7 +142,7 @@
 
         </div>
     </div>
-    <a href="cart.php"><button type="button" class="btn  close-btn mt-2" id="checkOutBtn">CHECK OUT</button></a>
+    <a href="cart.php"><button type="button" class="btn  close-btn mt-2" id="checkOutBtn"><em>CHECK OUT</em></button></a>
 </section>
 
 <script>
