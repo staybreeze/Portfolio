@@ -15,9 +15,19 @@ include_once "./db.php";
 //     ' (單引號) 變成	設定了 ENT_QUOTES 後， &#039; (如果是 ENT_HTML401) ，或者 &apos; (如果是 ENT_XML1、 ENT_XHTML 或 ENT_HTML5)。
 //     < (小於)	  變成  &lt;
 //     > (大於)   變成	&gt;
-$acc=htmlspecialchars(trim($_POST['acc']));
+$acc = htmlspecialchars(trim($_POST['acc']));
+$pattern = '/^[a-zA-Z0-9]+$/';
 
-$res=$User->count(['acc'=>$acc]);
+
+if (!preg_match($pattern, $acc)) {
+
+    header("Location:../add.php?wrongAcc");
+    exit();
+} 
+
+
+$res = $User->count(['acc' => $acc]);
+
 
 // 導入FUNCTION後不需要了
 // $sql="insert into `users`(`acc`,`pw`,`name`,`address`,`email`)
@@ -27,22 +37,17 @@ $res=$User->count(['acc'=>$acc]);
 // $pdo->exec($sql);
 
 
-if($res>0 || empty($_POST['pw'])){
+if ($res > 0 || empty($_POST['pw'])) {
     // echo "重複";
     header("Location:../add.php?error");
-}else{
-// 確定$_POST都是會處理到的對象，且$_POST本身就是陣列，因此可以save($_POST)
-$User->save($_POST);
-//  $User->save(['acc'=>"{$acc}",
-//                  'pw'=>"{$_POST['pw']}",
-//                  'name'=>"{$_POST['name']}",
-//                  'email'=>"{$_POST['email']}",
-//                  'address'=>"{$_POST['address']}"]);
+} else {
+    // 確定$_POST都是會處理到的對象，且$_POST本身就是陣列，因此可以save($_POST)
+    $User->save($_POST);
+    //  $User->save(['acc'=>"{$acc}",
+    //                  'pw'=>"{$_POST['pw']}",
+    //                  'name'=>"{$_POST['name']}",
+    //                  'email'=>"{$_POST['email']}",
+    //                  'address'=>"{$_POST['address']}"]);
 
-header("Location:../login.php?success");
+    header("Location:../login.php?success");
 }
-
-
-
-
-
