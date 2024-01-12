@@ -107,13 +107,23 @@ text-align:end;
 
     <form action="./api/cart_add_good.php" method="post">
       <table class="table">
-        <tr>
+        <tr class="tr-computer">
           <th style="width:8%;background-color:#f8ede0">ID</th>
           <th style="width:10% ;background-color:#f8ede0">圖片</th>
-          <th style="width:40% ;background-color:#f8ede0">商品</th>
+          <th style="width:40%;background-color:#f8ede0">商品</th>
           <th style="width:10%;background-color:#f8ede0">單價</th>
           <th style="width:10%;background-color:#f8ede0">數量</th>
           <th style="width:10%;background-color:#f8ede0">小計</th>
+          <th style="background-color:#f8ede0">刪除</th>
+        </tr>
+
+        <tr class="tr-mobile">
+          <th style="width:8%;background-color:#f8ede0">ID</th>
+          <th style="width:10%;background-color:#f8ede0">圖片</th>
+          <th style="width:10%;background-color:#f8ede0">商品</th>
+          <th style="width:10%;background-color:#f8ede0">單價</th>
+          <th style="width:40%;background-color:#f8ede0">數量</th>
+          <th style="width:20%;background-color:#f8ede0">小計</th>
           <th style="background-color:#f8ede0">刪除</th>
         </tr>
 
@@ -138,7 +148,7 @@ text-align:end;
           echo "<td style='padding-top:23px'>{$row['name']}</td>";
           echo "<td style='padding-top:23px' class='price'>{$row['price']}</td>";
           echo "<td style='padding-top:23px'>
-                    <input type='number' name='quantity[]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
+                    <input style='width:90%' type='number' name='quantity[]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
           $total = $cartItem['quantity'] * $row['price'];
 
           echo "<td style='padding-top:23px' class='subtotal' id='total'>{$total}</td>";
@@ -157,11 +167,12 @@ text-align:end;
 
 
         <tr>
-          <td colspan="4" class="pt-3">總計</td>
+          <td colspan="5" class="pt-3">總計</td>
 
-          <td colspan="2" class="pt-3" id="totalPrice">NTD</td>
+   
 
           <!-- <td></td> -->
+                 <td colspan="2" class="pt-3" id="totalPrice">NTD</td>
           <!-- <td></td> -->
           <!-- <td></td>
           <td></td> -->

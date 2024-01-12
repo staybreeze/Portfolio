@@ -1092,6 +1092,11 @@ input#menu {
     margin-top: 40px !important;
   }
 
+
+  .tr-computer{
+    display: none!important;
+  }
+
 }
 
 .myBtn-brown {
@@ -1103,6 +1108,8 @@ input#menu {
 }
 
 
-.hidden-div{
-  display:none
+
+.tr-computer{
+
+  display: none !important;
 }
