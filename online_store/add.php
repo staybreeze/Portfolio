@@ -185,11 +185,14 @@ include_once "./api/db.php";
           <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員註冊</p>
 
           <?php
+          if(isset($_GET['empty'])){
+            echo "<span style='color:crimson'>帳號或密碼空白，請重新註冊！</span>";
+          }
         if(isset($_GET['wrongAcc'])){
-          echo "<span style='color:crimson'>帳號只能使用英文及數字！</span>";
+          echo "<span style='color:crimson'>帳號只能使用英文或數字！</span>";
         }
 if(isset($_GET['error'])){
-  echo "<span style='color:crimson'>帳號重複或密碼空白，請重新註冊！</span>";
+  echo "<span style='color:crimson'>帳號重複，請重新註冊！</span>";
 }
 ?>
 
@@ -398,7 +401,7 @@ function check() {
         $.post("./api/acc_check.php", { acc: user.acc }, (res) => {
             // console.log(res);
             if (res === 'wrongAcc') {
-                alert('帳號只能使用英文及數字！');
+                alert('帳號只能使用英文或數字！');
             } else if (parseInt(res) === 1) {
                 alert("帳號重覆");
             } else {

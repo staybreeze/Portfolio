@@ -18,16 +18,7 @@ include_once "./db.php";
 $acc = htmlspecialchars(trim($_POST['acc']));
 $pattern = '/^[a-zA-Z0-9]+$/';
 
-
-if (!preg_match($pattern, $acc)) {
-
-    header("Location:../add.php?wrongAcc");
-    exit();
-} 
-
-
 $res = $User->count(['acc' => $acc]);
-
 
 // 導入FUNCTION後不需要了
 // $sql="insert into `users`(`acc`,`pw`,`name`,`address`,`email`)
@@ -35,19 +26,24 @@ $res = $User->count(['acc' => $acc]);
 
 
 // $pdo->exec($sql);
+if(empty($_POST['acc'])|| empty($_POST['pw'])){
 
+    header("Location:../add.php?empty");
+}elseif (!preg_match($pattern, $acc)) {
 
-if ($res > 0 || empty($_POST['pw'])) {
+    header("Location:../add.php?wrongAcc");
+    exit();
+}elseif ($res > 0 ) {
     // echo "重複";
     header("Location:../add.php?error");
-} else {
-    // 確定$_POST都是會處理到的對象，且$_POST本身就是陣列，因此可以save($_POST)
-    $User->save($_POST);
-    //  $User->save(['acc'=>"{$acc}",
-    //                  'pw'=>"{$_POST['pw']}",
-    //                  'name'=>"{$_POST['name']}",
-    //                  'email'=>"{$_POST['email']}",
-    //                  'address'=>"{$_POST['address']}"]);
+} else{
+// 確定$_POST都是會處理到的對象，且$_POST本身就是陣列，因此可以save($_POST)
+$User->save($_POST);
+//  $User->save(['acc'=>"{$acc}",
+//                  'pw'=>"{$_POST['pw']}",
+//                  'name'=>"{$_POST['name']}",
+//                  'email'=>"{$_POST['email']}",
+//                  'address'=>"{$_POST['address']}"]);
 
-    header("Location:../login.php?success");
+header("Location:../login.php?success");
 }
