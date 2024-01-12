@@ -1119,7 +1119,7 @@ input#menu {
 /* margin-left:10px; */
     margin-top: 70px !important;
     border-radius: 750px 0 750px 0 !important;
-    font-size: 25px;
+    font-size: 23px !important;
     font-weight: bolder;
     /* border-bottom:1px dotted rgb(107, 62, 2); */
  }

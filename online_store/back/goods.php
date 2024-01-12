@@ -40,37 +40,41 @@ include_once "../api/db.php"
     .dotted-border {
       border: 1px dotted brown;
     }
-    .pages{
 
-      margin-left:30px;
+    .pages {
+
+      margin-left: 30px;
       font-size: large;
-      border:3px dotted goldenrod;
-      color:brown;
+      border: 3px dotted goldenrod;
+      color: brown;
       text-decoration: none;
-      width:30px;
+      width: 30px;
       text-align: center;
     }
-    .pages:hover{
-      background-color: beige;
-    }
-    .currentPage{
-      background-color: beige;
-  margin-left:30px;
-font-size: large;
-border:3px dotted goldenrod;
-color:brown;
-text-decoration: none;
-width:30px;
-text-align: center;
 
-}
-    .ms-80{
-      margin-left:82px
-      
+    .pages:hover {
+      background-color: beige;
     }
-    a{
+
+    .currentPage {
+      background-color: beige;
+      margin-left: 30px;
+      font-size: large;
+      border: 3px dotted goldenrod;
+      color: brown;
       text-decoration: none;
-      color:brown;
+      width: 30px;
+      text-align: center;
+
+    }
+
+    .ms-80 {
+      margin-left: 82px
+    }
+
+    a {
+      text-decoration: none;
+      color: brown;
     }
   </style>
 
@@ -205,26 +209,25 @@ text-align: center;
           $start = ($now - 1) * $div;
           $goods = $Good->all('', " limit $start,$div");
 
-          
-       
+
+
           // if ($now > 1) {
           //   $prev = $now - 1;
           //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
           // }
-echo "<div class='d-flex ms-80 mt-4'>";
+          echo "<div class='d-flex ms-80 mt-4'>";
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-                
-                
+
+
             echo "<a href='?do=goods&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
-      
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
           //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
           // }
-         
+
           echo "</div>";
 
           foreach ($goods as $good) {
@@ -233,7 +236,7 @@ echo "<div class='d-flex ms-80 mt-4'>";
 
 
           ?>
-     
+
             <form action="../api/back_goods.php" method="post" class="mt-2 mb-5" enctype="multipart/form-data">
 
               <div class="container dotted-border">
@@ -317,7 +320,7 @@ echo "<div class='d-flex ms-80 mt-4'>";
                     <div class="input-group mb-3">
 
                       <span class="input-group-text bold"><i class="fas fa-heart" style="color:crimson"></i></span>
-                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:37%;text-align:center" disabled  value="<?= $good['like_item'];?>">
+                      <input type="number" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:37%;text-align:center" disabled value="<?= $good['like_item']; ?>">
 
                     </div>
                   </div>
