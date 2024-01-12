@@ -5,10 +5,10 @@
 </style>
 
 
-<section class="section-products " id="store">
+<section class="section-products " >
     <div class="container goods">
         <div class="row justify-content-center text-center">
-            <div class="col-md-8 col-lg-6">
+            <div class="col-md-8 col-lg-6"   id="store">
                 <div class="good-header" >
                     <h2  id="onlineStore"><b>購物商城 ✨</b>
 
@@ -25,7 +25,7 @@
        <!-- <div class="hidden-div"  style="margin-top:7px"></div> -->
         <a href="#onlineStore"><button type="button" class="btn  close-btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
 
-        <div class="row mt-2">
+        <div class="row mt-2" >
 
             <!-- Single Product -->
             <?php
@@ -35,8 +35,9 @@
             foreach ($goods as $good) {
 
             ?>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product" class="single-product">
+
+                <div class="col-md-6 col-lg-4 col-xl-3" >
+                    <div id="product " class="single-product">
 
                         <div class="part-1">
                             <img class="img-rotate" src="./img/<?= $good['img']; ?>" alt="" width="100%">
@@ -64,7 +65,7 @@
 
                             </ul>
                         </div>
-                        <div class="part-2">
+                        <div class="part-2" >
                             <h3 class="product-title"><?= $good['name']; ?></h3>
 
                             <?php
@@ -178,4 +179,5 @@
 
 
     });
+
 </script>
