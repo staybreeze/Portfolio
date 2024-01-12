@@ -16,6 +16,7 @@ include_once "./api/db.php";
   <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
   <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
     .aside {
       background-image: url(./img/18-2500x1667.jpg);
@@ -67,10 +68,11 @@ include_once "./api/db.php";
       background-color: #f8ede0
     }
 
-    .quantity-input{
+    .quantity-input {
       width: 100px;
-text-align:end;
+      text-align: end;
     }
+
     @media screen and (max-width: 450px) {
 
       .modal .input-group {
@@ -82,6 +84,21 @@ text-align:end;
       .modal input[type='submit'] {
         margin-left: 270px !important;
       }
+
+      table tr,table tr td{
+        font-size:13px
+      }
+      table tr{
+        font-size:10px
+      }
+      .quantity-input{
+        width:50px
+      }
+      input[type="submit"], input[type="button"] {
+ width:100%;
+ height:100%;
+ font-size:10px
+}
 
     }
   </style>
@@ -108,7 +125,7 @@ text-align:end;
     <form action="./api/cart_add_good.php" method="post">
       <table class="table">
         <tr class="tr-computer">
-          <th style="width:8%;background-color:#f8ede0">ID</th>
+          <th style="width:5%;background-color:#f8ede0">ID</th>
           <th style="width:10% ;background-color:#f8ede0">圖片</th>
           <th style="width:40%;background-color:#f8ede0">商品</th>
           <th style="width:10%;background-color:#f8ede0">單價</th>
@@ -119,11 +136,11 @@ text-align:end;
 
         <tr class="tr-mobile">
           <th style="width:8%;background-color:#f8ede0">ID</th>
-          <th style="width:10%;background-color:#f8ede0">圖片</th>
-          <th style="width:10%;background-color:#f8ede0">商品</th>
+          <th style="width:10% ;background-color:#f8ede0">圖片</th>
+          <th style="width:40%;background-color:#f8ede0">商品</th>
           <th style="width:10%;background-color:#f8ede0">單價</th>
-          <th style="width:40%;background-color:#f8ede0">數量</th>
-          <th style="width:20%;background-color:#f8ede0">小計</th>
+          <th style="width:10%;background-color:#f8ede0">數量</th>
+          <th style="width:10%;background-color:#f8ede0">小計</th>
           <th style="background-color:#f8ede0">刪除</th>
         </tr>
 
@@ -138,7 +155,7 @@ text-align:end;
         $cart = $Customer->all(['customer_acc' => $_SESSION['user']], 'ORDER BY product_id ASC');
         foreach ($cart as $index => $cartItem) {
           $row = $Good->find(['id' => $cartItem['product_id']]);
-       
+
 
           echo '<tr>';
           echo "<td style='padding-top:23px'>{$row['id']}</td>";
@@ -148,7 +165,7 @@ text-align:end;
           echo "<td style='padding-top:23px'>{$row['name']}</td>";
           echo "<td style='padding-top:23px' class='price'>{$row['price']}</td>";
           echo "<td style='padding-top:23px'>
-                    <input style='width:90%' type='number' name='quantity[]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
+                    <input  type='number' name='quantity[]' class='quantity-input' value='{$cartItem["quantity"]}'></td>";
           $total = $cartItem['quantity'] * $row['price'];
 
           echo "<td style='padding-top:23px' class='subtotal' id='total'>{$total}</td>";
@@ -167,12 +184,12 @@ text-align:end;
 
 
         <tr>
-          <td colspan="5" class="pt-3">總計</td>
+          <td colspan="5" class="">總計</td>
 
-   
+
 
           <!-- <td></td> -->
-                 <td colspan="2" class="pt-3" id="totalPrice">NTD</td>
+          <td colspan="2" class="" id="totalPrice">NTD</td>
           <!-- <td></td> -->
           <!-- <td></td>
           <td></td> -->
@@ -190,7 +207,7 @@ text-align:end;
 
           </td>
           <td>
-            <input class="btn btn-warning" type="submit" value="送出">
+            <input class="btn btn-warning" id="send" type="submit" value="送出">
           </td>
         </tr>
 
@@ -285,55 +302,60 @@ text-align:end;
   ?>
 
 
-
+</body>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const numberInputs = document.querySelectorAll('.quantity-input');
-  const priceElements = document.querySelectorAll('.price');
-  const totalElements = document.querySelectorAll('.subtotal');
-  const totalPriceElement = document.getElementById('totalPrice');
-  const userPriceElement = document.getElementById('total'); // 將 ID 更改為 'total'
+  document.addEventListener('DOMContentLoaded', function() {
+    const numberInputs = document.querySelectorAll('.quantity-input');
+    const priceElements = document.querySelectorAll('.price');
+    const totalElements = document.querySelectorAll('.subtotal');
+    const totalPriceElement = document.getElementById('totalPrice');
+    const userPriceElement = document.getElementById('total'); // 將 ID 更改為 'total'
 
-  let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
-  let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
+    let itemPrices = Array.from(priceElements).map(element => parseFloat(element.innerText));
+    let itemNumbers = Array.from(numberInputs).map(input => parseInt(input.value));
 
-  function updateTotals(index) {
-    // 檢查數量和價格是否是有效數字
-    if (!isNaN(itemNumbers[index]) & !isNaN(itemPrices[index])) {
-      let itemTotal = itemPrices[index] * itemNumbers[index];
-      totalElements[index].innerText = itemTotal;
-      updateGrandTotal();
-  
+    function updateTotals(index) {
+      // 檢查數量和價格是否是有效數字
+      if (!isNaN(itemNumbers[index]) & !isNaN(itemPrices[index])) {
+        let itemTotal = itemPrices[index] * itemNumbers[index];
+        totalElements[index].innerText = itemTotal;
+        updateGrandTotal();
+
+      }
     }
-  }
 
-  function updateGrandTotal() {
-    // 使用 parseFloat 過濾出有效數字，並排除 NaN
-    let grandTotal = Array.from(totalElements)
-      .map(element => parseFloat(element.innerText))
-      .filter(value => !isNaN(value))
-      .reduce((acc, value) => acc + value, 0);
+    function updateGrandTotal() {
+      // 使用 parseFloat 過濾出有效數字，並排除 NaN
+      let grandTotal = Array.from(totalElements)
+        .map(element => parseFloat(element.innerText))
+        .filter(value => !isNaN(value))
+        .reduce((acc, value) => acc + value, 0);
 
-    totalPriceElement.innerText = 'NTD ' + grandTotal + ' 元'; // 更新 totalPrice 的內容
-  }
-
+      totalPriceElement.innerText = 'NTD ' + grandTotal + ' 元'; // 更新 totalPrice 的內容
+    }
 
 
-  numberInputs.forEach((input, index) => {
-    input.addEventListener('input', function () {
-      // 檢查數量是否小於1，如果是，將其設置為1
-      itemNumbers[index] = Math.max(1, parseInt(input.value));
-      input.value = itemNumbers[index]; // 更新輸入欄位的值
+
+    numberInputs.forEach((input, index) => {
+      input.addEventListener('input', function() {
+        // 檢查數量是否小於1，如果是，將其設置為1
+        itemNumbers[index] = Math.max(1, parseInt(input.value));
+        input.value = itemNumbers[index]; // 更新輸入欄位的值
+        updateTotals(index);
+      });
+    });
+
+    // 最初更新總計
+    Array.from(totalElements).forEach((element, index) => {
       updateTotals(index);
     });
   });
 
-  // 最初更新總計
-  Array.from(totalElements).forEach((element, index) => {
-    updateTotals(index);
-  });
+  $(document).ready(function() {
+    $("#send").click(function() {
+        alert('您的訂單已送出，感謝您的購買!');
+    });
 });
-
 
 </script>
 
@@ -342,6 +364,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-</body>
 
 </html>
