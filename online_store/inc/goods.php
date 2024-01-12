@@ -16,16 +16,16 @@
                     <br>
                     <!-- <div class="hidden-div" id="onlineStore"></div> -->
                     <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
-
-                    <br>
+                    <a href="#onlineStore"><button type="button" class="btn  close-btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
+                    <!-- <br> -->
                 </div>
 
             </div>
         </div>
         <!-- <div class="hidden-div"  style="margin-top:7px"></div> -->
-        <a href="#onlineStore"><button type="button" class="btn  close-btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
 
-        <div class="row mt-2">
+
+        <div class="row mt-2 good-row">
 
             <!-- Single Product -->
             <?php
@@ -140,16 +140,14 @@
 
             <button type="button" class="btn  close-btn mt-2" id="close-btn" data-bs-dismiss="modal">Close</button>
 
-
-
         </div>
     </div>
-
-
+    <a href="cart.php"><button type="button" class="btn  close-btn mt-2" id="checkOutBtn">CHECK OUT</button></a>
 </section>
 
 <script>
     $(document).ready(function() {
+
         //         $(".fa-heart").click(function() {
         //     location.reload();
         // });
@@ -179,4 +177,14 @@
 
 
     });
+
+    $("#shoppingBtn").click(function() {
+
+        $("#shoppingBtn").hide()
+    })
+
+    // 如果包含 'store' 參數，隱藏 #shoppingBtn
+    if (window.location.hash.includes('store')) {
+        $("#shoppingBtn").css('display', 'none');
+    }
 </script>

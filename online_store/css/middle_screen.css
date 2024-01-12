@@ -1086,15 +1086,47 @@ input#menu {
   
   #shoppingBtn {
     cursor: pointer !important;
-    background-color: rgb(107, 62, 2) !important;
-    color: #fff !important;
+    background-color: rgb(175, 116, 40) !important;
+    color: gold !important;
     width:100%;
+    height:85px;
+    font-weight: 700;
     margin-top: 40px !important;
+    border-radius: 300px 300px 0 0;
+    font-size: 25px;
+    /* border-bottom:1px dotted rgb(107, 62, 2); */
+    -webkit-animation-name: fa-bounce;
+    animation-name: fa-bounce;
+    -webkit-animation-delay: var(--fa-animation-delay, 0s);
+    animation-delay: var(--fa-animation-delay, 0s);
+    -webkit-animation-direction: var(--fa-animation-direction, normal);
+    animation-direction: var(--fa-animation-direction, normal);
+    -webkit-animation-duration: var(--fa-animation-duration, 1s);
+    animation-duration: var(--fa-animation-duration, 1s);
+    -webkit-animation-iteration-count: var(--fa-animation-iteration-count, 2);
+    animation-iteration-count: var(--fa-animation-iteration-count, 2);
+    -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+    animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
   }
 
-
+#checkOutBtn {
+    cursor: pointer !important;
+    background-color:  rgb(175, 116, 40) !important;
+    color: gold !important;
+    width:95%;
+    height:85px;
+margin-left:10px;
+    margin-top: 70px !important;
+    /* border-radius: 300px 300px 0 0; */
+    font-size: 25px;
+    font-weight: bolder;
+    /* border-bottom:1px dotted rgb(107, 62, 2); */
+ }
   .tr-computer,.carousel-computer{
     display: none!important;
+  }
+  .good-row{
+border:10px solid rgb(175, 116, 40)
   }
 
 }

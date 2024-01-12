@@ -77,10 +77,10 @@ include_once "./api/db.php";
         <div class="col-md-8 col-lg-6  col-xl-4 mt-5">
 
 
-          <h3 class="h3">&nbsp;<?= $article['title']; ?></h3>
-          <a href="./articles/<?= $article['time']; ?>.php"><img class="pt-3" src="./img/<?= $article['img']; ?>"  style="border-radius:0px 0px 0px 0px"  alt="" width="375px" height="300px"></a>
+          <h3 style="margin:auto"class="h3">&nbsp;<?= $article['title']; ?></h3>
+          <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><img class="pt-3" src="./img/<?= $article['img']; ?>"  style="border-radius:0px 0px 0px 0px"  alt="" width="375px" height="300px"></a>
 
-          <a href="./articles/<?= $article['time']; ?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
+          <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
 
         </div>
 
