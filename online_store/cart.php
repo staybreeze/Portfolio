@@ -353,7 +353,7 @@ include_once "./api/db.php";
 
   $(document).ready(function() {
     $("#send").click(function() {
-        alert('您的訂單已送出，感謝您的購買!');
+        alert('您的訂單已送出，感謝您的購買！');
     });
 });
 
