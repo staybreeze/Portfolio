@@ -1093,7 +1093,7 @@ input#menu {
   }
 
 
-  .tr-computer{
+  .tr-computer,.carousel-computer{
     display: none!important;
   }
 
@@ -1109,7 +1109,7 @@ input#menu {
 
 
 
-.tr-computer{
+.tr-computer,.carousel-computer{
 
   display: none !important;
 }

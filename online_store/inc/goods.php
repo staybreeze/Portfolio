@@ -5,16 +5,16 @@
 </style>
 
 
-<section class="section-products" id="store">
+<section class="section-products " id="store">
     <div class="container goods">
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
-                <div class="good-header">
-                    <h2><b>購物商城 ✨</b>
+                <div class="good-header" >
+                    <h2  id="onlineStore"><b>購物商城 ✨</b>
 
                     </h2>
                     <br>
-                    <div class="hidden-div" id="onlineStore"></div>
+                    <!-- <div class="hidden-div" id="onlineStore"></div> -->
                     <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
 
                     <br>
@@ -22,10 +22,10 @@
      
             </div>
         </div>
-       <div class="hidden-div"  style="margin-top:7px"></div>
+       <!-- <div class="hidden-div"  style="margin-top:7px"></div> -->
         <a href="#onlineStore"><button type="button" class="btn  close-btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
 
-        <div class="row">
+        <div class="row mt-2">
 
             <!-- Single Product -->
             <?php
