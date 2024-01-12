@@ -191,8 +191,8 @@ include_once "./api/db.php";
           ?>
           <form action="./api/update.php" method="post" class="col-4 m-auto pt-3">
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100">帳號:</label>
-              <input class="form-control" type="text" name="acc" id="acc" value="<?= $user['acc']; ?>">
+              <label class="col-4  input-group-text mt-3 w-100" >帳號:</label>
+              <input class="form-control" type="text" name="acc" id="acc" value="<?= $user['acc']; ?>"  disabled>
             </div>
             <div class="input-group my-1">
               <label class="col-4  input-group-text mt-3 w-100">密碼:</label>
