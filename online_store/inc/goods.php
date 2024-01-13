@@ -2,6 +2,16 @@
     .liked {
         color: #fe302f
     }
+
+    #shoppingBtn{
+display: none;
+}
+    @media screen and (max-width: 450px) {
+   #shoppingBtn{
+display: block ;
+
+   } }
+
 </style>
 
 
@@ -16,7 +26,7 @@
                     <br>
                     <!-- <div class="hidden-div" id="onlineStore"></div> -->
                     <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
-                    <a href="#onlineStore"><button type="button" class="btn  close-btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
+                    <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
                     <!-- <br> -->
                 </div>
 
@@ -185,6 +195,6 @@
 
     // 如果包含 'store' 參數，隱藏 #shoppingBtn
     if (window.location.hash.includes('store')) {
-        $("#shoppingBtn").css('display', 'none');
+        $("#shoppingBtn").css('display', 'none !important');
     }
 </script>
