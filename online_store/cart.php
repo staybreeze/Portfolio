@@ -332,7 +332,7 @@ include_once "./api/db.php";
         .filter(value => !isNaN(value))
         .reduce((acc, value) => acc + value, 0);
 if(grandTotal>5000){
-  grandTotal=grandTotal*0.8;
+  grandTotal = Math.round(grandTotal * 0.8);
 }
       totalPriceElement.innerText = 'NTD ' + grandTotal + ' 元'; // 更新 totalPrice 的內容
     }

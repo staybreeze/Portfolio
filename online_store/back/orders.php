@@ -164,7 +164,8 @@ include_once "../api/db.php"
 
           $totalOrders = count($uniqueCustomerAccArray)-1;
           echo "<div class='gold-border mt-5' style='margin-left:95px'><p class='total-price mt-3'><b>訂單數：共<span class='underline'> {$totalOrders} </span>筆</b></p>";
-          echo "<p class='total-price' id='totalPrice'><b>總訂單金額：<span class='underline'></span>元</p></div>";
+          echo "<p class='total-price' id='totalPrice'><b>總訂單金額：<span class='underline'></span>元</p>";
+          echo "<p class='total-price' id='totalPrice'>目前折扣活動：【<span style='text-decoration:underline'>滿5000元，打8折～</span>】</p></div>";
           ?>
 
           <?php
@@ -346,7 +347,7 @@ include_once "../api/db.php"
             .reduce((acc, value) => acc + value, 0);
 
           if (userTotal > 5000) {
-            userTotal = userTotal * 0.8;
+            userTotal = Math.round(userTotal * 0.8);
           }
           userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
         });
@@ -376,7 +377,7 @@ include_once "../api/db.php"
 
 
           if (userTotal > 5000) {
-            userTotal *= 0.8;
+            userTotal = Math.round(userTotal * 0.8);
           }
 
 
