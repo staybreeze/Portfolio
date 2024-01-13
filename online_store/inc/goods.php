@@ -3,7 +3,7 @@
         color: #fe302f
     }
 
-    #shoppingBtn{
+    #shoppingBtn,#discountBanner{
 display: none;
 }
     @media screen and (max-width: 450px) {

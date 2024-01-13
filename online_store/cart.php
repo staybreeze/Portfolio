@@ -204,7 +204,8 @@ include_once "./api/db.php";
       
           <td></td> -->
           <td colspan="6">
-
+          <div class="discount-banner pt-1" style="color:crimson">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;～&nbsp;" </div>
+      
           </td>
           <td>
             <input class="btn btn-warning" id="send" type="submit" value="送出">
@@ -330,7 +331,9 @@ include_once "./api/db.php";
         .map(element => parseFloat(element.innerText))
         .filter(value => !isNaN(value))
         .reduce((acc, value) => acc + value, 0);
-
+if(grandTotal>5000){
+  grandTotal=grandTotal*0.8;
+}
       totalPriceElement.innerText = 'NTD ' + grandTotal + ' 元'; // 更新 totalPrice 的內容
     }
 

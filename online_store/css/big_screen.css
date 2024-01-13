@@ -608,6 +608,7 @@ a:hover {
   transition: transform .6s ease-in-out !important;
 }
 
-#shoppingBtn,#checkOutBtn,.hidden-div,.tr-mobile, .carousel-mobile{
+#shoppingBtn,#checkOutBtn, #discountBanner,.hidden-div,.tr-mobile, .carousel-mobile{
   display: none !important;
 }
+
