@@ -9,7 +9,9 @@
     }
 
     @media screen and (max-width: 450px) {
-        #shoppingBtn,#discountBanner {
+
+        #shoppingBtn,
+        #discountBanner {
             display: block;
 
         }
@@ -38,9 +40,9 @@
 
 
         <div class="row mt-2 good-row">
-            <div id="discountBanner" style="height:80px" onclick="location.href='#onlineStore'"
-><p>"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
-</div>
+            <div id="discountBanner" style="height:80px" onclick="location.href='#onlineStore'">
+                <p class="discount-p">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
+            </div>
             <!-- Single Product -->
             <?php
 
@@ -198,7 +200,20 @@
     })
 
     // 如果包含 'store' 參數，隱藏 #shoppingBtn
+
+
+        $("#discountBanner").click(function() {
+    $(".good-row").css('border', '10px solid #d8a25a');
+    $("#discountBanner").css('border', '10px solid #d8a25a');
+    $("#discountBanner").css('background-color', '#d8a25a');
+});
+
+ 
     if (window.location.hash.includes('store')) {
-        $("#shoppingBtn").hide()
-    }
+            $("#shoppingBtn").hide();
+            $(".discount-p").removeClass('discount-p');
+            $(".good-row").css('border', '10px solid #d8a25a');
+    $("#discountBanner").css('border', '10px solid #d8a25a');
+    $("#discountBanner").css('background-color', '#d8a25a');
+        }
 </script>
