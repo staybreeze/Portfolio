@@ -79,7 +79,7 @@
 
     <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:37px">
 
-      <div class="offcanvas offcanvas-end"  data-bs-backdrop="true" id="demo">
+      <div class="offcanvas offcanvas-end" data-bs-backdrop="true" id="demo">
         <div class="offcanvas-header">
           <h1 class="offcanvas-title">會員中心<img class="mb-3" src="./img/logo1.png" alt="" width="60px"></h1>
 
@@ -238,7 +238,7 @@
 
           <ul>
             <li class="nav-item me-3">
-              <a href="aboutUs.php">關於我們</a>
+              <a  href="aboutUs.php">關於我們</a>
               <div class="unloading-bar"></div>
               <div class="loading-bar"></div>
             </li>
@@ -329,3 +329,4 @@
     </nav>
 
 </header>
+

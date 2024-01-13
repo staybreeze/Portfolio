@@ -202,18 +202,44 @@
     // 如果包含 'store' 參數，隱藏 #shoppingBtn
 
 
-        $("#discountBanner").click(function() {
-    $(".good-row").css('border', '10px solid #d8a25a');
-    $("#discountBanner").css('border', '10px solid #d8a25a');
-    $("#discountBanner").css('background-color', '#d8a25a');
-});
+    // $("#discountBanner").click(function() {
+    //     $(".good-row").css('border', '10px solid #d8a25a');
+    //     $("#discountBanner").css('border', '10px solid #d8a25a');
+    //     $("#discountBanner").css('background-color', '#d8a25a');
+    //     $("#discountBanner").css('color', '#fff');
 
- 
+    // });
+
+
     if (window.location.hash.includes('store')) {
-            $("#shoppingBtn").hide();
-            $(".discount-p").removeClass('discount-p');
+        $("#shoppingBtn").hide();
+        $(".discount-p").removeClass('discount-p');
+        $(".good-row").css('border', '10px solid #d8a25a');
+        $("#discountBanner").css('border', '10px solid #d8a25a');
+        $("#discountBanner").css('background-color', '#d8a25a');
+        $("#discountBanner").css('color', '#fff');
+    }
+
+    var scrollThreshold = 300;
+
+
+    $(window).scroll(function() {
+
+        var scrollPosition = $(this).scrollTop();
+
+
+        if (scrollPosition > scrollThreshold) {
             $(".good-row").css('border', '10px solid #d8a25a');
-    $("#discountBanner").css('border', '10px solid #d8a25a');
-    $("#discountBanner").css('background-color', '#d8a25a');
+            $("#discountBanner").css('border', '10px solid #d8a25a');
+        $("#discountBanner").css('background-color', '#d8a25a');
+        $("#discountBanner").css('color', '#fff');
+
+
+        } else {
+            $(".good-row").css('border', '10px solid rgb(107, 62, 2)');
+            $("#discountBanner").css('border', '10px solid rgb(107, 62, 2)');
+        $("#discountBanner").css('background-color', 'rgb(107, 62, 2)');
+        $("#discountBanner").css('color', 'rgb(252, 233, 122)');
         }
+    });
 </script>

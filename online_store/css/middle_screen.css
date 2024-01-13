@@ -878,7 +878,10 @@ a:hover {
   #menu:checked~.menu-list {
 
     width: 405px;
+  
   }
+
+  
 }
 
 .menu-list {
@@ -1129,7 +1132,7 @@ input#menu {
   }
   .good-row{
 /* border:10px solid #d8a25a; */
-
+transition:  .7s ease; 
 border:10px solid rgb(107, 62, 2);
   }
 
@@ -1138,15 +1141,13 @@ border:10px solid rgb(107, 62, 2);
     border:10px solid #d8a25a; */
     background-color:  rgb(107, 62, 2);
     border:10px solid rgb(107, 62, 2);
-    color: #fff!important;
+    color: rgb(252, 233, 122);
     text-align: center;
     /* padding-top:7px; */
     height:70px;
     font-weight: 700;
-
-
     font-size: 20px;
-    
+    transition:  .7s ease; 
   }
 
   #discountBanner .discount-p{
@@ -1169,6 +1170,7 @@ border:10px solid rgb(107, 62, 2);
     text-decoration: underline;
     font-style: italic;
   }
+
 
 }
 
