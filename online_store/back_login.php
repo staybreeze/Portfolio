@@ -22,6 +22,8 @@ if (isset($_SESSION['admin'])) {
   <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
   <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <style>
     .aside {
       background-image: url(./img/18-2500x1667.jpg);
@@ -51,9 +53,11 @@ if (isset($_SESSION['admin'])) {
     .btn-group {
       margin-left: 156px !important;
     }
+
     .modal input[type='submit'] {
-margin-left: 408px !important;
-}
+      margin-left: 408px !important;
+    }
+
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -86,14 +90,16 @@ margin-left: 408px !important;
       .btn-group {
         margin-left: 310px !important;
       }
-      .modal     .input-group {
 
-width: 405px !important;
-margin-left: 00px !important;
-}
-.modal input[type='submit'] {
-margin-left: 345px !important;
-}
+      .modal .input-group {
+
+        width: 405px !important;
+        margin-left: 00px !important;
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 345px !important;
+      }
 
     }
 
@@ -123,14 +129,16 @@ margin-left: 345px !important;
       .btn-group {
         margin-left: 310px !important;
       }
-      .modal     .input-group {
 
-width: 330px !important;
+      .modal .input-group {
 
-}
-.modal input[type='submit'] {
-margin-left: 270px !important;
-}
+        width: 330px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 270px !important;
+      }
     }
   </style>
 </head>
@@ -158,7 +166,7 @@ margin-left: 270px !important;
           <form action="./api/back_login.php" method="post" class=" col-12 col-sm-4 m-auto">
             <?php
             if (isset($_GET['error'])) {
-              echo "<span style='color:red'>";
+              echo "<span style='color:red;text-align:center'>";
               echo $_GET['error'];
               echo "</span>";
             } ?>
@@ -171,11 +179,11 @@ margin-left: 270px !important;
               <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
-
+            <input type="hidden" name="windowWidth" id="hiddenWindowWidth">
             <div class="btn-group">
 
               <input class="btn btn-secondary mx-2 mt-4" type="reset" value="重置">
-              <input class="btn btn-warning mx-2 mt-4" type="submit" value="送出">
+              <input class="btn btn-warning mx-2 mt-4" id="submit" type="submit" value="送出">
             </div>
 
             <br> <br> <br> <br>
@@ -343,5 +351,21 @@ margin-left: 270px !important;
   include "./inc/copyright.php"
   ?>
 </body>
+<script>
+  $(document).ready(function() {
+    
+    var windowWidth = window.innerWidth;
+      console.log(windowWidth);
+      $("#hiddenWindowWidth").val(windowWidth);
+
+    $("#submit").click(function() {
+      if (window.innerWidth < 1200) {
+        alert('後台請用電腦開啟！謝謝～');
+        return;
+      }
+    });
+
+  });
+</script>
 
 </html>

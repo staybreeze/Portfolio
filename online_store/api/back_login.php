@@ -28,15 +28,28 @@ $pw = $_POST['pw'];
 // $user = $pdo->query($sql)->fetchColumn();
 // if($user)的條件式等同$user==1
 
-$admin=$Admin->count(['acc'=>$acc,'pw'=>$pw]);
+$admin = $Admin->count(['acc' => $acc, 'pw' => $pw]);
 
 
+$windowWidth = $_POST['windowWidth'];
 
-if (empty($_POST['acc']) || empty($_POST['pw'])) {
-    header('location:../back_login.php?error=請輸入帳號和密碼');
-    exit(); 
+if ($windowWidth > 1200) {
+
+    if (empty($_POST['acc']) || empty($_POST['pw'])) {
+        header('location:../back_login.php?error=請輸入帳號和密碼');
+        exit();
+    } elseif ($admin) {
+        $_SESSION['user_role'] = 'admin';
+        $_SESSION['admin'] = $acc;
+        header("location:../back.php");
+        exit();
+    } else {
+        header('location:../back_login.php?error=帳號密碼錯誤');
+        exit();
+    }
+} else {
+    header('location:../back_login.php');
 }
-
 // if ($user) {
 //     $_SESSION['user'] = $acc;
 //     header("location:../index.php");
@@ -44,18 +57,3 @@ if (empty($_POST['acc']) || empty($_POST['pw'])) {
 //     header('location:../login_form.php?error=帳號密碼錯誤');
 // }
 // echo $res;
-
-
-
-if($admin){
-    $_SESSION['user_role'] = 'admin';
-    $_SESSION['admin']=$acc;
-    header("location:../back.php");
-
-  
-}else{
-    header('location:../back_login.php?error=帳號密碼錯誤');
-}
-
-
-?>
