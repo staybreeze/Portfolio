@@ -212,35 +212,37 @@
     // });
 
 
-    if (window.location.hash.includes('store')) {
-        $("#shoppingBtn").hide();
-        $(".discount-p").removeClass('discount-p');
-        $(".good-row").css('border', '10px solid #d8a25a');
-        $("#discountBanner").css('border', '10px solid #d8a25a');
-        $("#discountBanner").css('background-color', '#d8a25a');
-        $("#discountBanner").css('color', '#fff');
-    }
-
+    if (window.innerWidth < 450) {
+        if (window.location.hash.includes('store')) {
+            $("#shoppingBtn").hide();
+            $(".discount-p").removeClass('discount-p');
+            $(".good-row").css('border', '10px solid #d8a25a');
+            $("#discountBanner").css('border', '10px solid #d8a25a');
+            $("#discountBanner").css('background-color', '#d8a25a');
+            $("#discountBanner").css('color', '#fff');
+        }
+    };
     var scrollThreshold = 300;
 
 
     $(window).scroll(function() {
         if (window.innerWidth < 450) {
-        var scrollPosition = $(this).scrollTop();
+            var scrollPosition = $(this).scrollTop();
 
 
-        if (scrollPosition > scrollThreshold) {
-            $(".good-row").css('border', '10px solid #d8a25a ');
-            $("#discountBanner").css('border', '1px solid #fff ');
-            $("#discountBanner").css('background-color', '#d8a25a ');
-            $("#discountBanner").css('color', '#fff ');
+            if (scrollPosition > scrollThreshold) {
+                $(".good-row").css('border', '10px solid #d8a25a ');
+                $("#discountBanner").css('border', '1px solid #fff ');
+                $("#discountBanner").css('background-color', '#d8a25a ');
+                $("#discountBanner").css('color', '#fff ');
 
 
-        } else {
-            $(".good-row").css('border', '10px solid rgb(107, 62, 2) ');
-            $("#discountBanner").css('border', '1px solid rgb(252, 233, 122) ');
-            $("#discountBanner").css('background-color', 'rgb(107, 62, 2) ');
-            $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
-        }};
+            } else {
+                $(".good-row").css('border', '10px solid rgb(107, 62, 2) ');
+                $("#discountBanner").css('border', '1px solid rgb(252, 233, 122) ');
+                $("#discountBanner").css('background-color', 'rgb(107, 62, 2) ');
+                $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
+            }
+        };
     });
 </script>
