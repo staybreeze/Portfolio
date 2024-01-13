@@ -120,7 +120,23 @@ include_once "./api/db.php";
         <div class="carousel-inner">
           <div class="carousel-item active">
 
-            <img class="carousel-img" src="./img/cheetos9.jpg" class="d-block w-100" alt="...">
+            <img class="carousel-img" src="./img/cheetos12.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（妖嬈版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="carousel-img" src="./img/cheetos13.jpg" class="d-block w-100" alt="..."></a>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（幼兒版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="carousel-img" src="./img/cheetos14.jpg" class="d-block w-100" alt="..."></a>
+
             <div class="carousel-caption d-none d-md-block">
               <h5>奇多（妖嬈版）</h5>
               <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -130,28 +146,12 @@ include_once "./api/db.php";
             <img class="carousel-img" src="./img/cheetos10.jpg" class="d-block w-100" alt="..."></a>
 
             <div class="carousel-caption d-none d-md-block">
-              <h5>奇多（幼兒版）</h5>
-              <p>Welcome to the Cheetos Meow Cooperative!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="carousel-img" src="./img/cheetos11.jpg" class="d-block w-100" alt="..."></a>
-
-            <div class="carousel-caption d-none d-md-block">
-              <h5>奇多（妖嬈版）</h5>
-              <p>Welcome to the Cheetos Meow Cooperative!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="carousel-img" src="./img/cheetos12.jpg" class="d-block w-100" alt="..."></a>
-
-            <div class="carousel-caption d-none d-md-block">
               <h5>奇多（看什麼看版）</h5>
               <p>Welcome to the Cheetos Meow Cooperative!</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="carousel-img" src="./img/cheetos13.jpg" class="d-block w-100" alt="..."></a>
+            <img class="carousel-img" src="./img/cheetos9.jpg" class="d-block w-100" alt="..."></a>
 
             <div class="carousel-caption d-none d-md-block">
               <h5>奇多（迷離眼神版）</h5>
@@ -159,7 +159,7 @@ include_once "./api/db.php";
             </div>
           </div>
           <div class="carousel-item">
-            <img class="carousel-img" src="./img/cheetos14.jpg" class="d-block w-100" alt="..."></a>
+            <img class="carousel-img" src="./img/cheetos11.jpg" class="d-block w-100" alt="..."></a>
 
             <div class="carousel-caption d-none d-md-block">
               <h5>奇多（超可愛版）</h5>
