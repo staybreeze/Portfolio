@@ -36,7 +36,7 @@ display: block ;
 
 
         <div class="row mt-2 good-row">
-
+        <div id="discountBanner">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;" </div>
             <!-- Single Product -->
             <?php
 
@@ -195,6 +195,6 @@ display: block ;
 
     // 如果包含 'store' 參數，隱藏 #shoppingBtn
     if (window.location.hash.includes('store')) {
-        $("#shoppingBtn").css('display', 'none !important');
+        $("#shoppingBtn").hide()
     }
 </script>
