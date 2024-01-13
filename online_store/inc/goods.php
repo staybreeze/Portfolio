@@ -3,15 +3,17 @@
         color: #fe302f
     }
 
-    #shoppingBtn,#discountBanner{
-display: none;
-}
+    #shoppingBtn,
+    #discountBanner {
+        display: none;
+    }
+
     @media screen and (max-width: 450px) {
-   #shoppingBtn{
-display: block ;
+        #shoppingBtn,#discountBanner {
+            display: block;
 
-   } }
-
+        }
+    }
 </style>
 
 
@@ -26,7 +28,7 @@ display: block ;
                     <br>
                     <!-- <div class="hidden-div" id="onlineStore"></div> -->
                     <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
-                    <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a>
+                    <!-- <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a> -->
                     <!-- <br> -->
                 </div>
 
@@ -36,7 +38,9 @@ display: block ;
 
 
         <div class="row mt-2 good-row">
-        <div id="discountBanner">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;" </div>
+            <div id="discountBanner" style="height:80px" onclick="location.href='#onlineStore'"
+><p>"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
+</div>
             <!-- Single Product -->
             <?php
 
