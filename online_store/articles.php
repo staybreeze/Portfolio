@@ -55,6 +55,13 @@ include_once "./api/db.php";
       .modal input[type='submit'] {
         margin-left: 270px !important;
       }
+      /* .container-articles{
+        border:10px solid #d8a25a;
+        border-top:none;
+      } */
+      .row-articles{
+        margin-left:3px
+      }
     }
   </style>
 </head>
@@ -67,8 +74,8 @@ include_once "./api/db.php";
   ?>
 
   <!-- ---- -->
-  <div class="container">
-    <div class="d-flex flex-wrap row">
+  <div class="container container-articles">
+    <div class="d-flex flex-wrap row  row-articles">
       <?php
       $articles = $Article->all();
 
@@ -78,7 +85,7 @@ include_once "./api/db.php";
 
 
           <h3 style="margin:auto"class="h3">&nbsp;<?= $article['title']; ?></h3>
-          <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><img class="pt-3" src="./img/<?= $article['img']; ?>"  style="border-radius:0px 0px 0px 0px"  alt="" width="375px" height="300px"></a>
+          <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><img class="mt-4" style="border-radius:5px 5px 5px 5px " src="./img/<?= $article['img']; ?>" width="375px" height="300px"></a>
 
           <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
 

@@ -49,16 +49,19 @@ include_once "../api/db.php";
 
     @media screen and (max-width: 550px) {
       .aside>img {
-        width: 250px;
+        width: 300px;
       }
       .box{
-        width: 300px;
+        width: 350px;
       }
     }
     @media screen and (max-width: 450px) {
 
-      .aside>img, .box{
-        margin-left: -30px;
+   .box{
+        margin-left: -50px;
+      }
+      .aside>img{
+        margin-left: -60px;
       }
       .modal input[type='submit'] {
 margin-left: 283px !important;
