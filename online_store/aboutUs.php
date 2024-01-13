@@ -243,7 +243,7 @@ $about=$About->find(1);
     </ul>
     <ul class="pages">
             <li>
-              <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+              <a class="footer-header" href="login.php">會員專區</a>
             </li>
             <?php
             if(isset($_SESSION['user'])){

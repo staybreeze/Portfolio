@@ -1,5 +1,10 @@
 <?php
 include_once "./api/db.php";
+if(isset($_SESSION['user'])){
+
+  header('location:member.php');
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -337,7 +342,7 @@ if(isset($_GET['success'])){
     </ul>
     <ul class="pages">
       <li>
-        <a class="footer-header" href="" data-bs-toggle="modal" data-bs-target="#myModal">會員專區</a>
+        <a class="footer-header" href="login.php">會員專區</a>
       </li>
       <?php
       if (isset($_SESSION['user'])) {
