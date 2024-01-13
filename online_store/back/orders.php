@@ -114,9 +114,10 @@ include_once "../api/db.php"
       text-decoration: none;
       color: brown;
     }
-    .gold-border{
-      border:2px dotted burlywood;
-      border-left:15px solid burlywood;
+
+    .gold-border {
+      border: 2px dotted burlywood;
+      border-left: 15px solid burlywood;
       text-align: left;
 
     }
@@ -161,7 +162,7 @@ include_once "../api/db.php"
           $customerAccArray = array_column($Customer->all('customer_acc'), 'customer_acc');
           $uniqueCustomerAccArray = array_unique($customerAccArray);
 
-          $totalOrders = count($uniqueCustomerAccArray);
+          $totalOrders = count($uniqueCustomerAccArray)-1;
           echo "<div class='gold-border mt-5' style='margin-left:95px'><p class='total-price mt-3'><b>訂單數：共<span class='underline'> {$totalOrders} </span>筆</b></p>";
           echo "<p class='total-price' id='totalPrice'><b>總訂單金額：<span class='underline'></span>元</p></div>";
           ?>
@@ -344,25 +345,53 @@ include_once "../api/db.php"
             })
             .reduce((acc, value) => acc + value, 0);
 
+          if (userTotal > 5000) {
+            userTotal = userTotal * 0.8;
+          }
           userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
         });
       }
 
-
-
-
-
-
       function updateGrandTotal() {
-        // 使用 parseFloat 過濾出有效數字，並排除 NaN
-        let grandTotal = Array.from(totalElements)
-          .map(element => parseFloat(element.innerText))
-          .filter(value => !isNaN(value))
-          .reduce((acc, value) => acc + value, 0);
 
-        // console.log(`Grand Total: ${grandTotal}`); // 新增這行用於輸出總訂單總價
+        let grandTotal = 0;
+
+        const userNames = Array.from(userPriceElements).map(element => {
+          return element.getAttribute('data-username');
+        });
+
+        userPriceElements.forEach((userPriceElement, index) => {
+          let totalElementsForUser = Array.from(totalElements)
+            .filter(element => {
+              const userName = userNames[index];
+              return element.id.startsWith(`subtotal_${userName}`);
+            });
+
+          let userTotal = totalElementsForUser
+            .map(element => {
+              let value = parseFloat(element.innerText);
+              return isNaN(value) ? 0 : value;
+            })
+            .reduce((acc, value) => acc + value, 0);
+
+
+          if (userTotal > 5000) {
+            userTotal *= 0.8;
+          }
+
+
+          grandTotal += userTotal;
+        });
+
+
+        console.log(`Grand Total: ${grandTotal}`);
+
+
         totalPriceElement.innerHTML = `<b>總訂單金額：<span class='underline'>${grandTotal}</span>元</b>`;
       }
+
+
+
 
       numberInputs.forEach((input, index) => {
         input.addEventListener('input', function() {
