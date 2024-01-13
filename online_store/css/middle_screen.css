@@ -1134,6 +1134,7 @@ input#menu {
 /* border:10px solid #d8a25a; */
 transition:  .7s ease; 
 border:10px solid rgb(107, 62, 2);
+margin-top:4.5px;
   }
 
   #discountBanner{
@@ -1141,6 +1142,7 @@ border:10px solid rgb(107, 62, 2);
     border:10px solid #d8a25a; */
     background-color:  rgb(107, 62, 2);
     border:1px solid rgb(252, 233, 122);
+    /* border-bottom:.0.3px solid rgb(252, 233, 122); */
     color: rgb(252, 233, 122);
     text-align: center;
     /* padding-top:7px; */
@@ -1148,6 +1150,7 @@ border:10px solid rgb(107, 62, 2);
     font-weight: 700;
     font-size: 20px;
     transition:  .7s ease; 
+
   }
 
   #discountBanner .discount-p{

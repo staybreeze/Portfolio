@@ -40,7 +40,7 @@
         <!-- <div class="hidden-div"  style="margin-top:7px"></div> -->
 
 
-        <div class="row mt-2 good-row">
+        <div class="row good-row">
             <div id="discountBanner" style="padding-top:15px;height:80px" onclick="location.href='#onlineStore'">
                 <p class="discount-p">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
             </div>
