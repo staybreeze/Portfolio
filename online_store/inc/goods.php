@@ -24,7 +24,7 @@
     <div class="container goods">
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6" id="store">
-                <div class="good-header">
+                <div class="good-header" onclick="location.href='#onlineStore'">
                     <h2 id="onlineStore"><b>購物商城 ✨</b>
 
                     </h2>
@@ -220,6 +220,7 @@
             $("#discountBanner").css('border', '10px solid #d8a25a');
             $("#discountBanner").css('background-color', '#d8a25a');
             $("#discountBanner").css('color', '#fff');
+            $(".good-row").css('margin-top', '4.5px');
         }
     };
     var scrollThreshold = 300;
@@ -236,12 +237,12 @@
                 $("#discountBanner").css('background-color', '#d8a25a ');
                 $("#discountBanner").css('color', '#fff ');
 
-
             } else {
                 $(".good-row").css('border', '10px solid rgb(107, 62, 2) ');
                 $("#discountBanner").css('border', '1px solid rgb(252, 233, 122) ');
                 $("#discountBanner").css('background-color', 'rgb(107, 62, 2) ');
                 $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
+                $(".good-row").css('margin-top', '4.5px');
             }
         };
     });
