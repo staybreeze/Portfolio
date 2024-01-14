@@ -201,10 +201,10 @@ include_once "./api/db.php";
         <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>
       <li>
-        <a href="./aboutUs.php">起源</a>
+        <a href="./aboutUs.php#origin">起源</a>
       </li>
       <li>
-        <a href="./aboutUs.php#origin">目標</a>
+        <a href="./aboutUs.php#goal">目標</a>
       </li>
       <li>
         <a href="./aboutUs.php#cheetos">店貓－奇多（Cheetos）</a>

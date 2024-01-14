@@ -36,21 +36,20 @@
 
 
       <div class=" mt-5 col-md-5 col footer-pages" style="border-left:5px solid white">
-          <ul class="pages">
-            <li>
-              <a class="footer-header" href="../aboutUs.php#">關於我們</a>
-            </li>
-            <li>
-              <a href="../aboutUs.php#">起源</a>
-            </li>
-            <li>
-              <a href="../aboutUs.php#origin">目標</a>
-            </li>
-            <li>
-              <a href="../aboutUs.php#cheetos">店貓－奇多（Cheetos）</a>
-            </li>
-
-          </ul>
+      <ul class="pages">
+      <li>
+        <a class="footer-header" href="../aboutUs.php">關於我們</a>
+      </li>
+      <li>
+        <a href="../aboutUs.php#origin">起源</a>
+      </li>
+      <li>
+        <a href="../aboutUs.php#goal">目標</a>
+      </li>
+      <li>
+        <a href="../aboutUs.php#cheetos">店貓－奇多（Cheetos）</a>
+      </li>
+    </ul>
 
           <ul class="pages">
             <li>

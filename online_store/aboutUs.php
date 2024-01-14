@@ -57,12 +57,14 @@ include_once "./api/db.php";
         width: 300px;
       }
     }
+
     @media screen and (max-width: 450px) {
 
-.modal input[type='submit'] {
-margin-left: 270px !important;
-}
+      .modal input[type='submit'] {
+        margin-left: 270px !important;
+      }
     }
+
     @media screen and (max-width: 450px) {
 
       .aside>img,
@@ -74,7 +76,7 @@ margin-left: 270px !important;
 </head>
 
 
-<body>
+<body id="origin">
   <?php
   include "./inc/header_aboutUs_articles.php"
   ?>
@@ -84,44 +86,46 @@ margin-left: 270px !important;
       <div class="col-5 aside">
 
       </div>
-<?php
-$about=$About->find(1);
-?>
+      <?php
+      $about = $About->find(1);
+      ?>
       <div class="col-6 section ms-5 ps-5">
         <br>
-        <div class="box mt-5">
+        <div class="box mt-5 pt-3">
           <h3 class="h3">&nbsp;起源</h3>
-          <p id="origin">
-
-          <?=$about['origin'];?>
+          <p>
+            <?= $about['origin']; ?>
           </p>
         </div>
-
+        <div id="goal"></div>
+        <br>
         <div class="box mt-5 pt-5">
-          <h3 class="h3">&nbsp;目標</h3>
-          <p id="cheetos">
-
-          
-          <?=$about['goal'];?>
+          <h3 class="h3" >&nbsp;目標</h3>
+          <p>
+            <?= $about['goal']; ?>
           </p>
-          <img src="./img/<?= $about['img']; ?>"width="100%" height="100%" class="mt-5">
+
         </div>
-          <div class="box mt-5">
-            <h3 class="h3">&nbsp;店貓－奇多（Cheetos） </h3>
-            <p>
+        <div id="cheetos"></div>
+        <br>
+        <div  id="cheetos" class="box mt-5 pt-5" style="margin-top:40px">
+        
+          <h3 class="h3">&nbsp;店貓－奇多（Cheetos） </h3>
+          <img src="./img/<?= $about['img']; ?>" width="100%" height="100%" class="mt-3">
+          <p class="mt-3">
 
-              
-          <?=$about['cheetos'];?> 🐾🍪
-              <br><br><br>
-            </p>
+            <?= $about['cheetos']; ?> 🐾🍪
+            <br><br><br>
+          </p>
 
-          </div>
-
-          <div class="col-1"></div>
         </div>
+
+        <div class="col-1"></div>
       </div>
     </div>
   </div>
+  </div>
+
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -197,20 +201,19 @@ $about=$About->find(1);
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col footer-pages" style="border-left:5px solid white">
-    <ul class="pages">
+  <ul class="pages">
       <li>
         <a class="footer-header" href="#">關於我們</a>
       </li>
       <li>
-        <a href="#">起源</a>
+        <a href="#origin">起源</a>
       </li>
       <li>
-        <a href="#origin">目標</a>
+        <a href="#goal">目標</a>
       </li>
       <li>
         <a href="#cheetos">店貓－奇多（Cheetos）</a>
       </li>
-
     </ul>
 
     <ul class="pages">
@@ -242,29 +245,29 @@ $about=$About->find(1);
       </li>
     </ul>
     <ul class="pages">
-            <li>
-              <a class="footer-header" href="login.php">會員專區</a>
-            </li>
-            <?php
-            if(isset($_SESSION['user'])){
-              echo            '<li>';
-             echo  '<a href="member.php">修改密碼</a>';
-            echo '</li>';
-            }else{
-              echo            '<li>';
-             echo  '<a href="add.php">加入會員</a>';
-            echo '</li>';
-            }
-            ?>
-    
-            <li>
-              <a href="cart.php">訂單查詢</a>
-            </li>
-            <li>
-              <a href="back_login.php">管理員登入</a>
-            </li>
+      <li>
+        <a class="footer-header" href="login.php">會員專區</a>
+      </li>
+      <?php
+      if (isset($_SESSION['user'])) {
+        echo            '<li>';
+        echo  '<a href="member.php">修改密碼</a>';
+        echo '</li>';
+      } else {
+        echo            '<li>';
+        echo  '<a href="add.php">加入會員</a>';
+        echo '</li>';
+      }
+      ?>
 
-          </ul>
+      <li>
+        <a href="cart.php">訂單查詢</a>
+      </li>
+      <li>
+        <a href="back_login.php">管理員登入</a>
+      </li>
+
+    </ul>
 
 
 
