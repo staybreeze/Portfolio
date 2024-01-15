@@ -149,17 +149,17 @@
             <!-- Modal body container end -->
 
           </div>
-          <br>  <br>  <br>  <br>  <br>
+          <br> <br> <br> <br> <br>
           <?php
-      // if(isset($_SESSION['user'])){
-      //   echo '<img class="ms-3" src="./img/cheetos16.jpg" width="300px"alt="">';
+          // if(isset($_SESSION['user'])){
+          //   echo '<img class="ms-3" src="./img/cheetos16.jpg" width="300px"alt="">';
 
-      //   }else{
+          //   }else{
 
-      //     echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
-      //   }
+          //     echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+          //   }
           ?>
-          <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">
+          <!-- <img class="ms-3" src="./img/cheetos15.jpg" width="300px" alt=""> -->
         </div>
       </div>
       <div>
@@ -182,11 +182,11 @@
 <header class="h-11 bg-gray container-fluid header2 ">
 
 
- <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
- <h2  style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px">奇多喵合作社</h2>
+  <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
+  <h2 style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px">奇多喵合作社</h2>
 
-<a href="../index.php">
-  <img class="logo2" src="../img/logo1.png" alt=""></a>
+  <a href="../index.php">
+    <img class="logo2" src="../img/logo1.png" alt=""></a>
 
   <div class="header-title2">
 

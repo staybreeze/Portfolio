@@ -1,4 +1,4 @@
-</style>
+
 
 
 <header class="h-11 bg-gray container-fluid header">
@@ -174,7 +174,7 @@
       //     echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
       //   }
           ?>
-          <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">
+          <img src="./img/cheetos15.jpg" width="300px"alt="">
         </div>
       </div>
       <div>
