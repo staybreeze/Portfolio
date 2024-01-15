@@ -216,7 +216,7 @@
 
                     <h4 class="mt-2">前台</h4>
                     <a href="./online_store/index.php">
-                        <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
+                        <img id="deviceNotice" class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
                     </a>
 
                 </div>
@@ -572,6 +572,17 @@
 
         alert('管理員帳密，歡迎來信索取～wunshengliao@gmail.com');
 
+    });
+
+    document.getElementById('deviceNotice').addEventListener('click', function() {
+        if (window.innerWidth < 776) {
+            alert('此網站另有【電腦版】，歡迎用電腦開啟～');
+            document.getElementById('noPhone').href = 'index.php';
+        }else{
+
+            alert('此網站另有【手機版】，歡迎用手機開啟～');
+            document.getElementById('noPhone').href = 'index.php';
+        }
     });
     document.getElementById('noPhone').addEventListener('click', function() {
         if (window.innerWidth < 1200) {
