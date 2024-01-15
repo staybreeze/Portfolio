@@ -605,7 +605,7 @@ a:hover {
 }
 
 .offcanvas.offcanvas-end {
-  transition: transform .6s ease-in-out !important;
+  transition: transform .4s ease-in-out !important;
 }
 
 #shoppingBtn,#checkOutBtn, #discountBanner,.hidden-div,.tr-mobile, .carousel-mobile{

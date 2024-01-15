@@ -86,6 +86,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
+
           <div class="modal-header">
             <h4 class="modal-title"></h4>
 
@@ -161,8 +162,19 @@
             </div>
             </form>
             <!-- Modal body container end -->
-
+      
           </div>
+          <br>  <br>  <br>  <br>  <br>
+          <?php
+      // if(isset($_SESSION['user'])){
+      //   echo '<img class="ms-3" src="./img/cheetos16.jpg" width="300px"alt="">';
+
+      //   }else{
+
+      //     echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+      //   }
+          ?>
+          <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">
         </div>
       </div>
       <div>
@@ -200,15 +212,7 @@
       </a>
     </div>
     </div>
-
-
-
     <div class="header-title3 ms-2 pb-2 ps-3 pt-1">
-
-
-
-
-
       <?php
 
       if (isset($_SESSION['user'])) {

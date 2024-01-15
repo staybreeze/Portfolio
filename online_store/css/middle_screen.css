@@ -538,10 +538,11 @@ a:hover {
   font-weight: 500;
 }
 
-.section-products .good-header h2 {
+.section-products .good-header h2  {
   font-size: 2.2rem;
   font-weight: 400;
   color: #444444;
+  
 }
 
 .section-products .single-product {
