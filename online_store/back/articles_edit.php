@@ -193,7 +193,7 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
 
 
 ?>
-          <form method="post" action="../api/message.php " enctype="multipart/form-data" >
+     
             <table class="mt-3 w-95" >
 
 
@@ -223,7 +223,7 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
                     echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='300px' class='mb-3'></td>";
                     echo "<td style='padding-top:23px'>{$row['title']}</td>";
                     echo "<td style='padding-top:23px'>{$row['content']}</td>";
-                    echo "<td><a href='article_editing.php?do=articles&edit&id={$row['id']}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
+                    echo "<td><a href='article_editing.php?do=articles&edit&id={$row['id']}&p={$now}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
                     echo "<td><a href='../api/back_del_article.php?id={$row['id']}&time={$row['time']}'><input class='btn btn-danger mt-5 mb-5' type='button' value='刪除'></a></td>";
 
 
@@ -234,7 +234,7 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
                 ?>
 
 
-          </form>
+   
 
                 <?php
                 

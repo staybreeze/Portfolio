@@ -1,7 +1,7 @@
 <?php
 
 include_once "db.php";
-
+print_r($_POST);
 $time=$_POST['time'];
 
 $fileToDelete = "../articles/{$time}.php";
@@ -22,7 +22,7 @@ echo "<br>";
 echo $_POST['originImg'];
 echo "<br>";
 
-$imgFilename = $_POST['img'];
+
 if (isset($_FILES['img']['tmp_name'])&&(!empty($_FILES['img']['tmp_name']))) {
     $imgFilename = $_FILES['img']['name'];
     move_uploaded_file($_FILES['img']['tmp_name'], "../img/" . $imgFilename);
@@ -45,5 +45,5 @@ $Article->save([
     'time'=> $time
   ]);}
 
-  header("location:back_process_article.php?name={$_POST['title']}")
+  header("location:back_process_article.php?name={$_POST['title']}&p={$_POST['p']}")
 ?>

@@ -130,10 +130,10 @@ $time=$article['time'];
 
   if (file_put_contents($filename, $articleContent)) {
     echo "文章新增成功！ <a href='{$filename}'>檢視文章</a>";
-    header("Location: ../back/articles_edit.php?do=articles&&edit");
+    header("Location: ../back/articles_edit.php?do=articles&edit&p={$_GET['p']}");
   } else {
     echo "文章新增失敗！";
-    header("Location:../back/articles_edit.php?do=articles&&edit");
+    header("Location:../back/articles_edit.php?do=articles&edit&p={$_GET['p']}");
   }
 } else {
   header("Location: add_article_form.php");

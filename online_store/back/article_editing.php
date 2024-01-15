@@ -151,6 +151,7 @@ include_once "../api/db.php"
                 <input type="file" name="img" id="" class="mt-5 ms-95 mb-4">
                 <input type="hidden" name="time" value="<?= $article['time']; ?>">
                 <input type="hidden" name="id" value="<?= $article['id']; ?>">
+                <input type="hidden" name="p" value="<?= $_GET['p']; ?>">
               </div>          </div>
               <input class="btn myBtn mt-4 mb-4 ms-95"  type="submit" value="送出">
    
