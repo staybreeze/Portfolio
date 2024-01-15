@@ -149,15 +149,15 @@
           </div>
           <br>  <br>  <br>  <br>  <br>
           <?php
-      // if(isset($_SESSION['user'])){
-      //   echo '<img class="ms-3" src="./img/cheetos16.jpg" width="300px"alt="">';
+      if(isset($_SESSION['user'])){
+        echo '<img class="ms-3" src="./img/cheetos18.jpg" width="300px"alt="">';
 
-      //   }else{
+        }else{
 
-      //     echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
-      //   }
+          echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+        }
           ?>
-          <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">
+          <!-- <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt=""> -->
         </div>
       </div>
       <div>
