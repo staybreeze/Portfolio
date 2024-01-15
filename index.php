@@ -97,7 +97,7 @@
                             <div>Education</div>
                         </td> -->
                         <td class="td4 align-items-sm-center skills fw-bold" colspan="2">
-                            HTML、CSS、Javascript、Bootstrap、RWD
+                            HTML、CSS、Javascript、Ajax、Bootstrap、RWD
                         </td>
                     </tr>
                     <tr>
@@ -121,7 +121,7 @@
                         <!-- <td class="td3" colspan="2">
                             <div>Education</div>
                         </td> -->
-                        <td class="td4 align-items-sm-center skills fw-bold" colspan="2">Git版本控制、Ajax、CRUD、Laravel
+                        <td class="td4 align-items-sm-center skills fw-bold" colspan="2">Git版本控制、CRUD、Laravel
                         </td>
                     </tr>
                     <tr>
