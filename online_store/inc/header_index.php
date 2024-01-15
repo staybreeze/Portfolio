@@ -77,7 +77,7 @@
     </div>
 
 
-    <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:37px">
+    <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;overflow:hidden">
 
       <div class="offcanvas offcanvas-end" data-bs-backdrop="true" id="demo">
         <div class="offcanvas-header">
@@ -116,7 +116,7 @@
                   <div class="col-12">
                     <div class="input-group mb-3 mt-4">
 
-                      <span class="input-group-text bold ms-3">帳號</span>
+                      <span class="input-group-text bold">帳號</span>
                       <input type="text" class="form-control" placeholder="Account123" name="acc">
 
                     </div>
@@ -126,12 +126,12 @@
                 <div class="row">
                   <div class="col">
                     <div class="input-group mb-3">
-                      <span class="input-group-text bold ms-3">密碼</span>
+                      <span class="input-group-text bold">密碼</span>
                       <input type="password" class="form-control" placeholder="****" name="pw">
 
                     </div>
                   </div>
-                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
+                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
                 </div>
 
                 <div class="row mt-5">
@@ -174,7 +174,7 @@
       //     echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
       //   }
           ?>
-          <img src="./img/cheetos15.jpg" width="300px"alt="">
+          <img class="ms-2" src="./img/cheetos15.jpg" width="250px"alt="">
         </div>
       </div>
       <div>

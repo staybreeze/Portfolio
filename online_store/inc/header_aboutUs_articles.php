@@ -9,7 +9,7 @@
 
       <a href="index.php">
         <h2 style="font-weight:600;">奇多喵合作社</h2>
-      </a>
+      </a>F
 
     </div>
     <div class="col-xxl-4 col-xl-12 col-12 test-1 pt-5 header-group">
@@ -99,7 +99,7 @@
                   <div class="col-12">
                     <div class="input-group mb-3 mt-4">
 
-                      <span class="input-group-text bold ms-3">帳號</span>
+                      <span class="input-group-text bold">帳號</span>
                       <input type="text" class="form-control" placeholder="Account123" name="acc">
 
                     </div>
@@ -109,12 +109,12 @@
                 <div class="row">
                   <div class="col">
                     <div class="input-group mb-3">
-                      <span class="input-group-text bold ms-3">密碼</span>
+                      <span class="input-group-text bold">密碼</span>
                       <input type="password" class="form-control" placeholder="****" name="pw">
 
                     </div>
                   </div>
-                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
+                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
                 </div>
 
                 <div class="row mt-5">
