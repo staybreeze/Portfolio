@@ -143,20 +143,16 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-       
-    
-         ';
+                </div>';
                 } else {
+                  echo ' <img src="./img/cheetos20.jpg" width="330px"">';
+                  echo " <br> 歡迎光臨！" . $_SESSION['user'] . " 💛";
 
-                  echo "歡迎光臨！" . $_SESSION['user'] . "💛";
 
 
+                  echo "  <br>  <a href='./member.php' class='btn btn-secondary mt-4 col-7 mx-2'>修改會員資料</a>";
 
-                  echo "<a href='./member.php' class='btn btn-secondary mt-4 col-7 mx-2'>修改會員資料</a>";
-
-                  echo "<a href='./api/logout.php' class='btn btn-warning mt-4 col-7 mx-2'>登出</a>";
+                  echo "  <br>  <a href='./api/logout.php' class='btn btn-warning mt-4 col-7 mx-2'>登出</a>";
                 }
                 ?>
             </div>
@@ -164,17 +160,16 @@
             <!-- Modal body container end -->
       
           </div>
-          <br>  <br>  <br>  <br>  <br>
+        
           <?php
       if(isset($_SESSION['user'])){
-        echo '<img class="ms-3" src="./img/cheetos18.jpg" width="300px"alt="">';
+        echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
 
         }else{
 
-          echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+          echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
         }
           ?>
-          <!-- <img class="ms-2" src="./img/cheetos15.jpg" width="250px"alt=""> -->
         </div>
       </div>
       <div>

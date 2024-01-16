@@ -162,7 +162,7 @@ include_once "../api/db.php"
           $customerAccArray = array_column($Customer->all('customer_acc'), 'customer_acc');
           $uniqueCustomerAccArray = array_unique($customerAccArray);
 
-          $totalOrders = count($uniqueCustomerAccArray)-1;
+          $totalOrders = count($uniqueCustomerAccArray);
           echo "<div class='gold-border mt-5' style='margin-left:95px'><p class='total-price mt-3'><b>訂單數：共<span class='underline'> {$totalOrders} </span>筆</b></p>";
           echo "<p class='total-price' id='totalPrice'><b>總訂單金額：<span class='underline'></span>元</p>";
           echo "<p class='total-price' id='totalPrice'>目前折扣活動：【<span style='text-decoration:underline'>滿5000元，打8折～</span>】</p></div>";

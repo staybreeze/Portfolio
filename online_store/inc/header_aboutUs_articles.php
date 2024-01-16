@@ -9,7 +9,7 @@
 
       <a href="index.php">
         <h2 style="font-weight:600;">奇多喵合作社</h2>
-      </a>F
+      </a>
 
     </div>
     <div class="col-xxl-4 col-xl-12 col-12 test-1 pt-5 header-group">
@@ -126,39 +126,33 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-       
-    
-         ';
-                } else {
-
-                  echo "歡迎光臨！" . $_SESSION['user'] . "💛";
+                </div>';
+        } else {
+          echo ' <img src="./img/cheetos20.jpg" width="330px"">';
+          echo " <br> 歡迎光臨！" . $_SESSION['user'] . " 💛";
 
 
 
-                  echo "<a href='./member.php' class='btn btn-secondary mt-4 col-7 mx-2'>修改會員資料</a>";
+          echo "  <br>  <a href='./member.php' class='btn btn-secondary mt-4 col-7 mx-2'>修改會員資料</a>";
 
-                  echo "<a href='./api/logout.php' class='btn btn-warning mt-4 col-7 mx-2'>登出</a>";
-                }
-                ?>
-            </div>
-            </form>
-            <!-- Modal body container end -->
-
-          </div>
-          <br>  <br>  <br>  <br>  <br>
-          <?php
-      if(isset($_SESSION['user'])){
-        echo '<img class="ms-3" src="./img/cheetos18.jpg" width="300px"alt="">';
-
-        }else{
-
-          echo '<img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+          echo "  <br>  <a href='./api/logout.php' class='btn btn-warning mt-4 col-7 mx-2'>登出</a>";
         }
-          ?>
-          <!-- <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt=""> -->
-        </div>
+        ?>
+    </div>
+    </form>
+    <!-- Modal body container end -->
+
+  </div>
+
+  <?php
+if(isset($_SESSION['user'])){
+echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;right:20px;top:30px">';
+
+}else{
+
+  echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+}
+  ?> </div>
       </div>
       <div>
 
