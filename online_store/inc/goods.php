@@ -16,9 +16,12 @@
             display: block;
 
         }
-        img{
-            width:100%
+        .img-rotate{
+            width:75%;
+            margin-top:20px;
+            margin-left:50px
         }
+        
     }
 </style>
 

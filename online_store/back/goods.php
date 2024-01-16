@@ -216,7 +216,7 @@ width:30px
           <h4 class="mt-5 color-gray" style="margin-left:95px">編輯</h4>
           <?php
           $total = count($Good->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-          $div = 3;
+          $div = 3  ;
           $pages = ceil($total / $div);
           $now = $_GET['p'] ?? 1;
           $start = ($now - 1) * $div;
@@ -238,8 +238,9 @@ width:30px
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
             $hidden  = ($i !=$now) ? 'hidden' : '';
             $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
-            $show  = ($i==$now+1 || $i==$now-1 ) ? 'show' : '';
-            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show ms-3'> $i</div> </a>";
+            $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
+            $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
+            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
@@ -247,7 +248,7 @@ width:30px
           // }
           $lastPage = ($pages ==$now) ? $now : ($now + 1);
       
-          $hiddenLastPage= ($now ==$pages-1||$now ==$pages) ? 'hidden' : '';
+          $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
           echo "<div class='dotted-line $hiddenLastPage'></div>";
           echo "<a href='?do=goods&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
           

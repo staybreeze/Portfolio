@@ -114,6 +114,9 @@ color:brown;
 .show{
   display: block !important;
 }
+.sho2{
+  display: block !important;
+}
   </style>
 
 
@@ -196,8 +199,9 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
             $hidden  = ($i !=$now) ? 'hidden' : '';
             $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
-            $show  = ($i==$now+1 || $i==$now-1 ) ? 'show' : '';
-            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show ms-3'> $i</div> </a>";
+            $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
+            $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
+            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
@@ -205,7 +209,7 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
           // }
           $lastPage = ($pages ==$now) ? $now : ($now + 1);
       
-          $hiddenLastPage= ($now ==$pages-1||$now ==$pages) ? 'hidden' : '';
+          $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
           echo "<div class='dotted-line $hiddenLastPage'></div>";
           echo "<a href='?do=goods&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
           
