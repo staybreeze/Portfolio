@@ -60,7 +60,7 @@
                     <div id="product " class="single-product">
 
                         <div class="part-1">
-                            <img class="img-rotate" src="./img/<?= $good['img']; ?>" style="margin-top:50px"width="80%">
+                            <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
                             <?php
 
                             if (!empty($good['discount'])) {

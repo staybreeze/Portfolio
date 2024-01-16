@@ -37,6 +37,16 @@ include_once "../api/db.php"
       }
     }
 
+    .dotted-line{
+font-size: larger;
+padding-top:10px;
+margin-left:15px;
+border-bottom: 3px dotted goldenrod;
+width:30px
+    }
+    .hidden{
+      display: none;
+    }
     .good-border {
       border: 1px dotted brown;
     }
@@ -92,6 +102,7 @@ width:30px;
 text-align: center;
 
 }
+
 .ms-20{
 margin-left:21px
 
@@ -99,6 +110,9 @@ margin-left:21px
 a{
 text-decoration: none;
 color:brown;
+}
+.show{
+  display: block !important;
 }
   </style>
 
@@ -159,33 +173,45 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
 
               
                 $total = count($Article->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-                $div = 5;
+                $div = 1;
                 $pages = ceil($total / $div);
                 $now = $_GET['p'] ?? 1;
                 $start = ($now - 1) * $div;
                 $rows = $Article->all('', " limit $start,$div");
+
+
+
+          // if ($now > 1) {
+          //   $prev = $now - 1;
+          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
+          // }
+       
+          echo "<div class='d-flex mt-4 me-1'>";
+          $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
+          echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-5'> <</div> </a>";
+          
+          
+          for ($i = 1; $i <= $pages; $i++) {
+            // $fontsize = ($now == $i) ? '24px' : '16px';
+            $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
+            $hidden  = ($i !=$now) ? 'hidden' : '';
+            $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
+            $show  = ($i==$now+1 || $i==$now-1 ) ? 'show' : '';
+            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show ms-3'> $i</div> </a>";
+          }
+          // if ($now < $pages) {
+          //   $next = $now + 1;
+          //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
+          // }
+          $lastPage = ($pages ==$now) ? $now : ($now + 1);
       
-                
-             
-                // if ($now > 1) {
-                //   $prev = $now - 1;
-                //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
-                // }
-      echo "<div class='d-flex ms-20 mt-4'>";
-                for ($i = 1; $i <= $pages; $i++) {
-                  // $fontsize = ($now == $i) ? '24px' : '16px';
-           
-                  $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-                
-                
-                  echo "<a href='?do=articles&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
-            
-                }
-                // if ($now < $pages) {
-                //   $next = $now + 1;
-                //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
-                // }
-               
+          $hiddenLastPage= ($now ==$pages-1||$now ==$pages) ? 'hidden' : '';
+          echo "<div class='dotted-line $hiddenLastPage'></div>";
+          echo "<a href='?do=goods&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
+          
+          echo "<a href='?do=goods&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
+          
+
                 echo "</div>";
 
                 foreach ($rows as $row) {

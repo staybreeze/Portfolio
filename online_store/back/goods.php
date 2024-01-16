@@ -68,6 +68,13 @@ include_once "../api/db.php"
 
     }
 
+    .dotted-line{
+font-size: larger;
+padding-top:10px;
+margin-left:15px;
+border-bottom: 3px dotted goldenrod;
+width:30px
+    }
     .ms-80 {
       margin-left: 82px
     }
@@ -76,6 +83,12 @@ include_once "../api/db.php"
       text-decoration: none;
       color: brown;
     }
+    .hidden{
+      display: none;
+    }
+    .show{
+  display: block !important;
+}
   </style>
 
   </style>
@@ -203,7 +216,7 @@ include_once "../api/db.php"
           <h4 class="mt-5 color-gray" style="margin-left:95px">編輯</h4>
           <?php
           $total = count($Good->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-          $div = 5;
+          $div = 3;
           $pages = ceil($total / $div);
           $now = $_GET['p'] ?? 1;
           $start = ($now - 1) * $div;
@@ -220,18 +233,24 @@ include_once "../api/db.php"
           $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
           echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-3'> <</div> </a>";
           
-          
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-
-            echo "<a href='?do=goods&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
+            $hidden  = ($i !=$now) ? 'hidden' : '';
+            $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
+            $show  = ($i==$now+1 || $i==$now-1 ) ? 'show' : '';
+            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show ms-3'> $i</div> </a>";
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
           //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
           // }
           $lastPage = ($pages ==$now) ? $now : ($now + 1);
+      
+          $hiddenLastPage= ($now ==$pages-1||$now ==$pages) ? 'hidden' : '';
+          echo "<div class='dotted-line $hiddenLastPage'></div>";
+          echo "<a href='?do=goods&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
+          
           echo "<a href='?do=goods&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
           
 
