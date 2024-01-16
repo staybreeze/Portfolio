@@ -117,8 +117,8 @@
                   <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
                 </div>
 
-                <div class="row mt-5">
-                  <div class="col-12 mt-1">
+                <div class="row">
+                  <div class="col-121">
                     <div class="">
                       <div class="d-flex gap-2">
                         <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
@@ -127,35 +127,35 @@
                     </div>
                   </div>
                 </div>';
-        } else {
-          echo ' <img src="./img/cheetos20.jpg" width="330px"">';
-          echo " <br> 歡迎光臨！" . $_SESSION['user'] . " 💛";
+                } else {
+                  echo ' <img src="./img/cheetos20.jpg" width="310px"">';
+                  echo "<br>歡迎光臨！" . $_SESSION['user'] . " 💛";
 
 
 
-          echo "  <br>  <a href='./member.php' class='btn btn-secondary mt-4 col-7 mx-2'>修改會員資料</a>";
+                  echo "  <br>  <a href='./member.php' class='btn btn-secondary mt-4 col-7 mx-2'>修改會員資料</a>";
 
-          echo "  <br>  <a href='./api/logout.php' class='btn btn-warning mt-4 col-7 mx-2'>登出</a>";
+                  echo "  <br>  <a href='./api/logout.php' class='btn btn-warning mt-4 col-7 mx-2'>登出</a>";
+                }
+                ?>
+            </div>
+            </form>
+            <!-- Modal body container end -->
+      
+          </div>
+        
+          <?php
+      if(isset($_SESSION['user'])){
+        // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
+      echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
+        }else{
+
+          echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
         }
-        ?>
-    </div>
-    </form>
-    <!-- Modal body container end -->
-
-  </div>
-
-  <?php
-if(isset($_SESSION['user'])){
-echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;right:20px;top:30px">';
-
-}else{
-
-  echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
-}
-  ?> </div>
+          ?>
+        </div>
       </div>
       <div>
-
         <i class="fa-regular fa-circle-user me-5" style=" font-size: 2em;" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
 
         <p class="mt-1 me-5 shopping-cart-p">Menbership</p>

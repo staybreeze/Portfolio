@@ -134,8 +134,8 @@
                   <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
                 </div>
 
-                <div class="row mt-5">
-                  <div class="col-12 mt-1">
+                <div class="row">
+                  <div class="col-121">
                     <div class="">
                       <div class="d-flex gap-2">
                         <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
@@ -145,8 +145,8 @@
                   </div>
                 </div>';
                 } else {
-                  echo ' <img src="./img/cheetos20.jpg" width="330px"">';
-                  echo " <br> 歡迎光臨！" . $_SESSION['user'] . " 💛";
+                  echo ' <img src="./img/cheetos20.jpg" width="310px"">';
+                  echo "<br>歡迎光臨！" . $_SESSION['user'] . " 💛";
 
 
 
@@ -163,8 +163,8 @@
         
           <?php
       if(isset($_SESSION['user'])){
-        echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
-
+        // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
+      echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
         }else{
 
           echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
