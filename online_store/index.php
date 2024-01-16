@@ -30,7 +30,6 @@ include_once "./api/db.php";
   </style>
 </head>
 
-
 <body>
   <?php
   include "./inc/header_index.php"
