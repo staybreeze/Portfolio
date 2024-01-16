@@ -104,7 +104,7 @@ include_once "./api/db.php";
   </div>
 
 
-  <div class="carousel carousel-mobile bg-black">
+  <div class="carousel carousel-mobile" style="background-color: #12304a;">
     <div class="">
       <div id="carouselExampleIndicators" class="carousel slide " class="carousel slide">
         <div class="carousel-indicators ">

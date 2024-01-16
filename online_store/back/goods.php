@@ -215,11 +215,15 @@ include_once "../api/db.php"
           //   $prev = $now - 1;
           //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
           // }
+       
           echo "<div class='d-flex ms-80 mt-4'>";
+          $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
+          echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-3'> <</div> </a>";
+          
+          
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-
 
             echo "<a href='?do=goods&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
           }
@@ -227,6 +231,9 @@ include_once "../api/db.php"
           //   $next = $now + 1;
           //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
           // }
+          $lastPage = ($pages ==$now) ? $now : ($now + 1);
+          echo "<a href='?do=goods&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
+          
 
           echo "</div>";
 

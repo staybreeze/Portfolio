@@ -16,6 +16,9 @@
             display: block;
 
         }
+        img{
+            width:100%
+        }
     }
 </style>
 
@@ -25,7 +28,7 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6" id="store">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
-                    <h2 id="onlineStore"><b>購物商城 ✨</b>
+                    <h2 id="onlineStore"><b>購物商城</b>
 
                     </h2>
                     <br>
@@ -57,7 +60,7 @@
                     <div id="product " class="single-product">
 
                         <div class="part-1">
-                            <img class="img-rotate" src="./img/<?= $good['img']; ?>" alt="" width="100%">
+                            <img class="img-rotate" src="./img/<?= $good['img']; ?>" style="margin-top:50px"width="80%">
                             <?php
 
                             if (!empty($good['discount'])) {
