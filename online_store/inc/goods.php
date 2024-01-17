@@ -257,7 +257,7 @@
             $(".good-row").css('margin-top', '4.5px');
         }
     };
-    var scrollThreshold = 300;
+    var scrollThreshold = 610;
 
 
     $(window).scroll(function() {
