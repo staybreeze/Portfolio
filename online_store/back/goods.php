@@ -341,7 +341,7 @@ include_once "../api/db.php"
                   <div class="input-group mb-3" style="margin-left:14px">
 
                     <span class="input-group-text bold">售價</span>
-                    <input type="number" class="price-edit" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:110px" name="price" value="<?=$good['price'];?>">
+                    <input type="number" class="price-edit" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:110px" name="price" value="<?=$good['price'];?>" disabled>
 
                   </div>
                 </div>

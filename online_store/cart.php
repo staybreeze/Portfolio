@@ -171,23 +171,16 @@ include_once "./api/db.php";
           echo "<td style='padding-top:23px' class='subtotal' id='total'>{$total}</td>";
         ?>
           <td>
-            <a href="./api/del_good.php?id=<?= $row['id']; ?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
+            <a href="./api/del_good.php?id=<?= $row['id']; ?>&quantity=<?=$cartItem['quantity'];?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
           </td>
           </tr>
         <?php
           $totalPrice += $total;
         }
-
-
         ?>
-
-
 
         <tr>
           <td colspan="5" class="">總計</td>
-
-
-
           <!-- <td></td> -->
           <td colspan="2" class="" id="totalPrice">NTD</td>
           <!-- <td></td> -->

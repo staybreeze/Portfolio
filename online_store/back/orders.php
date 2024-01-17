@@ -267,7 +267,7 @@ include_once "../api/db.php"
                       $total = $cartItem['quantity'] * $row['price'];
                       echo "<td class='subtotal' id='subtotal_{$user['acc']}_{$row['id']}'>{$total}</td>";
 
-                      echo "<td><a href='../api/del_good.php?id={$row['id']}&user={$user['acc']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
+                      echo "<td><a href='../api/del_good.php?id={$row['id']}&user={$user['acc']}&quantity={$cartItem['quantity']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
                       echo '</tr>';
                       $userTotalPrice += $total;
                     }

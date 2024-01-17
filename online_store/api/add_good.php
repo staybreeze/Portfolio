@@ -12,22 +12,29 @@ if (isset($_SESSION['user'])) {
             'product_id' => $goodId,
             'quantity' => 1,
         ]);
-    } elseif(isset($existingCartItem)) {
+    } elseif (isset($existingCartItem)) {
         $newQuantity = $existingCartItem['quantity'] + 1;
         $customerResult = $Customer->update(
-            
+
             $existingCartItem['id'],
             ['quantity' => $newQuantity]
         );
     }
+
+
+    $good = $Good->find($goodId);
+    $good['remain'] = $good['remain']-1;
+    $Good->save($good);
+
+
     echo "<pre>";
     print_r($customerResult);
     echo "</pre>";
-if(isset($_GET['cart'])){
-    header("location:../cart.php");
-}else{
-    header("location:../index.php#store");}
+    if (isset($_GET['cart'])) {
+        header("location:../cart.php");
+    } else {
+        header("location:../index.php#store");
+    }
 } else {
     header("location:../login.php?error=請先登入會員");
 }
-?>

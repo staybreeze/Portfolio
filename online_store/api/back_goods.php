@@ -12,14 +12,14 @@ $name = isset($_POST['name']) ? $_POST['name'] : '';
 $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : '';
 $old_price = isset($_POST['old_price']) ? $_POST['old_price'] : '';
 $discount = isset($_POST['discount']) ? $_POST['discount'] : '';
-$price = isset($_POST['price']) ? round($_POST['price']) : '';
 $remain = isset($_POST['remain']) ? $_POST['remain'] : '';
+
 
 $good['name'] = is_array($name) ? implode(', ', $name) : $name;
 $good['quantity'] = is_array($quantity) ? implode(', ', $quantity) : $quantity;
 $good['old_price'] = is_array($old_price) ? implode(', ', $old_price) : $old_price;
 $good['discount'] = is_array($discount) ? implode(', ', $discount) : $discount;
-$good['price'] = is_array($price) ? implode(', ', $price) : $price;
+$good['price'] = round($good['old_price']*(1 - $good['discount'] / 100));
 $good['remain'] = is_array($remain) ? implode(', ', $remain) : $remain;
 
 
