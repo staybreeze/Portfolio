@@ -32,10 +32,10 @@
 </style>
 
 
-<section class="section-products ">
+<section class="section-products " id="store">
     <div class="container goods">
         <div class="row justify-content-center text-center">
-            <div class="col-md-8 col-lg-6" id="store">
+            <div class="col-md-8 col-lg-6">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
                     <h2 id="onlineStore"><b>購物商城</b>
 

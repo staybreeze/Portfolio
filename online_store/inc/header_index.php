@@ -1,8 +1,53 @@
+<style>
+#header {
+    transform: translateY(0);
+    opacity: 1;
+    max-height: 12.5vh;
+    overflow: hidden;
+    transition: opacity 1s, max-height 1s
+  }
 
+  #header.hide-header {
+    opacity: 1;
+    /* transform: translateY(-100%); */
+    max-height: 0vh;
+    overflow: hidden;
+    pointer-events: none;
+    /* margin-bottom:20px; */
+  }
+</style>
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<header class="h-11 bg-gray container-fluid header">
-  <div class="row bg-gray">
+<script>
+  $(document).ready(function() {
+    let header = $('#header');
+    let body =$('body')
+    let scrollThreshold = 0;
+    header.removeClass('hide-header').addClass('show-header');
+    header.css('background-color','rgb(216, 162, 90)');
+    // header.css('background-color','#12304a');
+    $(window).scroll(function() {
+      var scrollPosition = $(this).scrollTop();
+     
+       if (scrollPosition > scrollThreshold) {
+        header.removeClass('hide-header').addClass('show-header');
+        header.css('background-color','rgb(216, 162, 90)');
+      } else {
+        header.removeClass('show-header').addClass('hide-header');
+        header.css('background-color','rgb(216, 162, 90)');
+      }
+    //   if (scrollPosition > scrollThreshold) {
+    //     header.removeClass('hide-header').addClass('show-header');
+    //   } else {
+    //     header.removeClass('show-header').addClass('hide-header');
+    //     header.css('background-color','#12304a');
+    //   }
+    });
+  });
+</script>
+<header class="h-11 bg-gray container-fluid header hide-header" id="header">
+  <div class="row">
 
     <div class="test col-xxl-2 col-xl-6 col-12 ms-3 logo-area">
       <a href="index.php" data-bs-toggle="modal" data-bs-target="#myModal-2">
@@ -158,17 +203,17 @@
             </div>
             </form>
             <!-- Modal body container end -->
-      
-          </div>
-        
-          <?php
-      if(isset($_SESSION['user'])){
-        // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
-      echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
-        }else{
 
-          echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
-        }
+          </div>
+
+          <?php
+          if (isset($_SESSION['user'])) {
+            // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
+            echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
+          } else {
+
+            echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+          }
           ?>
         </div>
       </div>
@@ -237,7 +282,7 @@
 
           <ul>
             <li class="nav-item me-3">
-              <a  href="aboutUs.php">關於我們</a>
+              <a href="aboutUs.php">關於我們</a>
               <div class="unloading-bar"></div>
               <div class="loading-bar"></div>
             </li>
@@ -328,4 +373,3 @@
     </nav>
 
 </header>
-
