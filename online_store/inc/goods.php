@@ -21,8 +21,13 @@
             width: 75%;
             margin-top: 20px;
             margin-left: 50px
+            
         }
 
+    }
+
+    .disabled{
+        display: none;
     }
 </style>
 
@@ -113,6 +118,7 @@
                             ?>
 
                             <h4 class="product-price">NTD <?= $good['price']; ?></h4>
+                            <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
                         </div>
                     </div>
                 </div>
@@ -236,9 +242,11 @@
     //     $("#discountBanner").css('color', '#fff');
 
     // });
-
-
+    if (window.innerWidth > 450) {
+        let part2 = $(".part-2")
+        part2.find(".fa-sharp").addClass('disabled');}
     if (window.innerWidth < 450) {
+
         if (window.location.hash.includes('store')) {
             $("#shoppingBtn").hide();
             $(".discount-p").removeClass('discount-p');
