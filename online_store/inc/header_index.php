@@ -1,51 +1,6 @@
-<style>
-#header {
-    transform: translateY(0);
-    opacity: 1;
-    max-height: 12.5vh;
-    overflow: hidden;
-    transition: opacity 1s, max-height 1s
-  }
-
-  #header.hide-header {
-    opacity: 1;
-    /* transform: translateY(-100%); */
-    max-height: 0vh;
-    overflow: hidden;
-    pointer-events: none;
-    /* margin-bottom:20px; */
-  }
-</style>
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    let header = $('#header');
-    let body =$('body')
-    let scrollThreshold = 0;
-    header.removeClass('hide-header').addClass('show-header');
-    header.css('background-color','rgb(216, 162, 90)');
-    // header.css('background-color','#12304a');
-    $(window).scroll(function() {
-      var scrollPosition = $(this).scrollTop();
-     
-       if (scrollPosition > scrollThreshold) {
-        header.removeClass('hide-header').addClass('show-header');
-        header.css('background-color','rgb(216, 162, 90)');
-      } else {
-        header.removeClass('show-header').addClass('hide-header');
-        header.css('background-color','rgb(216, 162, 90)');
-      }
-    //   if (scrollPosition > scrollThreshold) {
-    //     header.removeClass('hide-header').addClass('show-header');
-    //   } else {
-    //     header.removeClass('show-header').addClass('hide-header');
-    //     header.css('background-color','#12304a');
-    //   }
-    });
-  });
-</script>
+<?php
+include_once "header_effect.php"
+?>
 <header class="h-11 bg-gray container-fluid header hide-header" id="header">
   <div class="row">
 
@@ -75,7 +30,7 @@
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item me-3" style="margin-left:36px">
-            <a href="#store">商城</a>
+            <a href="#onlineStore">商城</a>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>
@@ -176,12 +131,12 @@
 
                     </div>
                   </div>
-                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
+                  <a href="./add.php" class="ms-1" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
                 </div>
 
                 <div class="row">
                   <div class="col-121">
-                    <div class="">
+                    <div class="mt-3">
                       <div class="d-flex gap-2">
                         <button type="reset" class="btn btn-primary btn-secondary col-6">重置</button>
                         <button type="submit" class="btn btn-primary btn-warning  col-6">送出</button>

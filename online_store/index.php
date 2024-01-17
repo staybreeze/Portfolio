@@ -227,16 +227,16 @@ include_once "./api/db.php";
     </ul>
     <ul class="pages">
       <li>
-        <a class="footer-header" href="./index.php#store">購物商城</a>
+        <a class="footer-header" href="./index.php#onlineStore">購物商城</a>
       </li>
       <li>
-        <a class="" href="./index.php#store">食物</a>
+        <a class="" href="./index.php#onlineStore">食物</a>
       </li>
       <li>
-        <a class="" href="./index.php#store">玩具</a>
+        <a class="" href="./index.php#onlineStore">玩具</a>
       </li>
       <li>
-        <a class="" href="./index.php#store">生活用品</a>
+        <a class="" href="./index.php#onlineStore">生活用品</a>
       </li>
     </ul>
     <ul class="pages">

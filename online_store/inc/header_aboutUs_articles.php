@@ -1,4 +1,8 @@
-<header class="h-11 bg-gray container-fluid header">
+<?php
+include_once "header_effect.php"
+?>
+
+<header class="h-11 bg-gray container-fluid header  hide-header" id="header">
   <div class="row bg-gray">
 
     <div class="test col-xxl-2 col-xl-6 col-12 ms-3 logo-area">
