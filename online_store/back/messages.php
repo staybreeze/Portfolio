@@ -113,6 +113,19 @@ a{
 text-decoration: none;
 color:brown;
 }
+.hidden{
+      display: none;
+    }
+.show{
+  display: block !important;
+}
+.dotted-line{
+font-size: larger;
+padding-top:10px;
+margin-left:15px;
+border-bottom: 3px dotted goldenrod;
+width:30px
+    }
   </style>
 
   </style>
@@ -162,28 +175,38 @@ color:brown;
                 $start = ($now - 1) * $div;
                 $rows = $Message->all('', " limit $start,$div");
       
-                
              
-                // if ($now > 1) {
-                //   $prev = $now - 1;
-                //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
-                // }
-      echo "<div class='d-flex ms-80 mt-5'>";
-                for ($i = 1; $i <= $pages; $i++) {
-                  // $herePage = ($now == $i) ? '24px' : '16px';
-               
-                    $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-                
-                
-                  echo "<a href='?do=messages&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
-            
-                }
+          // if ($now > 1) {
+          //   $prev = $now - 1;
+          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=messages&p=$prev'> < </a></div>";
+          // }
+       
+          echo "<div class='d-flex ms-80 mt-4'>";
+          $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
+          echo "<a href='?do=messages&p=$firstPage'><div class='pages ms-3'> <</div> </a>";
+          
+          for ($i = 1; $i <= $pages; $i++) {
+            // $fontsize = ($now == $i) ? '24px' : '16px';
+            $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
+            $hidden  = ($i !=$now) ? 'hidden' : '';
+            $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
+            $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
+            $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
+            echo "<a href='?do=messages&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
+          }
+          // if ($now < $pages) {
+          //   $next = $now + 1;
+          //   echo "<div  class='pages'><a href='?do=messages&p=$next'> > </a></div></div>";
+          // }
+          $lastPage = ($pages ==$now) ? $now : ($now + 1);
+      
+          $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
+          echo "<div class='dotted-line $hiddenLastPage'></div>";
+          echo "<a href='?do=messages&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
+          
+          echo "<a href='?do=messages&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
+          
 
-                // if ($now < $pages) {
-                //   $next = $now + 1;
-                //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
-                // }
-               
                 echo "</div>";
       
       

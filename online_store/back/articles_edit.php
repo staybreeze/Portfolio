@@ -186,12 +186,12 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
 
           // if ($now > 1) {
           //   $prev = $now - 1;
-          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
+          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=articles&p=$prev'> < </a></div>";
           // }
        
           echo "<div class='d-flex mt-4 me-1'>";
           $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
-          echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-5'> <</div> </a>";
+          echo "<a href='?do=articles&p=$firstPage'><div class='pages ms-5'> <</div> </a>";
           
           
           for ($i = 1; $i <= $pages; $i++) {
@@ -201,19 +201,19 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
             $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
             $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
             $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
-            echo "<a href='?do=goods&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
+            echo "<a href='?do=articles&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
-          //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
+          //   echo "<div  class='pages'><a href='?do=articles&p=$next'> > </a></div></div>";
           // }
           $lastPage = ($pages ==$now) ? $now : ($now + 1);
       
           $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
           echo "<div class='dotted-line $hiddenLastPage'></div>";
-          echo "<a href='?do=goods&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
+          echo "<a href='?do=articles&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
           
-          echo "<a href='?do=goods&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
+          echo "<a href='?do=articles&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
           
 
                 echo "</div>";

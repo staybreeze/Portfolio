@@ -64,6 +64,8 @@
 
                         <div class="part-1">
                             <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
+                            <br><br>
+                            <div ><i class="fa-sharp fa-solid fa-boxes-stacked"  style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?=$good['remain'];?></span></i></div>
                             <?php
 
                             if (!empty($good['discount'])) {
@@ -75,21 +77,17 @@
                             if (isset($_SESSION['liked_products'])) {
                                 $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
                             }
-
-
                             ?>
-
-
                             <ul>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
                                 <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li><a href="./api/add_good.php?id=<?= $good['id']; ?>"><i class="fas fa-plus"></i></a></li>
                                 <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
-
                             </ul>
+                            
                         </div>
                         <div class="part-2">
-                            <h3 class="product-title"><?= $good['name']; ?></h3>
+                            <h3 class="product-title" style="font-weight:bold"><?= $good['name']; ?></h3>
 
                             <?php
                             if (($good['old_price']) != ($good['price'])) {

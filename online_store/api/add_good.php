@@ -20,7 +20,6 @@ if (isset($_SESSION['user'])) {
             ['quantity' => $newQuantity]
         );
     }
-
     echo "<pre>";
     print_r($customerResult);
     echo "</pre>";
