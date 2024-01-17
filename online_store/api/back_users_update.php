@@ -26,6 +26,7 @@ if (isset($_POST['id']) && is_array($_POST['id'])) {
                 $row = $User->find($id);
                 if (isset($_POST['del']) && in_array($id, $_POST['del'])) {
                     $User->del($id);
+                    $Customer->del(['customer_acc'=>$row['acc']]);
                 } else
                 if (isset($row['acc'])) {
                     // 更新用戶數據
@@ -41,7 +42,7 @@ if (isset($_POST['id']) && is_array($_POST['id'])) {
         }
     }
 
-    // 移到 foreach 循環外部
+
     if (isset($_POST['admin'])) {
         header("location:../back/admins.php?do=admins");
         exit;
