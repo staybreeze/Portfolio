@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
     .liked {
         color: #fe302f
@@ -28,18 +30,59 @@
     .disabled {
         display: none;
     }
+
+    .banner {
+
+        position: relative;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .item {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 </style>
 <section class="section-products" id="store">
     <div class="container goods">
-        <div class="row justify-content-center text-center">
+        <div class="row justify-content-center text-center "id="storeBannerRow" style="margin-bottom:24px">
             <div class="col-md-8 col-lg-6">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
-                    <h2 id="onlineStore">—　<b>購物商城</b>　—
+                    <!-- <h2 id="onlineStore">—　<b>購物商城</b>　— -->
 
-                    </h2>
-                    <br>
+                    <!-- </h2> -->
+
+                    <div class="banner" id="onlineStore">
+                        <div class="item">
+                            <h2>—　<b>購物商城</b>　— </h2>
+                        </div>
+                        <div class="item">
+                            <h2>—　<b>肉泥</b>　— </h2>
+                        </div>
+                        <div class="item">
+                            <h2>—　<b>貓砂</b>　— </h2>
+                        </div>
+                        <div class="item">
+                            <h2>—　<b>罐頭</b>　— </h2>
+                        </div>
+                        <div class="item">
+                            <h2>—　<b>鮮食</b>　— </h2>
+                        </div>     <div class="item">
+                            <h2>—　<b>生食</b>　— </h2>
+                        </div>
+                        <div class="item">
+                            <h2>—　<b>貓草</b>　— </h2>
+                        </div>
+                        <div class="item">
+                            <h2>—　<b>逗貓棒</b>　— </h2>
+                        </div>
+                    </div>
+                    <br> <br>
                     <!-- <div class="hidden-div" id="onlineStore"></div> -->
                     <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
+
                     <!-- <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a> -->
                     <!-- <br> -->
                 </div>
@@ -296,7 +339,7 @@
                 $("#discountBanner").css('border', '1px solid d rgb(252, 233, 122) ');
                 $("#discountBanner").css('background-color', 'rgb(73, 42, 2) ');
                 $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
-
+                $("#storeBannerRow").css('margin-bottom', '14px')
             }
         };
     });
@@ -310,4 +353,32 @@
         }
 
     });
+</script>
+<!-- 引入 gsap 主程式 -->
+<script src="./gsap/gsap.js"></script>
+
+<script>
+    // set 是設定初始補間動畫的預設值
+    gsap.set('.banner', {
+        perspective: 300
+    })
+
+    const tl = gsap.timeline({
+        repeat: -1,
+        repeatDelay: 2
+    })
+
+    tl
+        .from('.item', {
+            y: 60,
+            rotationX: -90,
+            autoAlpha: 0,
+            stagger: 4
+        })
+        .to('.item', {
+            y: -60,
+            rotationX: 90,
+            autoAlpha: 0,
+            stagger: 4
+        }, 4) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 </script>
