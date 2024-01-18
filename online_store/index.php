@@ -339,6 +339,10 @@ include_once "./api/db.php";
     $('#storeBar').on('click', function() {
       $('#carousel').css('height', '');
     });
+    if (location.href.includes('#store')) {
+  $('#carousel').css('height', '');
+}
+
   </script>
 
 

@@ -34,7 +34,7 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
-                    <h2 id="onlineStore"><b>購物商城</b>
+                    <h2 id="onlineStore">—　<b>購物商城</b>　—
 
                     </h2>
                     <br>
@@ -272,7 +272,7 @@
         }
     };
     var scrollThreshold = 610;
-
+    var scrolltoTop = 100;
 
     $(window).scroll(function() {
         if (window.innerWidth < 450) {
@@ -281,16 +281,22 @@
 
             if (scrollPosition > scrollThreshold) {
                 $(".good-row").css('border', '10px solid #d8a25a ');
-                $("#discountBanner").css('border', '1px solid #fff ');
                 $("#discountBanner").css('background-color', '#d8a25a ');
-                $("#discountBanner").css('color', '#fff ');
 
             } else {
-                $(".good-row").css('border', '10px solid rgb(107, 62, 2) ');
+                $(".good-row").css('border', '10px solid rgb(148, 86, 6) ');
                 $("#discountBanner").css('border', '1px solid rgb(252, 233, 122) ');
-                $("#discountBanner").css('background-color', 'rgb(107, 62, 2) ');
+                $("#discountBanner").css('background-color', 'rgb(148, 86, 6) ');
                 $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
                 $(".good-row").css('margin-top', '4.5px');
+            }
+
+            if (scrollPosition < scrolltoTop) {
+                $(".good-row").css('border', '10px solid rgb(73, 42, 2) ');
+                $("#discountBanner").css('border', '1px solid d rgb(252, 233, 122) ');
+                $("#discountBanner").css('background-color', 'rgb(73, 42, 2) ');
+                $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
+
             }
         };
     });

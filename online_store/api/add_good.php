@@ -34,9 +34,9 @@ if (isset($_SESSION['user'])) {
     if (isset($_GET['cart'])) {
         header("location:../cart.php");
     } elseif (isset($_GET['mobile'])) {
-        header("location:../index.php#store");
-    }else{
         header("location:../index.php#onlineStore");
+    }else{
+        header("location:../index.php#store");
     }
 } else {
     header("location:../login.php?error=請先登入會員");

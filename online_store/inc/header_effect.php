@@ -12,7 +12,7 @@
     pointer-events: none;
   }
 
-  #headerMobile {
+  /* #headerMobile {
     opacity: 1;
     max-height: 500px;
     overflow: hidden;
@@ -21,7 +21,7 @@
   #headerMobile.hide-header {
     opacity: 0;
     max-height: 0;
-  }
+  } */
 </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
@@ -32,8 +32,8 @@
 
     header.removeClass('hide-header')
 
-    if (window.innerWidth < 450) {
-    headerMobile.removeClass('hide-header');
-    }
+    // if (window.innerWidth < 450) {
+    // headerMobile.removeClass('hide-header');
+    // }
   });
 </script>
