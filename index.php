@@ -12,6 +12,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+
+
+    @keyframes animate {
+      0% {
+        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
+      }
+
+      50% {
+        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 20px rgba(255, 255, 0, 1);
+      }
+
+      100% {
+        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
+      }
+    }
+ 
+</style>
+
 </head>
 </head>
 
@@ -465,6 +484,12 @@
 
 
 </html>
+  <!-- jQuery -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+  <!-- bootstrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+  <!-- 引入 gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
 
 
 <script>
@@ -608,4 +633,41 @@
             document.getElementById('noPhone3').href = 'index.php';
         }
     });
+ 
+    // 建立星星
+    function createStar(starCount) {
+      for (let i = 0; i < starCount; i++) {
+        $('.container').append(`<div class="star animate">.</div>`)
+      }
+
+      $('.star').each(function (index, star) {
+        $(this).css({
+          position: 'absolute',
+          left: gsap.utils.random(0, 100) + '%',
+          top: gsap.utils.random(0, 100) + '%',
+          color: 'yellow',
+        })
+      })
+    }
+
+    createStar(50)
+
+    // 建立星星動畫
+    gsap.to('.star', {
+      'font-size': `random(12,50)`,
+      filter: 'drop-shadow(0 0 30px rgba(255,255,0,1))',
+      left: '+=random(-10, 10)%',
+      x: 'random(-50,50)',
+      y: 'random(-50,50)',
+      rotationY: '-=180',
+      scale: 'random(1,2)',
+      duration: 'random(5, 10)',
+      delay: 'random(0,5)',
+      repeat: -1,
+      repeatRefresh: true,
+      ease: 'back',
+      stagger: 0.1
+    })
+
+
 </script>

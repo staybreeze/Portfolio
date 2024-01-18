@@ -27,7 +27,19 @@ include_once "./api/db.php";
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <style>
+    @keyframes animate {
+      0% {
+        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
+      }
 
+      50% {
+        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 20px rgba(255, 255, 0, 1);
+      }
+
+      100% {
+        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
+      }
+    }
   </style>
 </head>
 
@@ -53,7 +65,7 @@ include_once "./api/db.php";
         </div>
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos6.jpg" class="d-block w-100"  style="height:87.5vh">
+          <img src="./img/cheetos6.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（幼兒版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -63,7 +75,7 @@ include_once "./api/db.php";
 
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos5.jpg" class="d-block w-100"  style="height:87.5vh">
+          <img src="./img/cheetos5.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（妖嬈版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -73,7 +85,7 @@ include_once "./api/db.php";
 
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos3.jpg" class="d-block w-100"  style="height:87.5vh">
+          <img src="./img/cheetos3.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（看什麼看版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -82,7 +94,7 @@ include_once "./api/db.php";
         </div>
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos2.jpg" class="d-block w-100"  style="height:87.5vh">
+          <img src="./img/cheetos2.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（迷離眼神版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -91,7 +103,7 @@ include_once "./api/db.php";
         </div>
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos1.jpg" class="d-block w-100"  style="height:87.5vh">
+          <img src="./img/cheetos1.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（超可愛版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -269,15 +281,57 @@ include_once "./api/db.php";
   <?php
   include "./inc/copyright.php"
   ?>
-<script>
+  <!-- jQuery -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+  <!-- bootstrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+  <!-- 引入 gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+
+  <script>
+    // 建立星星
+    function createStar(starCount) {
+      for (let i = 0; i < starCount; i++) {
+        $('#carousel').append(`<div class="star animate">⦁</div>`)
+      }
+
+      $('.star').each(function(index, star) {
+        $(this).css({
+          position: 'absolute',
+          left: gsap.utils.random(0, 100) + '%',
+          top: gsap.utils.random(0, 100) + '%',
+          color: 'yellow',
+        })
+      })
+    }
+
+    createStar(50)
+
+    // 建立星星動畫
+    gsap.to('.star', {
+      'font-size': `random(1,20)`,
+      filter: 'drop-shadow(0 0 30px rgba(255,255,0,1))',
+      left: '+=random(-10, 10)%',
+      x: 'random(-50,50)',
+      y: 'random(-50,50)',
+      rotationY: '-=180',
+      scale: 'random(1,2)',
+      duration: 'random(5, 10)',
+      delay: 'random(0,5)',
+      repeat: -1,
+      repeatRefresh: true,
+      ease: 'back',
+      stagger: 0.1
+    })
+  </script>
+  <script>
     $(window).on('scroll', function() {
-        $('#carousel').css('height', '');
+      $('#carousel').css('height', '');
     });
     $('#storeBar').on('click', function() {
       $('#carousel').css('height', '');
-        });
-
-</script>
+    });
+  </script>
 
 
 
