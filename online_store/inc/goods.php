@@ -85,8 +85,24 @@
                             }
 
                             ?>
-                            <ul>
-                                <li><a href="./api/add_good.php?id=<?= $good['id']; ?>&cart"><i class="fas fa-shopping-cart"></i></a></li>
+                            <ul>  
+                                 <li> 
+                            <?php if ($good['remain'] > 0) { ?>
+                             
+                                <a href="./api/add_good.php?id=<?= $good['id']; ?>">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
+                   
+                                <?php 
+                                    }else  {
+                                        ?>
+                                        <a class="good-sold-out">
+                                            <i class="fas fa-shopping-cart" style="color: gray;"></i>
+                                    </a>
+                              <?php
+                            }
+                            ?>
+                             </li>
                                 <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li>
                                     <?php if ($good['remain'] > 0) { ?>
@@ -96,7 +112,7 @@
                                     <?php 
                                     }else  {
                                         ?>
-                                        <a id="goodSoldOut">
+                                        <a class="good-sold-out">
                                             <i class="fas fa-plus" style="color: gray;"></i>
                                     </a>
                               <?php
@@ -192,7 +208,7 @@
 <script>
     $(document).ready(function() {
 
-        $("#goodSoldOut").click(function(){
+        $(".good-sold-out").click(function(){
 
             alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
         })
