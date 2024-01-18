@@ -30,9 +30,7 @@
         display: none;
     }
 </style>
-
-
-<section class="section-products"  id="store">
+<section class="section-products" id="store">
     <div class="container goods">
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
@@ -106,7 +104,7 @@
                                 <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li>
                                     <?php if ($good['remain'] > 0) { ?>
-                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>">
+                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>" id="plusAtag">
                                             <i class="fas fa-plus"></i>
                                         </a>
                                     <?php 
@@ -296,5 +294,16 @@
             }
         };
     });
+    $(document).ready(function() {
+ 
+        var windowWidth = $(window).width();
+    
+     if(windowWidth<450){
+
+        $('#plusAtag').attr('href', './api/add_good.php?id=<?= $good['id']; ?>&mobile');
+     }
+ 
+    });
+
 
 </script>

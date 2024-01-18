@@ -4,32 +4,37 @@
     opacity: 1;
 
     overflow: hidden;
-    transition: opacity 1s, height 1s; 
+    transition: opacity 1s, height 1s;
   }
-  #header.hide-header {
+
+  #headerMobile.hide-header {
     opacity: 0;
-    height: 0;
     overflow: hidden;
     pointer-events: none;
+  }
+
+  #headerMobile {
+    opacity: 1;
+    max-height: 500px;
+    overflow: hidden;
+    transition: opacity 1.5s, max-height 1.5s;
+  }
+  #headerMobile.hide-header {
+    opacity: 0;
+    max-height: 0;
   }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
   $(document).ready(function() {
     let header = $('#header');
+    let headerMobile = $('#headerMobile');
     let scrollThreshold = 0;
 
-    header.removeClass('hide-header').addClass('show-header');
-    header.css('background-color', 'rgb(216, 162, 90)');
+    header.removeClass('hide-header')
 
-    $(window).scroll(function() {
-      var scrollPosition = $(this).scrollTop();
-
-      if (scrollPosition > scrollThreshold) {
-        header.removeClass('hide-header').addClass('show-header');
-      } else {
-        // header.removeClass('show-header').addClass('hide-header');
-      }
-    });
+    if (window.innerWidth < 450) {
+    headerMobile.removeClass('hide-header');
+    }
   });
 </script>

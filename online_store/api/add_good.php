@@ -23,17 +23,20 @@ if (isset($_SESSION['user'])) {
 
 
     $good = $Good->find($goodId);
-    $good['remain'] = $good['remain']-1;
+    $good['remain'] = $good['remain'] - 1;
     $Good->save($good);
 
 
     echo "<pre>";
     print_r($customerResult);
     echo "</pre>";
+
     if (isset($_GET['cart'])) {
         header("location:../cart.php");
-    } else {
+    } elseif (isset($_GET['mobile'])) {
         header("location:../index.php#store");
+    }else{
+        header("location:../index.php#onlineStore");
     }
 } else {
     header("location:../login.php?error=請先登入會員");
