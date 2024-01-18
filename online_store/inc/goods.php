@@ -103,7 +103,7 @@
                                 <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li>
                                     <?php if ($good['remain'] > 0) { ?>
-                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>" id="plusAtag">
+                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>" class="plus-atag">
                                             <i class="fas fa-plus"></i>
                                         </a>
                                     <?php
@@ -300,7 +300,7 @@
 
         if (windowWidth < 450) {
 
-            $('#plusAtag').attr('href', './api/add_good.php?id=<?= $good['id']; ?>&mobile');
+            $('.plus-atag').attr('href', './api/add_good.php?id=<?= $good['id']; ?>&mobile');
         }
 
     });
