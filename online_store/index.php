@@ -36,14 +36,14 @@ include_once "./api/db.php";
   include "./inc/header_index.php"
   ?>
   <!-- --自動輪播-- -->
-  <div class="caroisel carousel-computer" style="background-color: 13304a" id="carousel" style="height:100vh">
+  <div class="caroisel carousel-computer" style="background-color: #13304a;height:120vh" id="carousel">
     <!-- data-bs-ride="carousel" 使用 自動輪播功能 -->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <!-- 設定 秒數 data-bs-interval="1000" -->
         <div class="carousel-item active" data-bs-interval="2000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos8.jpg" class="d-block w-100 imgCarousel" style="height:100vh">
+          <img src="./img/cheetos8.jpg" class="d-block w-100 imgCarousel" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（東京巴奈奈版）</h5>
             <p>
@@ -53,7 +53,7 @@ include_once "./api/db.php";
         </div>
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos6.jpg" class="d-block w-100"  style="height:100vh">
+          <img src="./img/cheetos6.jpg" class="d-block w-100"  style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（幼兒版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -63,7 +63,7 @@ include_once "./api/db.php";
 
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos5.jpg" class="d-block w-100"  style="height:100vh">
+          <img src="./img/cheetos5.jpg" class="d-block w-100"  style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（妖嬈版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -73,7 +73,7 @@ include_once "./api/db.php";
 
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos3.jpg" class="d-block w-100"  style="height:100vh">
+          <img src="./img/cheetos3.jpg" class="d-block w-100"  style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（看什麼看版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -82,7 +82,7 @@ include_once "./api/db.php";
         </div>
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos2.jpg" class="d-block w-100"  style="height:100vh">
+          <img src="./img/cheetos2.jpg" class="d-block w-100"  style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（迷離眼神版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -91,7 +91,7 @@ include_once "./api/db.php";
         </div>
         <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
-          <img src="./img/cheetos1.jpg" class="d-block w-100"  style="height:100vh">
+          <img src="./img/cheetos1.jpg" class="d-block w-100"  style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
             <h5>奇多（超可愛版）</h5>
             <p>Welcome to the Cheetos Meow Cooperative!</p>
@@ -269,6 +269,14 @@ include_once "./api/db.php";
   <?php
   include "./inc/copyright.php"
   ?>
+<script>
+    $(window).on('scroll', function() {
+        $('#carousel').css('height', '');
+    });
+</script>
+
+
+
 </body>
 
 </html>

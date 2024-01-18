@@ -576,11 +576,11 @@
 
     document.getElementById('deviceNotice').addEventListener('click', function() {
         if (window.innerWidth < 776) {
-            alert('此網站另有【電腦版】，歡迎用電腦開啟～');
+            alert('此網站另有【電腦版】，歡迎使用電腦開啟～');
             document.getElementById('noPhone').href = 'index.php';
         }else{
 
-            alert('此網站另有【手機版】，歡迎用手機開啟～');
+            alert('此網站另有【手機版】，歡迎使用手機開啟～');
             document.getElementById('noPhone').href = 'index.php';
         }
     });

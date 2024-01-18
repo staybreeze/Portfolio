@@ -21,12 +21,11 @@
             width: 75%;
             margin-top: 20px;
             margin-left: 50px
-            
         }
 
     }
 
-    .disabled{
+    .disabled {
         display: none;
     }
 </style>
@@ -35,7 +34,7 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
-                    <h2  id="onlineStore"><b>購物商城</b>
+                    <h2 id="onlineStore"><b>購物商城</b>
 
                     </h2>
                     <br>
@@ -83,39 +82,39 @@
                             }
 
                             ?>
-                            <ul>  
-                                 <li> 
-                            <?php if ($good['remain'] > 0) { ?>
-                             
-                                <a href="./api/add_good.php?id=<?= $good['id']; ?>">
+                            <ul>
+                                <li>
+                                    <?php if ($good['remain'] > 0) { ?>
+
+                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>">
                                             <i class="fas fa-shopping-cart"></i>
                                         </a>
-                   
-                                <?php 
-                                    }else  {
-                                        ?>
+
+                                    <?php
+                                    } else {
+                                    ?>
                                         <a class="good-sold-out">
                                             <i class="fas fa-shopping-cart" style="color: gray;"></i>
-                                    </a>
-                              <?php
-                            }
-                            ?>
-                             </li>
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                </li>
                                 <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li>
                                     <?php if ($good['remain'] > 0) { ?>
                                         <a href="./api/add_good.php?id=<?= $good['id']; ?>" id="plusAtag">
                                             <i class="fas fa-plus"></i>
                                         </a>
-                                    <?php 
-                                    }else  {
-                                        ?>
+                                    <?php
+                                    } else {
+                                    ?>
                                         <a class="good-sold-out">
                                             <i class="fas fa-plus" style="color: gray;"></i>
-                                    </a>
-                              <?php
-                            }
-                            ?>
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
                                 </li>
 
                                 <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
@@ -206,7 +205,7 @@
 <script>
     $(document).ready(function() {
 
-        $(".good-sold-out").click(function(){
+        $(".good-sold-out").click(function() {
 
             alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
         })
@@ -258,7 +257,8 @@
     // });
     if (window.innerWidth > 450) {
         let part2 = $(".part-2")
-        part2.find(".fa-sharp").addClass('disabled');}
+        part2.find(".fa-sharp").addClass('disabled');
+    }
     if (window.innerWidth < 450) {
 
         if (window.location.hash.includes('store')) {
@@ -295,15 +295,13 @@
         };
     });
     $(document).ready(function() {
- 
+
         var windowWidth = $(window).width();
-    
-     if(windowWidth<450){
 
-        $('#plusAtag').attr('href', './api/add_good.php?id=<?= $good['id']; ?>&mobile');
-     }
- 
+        if (windowWidth < 450) {
+
+            $('#plusAtag').attr('href', './api/add_good.php?id=<?= $good['id']; ?>&mobile');
+        }
+
     });
-
-
 </script>

@@ -1,14 +1,13 @@
 <style>
   #header {
-
     opacity: 1;
-
     overflow: hidden;
     transition: opacity 1s, height 1s;
   }
 
-  #headerMobile.hide-header {
+  #header.hide-header {
     opacity: 0;
+    height: 0;
     overflow: hidden;
     pointer-events: none;
   }
