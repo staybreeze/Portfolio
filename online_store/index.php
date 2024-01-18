@@ -27,9 +27,10 @@ include_once "./api/db.php";
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <style>
-    body{
+    body {
       overflow-x: hidden;
     }
+
     @keyframes animate {
       0% {
         text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
@@ -293,44 +294,79 @@ include_once "./api/db.php";
 
   <script>
     // 建立星星
-    function createStar(starCount) {
+    function createstarWhite(starCount) {
       for (let i = 0; i < starCount; i++) {
-        $('#carousel').append(`<div class="star animate">⦁</div>`)
+        $('#carousel').append(`<div class="white-star animate">⦁</div>`)
       }
 
-      $('.star').each(function(index, star) {
+      $('.white-star').each(function(index, star) {
         $(this).css({
           position: 'absolute',
           left: gsap.utils.random(0, 100) + '%',
           top: gsap.utils.random(0, 100) + '%',
-          color: 'yellow',
+          color: 'white',
 
           // overflow:'hidden'
         })
       })
     }
 
-    createStar(50)
+    createstarWhite(50)
 
     // 建立星星動畫
-    gsap.to('.star', {
-  'font-size': () => gsap.utils.random(1, 20),
-  filter: 'drop-shadow(0 0 30px rgba(255, 255, 0, 1))',
-  textShadow: '0 0 10px rgba(255, 255, 0, 0.8)',
-  left: '+=random(-10, 10)%',
-  x: 'random(-50,50)',
-  y: 'random(-50,50)',
-  rotationY: '-=180',
-  scale: () => gsap.utils.random(1, 2),
-  duration: () => gsap.utils.random(5, 10),
-  delay: () => gsap.utils.random(0, 5),
-  repeat: -1,
-  repeatRefresh: true,
-  ease: 'back',
-  stagger: 0.1,
-});
+    gsap.to('.white-star', {
+      'font-size': () => gsap.utils.random(1, 10),
+      filter: 'drop-shadow(0 0 30px rgba(255, 255, 0, 1))',
+      textShadow: '0 0 10px rgba(255, 255, 0, 0.8)',
+      left: '+=random(-10, 10)%',
+      x: 'random(-50,50)',
+      y: 'random(-50,50)',
+      rotationY: '-=180',
+      scale: () => gsap.utils.random(1, 2),
+      duration: () => gsap.utils.random(5, 10),
+      delay: () => gsap.utils.random(0, 5),
+      repeat: -1,
+      repeatRefresh: true,
+      ease: 'back',
+      stagger: 0.1,
+    });
+        // 建立星星
+        function createstarGold(starCount) {
+      for (let i = 0; i < starCount; i++) {
+        $('#carousel').append(`<div class="gold-star animate">⦁</div>`)
+      }
 
+      $('.gold-star').each(function(index, star) {
+        $(this).css({
+          position: 'absolute',
+          left: gsap.utils.random(0, 100) + '%',
+          top: gsap.utils.random(0, 100) + '%',
+          color: 'gold',
 
+          // overflow:'hidden'
+        })
+      })
+    }
+
+    createstarGold(25)
+
+    // 建立星星動畫
+    gsap.to('.gold-star', {
+      'font-size': () => gsap.utils.random(10, 25),
+      filter: 'drop-shadow(0 0 30px rgba(255, 255, 0, 1))',
+      textShadow: '0 0 10px rgba(255, 255, 0, 0.8)',
+      left: '+=random(-10, 10)%',
+      x: 'random(-50,50)',
+      y: 'random(-50,50)',
+      rotationY: '-=180',
+      scale: () => gsap.utils.random(1, 2),
+      duration: () => gsap.utils.random(5, 10),
+      delay: () => gsap.utils.random(0, 5),
+      repeat: -1,
+      repeatRefresh: true,
+      ease: 'back',
+      stagger: 0.1,
+    });
   </script>
   <script>
     $(window).on('scroll', function() {
@@ -340,9 +376,8 @@ include_once "./api/db.php";
       $('#carousel').css('height', '');
     });
     if (location.href.includes('#store')) {
-  $('#carousel').css('height', '');
-}
-
+      $('#carousel').css('height', '');
+    }
   </script>
 
 
