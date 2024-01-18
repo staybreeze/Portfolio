@@ -273,6 +273,10 @@ include_once "./api/db.php";
     $(window).on('scroll', function() {
         $('#carousel').css('height', '');
     });
+    $('#storeBar').on('click', function() {
+      $('#carousel').css('height', '');
+        });
+
 </script>
 
 
