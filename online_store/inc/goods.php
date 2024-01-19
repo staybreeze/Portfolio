@@ -54,7 +54,7 @@
 
                     <!-- </h2> -->
 
-                    <div class="banner" id="">
+                    <div class="banner" id="onlineStore">
                         <div class="item">
                             <h2>—　<b>購物商城</b>　— </h2>
                         </div>
