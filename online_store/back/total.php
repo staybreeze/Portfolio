@@ -118,7 +118,7 @@ include_once "../api/db.php"
             <table style="width:30%">
 
               <tr class="th-update">
-                <td width="50%">進戰總人數</td>
+                <td width="50%">進站總人數</td>
                 <td width="50%">
                   <input type="number" name="total" value="<?= $Total->find(1)['total']; ?>" style="text-align:center">
               </tr>

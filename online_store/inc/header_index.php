@@ -30,7 +30,7 @@ include_once "header_effect.php"
             <div class="loading-bar"></div>
           </li>
           <li class="nav-item me-3" style="margin-left:36px">
-            <a href="#onlineStore" id="storeBar">商城</a>
+            <a href="#store" class="store-bar">商城</a>
             <div class="unloading-bar"></div>
             <div class="loading-bar"></div>
           </li>

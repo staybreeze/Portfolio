@@ -196,7 +196,6 @@ include_once "./api/db.php";
       </div>
     </div>
   </div>
-  <div id="onlineStore"></div>
   <!-- ---- -->
   <?php
   include "./inc/goods.php"
@@ -244,16 +243,16 @@ include_once "./api/db.php";
     </ul>
     <ul class="pages">
       <li>
-        <a class="footer-header" href="./index.php#onlineStore">購物商城</a>
+        <a class="footer-header store-bar" href="./index.php#store">購物商城</a>
       </li>
       <li>
-        <a class="" href="./index.php#onlineStore">食物</a>
+        <a class="store-bar" href="./index.php#store">食物</a>
       </li>
       <li>
-        <a class="" href="./index.php#onlineStore">玩具</a>
+        <a class="store-bar" href="./index.php#store">玩具</a>
       </li>
       <li>
-        <a class="" href="./index.php#onlineStore">生活用品</a>
+        <a class="store-bar" href="./index.php#store">生活用品</a>
       </li>
     </ul>
     <ul class="pages">
@@ -286,7 +285,7 @@ include_once "./api/db.php";
   <?php
   include "./inc/copyright.php"
   ?>
- <!-- 引入 gsap 主程式 -->
+  <!-- 引入 gsap 主程式 -->
   <script src="./gsap/gsap.js"></script>
 
   <script>
@@ -369,9 +368,19 @@ include_once "./api/db.php";
     $(window).on('scroll', function() {
       $('#carousel').css('height', '');
     });
-    $('#storeBar').on('click', function() {
+
+    $('.store-bar').on('click', function() {
       $('#carousel').css('height', '');
+      var targetAnchor = 'store';
+      var targetElement = $('#' + targetAnchor);
+
+      var targetPosition = targetElement.offset().top;
+
+      $('html, body').animate({
+        scrollTop: targetPosition - 100 // 
+      }, 100); // 
     });
+
     if (location.href.includes('#store')) {
       $('#carousel').css('height', '');
     }
