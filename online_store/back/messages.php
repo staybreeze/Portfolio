@@ -181,15 +181,16 @@ width:30px
           //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=messages&p=$prev'> < </a></div>";
           // }
        
-          echo "<div class='d-flex ms-80 mt-4'>";
+          echo "<div class='d-flex ms-80 mt-5'>";
           $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
-          echo "<a href='?do=messages&p=$firstPage'><div class='pages ms-3'> <</div> </a>";
+          $hiddenPrePage= ($now==$firstPage) ? 'hidden' : '';
+          echo "<a href='?do=messages&p=$firstPage'><div class='pages ms-3 $hiddenPrePage'> <</div> </a>";
           
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
             $hidden  = ($i !=$now) ? 'hidden' : '';
-            $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
+
             $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
             $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
             echo "<a href='?do=messages&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
@@ -199,12 +200,12 @@ width:30px
           //   echo "<div  class='pages'><a href='?do=messages&p=$next'> > </a></div></div>";
           // }
           $lastPage = ($pages ==$now) ? $now : ($now + 1);
-      
+          $hiddenNextPgae= ($now ==$pages) ? 'hidden' : '';
           $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
           echo "<div class='dotted-line $hiddenLastPage'></div>";
-          echo "<a href='?do=messages&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
+          echo "<a href='?do=messages&p=$pages'><div class='pages  $currentPage $hiddenLastPage  ms-3'> $pages</div> </a>";
           
-          echo "<a href='?do=messages&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
+          echo "<a href='?do=messages&p=$lastPage'><div class='pages ms-3 $hiddenNextPgae'> ></div> </a>";
           
 
                 echo "</div>";

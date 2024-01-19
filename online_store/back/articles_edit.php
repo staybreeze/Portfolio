@@ -37,16 +37,18 @@ include_once "../api/db.php"
       }
     }
 
-    .dotted-line{
-font-size: larger;
-padding-top:10px;
-margin-left:15px;
-border-bottom: 3px dotted goldenrod;
-width:30px
+    .dotted-line {
+      font-size: larger;
+      padding-top: 10px;
+      margin-left: 15px;
+      border-bottom: 3px dotted goldenrod;
+      width: 30px
     }
-    .hidden{
+
+    .hidden {
       display: none;
     }
+
     .good-border {
       border: 1px dotted brown;
     }
@@ -65,58 +67,65 @@ width:30px
       border: 1px dotted brown;
     }
 
-    a{
+    a {
       text-decoration: none;
     }
-    .color-blue{
-      color:cadetblue;
+
+    .color-blue {
+      color: cadetblue;
       /* border:3px dotted goldenrod; */
       font-weight: bold;
     }
-    .w-95{
+
+    .w-95 {
       width: 95%;
       text-align: center;
       margin: auto;
     }
-    .pages{
 
-margin-left:30px;
-font-size: large;
-border:3px dotted goldenrod;
-color:brown;
-text-decoration: none;
-width:30px;
-text-align: center;
-}
-.pages:hover{
-  background-color: beige;
-}
-.currentPage{
-  background-color: beige;
-  margin-left:30px;
-font-size: large;
-border:3px dotted goldenrod;
-color:brown;
-text-decoration: none;
-width:30px;
-text-align: center;
+    .pages {
 
-}
+      margin-left: 30px;
+      font-size: large;
+      border: 3px dotted goldenrod;
+      color: brown;
+      text-decoration: none;
+      width: 30px;
+      text-align: center;
+    }
 
-.ms-20{
-margin-left:21px
+    .pages:hover {
+      background-color: beige;
+    }
 
-}
-a{
-text-decoration: none;
-color:brown;
-}
-.show{
-  display: block !important;
-}
-.sho2{
-  display: block !important;
-}
+    .currentPage {
+      background-color: beige;
+      margin-left: 30px;
+      font-size: large;
+      border: 3px dotted goldenrod;
+      color: brown;
+      text-decoration: none;
+      width: 30px;
+      text-align: center;
+
+    }
+
+    .ms-20 {
+      margin-left: 21px
+    }
+
+    a {
+      text-decoration: none;
+      color: brown;
+    }
+
+    .show {
+      display: block !important;
+    }
+
+    .sho2 {
+      display: block !important;
+    }
   </style>
 
 
@@ -157,83 +166,87 @@ color:brown;
           <h2 class="title">文章管理</h2>
           <div class="d-flex">
 
-<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4></a>
-<?php
-if (isset($_GET['edit']) || isset($_GET['p'])) {
-  echo '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
-} else {
-  echo '<a href="./articles.php?do=articles&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
-}
+            <a href="./articles.php?do=articles&add">
+              <h4 class="mt-5 color-gray ms-95 mb-4 ">新增</h4>
+            </a>
+            <?php
+            if (isset($_GET['edit']) || isset($_GET['p'])) {
+              echo '<a href="./articles.php?do=articles&add"><h4 class="mt-5 color-blue ms-4 mb-4 ">編輯</h4></a>';
+            } else {
+              echo '<a href="./articles.php?do=articles&edit"><h4 class="mt-5 color-gray ms-4 mb-4 ">編輯</h4></a>';
+            }
 
-            
+
             ?>
           </div>
           <div class="dotted-border ms-95">
-        
-          <?php
 
-    
-
-              
-                $total = count($Article->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-                $div = 1;
-                $pages = ceil($total / $div);
-                $now = $_GET['p'] ?? 1;
-                $start = ($now - 1) * $div;
-                $rows = $Article->all('', " limit $start,$div");
+            <?php
 
 
 
-          // if ($now > 1) {
-          //   $prev = $now - 1;
-          //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=articles&p=$prev'> < </a></div>";
-          // }
-       
-          echo "<div class='d-flex mt-4 me-1'>";
-          $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
-          echo "<a href='?do=articles&p=$firstPage'><div class='pages ms-5'> <</div> </a>";
-          
-          
-          for ($i = 1; $i <= $pages; $i++) {
-            // $fontsize = ($now == $i) ? '24px' : '16px';
-            $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-            $hidden  = ($i !=$now) ? 'hidden' : '';
-            $hiddenLastPgae= ($i ==$pages) ? '' : 'hidden';
-            $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
-            $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
-            echo "<a href='?do=articles&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
-          }
-          // if ($now < $pages) {
-          //   $next = $now + 1;
-          //   echo "<div  class='pages'><a href='?do=articles&p=$next'> > </a></div></div>";
-          // }
-          $lastPage = ($pages ==$now) ? $now : ($now + 1);
-      
-          $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
-          echo "<div class='dotted-line $hiddenLastPage'></div>";
-          echo "<a href='?do=articles&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
-          
-          echo "<a href='?do=articles&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
-          
 
-                echo "</div>";
-
-                foreach ($rows as $row) {
-                  // 獲得當前USER的CART
+            $total = count($Article->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
+            $div = 1;
+            $pages = ceil($total / $div);
+            $now = $_GET['p'] ?? 1;
+            $start = ($now - 1) * $div;
+            $rows = $Article->all('', " limit $start,$div");
 
 
-?>
-     
-            <table class="mt-3 w-95" >
+
+            // if ($now > 1) {
+            //   $prev = $now - 1;
+            //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=articles&p=$prev'> < </a></div>";
+            // }
+
+            echo "<div class='d-flex mt-4 me-1'>";
+            $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
+            $hiddenFirstPage = ($now == $firstPage) ? 'hidden' : '';
+            echo "<a href='?do=articles&p=$firstPage'><div class='pages ms-5  $hiddenFirstPage'> <</div> </a>";
 
 
-            
-              <tr>
-<?php
+            for ($i = 1; $i <= $pages; $i++) {
+              // $fontsize = ($now == $i) ? '24px' : '16px';
+              $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
+              $hidden  = ($i != $now) ? 'hidden' : '';
+              $show  = ($i == $now + 1 || $i == $now - 1) ? 'show' : '';
+              $show2  = ($i == $now + 2 && $now + 2 == $pages) ? 'show' : '';
+              $ms5 = ($i == 1 && $now == $firstPage) ? 'ms-5' : '';
+              echo "<a href='?do=articles&p=$i'><div class=' $ms5 $currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
+            }
+            // if ($now < $pages) {
+            //   $next = $now + 1;
+            //   echo "<div  class='pages'><a href='?do=articles&p=$next'> > </a></div></div>";
+            // }
+            $lastPage = ($pages == $now) ? $now : ($now + 1);
 
-      
+            $hiddenLastPage = ($now == $pages - 1 || $now == $pages || $now == $pages - 2) ? 'hidden' : '';
+            $hiddenNextPage = ($now == $pages) ? 'hidden' : '';
+            echo "<div class='dotted-line $hiddenLastPage'></div>";
+            echo "<a href='?do=articles&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
 
-       
+            echo "<a href='?do=articles&p=$lastPage'><div class='pages ms-3 $hiddenNextPage'> ></div> </a>";
+
+
+            echo "</div>";
+
+            foreach ($rows as $row) {
+              // 獲得當前USER的CART
+
+
+            ?>
+
+              <table class="mt-3 w-95">
+
+
+
+                <tr>
+                  <?php
+
+
+
+
                   echo '<tr class="th-update text-center" style="height:30px">
      
             <th style="width:30%;background-color:#f8ede0">圖片</th>
@@ -247,37 +260,37 @@ if (isset($_GET['edit']) || isset($_GET['p'])) {
 
 
 
-                    echo '<tr>';
-                
-                   
-                    echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='300px' class='mb-3'></td>";
-                    echo "<td style='padding-top:23px'>{$row['title']}</td>";
-                    echo "<td style='padding-top:23px'>{$row['content']}</td>";
-                    echo "<td><a href='article_editing.php?do=articles&edit&id={$row['id']}&p={$now}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
-                    echo "<td><a href='../api/back_del_article.php?id={$row['id']}&time={$row['time']}'><input class='btn btn-danger mt-5 mb-5' type='button' value='刪除'></a></td>";
+                  echo '<tr>';
+
+
+                  echo "<td style='padding-top:23px'><img src='../img/{$row['img']}' width='300px' class='mb-3'></td>";
+                  echo "<td style='padding-top:23px'>{$row['title']}</td>";
+                  echo "<td style='padding-top:23px'>{$row['content']}</td>";
+                  echo "<td><a href='article_editing.php?do=articles&edit&id={$row['id']}&p={$now}'><input class='btn btn-secondary mt-5 mb-5' type='button' value='編輯'></a></td>";
+                  echo "<td><a href='../api/back_del_article.php?id={$row['id']}&time={$row['time']}'><input class='btn btn-danger mt-5 mb-5' type='button' value='刪除'></a></td>";
 
 
                   echo '</table>';
 
 
 
-                ?>
+                  ?>
 
 
-   
+
 
                 <?php
-                
-                }
-          ?>  
+
+              }
+                ?>
+          </div>
+          <br<br><br>
         </div>
-<br<br><br>
+
     </div>
 
-  </div>
-
-  <!-- content end -->
-  </main>
+    <!-- content end -->
+    </main>
   </div>
   </div>
 

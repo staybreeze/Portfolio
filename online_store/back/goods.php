@@ -38,9 +38,7 @@ include_once "../api/db.php"
       }
     }
 
-    .dotted-border {
-      border: 1px dotted brown;
-    }
+
 
     .pages {
 
@@ -80,6 +78,30 @@ include_once "../api/db.php"
 
     input {
       text-align: center;
+    }
+
+    .show {
+      display: block !important;
+    }
+
+    .sho2 {
+      display: block !important;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .dotted-border {
+      border: 1px dotted brown;
+    }
+
+    .dotted-line {
+      font-size: larger;
+      padding-top: 10px;
+      margin-left: 15px;
+      border-bottom: 3px dotted goldenrod;
+      width: 30px
     }
   </style>
 
@@ -225,7 +247,7 @@ include_once "../api/db.php"
         <h4 class="mt-5 color-gray" style="margin-left:107px" id="edit">編輯</h4>
         <?php
         $total = count($Good->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-        $div = 5;
+        $div = 1;
         $pages = ceil($total / $div);
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;
@@ -238,23 +260,34 @@ include_once "../api/db.php"
         //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=goods&p=$prev'> < </a></div>";
         // }
 
-        echo "<div class='d-flex ms-80 mt-4'>";
+
+        echo "<div class='d-flex mt-4 me-1' style='margin-left:61px'>";
         $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
-        echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-3'> <</div> </a>";
+        $hiddenFirstPage = ($now == $firstPage) ? 'hidden' : '';
+        echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-5  $hiddenFirstPage'> <</div> </a>";
 
 
         for ($i = 1; $i <= $pages; $i++) {
           // $fontsize = ($now == $i) ? '24px' : '16px';
           $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-
-          echo "<a href='?do=goods&p=$i'><div class='$currentPage ms-3'> $i</div> </a>";
+          $hidden  = ($i != $now) ? 'hidden' : '';
+          $show  = ($i == $now + 1 || $i == $now - 1) ? 'show' : '';
+          $show2  = ($i == $now + 2 && $now + 2 == $pages) ? 'show' : '';
+          $ms5 = ($i == 1 && $now == $firstPage) ? 'ms-5' : '';
+          echo "<a href='?do=goods&p=$i'><div class=' $ms5 $currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
         }
         // if ($now < $pages) {
         //   $next = $now + 1;
         //   echo "<div  class='pages'><a href='?do=goods&p=$next'> > </a></div></div>";
         // }
         $lastPage = ($pages == $now) ? $now : ($now + 1);
-        echo "<a href='?do=goods&p=$lastPage'><div class='pages ms-3'> ></div> </a>";
+
+        $hiddenLastPage = ($now == $pages - 1 || $now == $pages || $now == $pages - 2) ? 'hidden' : '';
+        $hiddenNextPage = ($now == $pages) ? 'hidden' : '';
+        echo "<div class='dotted-line $hiddenLastPage'></div>";
+        echo "<a href='?do=goods&p=$pages'><div class='pages  $currentPage $hiddenLastPage ms-3'> $pages</div> </a>";
+
+        echo "<a href='?do=goods&p=$lastPage'><div class='pages ms-3 $hiddenNextPage'> ></div> </a>";
 
 
         echo "</div>";
@@ -341,7 +374,7 @@ include_once "../api/db.php"
                   <div class="input-group mb-3" style="margin-left:14px">
 
                     <span class="input-group-text bold">售價</span>
-                    <input type="number" class="price-edit" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:110px" name="price" value="<?=$good['price'];?>" disabled>
+                    <input type="number" class="price-edit" style="border:1px solid lightgray; border-radius:0px 5px 5px 0px;width:110px" name="price" value="<?= $good['price']; ?>" disabled>
 
                   </div>
                 </div>
@@ -370,7 +403,7 @@ include_once "../api/db.php"
             </div>
 
             <div class="d-flex">
-            <input class="btn btn-danger mt-2" type="button" style="margin-left:1272px " value="刪除" onclick="location.href='../api/back_goods.php?del=<?= $good['id']; ?>'">
+              <input class="btn btn-danger mt-2" type="button" style="margin-left:1272px " value="刪除" onclick="location.href='../api/back_goods.php?del=<?= $good['id']; ?>'">
               <input class="btn myBtn mt-2" style="margin-left:20px " type="submit" value="送出">
             </div>
 
@@ -395,19 +428,18 @@ include_once "../api/db.php"
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="../js/back.js"></script>
   <script>
-$(document).ready(function() {
-  $(".old-price-edit, .discount-edit").on("input", function() {
-    let container = $(this).closest(".container");
-    let oldPriceEdit = parseFloat(container.find(".old-price-edit").val());
-    let discountEdit = parseFloat(container.find(".discount-edit").val());
+    $(document).ready(function() {
+      $(".old-price-edit, .discount-edit").on("input", function() {
+        let container = $(this).closest(".container");
+        let oldPriceEdit = parseFloat(container.find(".old-price-edit").val());
+        let discountEdit = parseFloat(container.find(".discount-edit").val());
 
-    if (!isNaN(oldPriceEdit) && !isNaN(discountEdit)) {
-      let priceEdit = oldPriceEdit * (1 - discountEdit / 100);
-      container.find(".price-edit").val(priceEdit.toFixed());
-    }
-  });
-});
-
+        if (!isNaN(oldPriceEdit) && !isNaN(discountEdit)) {
+          let priceEdit = oldPriceEdit * (1 - discountEdit / 100);
+          container.find(".price-edit").val(priceEdit.toFixed());
+        }
+      });
+    });
   </script>
 </body>
 
