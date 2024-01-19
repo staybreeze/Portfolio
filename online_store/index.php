@@ -52,7 +52,7 @@ include_once "./api/db.php";
   include "./inc/header_index.php"
   ?>
   <!-- --自動輪播-- -->
-  <div class="caroisel carousel-computer" style="background-color: #13304a;height:120vh" id="carousel">
+  <div class="caroisel carousel-computer" style="background-color:#13304a;height:120vh" id="carousel">
     <!-- data-bs-ride="carousel" 使用 自動輪播功能 -->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -196,6 +196,7 @@ include_once "./api/db.php";
       </div>
     </div>
   </div>
+  <div id="onlineStore"></div>
   <!-- ---- -->
   <?php
   include "./inc/goods.php"

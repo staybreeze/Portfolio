@@ -105,6 +105,12 @@ if (empty($_SESSION['admin']) & (!isset($_GET['profile']))) {
                 </div></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="./back/total.php?do=total">
+                <div class="nav-border"><i class="fa-solid fa-shoe-prints"></i>
+                &nbsp;足跡管理
+                </div></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="./back/users.php?do=users">
                 <div class="nav-border"><i class="fa-solid fa-people-group"></i>
                 &nbsp;會員管理

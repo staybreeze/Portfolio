@@ -6,6 +6,9 @@
     
   </footer>
   <div class="copyright">
-    <p>© WSL Web ALL Reserved.</p>
+    <div class="d-flex"></div>
+    <p>© WSL Web ALL Reserved. ／　<i class="fa-solid fa-users-viewfinder"></i>
+    進站總人數 : <?=$Total->find(1)['total'];?>
+    </p>
   </div>
   </div>

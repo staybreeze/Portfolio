@@ -270,3 +270,10 @@ $Message=new DB('store_messages');
 $Admin=new DB('admins');
 $About=new DB('about_us');
 $Article=new DB('articles');
+$Total=new DB('total');
+
+if(!isset($_SESSION['visited'])){
+    $Total->q("update `total` set `total`=`total`+1 where `id`=1");
+    $_SESSION['visited']=1;
+
+}

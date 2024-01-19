@@ -174,3 +174,7 @@ form>h4,.color-gray{
 
 }
 
+input[input='number']{
+  text-align: center;
+  margin:auto
+}

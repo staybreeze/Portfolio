@@ -77,6 +77,19 @@
           </div>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="
+                <?php
+                if ($_GET['do'] == 'total') {
+                  echo "nav-link active";
+                } else {
+                  echo "nav-link";
+                }
+                ?>" href="total.php?do=total">
+          <div class="nav-border"><i class="fa-solid fa-shoe-prints"></i>
+            &nbsp;足跡管理
+          </div>
+        </a>
       </li>
 
 
@@ -111,7 +124,7 @@
         </a>
       </li>
 
-      <li class="nav-item mt-5">
+      <li class="nav-item mt-4">
         <a class="nav-link fs-5 mx-auto" href="../index.php">
 
           <div style="width:200px;height:50px;padding-top:8px;  border:3px dotted#ffb71b;margin:auto"><i class="fa-solid fa-paw"></i>&nbsp;回首頁</div>
