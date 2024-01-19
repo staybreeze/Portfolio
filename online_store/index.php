@@ -307,7 +307,7 @@ include_once "./api/db.php";
       })
     }
 
-    createstarWhite(15)
+    createstarWhite(20)
 
     // 建立星星動畫
     gsap.to('.white-star', {
@@ -344,7 +344,7 @@ include_once "./api/db.php";
       })
     }
 
-    createstarGold(15)
+    createstarGold(20)
 
     // 建立星星動畫
     gsap.to('.gold-star', {

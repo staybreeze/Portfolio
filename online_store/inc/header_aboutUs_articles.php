@@ -67,8 +67,8 @@ include_once "header_effect.php"
 
     <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:37px">
 
-      <div class="offcanvas offcanvas-end" id="demo">
-        <div class="offcanvas-header">
+      <div class="offcanvas offcanvas-end" id="demo" >
+        <div class="offcanvas-header"  style="background-color:#12304a;text-align:center;padding-top:28px;color:#fff">
           <h1 class="offcanvas-title">會員中心<img  class="mb-3" src="./img/logo1.png" alt="" width="60px"></h1>
 
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -151,7 +151,7 @@ include_once "header_effect.php"
           <?php
       if(isset($_SESSION['user'])){
         // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
-      echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
+      // echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
         }else{
 
           echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';

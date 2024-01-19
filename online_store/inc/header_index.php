@@ -80,8 +80,8 @@ include_once "header_effect.php"
     <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;overflow:hidden">
 
       <div class="offcanvas offcanvas-end" data-bs-backdrop="true" id="demo">
-        <div class="offcanvas-header">
-          <h1 class="offcanvas-title">會員中心<img class="mb-3" src="./img/logo1.png" alt="" width="60px"></h1>
+        <div class="offcanvas-header"   style="background-color:#12304a;text-align:center;padding-top:21px;color:#fff">
+          <h1 class="offcanvas-title">會員中心<img class="mb-2" src="./img/logo1.png"  width="75px"></h1>
 
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
@@ -145,7 +145,7 @@ include_once "header_effect.php"
                   </div>
                 </div>';
                 } else {
-                  echo ' <img src="./img/cheetos20.jpg" width="310px"">';
+                  // echo ' <img src="./img/cheetos20.jpg" width="310px"">';
                   echo "<br>歡迎光臨！" . $_SESSION['user'] . " 💛";
 
 
