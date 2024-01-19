@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>This is WSL!</title>
+  <link rel="icon" href="./img/fort-awesome-alt.svg" type="image/x-icon">
+   
   <!-- bootstrap -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' />
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -48,6 +50,25 @@
       border-radius: 0.3rem;
       padding-right: 1rem;
     }
+    @media screen and (max-width: 450px) {
+
+      body{
+        overflow-y: hidden;
+      }
+      .banner {
+
+      line-height: 80px;
+ 
+    }
+      .item {
+  
+      font-size: 30px;
+
+    }
+.bar{
+  height:100px !important
+}
+}
   </style>
 </head>
 
@@ -108,14 +129,20 @@
     delay: 8,
     display: 'block',
     duration: 1,
-    stagger: 0.5,
     width: function (index, target, targets) {
 
-          $(target).append(languages+ '%')
+          $(target).append('HI! This is WSL!')
           return languages + '%'
     },
     onComplete: function() {
+      if (window.innerWidth < 450){
+    gsap.delayedCall(0.5, function() {
       location.href = "portfolio.php";
+    });
+  }else{
+
+    location.href = "portfolio.php";
+  }
     }
   });
 </script>
