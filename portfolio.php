@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 body{
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
     @keyframes animate {
@@ -31,13 +31,19 @@ body{
       }
     }
  
+    @media screen and (max-width: 450px) {
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
 </style>
 
 </head>
 </head>
 
 
-<body>
+<body class="body">
     <div class="top"><a href="#">TOP</a></div>
     <div class="container">
 
@@ -639,14 +645,14 @@ body{
     // 建立星星
     function createStar(starCount) {
       for (let i = 0; i < starCount; i++) {
-        $('.container').append(`<div class="star animate">.</div>`)
+        $('.body').append(`<div class="star animate">.</div>`)
       }
 
       $('.star').each(function (index, star) {
         $(this).css({
           position: 'absolute',
-          left: gsap.utils.random(0, 100) + '%',
-          top: gsap.utils.random(0, 100) + '%',
+          left: gsap.utils.random(10,88) + '%',
+          top: gsap.utils.random(10, 88) + '%',
           color: 'yellow',
         })
       })
@@ -668,7 +674,11 @@ body{
       repeat: -1,
       repeatRefresh: true,
       ease: 'back',
-      stagger: 0.1
+      stagger: 0.1,
+    //   modifiers 來限制 left 的值
+        modifiers: {
+    left: gsap.utils.unitize(gsap.utils.clamp(0, 88)),
+  },
     })
 
 
