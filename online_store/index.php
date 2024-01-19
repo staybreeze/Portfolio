@@ -15,7 +15,13 @@ include_once "./api/db.php";
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- <link rel="stylesheet" media="screen and (max-width: 400px)" href="./css/7th_screen.css"> -->
+  <!-- <link rel="stylesheet" media="screen and (max-width: 800px)" href="./css/6th_screen.css"> -->
+  <!-- <link rel="stylesheet" media="screen and (max-width  : 1200px)" href="./css/5th_screen.css"> -->
+  <!-- <link rel="stylesheet" media="screen and (max-width: 1200px)" href="./css/smallscreen.css"> -->
+  <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/small_screen.css">
   <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -51,7 +57,7 @@ include_once "./api/db.php";
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <!-- 設定 秒數 data-bs-interval="1000" -->
-        <div class="carousel-item active" data-bs-interval="6000">
+        <div class="carousel-item active" data-bs-interval="2000">
           <div class="blue-block"></div>
           <img src="./img/cheetos8.jpg" class="d-block w-100 imgCarousel" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -61,7 +67,7 @@ include_once "./api/db.php";
           </div>
           <div class="blue-block"></div>
         </div>
-        <div class="carousel-item" data-bs-interval="6000">
+        <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
           <img src="./img/cheetos6.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -71,7 +77,7 @@ include_once "./api/db.php";
           <div class="blue-block"></div>
         </div>
 
-        <div class="carousel-item" data-bs-interval="6000">
+        <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
           <img src="./img/cheetos5.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -81,7 +87,7 @@ include_once "./api/db.php";
           <div class="blue-block"></div>
         </div>
 
-        <div class="carousel-item" data-bs-interval="6000">
+        <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
           <img src="./img/cheetos3.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -90,7 +96,7 @@ include_once "./api/db.php";
           </div>
           <div class="blue-block"></div>
         </div>
-        <div class="carousel-item" data-bs-interval="6000">
+        <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
           <img src="./img/cheetos2.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -99,7 +105,7 @@ include_once "./api/db.php";
           </div>
           <div class="blue-block"></div>
         </div>
-        <div class="carousel-item" data-bs-interval="6000">
+        <div class="carousel-item" data-bs-interval="3000">
           <div class="blue-block"></div>
           <img src="./img/cheetos1.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -279,11 +285,7 @@ include_once "./api/db.php";
   <?php
   include "./inc/copyright.php"
   ?>
-  <!-- jQuery -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
-  <!-- bootstrap -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
-  <!-- 引入 gsap 主程式 -->
+ <!-- 引入 gsap 主程式 -->
   <script src="./gsap/gsap.js"></script>
 
   <script>
@@ -305,7 +307,7 @@ include_once "./api/db.php";
       })
     }
 
-    createstarWhite(50)
+    createstarWhite(15)
 
     // 建立星星動畫
     gsap.to('.white-star', {
@@ -324,8 +326,8 @@ include_once "./api/db.php";
       ease: 'back',
       stagger: 0.1,
     });
-        // 建立星星
-        function createstarGold(starCount) {
+    // 建立星星
+    function createstarGold(starCount) {
       for (let i = 0; i < starCount; i++) {
         $('#carousel').append(`<div class="gold-star animate">⦁</div>`)
       }
@@ -342,11 +344,11 @@ include_once "./api/db.php";
       })
     }
 
-    createstarGold(25)
+    createstarGold(15)
 
     // 建立星星動畫
     gsap.to('.gold-star', {
-      'font-size': () => gsap.utils.random(10, 25),
+      'font-size': () => gsap.utils.random(10, 20),
       filter: 'drop-shadow(0 0 30px rgba(255, 255, 0, 1))',
       textShadow: '0 0 10px rgba(255, 255, 0, 0.8)',
       left: '+=random(-10, 10)%',
