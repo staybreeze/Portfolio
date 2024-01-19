@@ -336,6 +336,7 @@ if(grandTotal>5000){
       input.addEventListener('input', function() {
         // 檢查數量是否小於1，如果是，將其設置為1
         itemNumbers[index] = Math.max(1, parseInt(input.value));
+
         input.value = itemNumbers[index]; // 更新輸入欄位的值
         updateTotals(index);
       });

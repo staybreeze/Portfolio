@@ -34,6 +34,10 @@ if (isset($_SESSION['user'])) {
                     ],
                     ['product_id' => $productName] // 加入條件以確保更新正確的產品
                 );
+                $good = $Good->find($cartItem['product_id']);
+                $tmp = ($cartItem['quantity'] == $quantity) ? '0' : $cartItem['quantity'] - $quantity;
+                $good['remain'] = $good['remain'] + $tmp;
+                $Good->save($good);
             }
         }
     }
