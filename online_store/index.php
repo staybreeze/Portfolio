@@ -53,93 +53,93 @@ include_once "./api/db.php";
   ?>
   <!-- --自動輪播-- -->
   <div class="caroisel carousel-computer" style="background-color:#13304a;height:120vh" id="carousel">
-  <div id="carouselExampleIndicators" class="carousel slide " class="carousel slide">
-        
-  <!-- data-bs-ride="carousel" 使用 自動輪播功能 -->
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- 設定 秒數 data-bs-interval="1000" -->
-        <div class="carousel-item active" data-bs-interval="5000">
-          <div class="blue-block"></div>
-          <img src="./img/cheetos8.jpg" class="d-block w-100 imgCarousel" style="height:87.5vh">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>奇多（東京巴奈奈版）</h5>
-            <p>
-              Welcome to the Cheetos Meow Cooperative!</p>
-          </div>
-          <div class="blue-block"></div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="blue-block"></div>
-          <img src="./img/cheetos6.jpg" class="d-block w-100" style="height:87.5vh">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>奇多（幼兒版）</h5>
-            <p>Welcome to the Cheetos Meow Cooperative!</p>
-          </div>
-          <div class="blue-block"></div>
-        </div>
+    <div id="carouselExampleIndicators" class="carousel slide " class="carousel slide">
 
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="blue-block"></div>
-          <img src="./img/cheetos5.jpg" class="d-block w-100" style="height:87.5vh">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>奇多（妖嬈版）</h5>
-            <p>Welcome to the Cheetos Meow Cooperative!</p>
+      <!-- data-bs-ride="carousel" 使用 自動輪播功能 -->
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- 設定 秒數 data-bs-interval="1000" -->
+          <div class="carousel-item active" data-bs-interval="5000">
+            <div class="blue-block"></div>
+            <img src="./img/cheetos8.jpg" class="d-block w-100 imgCarousel" style="height:87.5vh">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（東京巴奈奈版）</h5>
+              <p>
+                Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+            <div class="blue-block"></div>
           </div>
-          <div class="blue-block"></div>
-        </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <div class="blue-block"></div>
+            <img src="./img/cheetos6.jpg" class="d-block w-100" style="height:87.5vh">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（幼兒版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+            <div class="blue-block"></div>
+          </div>
 
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="blue-block"></div>
-          <img src="./img/cheetos3.jpg" class="d-block w-100" style="height:87.5vh">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>奇多（看什麼看版）</h5>
-            <p>Welcome to the Cheetos Meow Cooperative!</p>
+          <div class="carousel-item" data-bs-interval="5000">
+            <div class="blue-block"></div>
+            <img src="./img/cheetos5.jpg" class="d-block w-100" style="height:87.5vh">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（妖嬈版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+            <div class="blue-block"></div>
           </div>
-          <div class="blue-block"></div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="blue-block"></div>
-          <img src="./img/cheetos2.jpg" class="d-block w-100" style="height:87.5vh">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>奇多（迷離眼神版）</h5>
-            <p>Welcome to the Cheetos Meow Cooperative!</p>
-          </div>
-          <div class="blue-block"></div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="blue-block"></div>
-          <img src="./img/cheetos1.jpg" class="d-block w-100" style="height:87.5vh">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>奇多（超可愛版）</h5>
-            <p>Welcome to the Cheetos Meow Cooperative!</p>
-          </div>
-          <div class="blue-block"></div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
 
+          <div class="carousel-item" data-bs-interval="5000">
+            <div class="blue-block"></div>
+            <img src="./img/cheetos3.jpg" class="d-block w-100" style="height:87.5vh">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（看什麼看版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+            <div class="blue-block"></div>
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <div class="blue-block"></div>
+            <img src="./img/cheetos2.jpg" class="d-block w-100" style="height:87.5vh">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（迷離眼神版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+            <div class="blue-block"></div>
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <div class="blue-block"></div>
+            <img src="./img/cheetos1.jpg" class="d-block w-100" style="height:87.5vh">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>奇多（超可愛版）</h5>
+              <p>Welcome to the Cheetos Meow Cooperative!</p>
+            </div>
+            <div class="blue-block"></div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-<
+
 
   <div class="carousel carousel-mobile" style="background-color: #12304a;">
     <div>
-      <div id="carouselExampleIndicators" class="carousel slide " class="carousel slide">
+      <div id="carouselExampleIndicatorsMobile" class="carousel slide " class="carousel slide">
         <div class="carousel-indicators ">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="5" aria-label="Slide 6"></button>
 
         </div>
         <div class="carousel-inner">
@@ -194,11 +194,11 @@ include_once "./api/db.php";
 
 
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
