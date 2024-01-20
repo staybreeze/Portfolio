@@ -332,6 +332,7 @@ footer {
     font-size: 30px;
     font-family: Rubik scribble;
     /* border-bottom: 1px solid#00707f;   */
+    z-index: 999;
 }
 
 .myBtn {

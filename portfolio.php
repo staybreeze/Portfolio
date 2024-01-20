@@ -74,7 +74,7 @@
             #backWorks.hide-web,
             #graphicDesign.hide-web {
                 opacity: 0;
-                transform: translateY(100px);
+                transform: translateY(50px);
                 /* 移回原位 */
             }
     </style>
@@ -302,7 +302,6 @@
         </div>
 
         <div class="front-works mt-4 hide-web" id="frontWorks">
-            <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;前端（Front-end）</h3> -->
             <div class="section" style="display: flex;">
 
@@ -353,7 +352,6 @@
         </div>
 
         <div class="back-works mt-4 hide-web" id="backWorks">
-            <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;後端（Back-end）</h3> -->
             <div class="section" style="display: flex;">
 
@@ -544,11 +542,16 @@
 
         let web = $('#web');
         let fullWorks = $('#fullWorks');
+        let frontWorks = $('#frontWorks');
+        let backWorks = $('#backWorks');
         let graphicDesign = $('#graphicDesign');
 
         web.removeClass('hide-web');
         fullWorks.removeClass('hide-web');
+        frontWorks.removeClass('hide-web');
+        backWorks.removeClass('hide-web');
         graphicDesign.removeClass('hide-web');
+
         $(".full-works").show();
         $(".front-works").hide();
         $(".back-works").hide();
@@ -645,6 +648,7 @@
             $(".full-works").hide();
             $(".front-works").hide();
             $(".back-works").show();
+            $('#backWorks').removeClass('hide-web');
             $(".full-abbr").css("color", "gainsboro");
             $(".full-abbr").css("border-left", "  15px solid gainsboro");
             $(".front-abbr").css("color", "gainsboro");
