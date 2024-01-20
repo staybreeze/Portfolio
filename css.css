@@ -106,7 +106,6 @@ body {
     border: 1px solid black
 } */
 
-.aside-bottom {}
 
 .test:hover {
     & .col-2 .circle {
@@ -283,8 +282,6 @@ td {}
     z-index: 1;
 
 }
-
-
 
 .remind {
     text-align: end;

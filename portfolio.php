@@ -12,32 +12,72 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<style>
-body{
-    overflow-x: hidden !important;
-}
+    <style>
+        body {
+            overflow-x: hidden !important;
+        }
 
-    @keyframes animate {
-      0% {
-        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
-      }
+        @keyframes animate {
+            0% {
+                text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
+            }
 
-      50% {
-        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 20px rgba(255, 255, 0, 1);
-      }
+            50% {
+                text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 20px rgba(255, 255, 0, 1);
+            }
 
-      100% {
-        text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
-      }
-    }
- 
-    @media screen and (max-width: 450px) {
-    body {
-        overflow-x: hidden !important;
-    }
-}
+            100% {
+                text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
+            }
+        }
 
-</style>
+        @media screen and (max-width: 450px) {
+            body {
+                overflow-x: hidden !important;
+            }}
+
+            #header {
+                height: 100%;
+                opacity: 1;
+                overflow: hidden;
+                /* display: block; */
+                transition: opacity 2s, transform 2s;
+                /* 調整為 transform */
+                transform: translateY(0);
+                /* 初始時將元素下移 100px */
+            }
+
+            #header.hide-header {
+                opacity: 0;
+                transform: translateY(-100px);
+                /* 移回原位 */
+            }
+
+            #web,
+            #fullWorks,
+            #frontWorks,
+            #backWorks,
+            #graphicDesign {
+                height: 100%;
+                opacity: 1;
+                overflow: hidden;
+                display: block;
+                transition: opacity 2s, transform 2s;
+                /* 調整為 transform */
+                transform: translateY(0);
+                /* 初始時將元素下移 100px */
+            }
+
+            #web.hide-web,
+            #fullWorks.hide-web,
+            #frontWorks.hide-web,
+            #backWorks.hide-web,
+            #graphicDesign.hide-web {
+                opacity: 0;
+                transform: translateY(100px);
+                /* 移回原位 */
+            }
+    </style>
 
 </head>
 </head>
@@ -50,7 +90,7 @@ body{
         <div class="start"></div>
         <div class="aside">
             <div class="aside-top text-center pt-10">
-                <img src="./img/profile1.jpg" class="me-3" width="275px" alt="">
+                <img src="./img/profile1.jpg" class="me-3" width="275px" >
             </div>
             <div class="aside-bottom mt-5">
                 <!-- <div class="row test mt-3">
@@ -232,7 +272,7 @@ body{
             <div class="col-lg-1 me-5"></div>
         </div>
 
-        <div class="full-works hide-web" id="fullWorks" >
+        <div class="full-works hide-web" id="fullWorks">
             <!-- <h3 class="mb-4 ">&nbsp;全端（Full-stack）</h3> -->
 
             <h4 class="mt-4" style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
@@ -240,7 +280,7 @@ body{
                 <div>
                     <h4 class="mt-2">前台</h4>
                     <a href="./online_store/index.php">
-                        <img id="deviceNotice" class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
+                        <img id="deviceNotice" class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" >
                     </a>
 
                 </div>
@@ -250,7 +290,7 @@ body{
                     <h4 class="my-ms-4 mt-2">後台</h4>
 
                     <a href="./online_store/back_login.php">
-                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" alt="">
+                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" >
                     </a>
 
                     <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
@@ -271,7 +311,7 @@ body{
                     <h4>線上課程網站<span class="halloween">（萬聖節主題）</span></h4>
 
                     <a id="noPhone" href="./side_project/online_course_store">
-                        <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" alt="">
+                        <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" >
                     </a>
 
                 </div>
@@ -281,7 +321,7 @@ body{
                     <h4 class="my-ms-4">學校資料庫前台</h4>
 
                     <a href="./side_project/school" id="noPhone1">
-                        <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" alt="">
+                        <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" >
                     </a>
 
                 </div>
@@ -294,7 +334,7 @@ body{
                     <h4 class="mt-4">前端切版練習</h4>
 
                     <a href="./side_project/front_pra_yukigi" id="noPhone2">
-                        <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" alt="">
+                        <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" >
                     </a>
 
                 </div>
@@ -304,7 +344,7 @@ body{
                 <h4 class="my-ms-4">學校資料庫前台</h4>
 
                 <a href="./side_project/school">
-                    <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" alt="">
+                    <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="96%" >
                 </a>
 
             </div> -->
@@ -322,7 +362,7 @@ body{
                 <h4>購物商城網站</h4>
 
                 <a href="./online_store/index.php">
-                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="100%" alt="">
+                    <img class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="100%" >
                 </a>
 
             </div>
@@ -331,7 +371,7 @@ body{
                     <h4>萬年暦</h4>
 
                     <a href="./calendar/index.php" id="noPhone3">
-                        <img src="./img/calendar.jpg" width="47%" alt="" class="calendar_pic"></a>
+                        <img src="./img/calendar.jpg" width="47%"  class="calendar_pic"></a>
                 </div>
 
             </div>
@@ -347,7 +387,7 @@ body{
 
                 <h4>海報</h4>
 
-                <img class="mt-2" src="./img/poster.jpg" width="100%" alt="" data-bs-toggle="modal" data-bs-target="#poster">
+                <img class="mt-2" src="./img/poster.jpg"  width="100%" data-bs-toggle="modal" data-bs-target="#poster" style="cursor:pointer">
 
 
             </div>
@@ -355,7 +395,7 @@ body{
             <div class="ms-5">
                 <h4>年暦</h4>
 
-                <img src="./img/calendar1.jpg" class="mt-2" width="100%" alt="" data-bs-toggle="modal" data-bs-target="#calendar_pic">
+                <img src="./img/calendar1.jpg" class="mt-2"  width="100%"  data-bs-toggle="modal" data-bs-target="#calendar_pic" style="cursor:pointer">
             </div>
 
         </div>
@@ -363,7 +403,7 @@ body{
             <div style="margin-top:50px">
                 <h4>Banner</h4>
 
-                <img src="./img/banner.jpg" width="53%" alt="" data-bs-toggle="modal" data-bs-target="#banner">
+                <img src="./img/banner.jpg" width="53%"  style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#banner">
             </div>
         </div>
     </div>
@@ -431,7 +471,7 @@ body{
 
             <!-- Modal body -->
 
-            <img src="./img/poster.jpg" width="221%" alt="">
+            <img src="./img/poster.jpg" width="221%" >
 
 
             <!-- Modal footer -->
@@ -453,7 +493,7 @@ body{
 
             <!-- Modal body -->
 
-            <img src="./img/calendar1.jpg" width="221%" alt="">
+            <img src="./img/calendar1.jpg" width="221%" >
 
 
             <!-- Modal footer -->
@@ -474,7 +514,7 @@ body{
 
             <!-- Modal body -->
 
-            <img src="./img/banner.jpg" width="221%" alt="">
+            <img src="./img/banner.jpg" width="221%" >
 
 
             <!-- Modal footer -->
@@ -489,16 +529,26 @@ body{
 
 
 </html>
-  <!-- jQuery -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
-  <!-- bootstrap -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
-  <!-- 引入 gsap 主程式 -->
-  <script src="./gsap/gsap.js"></script>
+<!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+<!-- bootstrap -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+<!-- 引入 gsap 主程式 -->
+<script src="./gsap/gsap.js"></script>
 
 
 <script>
     $(document).ready(function() {
+        let header = $('#header');
+        header.removeClass('hide-header');
+
+        let web = $('#web');
+        let fullWorks = $('#fullWorks');
+        let graphicDesign = $('#graphicDesign');
+
+        web.removeClass('hide-web');
+        fullWorks.removeClass('hide-web');
+        graphicDesign.removeClass('hide-web');
         $(".full-works").show();
         $(".front-works").hide();
         $(".back-works").hide();
@@ -520,7 +570,7 @@ body{
         $(".back-abbr").css("border-left", "  15px solid gainsboro");
         $("#full").click(function() {
             $('#fullWorks').addClass('hide-web');
-            $(".full-works").show();            
+            $(".full-works").show();
             $('#fullWorks').removeClass('hide-web');
             $(".front-works").hide();
             $(".back-works").hide();
@@ -537,7 +587,7 @@ body{
         $("#front").click(function() {
             $(".full-works").hide();
             $('#frontWorks').addClass('hide-web');
-            $(".front-works").show();            
+            $(".front-works").show();
             $('#frontWorks').removeClass('hide-web');
             $(".back-works").hide();
             $(".full").css("color", "gray");
@@ -554,7 +604,7 @@ body{
             $(".full-works").hide();
             $(".front-works").hide();
             $('#backWorks').addClass('hide-web');
-            $(".back-works").show();            
+            $(".back-works").show();
             $('#backWorks').removeClass('hide-web');
             $(".full").css("color", "gray");
             // $(".full").css("border-left", "  15px solid gainsboro");
@@ -614,7 +664,7 @@ body{
         if (window.innerWidth < 776) {
             alert('此網站另有【電腦版】，歡迎使用電腦開啟～');
             document.getElementById('noPhone').href = 'index.php';
-        }else{
+        } else {
 
             alert('此網站另有【手機版】，歡迎使用手機開啟～');
             document.getElementById('noPhone').href = 'index.php';
@@ -644,95 +694,43 @@ body{
             document.getElementById('noPhone3').href = 'index.php';
         }
     });
- 
+
     // 建立星星
     function createStar(starCount) {
-      for (let i = 0; i < starCount; i++) {
-        $('.body').append(`<div class="star animate">.</div>`)
-      }
+        for (let i = 0; i < starCount; i++) {
+            $('.body').append(`<div class="star animate">.</div>`)
+        }
 
-      $('.star').each(function (index, star) {
-        $(this).css({
-          position: 'absolute',
-          left: gsap.utils.random(10,88) + '%',
-          top: gsap.utils.random(10, 88) + '%',
-          color: 'yellow',
+        $('.star').each(function(index, star) {
+            $(this).css({
+                position: 'absolute',
+                left: gsap.utils.random(10, 88) + '%',
+                top: gsap.utils.random(10, 88) + '%',
+                color: 'yellow',
+            })
         })
-      })
     }
 
     createStar(50)
 
     // 建立星星動畫
     gsap.to('.star', {
-      'font-size': `random(12,50)`,
-      filter: 'drop-shadow(0 0 30px rgba(255,255,0,1))',
-      left: '+=random(-10, 10)%',
-      x: 'random(-50,50)',
-      y: 'random(-50,50)',
-      rotationY: '-=180',
-      scale: 'random(1,2)',
-      duration: 'random(5, 10)',
-      delay: 'random(0,5)',
-      repeat: -1,
-      repeatRefresh: true,
-      ease: 'back',
-      stagger: 0.1,
-    //   modifiers 來限制 left 的值
+        'font-size': `random(12,50)`,
+        filter: 'drop-shadow(0 0 30px rgba(255,255,0,1))',
+        left: '+=random(-10, 10)%',
+        x: 'random(-50,50)',
+        y: 'random(-50,50)',
+        rotationY: '-=180',
+        scale: 'random(1,2)',
+        duration: 'random(5, 10)',
+        delay: 'random(0,5)',
+        repeat: -1,
+        repeatRefresh: true,
+        ease: 'back',
+        stagger: 0.1,
+        //   modifiers 來限制 left 的值
         modifiers: {
-    left: gsap.utils.unitize(gsap.utils.clamp(0, 88)),
-  },
+            left: gsap.utils.unitize(gsap.utils.clamp(0, 88)),
+        },
     })
-
-
-</script>
-
-<style>
-  #header {
-    height: 100%;
-    opacity: 1;
-    overflow: hidden;
-    /* display: block; */
-    transition: opacity 2s, transform 2s; /* 調整為 transform */
-    transform: translateY(0); /* 初始時將元素下移 100px */
-  }
-
-  #header.hide-header {
-    opacity: 0;
-    transform: translateY(-100px); /* 移回原位 */
-  }
-    #web,#fullWorks,#frontWorks,#backWorks,#graphicDesign {
-    height: 100%;
-    opacity: 1;
-    overflow: hidden;
-    display: block;
-    transition: opacity 2s, transform 2s; /* 調整為 transform */
-    transform: translateY(0); /* 初始時將元素下移 100px */
-  }
-
-  #web.hide-web,#fullWorks.hide-web,#frontWorks.hide-web,#backWorks.hide-web,#graphicDesign.hide-web {
-    opacity: 0;
-    transform: translateY(100px); /* 移回原位 */
-  }
-  
-</style>
-<script>
-$(document).ready(function() {
-    let header = $('#header');   
-    header.addClass('hide-header');
-    header.removeClass('hide-header');
-
-    let web = $('#web');
-    let fullWorks=$('#fullWorks');
-    let graphicDesign=$('#graphicDesign');
-    // web.addClass('hide-web')
-    web.removeClass('hide-web');
-    fullWorks.removeClass('hide-web');
-    graphicDesign.removeClass('hide-web');
-  
-});
-
-
-
-
 </script>
