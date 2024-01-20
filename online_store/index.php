@@ -57,7 +57,7 @@ include_once "./api/db.php";
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <!-- 設定 秒數 data-bs-interval="1000" -->
-        <div class="carousel-item active" data-bs-interval="2000">
+        <div class="carousel-item active" data-bs-interval="5000">
           <div class="blue-block"></div>
           <img src="./img/cheetos8.jpg" class="d-block w-100 imgCarousel" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -67,7 +67,7 @@ include_once "./api/db.php";
           </div>
           <div class="blue-block"></div>
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="5000">
           <div class="blue-block"></div>
           <img src="./img/cheetos6.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -77,7 +77,7 @@ include_once "./api/db.php";
           <div class="blue-block"></div>
         </div>
 
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="5000">
           <div class="blue-block"></div>
           <img src="./img/cheetos5.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -87,7 +87,7 @@ include_once "./api/db.php";
           <div class="blue-block"></div>
         </div>
 
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="5000">
           <div class="blue-block"></div>
           <img src="./img/cheetos3.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -96,7 +96,7 @@ include_once "./api/db.php";
           </div>
           <div class="blue-block"></div>
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="5000">
           <div class="blue-block"></div>
           <img src="./img/cheetos2.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">
@@ -105,7 +105,7 @@ include_once "./api/db.php";
           </div>
           <div class="blue-block"></div>
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="5000">
           <div class="blue-block"></div>
           <img src="./img/cheetos1.jpg" class="d-block w-100" style="height:87.5vh">
           <div class="carousel-caption d-none d-md-block">

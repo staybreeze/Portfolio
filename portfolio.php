@@ -45,7 +45,7 @@ body{
 
 <body class="body">
     <div class="top"><a href="#">TOP</a></div>
-    <div class="container">
+    <div class="container hide-header" id="header">
 
         <div class="start"></div>
         <div class="aside">
@@ -195,7 +195,7 @@ body{
         </div>
 
     </div>
-    <div id="web" class="box mt-5">
+    <div id="web" class="box mt-5 hide-web">
 
         <div class="d-flex ms-1 full-name" style="position:relative;left:313px;top:63px">
 
@@ -232,15 +232,12 @@ body{
             <div class="col-lg-1 me-5"></div>
         </div>
 
-        <div class="full-works">
+        <div class="full-works hide-web" id="fullWorks" >
             <!-- <h3 class="mb-4 ">&nbsp;全端（Full-stack）</h3> -->
 
             <h4 class="mt-4" style="font-size:23px;color:purple;text-decoration:underline">購物商城網站</h4>
             <div class="section" style="display: flex;">
-
                 <div>
-
-
                     <h4 class="mt-2">前台</h4>
                     <a href="./online_store/index.php">
                         <img id="deviceNotice" class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" alt="">
@@ -264,7 +261,7 @@ body{
             </div>
         </div>
 
-        <div class="front-works mt-4">
+        <div class="front-works mt-4 hide-web" id="frontWorks">
             <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;前端（Front-end）</h3> -->
             <div class="section" style="display: flex;">
@@ -315,7 +312,7 @@ body{
             </div>
         </div>
 
-        <div class="back-works mt-4">
+        <div class="back-works mt-4 hide-web" id="backWorks">
             <h2 class="mt-3 full-works"></h2>
             <!-- <h3>&nbsp;後端（Back-end）</h3> -->
             <div class="section" style="display: flex;">
@@ -342,7 +339,7 @@ body{
         </div>
 
         <h2 style="margin-top:40px" id="graphic"><span>G</span>raphic Design</h2>
-        <div class="section" style="display: flex;">
+        <div class="section hide-web" style="display: flex;" id="graphicDesign">
 
 
 
@@ -522,7 +519,9 @@ body{
         $(".back-abbr").css("color", "gainsboro");
         $(".back-abbr").css("border-left", "  15px solid gainsboro");
         $("#full").click(function() {
-            $(".full-works").show();
+            $('#fullWorks').addClass('hide-web');
+            $(".full-works").show();            
+            $('#fullWorks').removeClass('hide-web');
             $(".front-works").hide();
             $(".back-works").hide();
             $(".full").css("color", "rgb(246, 246, 161)");
@@ -537,7 +536,9 @@ body{
         });
         $("#front").click(function() {
             $(".full-works").hide();
-            $(".front-works").show();
+            $('#frontWorks').addClass('hide-web');
+            $(".front-works").show();            
+            $('#frontWorks').removeClass('hide-web');
             $(".back-works").hide();
             $(".full").css("color", "gray");
             // $(".full").css("border-left", "  15px solid gainsboro");
@@ -552,7 +553,9 @@ body{
         $("#back").click(function() {
             $(".full-works").hide();
             $(".front-works").hide();
-            $(".back-works").show();
+            $('#backWorks').addClass('hide-web');
+            $(".back-works").show();            
+            $('#backWorks').removeClass('hide-web');
             $(".full").css("color", "gray");
             // $(".full").css("border-left", "  15px solid gainsboro");
             $(".web-tag-full").css("background-color", "rgb(230, 230, 150)");
@@ -680,6 +683,56 @@ body{
     left: gsap.utils.unitize(gsap.utils.clamp(0, 88)),
   },
     })
+
+
+</script>
+
+<style>
+  #header {
+    height: 100%;
+    opacity: 1;
+    overflow: hidden;
+    /* display: block; */
+    transition: opacity 2s, transform 2s; /* 調整為 transform */
+    transform: translateY(0); /* 初始時將元素下移 100px */
+  }
+
+  #header.hide-header {
+    opacity: 0;
+    transform: translateY(-100px); /* 移回原位 */
+  }
+    #web,#fullWorks,#frontWorks,#backWorks,#graphicDesign {
+    height: 100%;
+    opacity: 1;
+    overflow: hidden;
+    display: block;
+    transition: opacity 2s, transform 2s; /* 調整為 transform */
+    transform: translateY(0); /* 初始時將元素下移 100px */
+  }
+
+  #web.hide-web,#fullWorks.hide-web,#frontWorks.hide-web,#backWorks.hide-web,#graphicDesign.hide-web {
+    opacity: 0;
+    transform: translateY(100px); /* 移回原位 */
+  }
+  
+</style>
+<script>
+$(document).ready(function() {
+    let header = $('#header');   
+    header.addClass('hide-header');
+    header.removeClass('hide-header');
+
+    let web = $('#web');
+    let fullWorks=$('#fullWorks');
+    let graphicDesign=$('#graphicDesign');
+    // web.addClass('hide-web')
+    web.removeClass('hide-web');
+    fullWorks.removeClass('hide-web');
+    graphicDesign.removeClass('hide-web');
+  
+});
+
+
 
 
 </script>

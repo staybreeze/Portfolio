@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This is WSL!</title>
   <link rel="icon" href="./img/fort-awesome-alt.svg" type="image/x-icon">
-   
+
   <!-- bootstrap -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' />
-  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
- 
-  <style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-        body {
+  <style>
+    body {
       height: 100vh;
       background: rgb(35, 35, 35);
       display: flex;
@@ -25,14 +26,15 @@
     .banner {
       width: 100%;
       height: 100px;
-      top:-250px;
+      top: -250px;
       position: relative;
       font-family: 'Orbitron', sans-serif;
       line-height: 100px;
- 
+
     }
-        .item {
-          display: none;
+
+    .item {
+      display: none;
       /* width: 100%; */
       font-size: 50px;
       color: #fff;
@@ -52,25 +54,30 @@
       border-radius: 0.3rem;
       padding-right: 1rem;
     }
+
     @media screen and (max-width: 450px) {
 
-      body{
+      body {
         overflow-y: hidden;
       }
+
       .banner {
 
-      line-height: 78px;
- 
-    }
-      .item {
-  
-      font-size: 30px;
+        line-height: 78px;
 
+      }
+
+      .item {
+
+        font-size: 30px;
+
+      }
+
+      .bar {
+        height: 100px !important;
+        color:#fff
+      }
     }
-.bar{
-  height:100px !important;
-}
-}
   </style>
 </head>
 
@@ -106,11 +113,11 @@
     const tl = gsap.timeline({
       // repeat: -1,
       // repeatDelay: 1
-      delay:0.5,
+      delay: 0.5,
     })
 
     tl
-    .set('.item', { display: 'block' }) 
+      .set('.item', { display: 'block' })
       .from('.item', {
         y: 60,
         rotationX: -90,
@@ -125,35 +132,35 @@
         stagger: 1
       }, 1) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 
-      if (window.innerWidth < 450){
-        $('.bar').css('padding','15px')
-      }
-  </script>
-<script>
-  // 註冊套件
-  const languages = 100
-
-  const tween = gsap.to('.bar', {
-    delay: 8,
-    display: 'block',
-    duration: 0.8,
-    width: function (index, target, targets) {
-
-          $(target).append('HI! This is WSL!')
-          return languages + '%'
-    },
-    onComplete: function() {
-      if (window.innerWidth < 450){
-    gsap.delayedCall(0.5, function() {
-      location.href = "portfolio.php";
-    });
-  }else{
-
-    location.href = "portfolio.php";
-  }
+    if (window.innerWidth < 450) {
+      $('.bar').css('padding', '15px')
     }
-  });
-</script>
+  </script>
+  <script>
+    // 註冊套件
+    const languages = 100
+
+    const tween = gsap.to('.bar', {
+      delay: 8,
+      display: 'block',
+      duration: 0.8,
+      width: function (index, target, targets) {
+
+        $(target).append('HI! This is WSL!')
+        return languages + '%'
+      },
+      onComplete: function () {
+        if (window.innerWidth < 450) {
+          gsap.delayedCall(0.5, function () {
+            location.href = "portfolio.php";
+          });
+        } else {
+
+          location.href = "portfolio.php";
+        }
+      }
+    });
+  </script>
 
 </body>
 
