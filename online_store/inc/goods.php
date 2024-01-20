@@ -93,7 +93,7 @@
 
 
         <div class="row good-row">
-            <div id="discountBanner" style="padding-top:15px;height:80px" onclick="location.href='#onlineStore'">
+            <div id="discountBanner" style="padding-top:18px;height:85.7px" onclick="location.href='#onlineStore'">
                 <p class="discount-p">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
             </div>
             <!-- Single Product -->
@@ -339,6 +339,7 @@
                 $("#discountBanner").css('border', '1px solid d rgb(252, 233, 122) ');
                 $("#discountBanner").css('background-color', 'rgb(73, 42, 2) ');
                 $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
+                $("#discountBanner").css('padding-top', '18px');
                 $("#storeBannerRow").css('margin-bottom', '14px')
             }
         };
