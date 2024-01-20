@@ -1,6 +1,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
     .liked {
         color: #fe302f
     }
@@ -44,6 +47,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .item h2,.good-header h3{
+        font-family: 'Zen Maru Gothic', serif;
+    }
 </style>
 <section class="section-products" id="store">
     <div class="container goods">
@@ -62,7 +68,7 @@
                             <h2>—　<b>肉泥</b>　— </h2>
                         </div>
                         <div class="item">
-                            <h2>—　<b>貓砂</b>　— </h2>
+                            <h2>—　<b>猫砂</b>　— </h2>
                         </div>
                         <div class="item">
                             <h2>—　<b>罐頭</b>　— </h2>
@@ -73,15 +79,15 @@
                             <h2>—　<b>生食</b>　— </h2>
                         </div>
                         <div class="item">
-                            <h2>—　<b>貓草</b>　— </h2>
+                            <h2>—　<b>猫草</b>　— </h2>
                         </div>
                         <div class="item">
-                            <h2>—　<b>逗貓棒</b>　— </h2>
+                            <h2>—　<b>逗猫棒</b>　— </h2>
                         </div>
                     </div>
                     <br> <br>
                     <!-- <div class="hidden-div" id="onlineStore"></div> -->
-                    <h3>超熱銷～快手刀下單唷 (=^-ω-^=)</h3>
+                    <h3>超熱銷～快手刀下單～ (=^-ω-^=)</h3>
 
                     <!-- <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a> -->
                     <!-- <br> -->
@@ -194,7 +200,7 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <h3 class="product-title">CIAO｜貓咪肉泥 訓練獎勵好幫手</h3>
+                        <h3 class="product-title">CIAO｜猫咪肉泥 訓練獎勵好幫手</h3>
 
                         <h4 class="product-price">NTD 55</h4>
                     </div>
