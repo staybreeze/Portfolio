@@ -261,7 +261,7 @@ include_once "../api/db.php"
         // }
 
 
-        echo "<div class='d-flex mt-4 me-1' style='margin-left:61px'>";
+        echo "<div class='d-flex mt-4 me-1' style='margin-left:69px'>";
         $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
         $hiddenFirstPage = ($now == $firstPage) ? 'hidden' : '';
         echo "<a href='?do=goods&p=$firstPage'><div class='pages ms-5  $hiddenFirstPage'> <</div> </a>";

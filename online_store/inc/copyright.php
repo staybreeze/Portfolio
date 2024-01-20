@@ -1,4 +1,12 @@
-<<a class="footer-header pt-1 text-center join-us" 
+<style>
+
+@media screen and (max-width: 450px) {
+            .copyright p{
+                font-size: 1px;
+            }}
+</style>
+
+<a class="footer-header pt-1 text-center join-us" 
        
         href=""data-bs-toggle="modal" data-bs-target="#contact">Join Us!</a>
 
@@ -7,6 +15,7 @@
   </footer>
   <div class="copyright">
     <div class="d-flex"></div>
+
     <p>© WSL Web All Rights Reserved. ／　<i class="fa-solid fa-users-viewfinder"></i>
     進站總人數 : <?=$Total->find(1)['total'];?>
     </p>

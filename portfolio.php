@@ -133,7 +133,7 @@
 
                 <p class="mt-5">安安安</p>
             </div> -->
-            <div class="section" style="margin-top:100px" id="about">
+            <div class="section" style="margin-top:90px" id="about">
                 <h2><span>A</span>bout &nbsp; &nbsp; &nbsp;Wun-Sheng &nbsp;, &nbsp;Liao &nbsp;(&nbsp;WSL&nbsp;)</h2>
 
                 <table>
@@ -237,7 +237,7 @@
     </div>
     <div id="web" class="box mt-5 hide-web">
 
-        <div class="d-flex ms-1 full-name" style="position:relative;left:313px;top:63px">
+        <div class="d-flex ms-1 full-name" style="position:relative;left:313px;top:53px">
 
             <div class="mt-3 web-tag web-tag-full" id="full">
                 <h3 class="full">&nbsp;全端（Full-stack）</h3>
@@ -254,7 +254,7 @@
 
         </div>
 
-        <h2 style="margin-top:10px"><span>W</span>eb Design</h2>
+        <h2><span>W</span>eb Design</h2>
         <div class="row abbr-name">
             <div class="col-lg-1"></div>
             <div class="col-3 col-lg-3  mt-3 web-tag-abbr" id="full-abbr">
