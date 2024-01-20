@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
  
   <style>
+
         body {
       height: 100vh;
       background: rgb(35, 35, 35);
@@ -58,7 +59,7 @@
       }
       .banner {
 
-      line-height: 80px;
+      line-height: 73px;
  
     }
       .item {
@@ -67,7 +68,7 @@
 
     }
 .bar{
-  height:100px !important
+  height:100px !important;
 }
 }
   </style>
@@ -123,6 +124,10 @@
         // autoAlpha: 0,
         stagger: 1
       }, 1) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
+
+      if (window.innerWidth < 450){
+        $('.bar').css('padding','15px')
+      }
   </script>
 <script>
   // 註冊套件
