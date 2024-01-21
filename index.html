@@ -91,10 +91,11 @@
   <div class="banner">
     <div class="item">HTML</div>
     <div class="item">CSS</div>
-    <div class="item">JavaScript / Ajax</div>
+    <div class="item">JavaScript</div>
+    <div class="item">Ajax</div>
     <div class="item" style="color:goldenrod">x</div>
     <div class="item">PHP</div>
-    <div class="item">jQuery</div>
+    <!-- <div class="item"></div> -->
     <div class="item">MySQL</div>
     <div class="bar"></div>
   </div>
@@ -214,7 +215,7 @@
     const tl = gsap.timeline({
       // repeat: -1,
       // repeatDelay: 1
-      delay: 0.5,
+      delay: 0.8,
     })
 
     tl
@@ -223,15 +224,15 @@
         y: 60,
         rotationX: -90,
         autoAlpha: 0,
-        stagger: 1
+        stagger: 0.8
       })
       .to('.item', {
         y: -60,
         // rotationX: 90,
         autoAlpha: 1,
         // autoAlpha: 0,
-        stagger: 1
-      }, 1) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
+        stagger: 0.8
+      }, 0.8) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 
     if (window.innerWidth < 450) {
       $('.bar').css('padding', '15px')
@@ -242,9 +243,9 @@
     const languages = 100
 
     const tween = gsap.to('.bar', {
-      delay: 8,
+      delay: 6.8,
       display: 'block',
-      duration: 0.8,
+      duration: 0.7,
       width: function (index, target, targets) {
 
         $(target).append('Hi!')

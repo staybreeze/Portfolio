@@ -77,6 +77,10 @@
                 transform: translateY(50px);
                 /* 移回原位 */
             }
+            .star{
+                z-index:999;
+
+            }
     </style>
 
 </head>
@@ -164,7 +168,7 @@
                             <div>Education</div>
                         </td> -->
                         <td class="td4 align-items-sm-center skills fw-bold" colspan="2">
-                            HTML、CSS、Javascript、Ajax、Bootstrap、RWD
+                            HTML、CSS、Javascript、Ajax、jQuery、Bootstrap、RWD
                         </td>
                     </tr>
                     <tr>
@@ -177,7 +181,7 @@
                         <!-- <td class="td3" colspan="2">
                             <div>Education</div>
                         </td> -->
-                        <td class="td4 align-items-sm-center skills fw-bold" colspan="2">PHP、MySQL、jQuery
+                        <td class="td4 align-items-sm-center skills fw-bold" colspan="2">PHP、MySQL
                         </td>
                     </tr>
                     <tr>
@@ -702,20 +706,25 @@
     // 建立星星
     function createStar(starCount) {
         for (let i = 0; i < starCount; i++) {
-            $('.body').append(`<div class="star animate">.</div>`)
+            $('#header').append(`<div class="star animate">.</div>`)
         }
+        for (let i = 0; i < starCount; i++) {
+            $('#web').append(`<div class="star animate">.</div>`)
+        } 
 
         $('.star').each(function(index, star) {
             $(this).css({
                 position: 'absolute',
-                left: gsap.utils.random(10, 88) + '%',
-                top: gsap.utils.random(10, 88) + '%',
+                left: gsap.utils.random(0, 88) + 'vw',
+                top: gsap.utils.random(0, 88) + 'vh',
                 color: 'yellow',
             })
         })
     }
 
-    createStar(50)
+    if(window.innerWidth>450){
+        createStar(30)
+    }
 
     // 建立星星動畫
     gsap.to('.star', {
