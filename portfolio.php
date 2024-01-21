@@ -103,25 +103,25 @@
                         <div class="circle"></div>
                     </div>
                 </div> -->
-                <div class="row test">
+                <div class="row nav-bar">
                     <div class="col-10 text-start font-river mt-1"><a href="#about">About WSL</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
                 </div>
-                <div class="row test">
+                <div class="row nav-bar">
                     <div class="col-10 text-start  font-river mt-1"><a href="#web">Web Design</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
                 </div>
-                <div class="row test">
+                <div class="row nav-bar">
                     <div class="col-10 text-start  font-river mt-1"><a href="#graphic">Graphic Design</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
                     </div>
                 </div>
-                <div class="row test">
+                <div class="row nav-bar">
                     <div class="col-10 text-start font-river mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">Contact</a></div>
                     <div class="col-2 pt-1">
                         <div class="circle"></div>
@@ -294,7 +294,7 @@
                     <h4 class="my-ms-4 mt-2">後台</h4>
 
                     <a href="./online_store/back_login.php">
-                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95%" >
+                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95.55%" >
                     </a>
 
                     <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
@@ -706,11 +706,9 @@
     // 建立星星
     function createStar(starCount) {
         for (let i = 0; i < starCount; i++) {
-            $('#header').append(`<div class="star animate">.</div>`)
+            $('.body').append(`<div class="star animate">.</div>`)
         }
-        for (let i = 0; i < starCount; i++) {
-            $('#web').append(`<div class="star animate">.</div>`)
-        } 
+
 
         $('.star').each(function(index, star) {
             $(this).css({
@@ -723,6 +721,8 @@
     }
 
     if(window.innerWidth>450){
+        createStar(50)
+    }else{
         createStar(30)
     }
 
