@@ -45,6 +45,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        opacity: 0;
     }
 
     .item h2,
@@ -286,8 +287,6 @@
     $('#top').on('click', function() {
         if (window.innerWidth > 450) {
             $(this).css('background', '#12304a');
-        } else {
-            $(this).css('background', 'rgb(73, 42, 2)');
         }
         setTimeout(function() {
             $('#top').css('background', 'rgb(216, 162, 90)');
