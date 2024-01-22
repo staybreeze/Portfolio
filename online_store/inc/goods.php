@@ -50,7 +50,26 @@
     .item h2,.good-header h3{
         font-family: 'Zen Maru Gothic', serif;
     }
+    .top {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    right: 20px;
+    bottom: 50px;
+background-color:rgb(216, 162, 90);
+    color: #fff;
+    /* font-weight: bold; */
+    font-size: 20px;
+    font-family: Rubik scribble;
+    /* border-bottom: 1px solid#00707f;   */
+    z-index: 999;
+    opacity: 0;
+transition: opacity 0.5s;
+}
 </style>
+<div id="top" class="top"><a href="#"><i class="fa-solid fa-angle-up"></i></a></div>
 <section class="section-products" id="store">
     <div class="container goods">
         <div class="row justify-content-center text-center "id="storeBannerRow" style="margin-bottom:24px">
@@ -322,15 +341,17 @@
     };
     var scrollThreshold = 610;
     var scrolltoTop = 100;
-
+    var scrolltoDiscountBar = 400;
     $(window).scroll(function() {
         if (window.innerWidth < 450) {
             var scrollPosition = $(this).scrollTop();
-
+            var documentHeight = $(document).height();
+        var windowHeight = $(this).height();
 
             if (scrollPosition > scrollThreshold) {
                 $(".good-row").css('border', '10px solid #d8a25a ');
                 $("#discountBanner").css('background-color', '#d8a25a ');
+           
 
             } else {
                 $(".good-row").css('border', '10px solid rgb(148, 86, 6) ');
@@ -346,9 +367,18 @@
                 $("#discountBanner").css('background-color', 'rgb(73, 42, 2) ');
                 $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
                 $("#discountBanner").css('padding-top', '18px');
-                $("#storeBannerRow").css('margin-bottom', '14px')
+                $("#storeBannerRow").css('margin-bottom', '14px');
+                $("#top").css('opacity', '0')
+                $("#top").css('margin-top', '50px')
+            }else{
+                $("#top").css('opacity', '1')
             }
+
+            if (scrollPosition < scrolltoDiscountBar) {
+                $("#top").css('opacity', '0')
+                $("#top").css('margin-top', '50px')
         };
+    }
     });
     $(document).ready(function() {
 
