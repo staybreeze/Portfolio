@@ -559,6 +559,15 @@
 
 <script>
     $(document).ready(function() {
+
+        $('#top').on('click', function() {
+            $(this).css('background', '#0b7d8ceb');
+        });
+
+        $('#top').on('mouseout', function() {
+            $(this).css('background', '#1f89976e');
+        });
+
         let header = $('#header');
         header.removeClass('hide-header');
 

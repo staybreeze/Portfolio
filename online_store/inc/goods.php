@@ -71,7 +71,8 @@
         opacity: 0;
         transition: opacity 0.5s;
     }
-    #checkOutBtn{
+
+    #checkOutBtn {
         z-index: 999;
     }
 </style>
@@ -281,28 +282,41 @@
 
 <script>
     $(document).ready(function() {
+        $(document).ready(function() {
+    $('#top').on('click', function() {
+        if (window.innerWidth > 450) {
+            $(this).css('background', '#12304a');
+        } else {
+            $(this).css('background', 'rgb(73, 42, 2)');
+        }
+        setTimeout(function() {
+            $('#top').css('background', 'rgb(216, 162, 90)');
+        }, 800);
+    });
+});
 
-        $(".good-sold-out").click(function() {
 
-            alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
-        })
+    $(".good-sold-out").click(function() {
 
-        //         $(".fa-heart").click(function() {
-        //     location.reload();
-        // });
+        alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
+    })
 
-        $(".like").click(function(event) {
-            let productId = $(this).data("id");
+    //         $(".fa-heart").click(function() {
+    //     location.reload();
+    // });
 
-            $.post("./api/add_like.php", {
-                'id': productId
-            }, (res) => {
-                console.log(res);
+    $(".like").click(function(event) {
+        let productId = $(this).data("id");
 
-                $("#" + productId).load(location.href + " #" + productId + " > *");
-                //   location.reload();
-            });
+        $.post("./api/add_like.php", {
+            'id': productId
+        }, (res) => {
+            console.log(res);
+
+            $("#" + productId).load(location.href + " #" + productId + " > *");
+            //   location.reload();
         });
+    });
     });
 
     $(document).ready(function() {
@@ -422,7 +436,11 @@
 <script src="./gsap/gsap.js"></script>
 
 <script>
-    gsap.set('.item', { y: 0, rotationX: 0, autoAlpha: 1 });
+    gsap.set('.item', {
+        y: 0,
+        rotationX: 0,
+        autoAlpha: 1
+    });
 
     // set 是設定初始補間動畫的預設值
     gsap.set('.banner', {

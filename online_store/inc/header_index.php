@@ -80,7 +80,7 @@ include_once "header_effect.php"
     <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;overflow:hidden">
 
       <div class="offcanvas offcanvas-end" data-bs-backdrop="true" id="demo">
-        <div class="offcanvas-header"   style="background-color:#12304a;text-align:center;padding-top:26.5px;color:#fff">
+        <div class="offcanvas-header"   style="background-color:#12304a;text-align:center;padding-top:22.5px;color:#fff">
           <h2 class="offcanvas-title">會員中心<img class="mb-2" src="./img/logo1.png"  width="75px"></h2>
 
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
