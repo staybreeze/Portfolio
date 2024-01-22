@@ -2,7 +2,7 @@
 
 @media screen and (max-width: 450px) {
             .copyright p{
-                font-size: 1px;
+                font-size: 10px;
             }}
 </style>
 
@@ -14,7 +14,7 @@
     
   </footer>
   <div class="copyright">
-    <div class="d-flex"></div>
+    <div class="d-flex mt-1"></div>
 
     <p>© WSL Web All Rights Reserved. ／　<i class="fa-solid fa-users-viewfinder"></i>
     進站總人數 : <?=$Total->find(1)['total'];?>
