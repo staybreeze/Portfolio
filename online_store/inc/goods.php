@@ -70,7 +70,6 @@
         z-index: 99;
         opacity: 0;
         transition: opacity 0.5s;
-        cursor: pointer;
     }
     #checkOutBtn{
         z-index: 999;

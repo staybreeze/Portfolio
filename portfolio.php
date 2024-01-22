@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Sans+JP&family=Josefin+Slab&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC:wght@300&family=Orbitron&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&family=Zen+Old+Mincho&display=swap');
+
         body {
             overflow-x: hidden !important;
         }
@@ -34,67 +36,83 @@
         @media screen and (max-width: 450px) {
             body {
                 overflow-x: hidden !important;
-            }}
-
-            #header {
-                height: 100%;
-                opacity: 1;
-                overflow: hidden;
-                /* display: block; */
-                transition: opacity 2s, transform 2s;
-                /* 調整為 transform */
-                transform: translateY(0);
-                /* 初始時將元素下移 100px */
             }
-
-            #header.hide-header {
-                opacity: 0;
-                transform: translateY(-100px);
-                /* 移回原位 */
+            #top{
+                display: none;
             }
-
-            #web,
-            #fullWorks,
-            #frontWorks,
-            #backWorks,
-            #graphicDesign {
-                height: 100%;
-                opacity: 1;
-                overflow: hidden;
-                display: block;
-                transition: opacity 2s, transform 2s;
-                /* 調整為 transform */
-                transform: translateY(0);
-                /* 初始時將元素下移 100px */
+            #topMobile{
+                display: block !important;
             }
+        }
 
-            #web.hide-web,
-            #fullWorks.hide-web,
-            #frontWorks.hide-web,
-            #backWorks.hide-web,
-            #graphicDesign.hide-web {
-                opacity: 0;
-                transform: translateY(50px);
-                /* 移回原位 */
-            }
-            .star{
-                z-index:999;
+        #header {
+            height: 100%;
+            opacity: 1;
+            overflow: hidden;
+            /* display: block; */
+            transition: opacity 2s, transform 2s;
+            /* 調整為 transform */
+            transform: translateY(0);
+            /* 初始時將元素下移 100px */
+        }
 
-            }
+        #header.hide-header {
+            opacity: 0;
+            transform: translateY(-100px);
+            /* 移回原位 */
+        }
+
+        #web,
+        #fullWorks,
+        #frontWorks,
+        #backWorks,
+        #graphicDesign
+     {
+            height: 100%;
+            opacity: 1;
+            overflow: hidden;
+            display: block;
+            transition: opacity 2s, transform 2s;
+            /* 調整為 transform */
+            transform: translateY(0);
+            /* 初始時將元素下移 100px */
+        }
+
+        #web.hide-web,
+        #fullWorks.hide-web,
+        #frontWorks.hide-web,
+        #backWorks.hide-web,
+        #graphicDesign.hide-web{
+            opacity: 0;
+            transform: translateY(50px);
+            /* 移回原位 */
+        }
+
+        .star {
+            z-index: 9;
+        }
+        #topMobile{
+            display: none;
+        }
+        .top,#topMobile{
+            transition: opacity 2s;
+        }
     </style>
 
-</head>
+
 </head>
 
 
 <body class="body">
-    <div class="top"><a href="#">TOP</a></div>
+<div id="topMobile" class="top-mobile"><a href="#">TOP</a></div>
+    <div id="top" class="top"><a href="#"><i class="fa-solid fa-angle-up"></i>
+</a></div>
     <div class="container hide-header" id="header">
 
         <div class="start"></div>
         <div class="aside">
             <div class="aside-top text-center pt-10">
-                <img src="./img/profile1.jpg" class="me-3" width="275px" >
+                <img src="./img/profile1.jpg" class="me-3" width="275px">
             </div>
             <div class="aside-bottom mt-5">
                 <!-- <div class="row test mt-3">
@@ -284,7 +302,7 @@
                 <div>
                     <h4 class="mt-2">前台</h4>
                     <a href="./online_store/index.php">
-                        <img id="deviceNotice" class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%" >
+                        <img id="deviceNotice" class="mt-2 online_store_pic" src="./img/online_store2.jpg" width="96%">
                     </a>
 
                 </div>
@@ -294,7 +312,7 @@
                     <h4 class="my-ms-4 mt-2">後台</h4>
 
                     <a href="./online_store/back_login.php">
-                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95.55%" >
+                        <img id="requestAdmin" class="mt-2 online_store_pic online_store_back_pic my-ms-4" src="./img/online_store3.jpg" width="95.55%">
                     </a>
 
                     <div class="mt-1"><a href="http://" data-bs-toggle="modal" data-bs-target="#contact">
@@ -314,7 +332,7 @@
                     <h4>線上課程網站<span class="halloween">（萬聖節主題）</span></h4>
 
                     <a id="noPhone" href="./side_project/online_course_store">
-                        <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%" >
+                        <img class="mt-2 online_store_pic" src="./img/online_course.jpg" width="96%">
                     </a>
 
                 </div>
@@ -324,7 +342,7 @@
                     <h4 class="my-ms-4">學校資料庫前台</h4>
 
                     <a href="./side_project/school" id="noPhone1">
-                        <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%" >
+                        <img class="mt-2 online_store_pic my-ms-4" style="box-shadow: 10px 5px 5px #cdcd9b;" src="./img/school1.jpg" width="94%">
                     </a>
 
                 </div>
@@ -337,7 +355,7 @@
                     <h4 class="mt-4">前端切版練習</h4>
 
                     <a href="./side_project/front_pra_yukigi" id="noPhone2">
-                        <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%" >
+                        <img class="mt-2 online_store_pic" src="./img/yukigi.jpg" width="48%">
                     </a>
 
                 </div>
@@ -373,7 +391,7 @@
                     <h4>萬年暦</h4>
 
                     <a href="./calendar/index.php" id="noPhone3">
-                        <img src="./img/calendar.jpg" width="47%"  class="calendar_pic"></a>
+                        <img src="./img/calendar.jpg" width="47%" class="calendar_pic"></a>
                 </div>
 
             </div>
@@ -389,7 +407,7 @@
 
                 <h4>海報</h4>
 
-                <img class="mt-2" src="./img/poster.jpg"  width="100%" data-bs-toggle="modal" data-bs-target="#poster" style="cursor:pointer">
+                <img class="mt-2" src="./img/poster.jpg" width="100%" data-bs-toggle="modal" data-bs-target="#poster" style="cursor:pointer">
 
 
             </div>
@@ -397,7 +415,7 @@
             <div class="ms-5">
                 <h4>年暦</h4>
 
-                <img src="./img/calendar1.jpg" class="mt-2"  width="100%"  data-bs-toggle="modal" data-bs-target="#calendar_pic" style="cursor:pointer">
+                <img src="./img/calendar1.jpg" class="mt-2" width="100%" data-bs-toggle="modal" data-bs-target="#calendar_pic" style="cursor:pointer">
             </div>
 
         </div>
@@ -405,7 +423,7 @@
             <div style="margin-top:50px">
                 <h4>Banner</h4>
 
-                <img src="./img/banner.jpg" width="53%"  style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#banner">
+                <img src="./img/banner.jpg" width="53%" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#banner">
             </div>
         </div>
     </div>
@@ -473,7 +491,7 @@
 
             <!-- Modal body -->
 
-            <img src="./img/poster.jpg" width="221%" >
+            <img src="./img/poster.jpg" width="221%">
 
 
             <!-- Modal footer -->
@@ -495,7 +513,7 @@
 
             <!-- Modal body -->
 
-            <img src="./img/calendar1.jpg" width="221%" >
+            <img src="./img/calendar1.jpg" width="221%">
 
 
             <!-- Modal footer -->
@@ -516,7 +534,7 @@
 
             <!-- Modal body -->
 
-            <img src="./img/banner.jpg" width="221%" >
+            <img src="./img/banner.jpg" width="221%">
 
 
             <!-- Modal footer -->
@@ -549,12 +567,14 @@
         let frontWorks = $('#frontWorks');
         let backWorks = $('#backWorks');
         let graphicDesign = $('#graphicDesign');
-
+  
         web.removeClass('hide-web');
         fullWorks.removeClass('hide-web');
         frontWorks.removeClass('hide-web');
         backWorks.removeClass('hide-web');
         graphicDesign.removeClass('hide-web');
+        $('.top').css('opacity', '1');
+        $('#topMobile').css('opacity', '1');
 
         $(".full-works").show();
         $(".front-works").hide();
@@ -720,9 +740,9 @@
         })
     }
 
-    if(window.innerWidth>450){
+    if (window.innerWidth > 450) {
         createStar(50)
-    }else{
+    } else {
         createStar(30)
     }
 
