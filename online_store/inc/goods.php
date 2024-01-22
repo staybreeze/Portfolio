@@ -1,8 +1,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-  @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
 
     .liked {
         color: #fe302f
@@ -47,32 +46,42 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .item h2,.good-header h3{
+
+    .item h2,
+    .good-header h3 {
         font-family: 'Zen Maru Gothic', serif;
     }
+
     .top {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    align-items: center;
-    right: 20px;
-    bottom: 50px;
-background-color:rgb(216, 162, 90);
-    color: #fff;
-    /* font-weight: bold; */
-    font-size: 20px;
-    font-family: Rubik scribble;
-    /* border-bottom: 1px solid#00707f;   */
-    z-index: 999;
-    opacity: 0;
-transition: opacity 0.5s;
-}
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        padding-top: 1px;
+        text-align: center;
+        align-items: center;
+        right: 20px;
+        bottom: 200px;
+        background-color: rgb(216, 162, 90);
+        color: #fff;
+        /* font-weight: bold; */
+        font-size: 20px;
+        font-family: Rubik scribble;
+        /* border-bottom: 1px solid#00707f;   */
+        z-index: 99;
+        opacity: 0;
+        transition: opacity 0.5s;
+        cursor: pointer;
+    }
+    #checkOutBtn{
+        z-index: 999;
+    }
 </style>
-<div id="top" class="top"><a href="#"><i class="fa-solid fa-angle-up"></i></a></div>
+<a href="#">
+    <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
+</a>
 <section class="section-products" id="store">
     <div class="container goods">
-        <div class="row justify-content-center text-center "id="storeBannerRow" style="margin-bottom:24px">
+        <div class="row justify-content-center text-center " id="storeBannerRow" style="margin-bottom:24px">
             <div class="col-md-8 col-lg-6">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
                     <!-- <h2 id="onlineStore">—　<b>購物商城</b>　— -->
@@ -94,7 +103,8 @@ transition: opacity 0.5s;
                         </div>
                         <div class="item">
                             <h2>—　<b>鮮食</b>　— </h2>
-                        </div>     <div class="item">
+                        </div>
+                        <div class="item">
                             <h2>—　<b>生食</b>　— </h2>
                         </div>
                         <div class="item">
@@ -343,15 +353,33 @@ transition: opacity 0.5s;
     var scrolltoTop = 100;
     var scrolltoDiscountBar = 400;
     $(window).scroll(function() {
+
+        var scrollPosition = $(this).scrollTop();
+        var documentHeight = $(document).height();
+        var windowHeight = $(this).height();
+
+        if (scrollPosition < scrolltoTop) {
+            var scrollPosition = $(this).scrollTop();
+            $("#top").css('opacity', '0')
+
+        } else {
+            $("#top").css('opacity', '1')
+        }
+
+        if (scrollPosition < scrolltoDiscountBar) {
+            $("#top").css('opacity', '0')
+
+        };
+
         if (window.innerWidth < 450) {
             var scrollPosition = $(this).scrollTop();
             var documentHeight = $(document).height();
-        var windowHeight = $(this).height();
+            var windowHeight = $(this).height();
 
             if (scrollPosition > scrollThreshold) {
                 $(".good-row").css('border', '10px solid #d8a25a ');
                 $("#discountBanner").css('background-color', '#d8a25a ');
-           
+
 
             } else {
                 $(".good-row").css('border', '10px solid rgb(148, 86, 6) ');
@@ -370,15 +398,15 @@ transition: opacity 0.5s;
                 $("#storeBannerRow").css('margin-bottom', '14px');
                 $("#top").css('opacity', '0')
                 $("#top").css('margin-top', '50px')
-            }else{
+            } else {
                 $("#top").css('opacity', '1')
             }
 
             if (scrollPosition < scrolltoDiscountBar) {
                 $("#top").css('opacity', '0')
                 $("#top").css('margin-top', '50px')
-        };
-    }
+            };
+        }
     });
     $(document).ready(function() {
 
@@ -395,14 +423,16 @@ transition: opacity 0.5s;
 <script src="./gsap/gsap.js"></script>
 
 <script>
+    gsap.set('.item', { y: 0, rotationX: 0, autoAlpha: 1 });
+
     // set 是設定初始補間動畫的預設值
     gsap.set('.banner', {
-        perspective: 300
+        perspective: 1000
     })
 
     const tl = gsap.timeline({
         repeat: -1,
-        repeatDelay: 2
+        repeatDelay: 2,
     })
 
     tl

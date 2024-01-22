@@ -23,7 +23,7 @@
         </a>
         <br>
         <br>
-        <a aria-label="line" target="_blank" href="https://www.instagram.com/kingone_design">
+        <a aria-label="line" target="_blank" href="">
           <i class="fa-brands fa-line fa-2xl pt-4 " style="padding-left:25px"></i>
         </a>
         <br>
