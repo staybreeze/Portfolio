@@ -349,7 +349,7 @@ include_once "../api/db.php"
           if (userTotal > 5000) {
             userTotal = Math.round(userTotal * 0.8);
           }
-          userPriceElement.innerHTML = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
+          userPriceElement.innerText = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
         });
       }
 

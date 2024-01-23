@@ -353,10 +353,6 @@ if (isset($_SESSION['admin'])) {
 <script>
   $(document).ready(function() {
     
-    var windowWidth = window.innerWidth;
-      console.log(windowWidth);
-      $("#hiddenWindowWidth").val(windowWidth);
-
     $("#submit").click(function() {
       if (window.innerWidth < 1200) {
         alert('後台請使用電腦開啟！謝謝～');

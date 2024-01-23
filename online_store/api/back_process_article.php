@@ -117,10 +117,10 @@ HTML;
 if (isset($_GET['name'])) {
   $article = $Article->find(['title' => $_GET['name']]);
 
-$title=$article['title'];
+  $title = $article['title'];
   $content = $article['content'];
   $imgFilename = $article['img'];
-$time=$article['time'];
+  $time = $article['time'];
 
 
   // if (!empty($title) && !empty($content)) {
