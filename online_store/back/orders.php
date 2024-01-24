@@ -326,7 +326,7 @@ include_once "../api/db.php"
           updateUserTotal();
         }
       }
-
+      // ---與updateGrandTotal相同邏輯---
       function updateUserTotal() {
         const userNames = Array.from(userPriceElements).map(element => {
           return element.getAttribute('data-username');
@@ -352,7 +352,9 @@ include_once "../api/db.php"
           userPriceElement.innerText = `<b>總計：<span class='underline'>${userTotal}</span>元</b>`;
         });
       }
+      // ------
 
+      // ---與updateUserTotal相同邏輯---
       function updateGrandTotal() {
 
         let grandTotal = 0;
@@ -391,8 +393,7 @@ include_once "../api/db.php"
         totalPriceElement.innerHTML = `<b>總訂單金額：<span class='underline'>${grandTotal}</span>元</b>`;
       }
 
-
-
+      // ------
 
       numberInputs.forEach((input, index) => {
         input.addEventListener('input', function() {
