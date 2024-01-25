@@ -1,4 +1,5 @@
 <?php
+include_once "../inc/mouse_squares.php";
 include_once "../api/db.php";
 ?>
     <!DOCTYPE html>

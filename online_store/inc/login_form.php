@@ -40,7 +40,7 @@
                   <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
                 </div>
               </div>
-                          <a href="./add.php" style="padding-left:0px;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
+                          <a href="./add.php" style="padding-left:0px;text-decoration:underline;color:cadetblue" class="ms-3">加入會員</a>
                 </div>
             </div>
 

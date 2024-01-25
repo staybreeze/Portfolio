@@ -6,6 +6,7 @@ include_once "./db.php";
 $acc = $_POST['acc'];
 $pw = $_POST['pw'];
 
+print_r($_POST);
 // 一般作法
 // $sql="select * from users where `acc`='$acc' && `pw`='$pw'";
 // $user=$pdo->query($sql)->fetch();

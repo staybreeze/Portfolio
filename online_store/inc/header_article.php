@@ -115,7 +115,7 @@ include_once "header_effect.php"
                 </div>
                 <div class="row">
                   <div class="col">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 mt-3">
                       <span class="input-group-text bold">密碼</span>
                       <input type="password" class="form-control" placeholder="****" name="pw">
 

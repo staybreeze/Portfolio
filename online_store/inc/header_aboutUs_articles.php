@@ -112,13 +112,13 @@ include_once "header_effect.php"
                 </div>
                 <div class="row">
                   <div class="col">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 mt-3">
                       <span class="input-group-text bold">密碼</span>
                       <input type="password" class="form-control" placeholder="****" name="pw">
 
                     </div>
                   </div>
-                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
+                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue" class="mb-3">加入會員</a>
                 </div>
 
                 <div class="row">

@@ -1,11 +1,8 @@
 <?php
 include_once "./api/db.php";
-
 if (isset($_SESSION['admin'])) {
   header('location:back.php');
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +20,7 @@ if (isset($_SESSION['admin'])) {
   <link rel="stylesheet" media="screen and (max-width:1600px)" href="./css/middle_screen.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
 
   <style>
     .aside {
@@ -195,6 +193,7 @@ if (isset($_SESSION['admin'])) {
 
 <body>
   <?php
+  include_once "./inc/mouse_squares.php";
   include "./inc/header_aboutUs_articles.php"
   ?>
   <!-- ---- -->
@@ -228,7 +227,7 @@ if (isset($_SESSION['admin'])) {
               <label class="col-4  input-group-text w-100 mt-3">密碼:</label>
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
-            <input type="hidden" name="windowWidth" id="hiddenWindowWidth">
+            <input type="hidden" name="windowWidth" id="hiddenWindowWidth" value="">
             <div class="btn-group">
 
               <input class="btn btn-secondary mx-2 mt-4" type="reset" value="重置">
@@ -247,81 +246,9 @@ if (isset($_SESSION['admin'])) {
     </div>
   </div>
   </div>
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">會員登入</h4>
-          <img src="./img/logo1.png" alt="" width="60px">
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <!-- 插入程式碼要有頭跟END，方便日後維護及辨識 -->
-          <!-- Modal body container. -->
-          <div class="container mt-3">
-
-
-            <form action="./api/login.php">
-
-              <div class="row">
-                <div class="col-12">
-                  <div class="mb-3">
-                    <label for="price">帳號:</label>
-                    <input type="text" class="form-control" id="acc" placeholder="Enter acc" name="acc">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="mb-3">
-                    <label for="unit">密碼:</label>
-                    <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mt-5">
-                <div class="col-12">
-                  <div class="mb-3">
-                    <div class="d-flex gap-2">
-                      <button type="reset" class="btn  btn-secondary col-6">重置</button>
-                      <button type="submit" class="btn  btn-warning  col-6">送出</button>
-
-                      <br>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Modal body container end -->
-
-
-        <!-- Modal footer -->
-        <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div> -->
-
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="myModal-2">
-    <div class="modal-dialog">
-
-      <img src="./img/logo1.png" alt="" width="120%">
-
-      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-
-    </div>
-  </div>
 
   <?php
+      include "./inc/login_form.php";
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
@@ -401,7 +328,8 @@ if (isset($_SESSION['admin'])) {
 </body>
 <script>
   $(document).ready(function() {
-    
+    $('#hiddenWindowWidth').val(window.innerWidth);
+
     $("#submit").click(function() {
       if (window.innerWidth < 1200) {
         alert('後台請使用電腦開啟！謝謝～');

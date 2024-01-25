@@ -1,6 +1,3 @@
-
-
-
 <?php
 include_once "../api/db.php"
 ?>
@@ -78,53 +75,61 @@ include_once "../api/db.php"
     td>input {
       width: 100%;
     }
-    .underline{
+
+    .underline {
       text-decoration: underline;
     }
-    .pages{
 
-margin-left:30px;
-font-size: large;
-border:3px dotted goldenrod;
-color:brown;
-text-decoration: none;
-width:30px;
-text-align: center;
-}
-.pages:hover{
-  background-color: beige;
-}
-.currentPage{
-  background-color: beige;
-  margin-left:30px;
-font-size: large;
-border:3px dotted goldenrod;
-color:brown;
-text-decoration: none;
-width:30px;
-text-align: center;
+    .pages {
 
-}
-.ms-80{
-margin-left:80px
+      margin-left: 30px;
+      font-size: large;
+      border: 3px dotted goldenrod;
+      color: brown;
+      text-decoration: none;
+      width: 30px;
+      text-align: center;
+    }
 
-}
-a{
-text-decoration: none;
-color:brown;
-}
-.hidden{
+    .pages:hover {
+      background-color: beige;
+    }
+
+    .currentPage {
+      background-color: beige;
+      margin-left: 30px;
+      font-size: large;
+      border: 3px dotted goldenrod;
+      color: brown;
+      text-decoration: none;
+      width: 30px;
+      text-align: center;
+
+    }
+
+    .ms-80 {
+      margin-left: 80px
+    }
+
+    a {
+      text-decoration: none;
+      color: brown;
+    }
+
+    .hidden {
       display: none;
     }
-.show{
-  display: block !important;
-}
-.dotted-line{
-font-size: larger;
-padding-top:10px;
-margin-left:15px;
-border-bottom: 3px dotted goldenrod;
-width:30px
+
+    .show {
+      display: block !important;
+    }
+
+    .dotted-line {
+      font-size: larger;
+      padding-top: 10px;
+      margin-left: 15px;
+      border-bottom: 3px dotted goldenrod;
+      width: 30px
     }
   </style>
 
@@ -136,7 +141,9 @@ width:30px
 </head>
 
 <body>
-
+<?php
+      include_once "../inc/mouse_squares.php";
+  ?>
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
 
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../back.php"><img src="../img/logo1.png" width="60px" alt="">
@@ -166,65 +173,65 @@ width:30px
           <h2 class="title">留言管理</h2>
 
           <?php
-                $totalPrice = 0;
+          $totalPrice = 0;
 
-                $total = count($Message->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-                $div = 2;
-                $pages = ceil($total / $div);
-                $now = $_GET['p'] ?? 1;
-                $start = ($now - 1) * $div;
-                $rows = $Message->all('', " limit $start,$div");
-      
-             
+          $total = count($Message->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
+          $div = 2;
+          $pages = ceil($total / $div);
+          $now = $_GET['p'] ?? 1;
+          $start = ($now - 1) * $div;
+          $rows = $Message->all('', " limit $start,$div");
+
+
           // if ($now > 1) {
           //   $prev = $now - 1;
           //   echo "<div  style='diaplay:margin-left:95px><div' class='pages'><a href='?do=messages&p=$prev'> < </a></div>";
           // }
-       
+
           echo "<div class='d-flex ms-80 mt-5'>";
           $firstPage = ($now - 1 != 0) ? ($now - 1) : 1;
-          $hiddenPrePage= ($now==$firstPage) ? 'hidden' : '';
+          $hiddenPrePage = ($now == $firstPage) ? 'hidden' : '';
           echo "<a href='?do=messages&p=$firstPage'><div class='pages ms-3 $hiddenPrePage'> <</div> </a>";
-          
+
           for ($i = 1; $i <= $pages; $i++) {
             // $fontsize = ($now == $i) ? '24px' : '16px';
             $currentPage  = ($now == $i) ? 'currentPage' : 'pages';
-            $hidden  = ($i !=$now) ? 'hidden' : '';
+            $hidden  = ($i != $now) ? 'hidden' : '';
 
-            $show  = ($i==$now+1 || $i==$now-1) ? 'show' : '';
-            $show2  = ($i ==$now+2 && $now+2==$pages) ? 'show' : '';
+            $show  = ($i == $now + 1 || $i == $now - 1) ? 'show' : '';
+            $show2  = ($i == $now + 2 && $now + 2 == $pages) ? 'show' : '';
             echo "<a href='?do=messages&p=$i'><div class='$currentPage $hidden $show $show2 ms-3'> $i</div> </a>";
           }
           // if ($now < $pages) {
           //   $next = $now + 1;
           //   echo "<div  class='pages'><a href='?do=messages&p=$next'> > </a></div></div>";
           // }
-          $lastPage = ($pages ==$now) ? $now : ($now + 1);
-          $hiddenNextPgae= ($now ==$pages) ? 'hidden' : '';
-          $hiddenLastPage= ($now ==$pages-1||$now ==$pages||$now ==$pages-2) ? 'hidden' : '';
+          $lastPage = ($pages == $now) ? $now : ($now + 1);
+          $hiddenNextPgae = ($now == $pages) ? 'hidden' : '';
+          $hiddenLastPage = ($now == $pages - 1 || $now == $pages || $now == $pages - 2) ? 'hidden' : '';
           echo "<div class='dotted-line $hiddenLastPage'></div>";
           echo "<a href='?do=messages&p=$pages'><div class='pages  $currentPage $hiddenLastPage  ms-3'> $pages</div> </a>";
-          
+
           echo "<a href='?do=messages&p=$lastPage'><div class='pages ms-3 $hiddenNextPgae'> ></div> </a>";
-          
-
-                echo "</div>";
-      
-      
 
 
-                foreach ($rows as $row) {
-                  // 獲得當前USER的CART
+          echo "</div>";
 
 
-?>
-          <form method="post" action="../api/message.php" style="margin-left:95px;margin-top:50px">
-            <table>
 
 
-            
-              <tr>
-<?php
+          foreach ($rows as $row) {
+            // 獲得當前USER的CART
+
+
+          ?>
+            <form method="post" action="../api/message.php" style="margin-left:95px;margin-top:50px">
+              <table>
+
+
+
+                <tr>
+                  <?php
 
                   echo "<p style='font-size:20px'>寄信人:<span class='underline'> {$row['sender']}</span></p>";
 
@@ -240,44 +247,44 @@ width:30px
 
 
 
-                    echo '<tr>';
-                    echo "<td style='padding-top:23px'>{$row['subject']}</td>";
-                   
-                    echo "<td style='padding-top:23px'>{$row['text']}</td>";
-                    echo "<td><a href='../api/message.php?id={$row['id']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
-                  
+                  echo '<tr>';
+                  echo "<td style='padding-top:23px'>{$row['subject']}</td>";
+
+                  echo "<td style='padding-top:23px'>{$row['text']}</td>";
+                  echo "<td><a href='../api/message.php?id={$row['id']}'><input class='btn btn-danger mt-3' type='button' value='刪除'></a></td>";
+
 
 
                   echo '</table>';
 
 
 
-                ?>
+                  ?>
 
 
 
-            </table>
-            <table>
-<br>
-              <tr>
+              </table>
+              <table>
+                <br>
+                <tr>
 
 
-                <div class="d-flex">
-                <!-- <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改"> -->
-                  
-                </div>
-                <hr>
-              </tr>
+                  <div class="d-flex">
+                    <!-- <input class="btn myBtn mt-5" style="margin-left:1305px " type="submit" value="修改"> -->
 
-            </table>
-  
+                  </div>
+                  <hr>
+                </tr>
 
-          </form>
+              </table>
 
-                <?php
-                
-                }
-          ?>  
+
+            </form>
+
+          <?php
+
+          }
+          ?>
         </div>
 
     </div>

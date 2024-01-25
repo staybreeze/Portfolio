@@ -44,12 +44,24 @@ include_once "./api/db.php";
         text-shadow: 0 0 1px rgba(255, 255, 135, 1), 0 0 1px rgba(255, 255, 0, 1);
       }
     }
+
+    #mouseSquareBig {
+      width: 20px;
+      height: 20px;
+      background-color: goldenrod;
+      position: fixed;
+      transition-duration: 0.1s;
+      z-index: 999;
+    }
+
   </style>
 </head>
 
 <body>
+
   <?php
-  include "./inc/header_index.php"
+    include_once "./inc/mouse_squares.php";
+  include_once "./inc/header_index.php"
   ?>
   <!-- --自動輪播-- -->
   <div class="caroisel carousel-computer" style="background-color:#13304a;height:120vh" id="carousel">

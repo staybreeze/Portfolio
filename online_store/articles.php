@@ -91,6 +91,7 @@ include_once "./api/db.php";
 <body>
 
   <?php
+  include_once "./inc/mouse_squares.php";
   include "./inc/header_aboutUs_articles.php"
   ?>
 
@@ -120,10 +121,8 @@ include_once "./api/db.php";
 
   <?php
 
-  include "./inc/login_form.php"
-  ?>
+  include "./inc/login_form.php";
 
-  <?php
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">

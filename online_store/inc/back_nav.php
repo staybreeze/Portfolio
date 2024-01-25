@@ -5,6 +5,7 @@
         <a class="
               
               <?php
+           
               if ($_GET['do'] == 'aboutUs') {
                 echo "nav-link active";
               } else {

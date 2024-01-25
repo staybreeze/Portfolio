@@ -104,6 +104,7 @@ margin-left: 227px !important;
     <body>
 
 <?php
+include_once "../inc/mouse_squares.php";
 include "../inc/header_article.php"
 ?>
 <!-- ---- -->
