@@ -55,12 +55,33 @@ include_once "./api/db.php";
       .modal input[type='submit'] {
         margin-left: 270px !important;
       }
+
       /* .container-articles{
         border:10px solid #d8a25a;
         border-top:none;
       } */
-      .row-articles{
-        margin-left:3px
+      .row-articles {
+        margin-left: 3px
+      }
+    }
+
+    @media screen and (max-width: 410px) {
+      .row-articles {
+        margin-left: 20px
+      }
+
+      img {
+        width: 300px;
+        height: 240px
+      }
+
+      h3 {
+        font-size: 19px !important;
+      }
+
+      input[type='submit'] {
+        width: 75px;
+        font-size: 13px
       }
     }
   </style>
@@ -84,10 +105,10 @@ include_once "./api/db.php";
         <div class="col-md-8 col-lg-6  col-xl-4 mt-5">
 
 
-          <h3 style="margin:auto"class="h3">&nbsp;<?= $article['title']; ?></h3>
-          <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><img class="mt-4" style="border-radius:5px 5px 5px 5px " src="./img/<?= $article['img']; ?>" width="375px" height="300px"></a>
+          <h3 style="margin:auto" class="h3">&nbsp;<?= $article['title']; ?></h3>
+          <a style="margin:auto" href="./articles/<?= $article['time']; ?>.php"><img class="mt-4" style="border-radius:5px 5px 5px 5px " src="./img/<?= $article['img']; ?>" width="375px" height="300px"></a>
 
-          <a style="margin:auto"href="./articles/<?= $article['time']; ?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
+          <a style="margin:auto" href="./articles/<?= $article['time']; ?>.php"><input class="btn btn-warning mt-3" type="submit" value="觀看文章"></a>
 
         </div>
 
@@ -106,7 +127,7 @@ include_once "./api/db.php";
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
-  <ul class="pages">
+    <ul class="pages">
       <li>
         <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>

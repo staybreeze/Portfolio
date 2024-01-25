@@ -332,7 +332,15 @@ footer {
     height: 110vh;
   }
 }
-
+@media screen and (max-width: 450px) {
+  .footer {
+    height: 88vh !important;
+  }}
+  @media screen and (max-width: 410px) {
+  .footer{
+    height:120vh !important
+  }
+}
 
 
 footer>.row {
@@ -769,28 +777,13 @@ a:hover {
   /* background: rgb(216, 162, 90); */
   cursor: pointer;
   display: block;
-  padding: 16px;
+  padding: 20px;
   padding-top: 5px;
   position: fixed;
   z-index: 2;
 }
 
 
-@media screen and (max-width: 450px) {
-
-  .line .menu::before {
-    margin-top: 53px;
-
-  }
-
-  .line .menu {
-    margin-top: 102.45px;
-  }
-
-  .line .menu::after {
-    margin-top: 55px;
-  }
-}
 
 .line .menu::before {
   margin-top: 57px;
@@ -829,22 +822,35 @@ a:hover {
 @media screen and (max-width: 450px) {
   .line .menu {
     left: 358px;
-    /* top: 200px; */
-
   }
 }
 
+@media screen and (max-width: 450px) {
+
+  .line .menu::before {
+    margin-top: 52.5px;
+
+  }
+
+  .line .menu {
+    margin-top: 102.5px;
+  }
+
+  .line .menu::after {
+    margin-top: 52.5px;
+  }
+}
 
 .line .menu::before {
-  top: -6px;
+  top: -5px;
+}
+
+.line .menu {
+  top:5 px;
 }
 
 .line .menu::after {
-  top: 6px;
-}
-
-.line .menu::after {
-  top: 6px;
+  top: 9px;
 }
 
 /*
@@ -1027,7 +1033,7 @@ input#menu {
   }
 
   .modal input[type='submit'] {
-    margin-left: 270px !important;
+    margin-left: 272px !important;
   }
 
   .cheetos-title1 {
@@ -1200,3 +1206,45 @@ margin-top:14.5px;
   display: none !important;
 }
 
+
+@media screen and (max-width: 410px) {
+
+.header-title2{
+  position: absolute;
+  top: 20px;
+  left: 50px
+}
+.page-link{
+  left: 30px
+}
+
+.header2{
+  height:13.3vh !important
+}
+
+.line .menu {
+  left: 328px;
+}
+.line .menu::before {
+  margin-top: 53px !important;
+
+}
+
+.line .menu {
+  margin-top: 103px !important;
+  
+}
+
+.line .menu::after {
+  margin-top: 53px !important;
+}
+.header-title-mobile{
+  margin-left:130px !important
+}
+.modal input[type='submit'] {
+  margin-left: 230px !important;
+}
+#menu:checked~.menu-list {
+  width: 365.5px;
+}
+}

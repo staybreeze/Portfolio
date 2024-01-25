@@ -72,6 +72,13 @@ include_once "./api/db.php";
         margin-left: -30px;
       }
     }
+    @media screen and (max-width: 410px) {
+
+.aside>img,
+.box {
+  margin-left: -50px;
+}
+}
   </style>
 </head>
 

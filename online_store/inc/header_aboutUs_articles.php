@@ -178,7 +178,7 @@ include_once "header_effect.php"
 <header class="h-11 bg-gray container-fluid header2 ">
 
  <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
- <h2  style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px">奇多喵合作社</h2>
+ <h2  style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px"  class="header-title-mobile">奇多喵合作社</h2>
 
 
 <a href="index.php">

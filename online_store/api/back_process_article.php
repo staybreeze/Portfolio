@@ -67,6 +67,36 @@ include_once "../api/db.php";
 margin-left: 283px !important;
 }
     }
+    @media screen and (max-width: 410px) {
+
+
+.aside img{
+  padding-right:30px
+ }
+
+ h3 {
+   font-size: 18px !important;
+ }
+
+ input[type='submit'] {
+   width: 75px;
+   font-size: 13px
+ }
+
+ p{
+   font-size: 15px !important;
+ }
+
+ .footer{
+   /* height: 96vh !important; */
+ }
+ .box {
+   width: 300px;
+ }
+ .modal input[type='submit'] {
+margin-left: 227px !important;
+}
+}
       </style>
     </head>
     
@@ -80,7 +110,7 @@ include "../inc/header_article.php"
 <div class="container-fluid">
   <div class="row d-flex main">
     <div class="col-5 aside">
-      <img src="../img/{$imgFilename}" alt="" width="100%" style="padding-top:70px ;">
+      <img src="../img/{$imgFilename}" width="100%" style="padding-top:70px ;">
     </div>
 
     <div class="col-6 section ms-5 ps-5">
@@ -117,10 +147,10 @@ HTML;
 if (isset($_GET['name'])) {
   $article = $Article->find(['title' => $_GET['name']]);
 
-$title=$article['title'];
+  $title = $article['title'];
   $content = $article['content'];
   $imgFilename = $article['img'];
-$time=$article['time'];
+  $time = $article['time'];
 
 
   // if (!empty($title) && !empty($content)) {

@@ -18,7 +18,7 @@ include_once "./api/db.php";
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="./css/big_screen.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
- <style>
+  <style>
     .aside {
       background-image: url(./img/18-2500x1667.jpg);
       opacity: 0.9;
@@ -51,7 +51,7 @@ include_once "./api/db.php";
     .modal input[type='submit'] {
       margin-left: 408px !important;
     }
- 
+
     @media screen and (max-width: 550px) {
       .aside {
         display: none;
@@ -151,9 +151,25 @@ include_once "./api/db.php";
         margin-left: 270px !important;
       }
 
-      .check{
-        margin-left:160px !important; 
+      .check {
+        margin-left: 160px !important;
 
+      }
+    }
+
+    @media screen and (max-width: 410px) {
+      .modal .input-group {
+
+        width: 289px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 231px !important;
+      }
+
+      .footer {
+        height: 96vh !important
       }
     }
   </style>
@@ -185,24 +201,24 @@ include_once "./api/db.php";
           <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員註冊</p>
 
           <?php
-          if(isset($_GET['empty'])){
+          if (isset($_GET['empty'])) {
             echo "<span style='color:crimson'>帳號或密碼空白，請重新註冊！</span>";
           }
-        if(isset($_GET['wrongAcc'])){
-          echo "<span style='color:crimson'>帳號只能使用英文或數字！</span>";
-        }
-if(isset($_GET['error'])){
-  echo "<span style='color:crimson'>帳號重複，請重新註冊！</span>";
-}
-?>
+          if (isset($_GET['wrongAcc'])) {
+            echo "<span style='color:crimson'>帳號只能使用英文或數字！</span>";
+          }
+          if (isset($_GET['error'])) {
+            echo "<span style='color:crimson'>帳號重複，請重新註冊！</span>";
+          }
+          ?>
 
           <form action="./api/add_user.php" method="post" class="col-4 m-auto">
             <div class="input-group my-1">
               <label class="col-4  input-group-text w-100">帳號<sapn style="color:crimson">&nbsp;*&nbsp; </sapn>:
 
                 <input type="button" class="check" style="margin-left:153px;color:cadetblue;text-decoration:underline;border:none;background-color:#f8f9fa" value="檢查帳號" onclick="check()">
-              
-</label>
+
+              </label>
               <input class="form-control" type="text" name="acc" id="acc">
 
             </div>
@@ -314,7 +330,7 @@ if(isset($_GET['error'])){
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
-  <ul class="pages">
+    <ul class="pages">
       <li>
         <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>
@@ -391,32 +407,31 @@ if(isset($_GET['error'])){
 </body>
 
 <script>
-function check() {
+  function check() {
     let user = {
-        acc: $("#acc").val()
+      acc: $("#acc").val()
     };
 
     if (user.acc.trim() !== '') {
-        $.post("./api/acc_check.php", { acc: user.acc }, (res) => {
-            // console.log(res);
-            if (res === 'wrongAcc') {
-                alert('帳號只能使用英文或數字！');
-            } else if (parseInt(res) === 1) {
-                alert("帳號重覆");
-            } else {
-                alert("此帳號可以使用");
-            }
-        });
+      $.post("./api/acc_check.php", {
+        acc: user.acc
+      }, (res) => {
+        // console.log(res);
+        if (res === 'wrongAcc') {
+          alert('帳號只能使用英文或數字！');
+        } else if (parseInt(res) === 1) {
+          alert("帳號重覆");
+        } else {
+          alert("此帳號可以使用");
+        }
+      });
     } else {
-        alert('帳號不可以空白');
+      alert('帳號不可以空白');
     }
 
     // 防止表單提交
     return false;
-}
-
-
-
+  }
 </script>
 
 </html>

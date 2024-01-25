@@ -52,11 +52,12 @@ include_once "./api/db.php";
     .modal input[type='submit'] {
       margin-left: 408px !important;
     }
-    .modal-body>.delete{
+
+    .modal-body>.delete {
       font-size: large;
       font-weight: bold;
-      color:crimson;
-      margin-top:28px;
+      color: crimson;
+      margin-top: 28px;
     }
 
     @media screen and (max-width: 550px) {
@@ -145,6 +146,23 @@ include_once "./api/db.php";
         margin-left: 270px !important;
       }
     }
+    
+    @media screen and (max-width: 410px) {
+
+      .modal .input-group {
+
+        width: 289px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 231px !important;
+      }
+
+      .footer {
+        height: 96vh !important
+      }
+    }
   </style>
 </head>
 
@@ -191,8 +209,8 @@ include_once "./api/db.php";
           ?>
           <form action="./api/update.php" method="post" class="col-4 m-auto pt-3">
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100" >帳號:</label>
-              <input class="form-control" type="text" name="acc" id="acc" value="<?= $user['acc']; ?>"  disabled>
+              <label class="col-4  input-group-text mt-3 w-100">帳號:</label>
+              <input class="form-control" type="text" name="acc" id="acc" value="<?= $user['acc']; ?>" disabled>
             </div>
             <div class="input-group my-1">
               <label class="col-4  input-group-text mt-3 w-100">密碼:</label>
@@ -303,7 +321,7 @@ include_once "./api/db.php";
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
-  <ul class="pages">
+    <ul class="pages">
       <li>
         <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>
@@ -378,45 +396,45 @@ include_once "./api/db.php";
   include "./inc/copyright.php"
   ?>
 
-<script>
-  function showDeleteConfirmModal() {
-    var modal = new bootstrap.Modal(document.getElementById('deleteConfirmModal'), {
-      keyboard: false
-    });
+  <script>
+    function showDeleteConfirmModal() {
+      var modal = new bootstrap.Modal(document.getElementById('deleteConfirmModal'), {
+        keyboard: false
+      });
 
-    modal.show();
+      modal.show();
 
-    document.getElementById('confirmDeleteButton').addEventListener('click', function() {
-     
-      location.href = './api/del_user.php?id=<?= $user['id']; ?>';
-      modal.hide();
-    });
-  }
-</script>
+      document.getElementById('confirmDeleteButton').addEventListener('click', function() {
+
+        location.href = './api/del_user.php?id=<?= $user['id']; ?>';
+        modal.hide();
+      });
+    }
+  </script>
 
 
-<div class="modal fade" id="deleteConfirmModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <!-- <div class="modal-header">
+  <div class="modal fade" id="deleteConfirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <!-- <div class="modal-header">
         <h5 class="modal-title">確認刪除</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div> -->
 
-      <!-- Modal Body -->
-      <div class="modal-body">
-        <p class="delete">確定要刪除嗎？<br><br>資料會一去不復返喔！</p>
-      </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <p class="delete">確定要刪除嗎？<br><br>資料會一去不復返喔！</p>
+        </div>
 
-      <!-- Modal Footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-        <a href='./api/del_user.php?id=<?= $user['id']; ?>'><button type="button" id="confirmDeleteButton" class="btn btn-danger">確認</button></a>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+          <a href='./api/del_user.php?id=<?= $user['id']; ?>'><button type="button" id="confirmDeleteButton" class="btn btn-danger">確認</button></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 

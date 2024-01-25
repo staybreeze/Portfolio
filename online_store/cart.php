@@ -83,23 +83,46 @@ include_once "./api/db.php";
 
       .modal input[type='submit'] {
         margin-left: 270px !important;
+        width: 60px !important;
+        font-size: 15px;
       }
 
-      table tr,table tr td{
-        font-size:13px
+      table tr,
+      table tr td {
+        font-size: 13px
       }
-      table tr{
-        font-size:10px
-      }
-      .quantity-input{
-        width:50px
-      }
-      input[type="submit"], input[type="button"] {
- width:100%;
- height:100%;
- font-size:10px
-}
 
+      table tr {
+        font-size: 10px
+      }
+
+      .quantity-input {
+        width: 50px
+      }
+
+      input[type="submit"],
+      input[type="button"] {
+        width: 100%;
+        height: 100%;
+        font-size: 10px
+      }
+
+    }
+    
+    @media screen and (max-width: 410px) {
+      .modal .input-group {
+
+        width: 289px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 235px !important;
+      }
+
+      .modal-content{
+        width:330px
+      }
     }
   </style>
 </head>
@@ -171,7 +194,7 @@ include_once "./api/db.php";
           echo "<td style='padding-top:23px' class='subtotal' id='total'>{$total}</td>";
         ?>
           <td>
-            <a href="./api/del_good.php?id=<?= $row['id']; ?>&quantity=<?=$cartItem['quantity'];?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
+            <a href="./api/del_good.php?id=<?= $row['id']; ?>&quantity=<?= $cartItem['quantity']; ?>"><input class="btn btn-danger mt-3" type="button" value="刪除"></a>
           </td>
           </tr>
         <?php
@@ -197,8 +220,8 @@ include_once "./api/db.php";
       
           <td></td> -->
           <td colspan="6">
-          <div class="discount-banner pt-1" style="color:crimson">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;～&nbsp;" </div>
-      
+            <div class="discount-banner pt-1" style="color:crimson">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;～&nbsp;" </div>
+
           </td>
           <td>
             <input class="btn btn-warning" id="send" type="submit" value="送出">
@@ -218,7 +241,7 @@ include_once "./api/db.php";
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col footer-pages" style="border-left:5px solid white">
-  <ul class="pages">
+    <ul class="pages">
       <li>
         <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>
@@ -324,9 +347,9 @@ include_once "./api/db.php";
         .map(element => parseFloat(element.innerText))
         .filter(value => !isNaN(value))
         .reduce((acc, value) => acc + value, 0);
-if(grandTotal>5000){
-  grandTotal = Math.round(grandTotal * 0.8);
-}
+      if (grandTotal > 5000) {
+        grandTotal = Math.round(grandTotal * 0.8);
+      }
       totalPriceElement.innerText = 'NTD ' + grandTotal + ' 元'; // 更新 totalPrice 的內容
     }
 
@@ -350,10 +373,9 @@ if(grandTotal>5000){
 
   $(document).ready(function() {
     $("#send").click(function() {
-        alert('您的訂單已送出，感謝您的購買！');
+      alert('您的訂單已送出，感謝您的購買！');
     });
-});
-
+  });
 </script>
 
 

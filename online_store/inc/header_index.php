@@ -192,7 +192,7 @@ include_once "header_effect.php"
 <header class="h-11 bg-gray container-fluid header2" id="headerMobile">
 
   <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
-  <h2 style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px">    <a href="index.php">奇多喵合作社</a></h2>
+  <h2 style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px" class="header-title-mobile">    <a href="index.php">奇多喵合作社</a></h2>
   <a href="index.php">
 
       <img class="logo2" src="./img/logo1.png" alt=""> </a>

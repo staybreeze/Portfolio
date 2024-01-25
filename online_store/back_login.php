@@ -140,6 +140,55 @@ if (isset($_SESSION['admin'])) {
         margin-left: 270px !important;
       }
     }
+    @media screen and (max-width: 410px) {
+      .section {
+        width: 100%;
+        margin: auto !important;
+        /* border: 1px solid black; */
+      }
+
+      .box {
+        margin-left: -160px !important;
+
+      }
+
+      .input-group {
+
+        width: 325px !important;
+        margin-left: 148px !important;
+      }
+
+      .box>p {
+        margin-left: 130px !important;
+        margin-bottom: 30px !important;
+      }
+
+      .btn-group {
+        margin-left: 317px !important;
+      }
+
+      .box>span {
+        margin-left: 130px !important;
+      }
+
+      .add {
+        margin-left: 150px !important;
+
+      }
+
+      .modal .input-group {
+
+        width: 289px !important;
+
+      }
+
+      .modal input[type='submit'] {
+        margin-left: 231px !important;
+      }
+.footer{
+  height:96vh !important
+}
+    }
   </style>
 </head>
 
