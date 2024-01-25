@@ -40,11 +40,11 @@
                   <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
                 </div>
               </div>
-                          <a href="./add.php" style="padding-left:0px;text-decoration:underline;color:cadetblue" class="ms-3">加入會員</a>
+                          <a href="./add.php" style="padding-left:0px;text-decoration:underline;color:cadetblue" class="ms-3 mt-2">加入會員</a>
                 </div>
             </div>
 
-            <div class="row mt-5">
+            <div class="row mt-4">
               <div class="col-12">
                 <div class="mb-3">
                   <div class="d-flex gap-2">
