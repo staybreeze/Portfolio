@@ -134,7 +134,7 @@ include_once "header_effect.php"
 
                     </div>
                   </div>
-                  <a href="./add.php" class="ms-1" style="text-align:left;text-decoration:underline;color:cadetblue">加入會員</a>
+                  <a href="./add.php" class="ms-1" style="text-align:left;text-decoration:underline;color:cadetblue"><i class="fa-solid  fa-user-plus"></i>&nbsp;加入會員</a>
                 </div>
 
                 <div class="row">

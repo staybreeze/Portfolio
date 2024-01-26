@@ -120,7 +120,7 @@ include_once "header_effect.php"
 
                     </div>
                   </div>
-                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue" class="mb-3">加入會員</a>
+                  <a href="./add.php" style="text-align:left;text-decoration:underline;color:cadetblue" class="mb-3"><i class="fa-solid fa-user-plus ms-1"></i>&nbsp;加入會員</a>
                 </div>
 
                 <div class="row">

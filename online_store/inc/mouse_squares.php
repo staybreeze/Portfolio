@@ -68,7 +68,7 @@
   let mouseSquareSmall = document.getElementById("mouseSquareSmall")
   let mouseSquareSmaller = document.getElementById("mouseSquareSmaller")
   let mouseSquareSmallest = document.getElementById("mouseSquareSmallest")
-
+if(window.innerWidth>450){
   function updateCursor(e) {
     let x = e.clientX;
     let y = e.clientY;
@@ -133,6 +133,6 @@
     mouseSquareSmallest.style.backgroundColor='rgb(253, 211, 104)';
     
   }
-  
-});
+
+});}
 </script>
