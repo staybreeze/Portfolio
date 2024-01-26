@@ -12,8 +12,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel="preload" href="portfolio.php" as="document">
 
   <style>
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+
+    .box-first0 {
+      border-top: 10px solid #8bafb4;
+    }
+
+    .box {
+      width: 100px;
+      height: 100vh;
+      background-color: beige;
+      opacity: 0;
+      /* border:3px solid rgb(35, 35, 35); */
+      position: absolute;
+      transition: opacity 1.5s ease;
+    }
+
     body {
       height: 100vh;
       background: rgb(35, 35, 35);
@@ -33,7 +54,7 @@
 
     }
 
-    .item {
+    .item, .item-second,.item-third {
       display: none;
       /* width: 100%; */
       font-size: 50px;
@@ -71,7 +92,7 @@
 
       }
 
-      .item {
+      .item, .item-second,.item-third {
 
         font-size: 30px;
 
@@ -83,19 +104,33 @@
         font-size: 20px;
       }
     }
+
+    .hide-content {
+      display: none;
+    }
+    /* .boxX4Y2,.boxX4Y3,.boxX4Y4,.boxX4Y5,.boxX4Y6,.boxX7Y2,.boxX7Y3,.boxX7Y5,.boxX7Y6,.boxX9Y6,.boxX9Y5,.boxX9Y4,.boxX9Y2{
+
+border-right:50px solid#8bafb4
+}
+.boxX5Y4,.boxX6Y4,.boxX7Y4{
+  border-top:50px solid#8bafb4 !important
+} */
+
+
   </style>
 </head>
 
 <body>
+
   <div class="banner">
     <div class="item">HTML</div>
     <div class="item">CSS</div>
     <div class="item">JavaScript</div>
     <div class="item">Ajax</div>
     <div class="item" style="color:goldenrod">x</div>
-    <div class="item">PHP</div>
+    <div class="item-third">PHP</div>
     <!-- <div class="item"></div> -->
-    <div class="item">MySQL</div>
+    <div class="item-third">MySQL</div>
     <div class="bar"></div>
   </div>
   <!-- jQuery -->
@@ -107,6 +142,7 @@
   <!-- 引入 scrollTrigger plugin -->
   <script src="./gsap/ScrollTrigger.js"></script>
   <script>
+
     // 建立星星
     function createstarWhite(starCount) {
       for (let i = 0; i < starCount; i++) {
@@ -213,7 +249,7 @@
     const tl = gsap.timeline({
       // repeat: -1,
       // repeatDelay: 1
-      delay: 0.8,
+      delay: 1,
     })
 
     tl
@@ -222,45 +258,383 @@
         y: 60,
         rotationX: -90,
         autoAlpha: 0,
-        stagger: 0.8
+        stagger: 0.5
       })
       .to('.item', {
         y: -60,
         // rotationX: 90,
         autoAlpha: 1,
         // autoAlpha: 0,
-        stagger: 0.8
-      }, 0.8) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
+        stagger: 0.5
+      }, 0.5) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
+
+      const tlSecond = gsap.timeline({
+      // repeat: -1,
+      // repeatDelay: 1
+      delay: 3.2,
+    })
+
+    tlSecond
+      .set('.item-second', { display: 'block' })
+      .from('.item-second', {
+        y: 60,
+        rotationX: -90,
+        autoAlpha: 0,
+        stagger: 0.5
+      })
+      .to('.item-second', {
+        y: -60,
+        // rotationX: 90,
+        autoAlpha: 1,
+        // autoAlpha: 0,
+        stagger: 0.5
+      }, 0.5) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
+
+      
+      const tlThird = gsap.timeline({
+      // repeat: -1,
+      // repeatDelay: 1
+      delay: 4.1,
+    })
+
+    tlThird
+      .set('.item-third', { display: 'block' })
+      .from('.item-third', {
+        y: 60,
+        rotationX: -90,
+        autoAlpha: 0,
+        stagger: 0.5
+      })
+      .to('.item-third', {
+        y: -60,
+        // rotationX: 90,
+        autoAlpha: 1,
+        // autoAlpha: 0,
+        stagger: 0.5
+      }, 0.5) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 
     if (window.innerWidth < 450) {
       $('.bar').css('padding', '15px')
     }
   </script>
   <script>
-    // 註冊套件
-    const languages = 100
+    if (window.innerWidth < 450) {
+      const languages = 100
 
-    const tween = gsap.to('.bar', {
-      delay: 6.8,
-      display: 'block',
-      duration: 0.7,
-      width: function (index, target, targets) {
-        if (window.innerWidth < 450) {
-          $(target).append('Hi!')
-        }
-        return languages + '%'
-      },
-      onComplete: function () {
-        if (window.innerWidth < 450) {
+      const tween = gsap.to('.bar', {
+        delay:5.7,
+        display: 'block',
+        duration: 0.7,
+        width: function (index, target, targets) {
+          if (window.innerWidth < 450) {
+            $(target).append('Hi!')
+          }
+          return languages + '%'
+        },
+        onComplete: function () {
+
           gsap.delayedCall(0.5, function () {
             location.href = "portfolio.php";
           });
-        } else {
 
-          location.href = "portfolio.php";
         }
-      }
-    });
+      });
+    }
+    if (window.innerWidth > 450) {
+      document.addEventListener("DOMContentLoaded", function () {
+        var container = document.querySelector('body');
+        var boxSize = 100;
+        var spacing = 0;
+
+        var rows = Math.ceil(container.clientHeight / (boxSize + spacing));
+        var cols = Math.ceil(container.clientWidth / (boxSize + spacing));
+
+
+        for (var i = 0; i < rows; i++) {
+          for (var j = 0; j < cols; j++) {
+            var box = document.createElement('div');
+            box.className = 'box ' + 'box' + j + ' box-first' + i+' boxX'+j+'Y'+i;
+            box.style.left = (j * (boxSize + spacing)) + 'px';
+            box.style.top = (i * (boxSize + spacing)) + -100 + 'px';
+            container.appendChild(box);
+          }
+        }
+        gsap.to('.box0', {
+          delay: 5.3,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+        });
+        gsap.to('.box1', {
+          delay: 5.4,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+
+        gsap.to('.box2', {
+          delay: 5.5,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box3', {
+          delay: 5.6,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box4', {
+          delay: 5.7,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box5', {
+          delay: 5.8,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box6', {
+          delay: 5.9,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box7', {
+          delay: 6,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box8', {
+          delay: 6.1,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box9', {
+          delay: 6.2,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box10', {
+          delay: 6.3,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box11', {
+          delay: 6.4,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box12', {
+          delay: 6.5,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box13', {
+          delay: 6.6,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box14', {
+          delay: 6.7,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box15', {
+          delay: 6.8,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box16', {
+          delay: 6.9,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box17', {
+          delay: 7,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+
+        });
+        gsap.to('.box18', {
+          delay: 7.1,
+          y: 100,
+          duration: 0.1,
+          stagger: {
+            each: 0.1,
+            yoyo: 'true'
+          },
+          opacity: 1,
+          //yoyo: 'true',
+          //ease: 'back',
+          // rotate: 360,
+          onComplete: function () {
+
+            gsap.delayedCall(0.2, function () {
+              location.href = "portfolio.php";
+            });
+          }
+        });
+
+      });
+    }
+
+
   </script>
 
 </body>
