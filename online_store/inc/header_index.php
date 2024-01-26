@@ -74,7 +74,7 @@ include_once "header_effect.php"
            <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 0.6s">
           </i>
         </a>
-        <p class="mt-1 shopping-cart-p hidden-words">Buy it !</p>
+        <p class="mt-1 shopping-cart-p hidden-words ms-2">Buy it !</p>
       </a>
 
     </div>
