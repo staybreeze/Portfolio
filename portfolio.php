@@ -104,6 +104,9 @@
 
 
 <body class="body">
+    <?php
+    include_once "mouse_squares.php"
+    ?>
 <div id="topMobile" class="top-mobile"><a href="#">TOP</a></div>
     <div id="top" class="top"><a href="#"><i class="fa-solid fa-angle-up"></i>
 </a></div>

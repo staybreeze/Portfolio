@@ -2,7 +2,7 @@
   #header {
     opacity: 1;
     overflow: hidden;
-    transition: opacity 1s, height 1s;
+    transition: opacity 0.8s, height 0.8s;
   }
 
   #header.hide-header {
@@ -37,7 +37,7 @@
     // }
   });
   $(document).ready(function() {
-    var scrollThreshold = 610;
+    var scrollThreshold = 0;
     var scrolltoTop = 100;
 
     if (window.innerWidth > 450) {
@@ -55,6 +55,7 @@
           $(".hidden-icon").css({'margin-top': '1px','font-size': '1.6em'});
           $(".hidden-words").css('font-size', 'small');
           $(".search-icon").css('margin-top', '15px');
+          $(".nav-item").css('font-size', '15px');
         } else {
           $("#header").css('height', '12.5vh');
           $("#logo").css('width', '85%');
@@ -63,6 +64,7 @@
           $(".hidden-icon").css({'margin-top': '0px','font-size': '2em'});
           $(".hidden-words").css('font-size', 'smaller');
           $(".search-icon").css('margin-top', '20px');
+          $(".nav-item").css('font-size', '16px');
         }
       });
     }

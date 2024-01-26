@@ -213,14 +213,6 @@ header .page-link-min li:hover span {
 }
 
 
-.hidden-icon,
-.logo {
-
-  height: 0px;
-
-  transition: 0.5s !important
-}
-
 .shopping-cart:hover,
 .fa-circle-user:hover {
   color: #ffb71b
