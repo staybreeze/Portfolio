@@ -282,40 +282,40 @@
 </section>
 
 <script>
-    $(document).ready(function() {
+  
         $(document).ready(function() {
-    $('#top').on('click', function() {
-        if (window.innerWidth > 450) {
-            $(this).css('background', '#12304a');
-        }
-        setTimeout(function() {
-            $('#top').css('background', 'rgb(216, 162, 90)');
-        }, 800);
-    });
-});
+            $('#top').on('click', function() {
+                if (window.innerWidth > 450) {
+                    $(this).css('background', '#12304a');
+                }
+                setTimeout(function() {
+                    $('#top').css('background', 'rgb(216, 162, 90)');
+                }, 800);
+            });
+       
 
 
-    $(".good-sold-out").click(function() {
+        $(".good-sold-out").click(function() {
 
-        alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
-    })
+            alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
+        })
 
-    //         $(".fa-heart").click(function() {
-    //     location.reload();
-    // });
+        //         $(".fa-heart").click(function() {
+        //     location.reload();
+        // });
 
-    $(".like").click(function(event) {
-        let productId = $(this).data("id");
+        $(".like").click(function(event) {
+            let productId = $(this).data("id");
 
-        $.post("./api/add_like.php", {
-            'id': productId
-        }, (res) => {
-            console.log(res);
+            $.post("./api/add_like.php", {
+                'id': productId
+            }, (res) => {
+                console.log(res);
 
-            $("#" + productId).load(location.href + " #" + productId + " > *");
-            //   location.reload();
+                $("#" + productId).load(location.href + " #" + productId + " > *");
+                //   location.reload();
+            });
         });
-    });
     });
 
     $(document).ready(function() {

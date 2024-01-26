@@ -83,6 +83,9 @@ include_once "./api/db.php";
         width: 75px;
         font-size: 13px
       }
+      .footer {
+        height: 96vh !important
+      }
     }
   </style>
 </head>

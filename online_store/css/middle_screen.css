@@ -112,6 +112,10 @@ header .page-link-min li:hover span {
   left: 400px
 }
 
+.fa-circle-user{
+  cursor: pointer !important;
+}
+
 @media screen and (max-width: 550px) {
   .header-title {
     display: none;
@@ -209,11 +213,12 @@ header .page-link-min li:hover span {
 }
 
 
-.shopping-cart {
+.hidden-icon,
+.logo {
 
   height: 0px;
 
-  transition: 0.5s
+  transition: 0.5s !important
 }
 
 .shopping-cart:hover,
@@ -332,13 +337,16 @@ footer {
     height: 110vh;
   }
 }
+
 @media screen and (max-width: 450px) {
   .footer {
     height: 88vh !important;
-  }}
-  @media screen and (max-width: 410px) {
-  .footer{
-    height:120vh !important
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .footer {
+    height: 120vh !important
   }
 }
 
@@ -546,11 +554,11 @@ a:hover {
   font-weight: 500;
 }
 
-.section-products .good-header h2  {
+.section-products .good-header h2 {
   font-size: 2.2rem;
   font-weight: 400;
   color: #444444;
-  
+
 }
 
 .section-products .single-product {
@@ -846,7 +854,7 @@ a:hover {
 }
 
 .line .menu {
-  top:5 px;
+  top: 5 px;
 }
 
 .line .menu::after {
@@ -885,10 +893,10 @@ a:hover {
   #menu:checked~.menu-list {
 
     width: 405px;
-  
+
   }
 
-  
+
 }
 
 .menu-list {
@@ -1046,7 +1054,8 @@ input#menu {
     ;
   }
 
-  .carousel-item img,.carousel-img {
+  .carousel-item img,
+  .carousel-img {
 
     height: 341px !important;
     /* background-color: #12304a !important; */
@@ -1072,36 +1081,38 @@ input#menu {
   .section-products .good-header br:nth-child(4) {
     display: none;
   }
-  .blue-block{
+
+  .blue-block {
     background-color: #12304a;
-    height:50px
+    height: 50px
   }
 
-  .down-arrows{
+  .down-arrows {
     display: block !important;
-    color: gold!important;
+    color: gold !important;
     background-color: rgb(107, 62, 2) !important;
     font-weight: bolder;
     font-size: 20px !important;
     margin-bottom: 20px;
     text-align: center;
   }
+
   #close-btn {
     cursor: pointer !important;
     background-color: rgb(107, 62, 2) !important;
     color: #fff !important;
-    width:100%;
+    width: 100%;
   }
 
 
-  
+
   #shoppingBtn {
     cursor: pointer !important;
     background-color: rgb(175, 116, 40) !important;
     /* background-color: #d8a25a !important; */
     color: gold !important;
-    width:100%;
-    height:85px;
+    width: 100%;
+    height: 85px;
     font-weight: 700;
     margin-top: 40px !important;
     border-radius: 300px 300px 0 0;
@@ -1121,47 +1132,50 @@ input#menu {
     animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
   }
 
-#checkOutBtn {
+  #checkOutBtn {
     cursor: pointer !important;
-    background-color:  #12304a !important;
+    background-color: #12304a !important;
     color: gold !important;
-    width:100%;
-    height:65px;
-/* margin-left:10px; */
+    width: 100%;
+    height: 65px;
+    /* margin-left:10px; */
     margin-top: 70px !important;
     border-radius: 750px 0 750px 0 !important;
     font-size: 23px !important;
     font-weight: bolder;
     /* border-bottom:1px dotted rgb(107, 62, 2); */
- }
-  .tr-computer,.carousel-computer{
-    display: none!important;
-  }
-  .good-row{
-/* border:10px solid #d8a25a; */
-transition:  .7s ease; 
-/* border:10px solid #12304a; */
-/* margin-top:4.5px; */
-margin-top:14.5px;
   }
 
-  #discountBanner{
+  .tr-computer,
+  .carousel-computer {
+    display: none !important;
+  }
+
+  .good-row {
+    /* border:10px solid #d8a25a; */
+    transition: .7s ease;
+    /* border:10px solid #12304a; */
+    /* margin-top:4.5px; */
+    margin-top: 14.5px;
+  }
+
+  #discountBanner {
     /* background-color:  #d8a25a !important; */
     /* border:10px solid #d8a25a; */
     /* background-color:  #12304a; */
-    background-color:  rgb(73, 42, 2);
+    background-color: rgb(73, 42, 2);
     /* border:1px solid rgb(252, 233, 122); */
     /* border-bottom:.0.3px solid rgb(252, 233, 122); */
     color: rgb(252, 233, 122);
     text-align: center;
     /* padding-top:7px; */
-    height:70px;
+    height: 70px;
     font-weight: 700;
     font-size: 20px;
-    transition:  .7s ease; 
+    transition: .7s ease;
   }
 
-  #discountBanner .discount-p{
+  #discountBanner .discount-p {
     -webkit-animation-name: fa-bounce;
     animation-name: fa-bounce;
     -webkit-animation-delay: var(--fa-animation-delay, 1git s);
@@ -1174,9 +1188,10 @@ margin-top:14.5px;
     animation-iteration-count: var(--fa-animation-iteration-count, 4);
     -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
     animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
-  
+
   }
-  #discountBanner p span{
+
+  #discountBanner p span {
     font-size: 30px;
     text-decoration: underline;
     font-style: italic;
@@ -1191,8 +1206,8 @@ margin-top:14.5px;
 
 .myBtn-gold {
   background-color: goldenrod;
-  width:100%;
-  height:65px;
+  width: 100%;
+  height: 65px;
   font-weight: 700;
   margin-top: 40px !important;
   border-radius: 300px 300px 0 0;
@@ -1201,7 +1216,8 @@ margin-top:14.5px;
 
 
 
-.tr-computer,.carousel-computer{
+.tr-computer,
+.carousel-computer {
 
   display: none !important;
 }
@@ -1209,42 +1225,56 @@ margin-top:14.5px;
 
 @media screen and (max-width: 410px) {
 
-.header-title2{
-  position: absolute;
-  top: 20px;
-  left: 50px
-}
-.page-link{
-  left: 30px
+  .header-title2 {
+    position: absolute;
+    top: 20px;
+    left: 50px
+  }
+
+  .page-link {
+    left: 30px
+  }
+
+  .header2 {
+    height: 13.3vh !important
+  }
+
+  .line .menu {
+    left: 328px;
+  }
+
+  .line .menu::before {
+    margin-top: 53px !important;
+
+  }
+
+  .line .menu {
+    margin-top: 103px !important;
+
+  }
+
+  .line .menu::after {
+    margin-top: 53px !important;
+  }
+
+  .header-title-mobile {
+    margin-left: 130px !important
+  }
+
+  .modal input[type='submit'] {
+    margin-left: 230px !important;
+  }
+
+  #menu:checked~.menu-list {
+    width: 365.5px;
+  }
 }
 
-.header2{
-  height:13.3vh !important
-}
-
-.line .menu {
-  left: 328px;
-}
-.line .menu::before {
-  margin-top: 53px !important;
-
-}
-
-.line .menu {
-  margin-top: 103px !important;
-  
-}
-
-.line .menu::after {
-  margin-top: 53px !important;
-}
-.header-title-mobile{
-  margin-left:130px !important
-}
-.modal input[type='submit'] {
-  margin-left: 230px !important;
-}
-#menu:checked~.menu-list {
-  width: 365.5px;
-}
+#header,
+#logo,
+#title,
+#header-pages,
+.hidden-icon,
+.hidden-words {
+  transition: all 3s !important;
 }
