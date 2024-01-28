@@ -431,6 +431,7 @@ include_once "../api/db.php"
   <script src="../js/back.js"></script>
   <script>
     $(document).ready(function() {
+  
       $(".old-price-edit, .discount-edit").on("input", function() {
         let container = $(this).closest(".container");
         let oldPriceEdit = parseFloat(container.find(".old-price-edit").val());

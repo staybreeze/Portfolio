@@ -45,7 +45,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 0;
+        /* opacity: 0; */
     }
 
     .item h2,
@@ -91,9 +91,9 @@
 
                     <div class="banner" id="onlineStore">
                         <div class="item">
-                            <h2>—　<b>購物商城</b>　— </h2>
+                            <h2 style="font-size:30px">—　<b>商品搜尋結果</b>　— </h2>
                         </div>
-                        <div class="item">
+                        <!--   <div class="item">
                             <h2>—　<b>肉泥</b>　— </h2>
                         </div>
                         <div class="item">
@@ -112,114 +112,119 @@
                             <h2>—　<b>猫草</b>　— </h2>
                         </div>
                         <div class="item">
-                            <h2>—　<b>逗猫棒</b>　— </h2>
-                        </div>
+                            <h2>—　<b>逗猫棒</b>　— </h2> -->
+                        <!-- </div>
                     </div>
-                    <br> <br>
-                    <!-- <div class="hidden-div" id="onlineStore"></div> -->
-                    <h3>超熱銷～快手刀下單～ (=^-ω-^=)</h3>
+                    <br> <br> -->
+                        <!-- <div class="hidden-div" id="onlineStore"></div> -->
+                        <!-- <h3>超熱銷～快手刀下單～ (=^-ω-^=)</h3> -->
 
-                    <!-- <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a> -->
-                    <!-- <br> -->
+                        <!-- <a href="#onlineStore"><button type="button" class="btn mt-2" id="shoppingBtn">SHOPPING NOW</button></a> -->
+                        <!-- <br> -->
+                    </div>
+
                 </div>
-
             </div>
-        </div>
-        <!-- <div class="hidden-div"  style="margin-top:7px"></div> -->
+            <!-- <div class="hidden-div"  style="margin-top:7px"></div> -->
 
 
-        <div class="row good-row">
-            <div id="discountBanner" style="padding-top:18px;height:85.7px" onclick="location.href='#onlineStore'">
-                <p class="discount-p">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
-            </div>
-            <!-- Single Product -->
-            <?php
+            <div class="row good-row mt-5">
+                <div id="discountBanner" style="padding-top:18px;height:85.7px" onclick="location.href='#onlineStore'">
+                    <p class="discount-p">"&nbsp;&nbsp;滿&nbsp;<span>5&nbsp;0&nbsp;0&nbsp;0</span>&nbsp;元，打&nbsp;<span>8</span>&nbsp;折&nbsp;&nbsp;"</p>
+                </div>
+                <!-- Single Product -->
+                <?php
 
-            $goods = $Good->all();
+                if (isset($_GET['query'])) {
+                    $query = $_GET['query'];
 
-            foreach ($goods as $good) {
+                    $goods = $Good->q("SELECT * FROM goods WHERE name LIKE '%" . $query . "%'");
 
-            ?>
 
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product<?=$good['id'];?>" class="single-product">
+                    foreach ($goods as $good) {
 
-                        <div class="part-1">
-                            <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
-                            <br><br>
-                            <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
-                            <?php
+                ?>
 
-                            if (!empty($good['discount'])) {
-                                echo '<span class="discount">' . $good["discount"] . '% off</span>';
-                            }
-                            if (($good['new']) > 0) {
-                                echo '<span class="new">new</span>';
-                            }
-                            if (isset($_SESSION['liked_products'])) {
-                                $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
-                            }
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div id="product<?= $good['id']; ?>" class="single-product">
 
-                            ?>
-                            <ul>
-                                <li>
-                                    <?php if ($good['remain'] > 0) { ?>
-
-                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>">
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </a>
-
+                                <div class="part-1">
+                                    <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
+                                    <br><br>
+                                    <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
                                     <?php
-                                    } else {
+
+                                    if (!empty($good['discount'])) {
+                                        echo '<span class="discount">' . $good["discount"] . '% off</span>';
+                                    }
+                                    if (($good['new']) > 0) {
+                                        echo '<span class="new">new</span>';
+                                    }
+                                    if (isset($_SESSION['liked_products'])) {
+                                        $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
+                                    }
+
                                     ?>
-                                        <a class="good-sold-out">
-                                            <i class="fas fa-shopping-cart" style="color: gray;"></i>
-                                        </a>
+                                    <ul>
+                                        <li>
+                                            <?php if ($good['remain'] > 0) { ?>
+
+                                                <a href="./api/add_good.php?id=<?= $good['id']; ?>">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </a>
+
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <a class="good-sold-out">
+                                                    <i class="fas fa-shopping-cart" style="color: gray;"></i>
+                                                </a>
+                                            <?php
+                                            }
+                                            ?>
+                                        </li>
+                                        <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
+                                        <li>
+                                            <?php if ($good['remain'] > 0) { ?>
+                                                <a href="./api/add_good.php?id=<?= $good['id']; ?>" class="plus-atag">
+                                                    <i class="fas fa-plus"></i>
+                                                </a>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <a class="good-sold-out">
+                                                    <i class="fas fa-plus" style="color: gray;"></i>
+                                                </a>
+                                            <?php
+                                            }
+                                            ?>
+                                        </li>
+
+                                        <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="part-2">
+                                    <h3 class="product-title" style="font-weight:bold"><?= $good['name']; ?></h3>
+
                                     <?php
+                                    if (($good['old_price']) != ($good['price'])) {
+                                        echo '<span class="product-old-price">NTD  ' . $good["old_price"] . '</span>';
                                     }
                                     ?>
-                                </li>
-                                <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
-                                <li>
-                                    <?php if ($good['remain'] > 0) { ?>
-                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>" class="plus-atag">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <a class="good-sold-out">
-                                            <i class="fas fa-plus" style="color: gray;"></i>
-                                        </a>
-                                    <?php
-                                    }
-                                    ?>
-                                </li>
 
-                                <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
-                            </ul>
-
+                                    <h4 class="product-price">NTD <?= $good['price']; ?></h4>
+                                    <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="part-2">
-                            <h3 class="product-title" style="font-weight:bold"><?= $good['name']; ?></h3>
 
-                            <?php
-                            if (($good['old_price']) != ($good['price'])) {
-                                echo '<span class="product-old-price">NTD  ' . $good["old_price"] . '</span>';
-                            }
-                            ?>
+                <?php
 
-                            <h4 class="product-price">NTD <?= $good['price']; ?></h4>
-                            <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
-                        </div>
-                    </div>
-                </div>
-
-            <?php
-
-            } ?>
-            <!-- Single Product -->
-            <!-- <div class="col-md-6 col-lg-4 col-xl-3">
+                    }
+                } ?>
+                <!-- Single Product -->
+                <!-- <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-7" class="single-product">
                     <div class="part-1">
                         <ul>
@@ -236,8 +241,8 @@
                     </div>
                 </div>
             </div> -->
-            <!-- Single Product -->
-            <!-- <div class="col-md-6 col-lg-4 col-xl-3">
+                <!-- Single Product -->
+                <!-- <div class="col-md-6 col-lg-4 col-xl-3">
                 <div id="product-8" class="single-product">
                     <div class="part-1">
                         <span class="new">new</span>
@@ -255,45 +260,44 @@
                 </div>
 
             </div> -->
+            </div>
         </div>
-    </div>
 
 
 
-    <!-- good Modal -->
-    <div class="modal fade poster-modal" id="good">
-        <div class="modal-dialog">
+        <!-- good Modal -->
+        <div class="modal fade poster-modal" id="good">
+            <div class="modal-dialog">
 
 
 
-            <!-- Modal body -->
+                <!-- Modal body -->
 
 
-            <img id="imgModalSrc" width="100%" alt="">
+                <img id="imgModalSrc" width="100%" alt="">
 
 
-            <!-- Modal footer -->
+                <!-- Modal footer -->
 
-            <button type="button" class="btn  close-btn mt-2" id="close-btn" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn  close-btn mt-2" id="close-btn" data-bs-dismiss="modal">Close</button>
 
+            </div>
         </div>
-    </div>
-    <a href="cart.php"><button type="button" class="btn  close-btn mt-2" id="checkOutBtn"><em>CHECK OUT</em></button></a>
+        <a href="cart.php"><button type="button" class="btn  close-btn mt-2" id="checkOutBtn"><em>CHECK OUT</em></button></a>
 </section>
 
 <script>
-  
-        $(document).ready(function() {
+    $(document).ready(function() {
 
-            $('#top').on('click', function() {
-                if (window.innerWidth > 450) {
-                    $(this).css('background', '#12304a');
-                }
-                setTimeout(function() {
-                    $('#top').css('background', 'rgb(216, 162, 90)');
-                }, 800);
-            });
-       
+        $('#top').on('click', function() {
+            if (window.innerWidth > 450) {
+                $(this).css('background', '#12304a');
+            }
+            setTimeout(function() {
+                $('#top').css('background', 'rgb(216, 162, 90)');
+            }, 800);
+        });
+
 
 
         $(".good-sold-out").click(function() {
@@ -434,7 +438,7 @@
 </script>
 <!-- 引入 gsap 主程式 -->
 <script src="./gsap/gsap.js"></script>
-
+<!-- 
 <script>
     gsap.set('.item', {
         y: 0,
@@ -466,4 +470,4 @@
             stagger: 4
         }, 4) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 
-</script>
+</script> -->

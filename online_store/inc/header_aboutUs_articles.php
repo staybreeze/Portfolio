@@ -170,8 +170,8 @@ include_once "header_effect.php"
     </div>
     <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:37px;transition:all 0.6s">
       <form class="d-flex">
-        <input class="search-wrapper me-2 myInput " type="text" placeholder="Search">
-        <button class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>
+      <input class="search-wrapper me-2 myInput" id="searchInput" type="text" placeholder="Search Product">
+         <button id="searchButton" class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>
       </form>
     </div>
   </div>
@@ -282,3 +282,15 @@ include_once "header_effect.php"
   </nav>
 
 </header>
+<script>
+
+$(document).ready(function() {
+    $('#searchButton').click(function() {
+        var searchQuery = $('#searchInput').val();
+     
+        var encodedQuery = encodeURIComponent(searchQuery);
+        var url = "search.php?query=" + encodedQuery;
+        window.location.href = url;
+    });
+});
+</script>
