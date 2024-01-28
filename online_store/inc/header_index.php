@@ -6,16 +6,16 @@ include_once "header_effect.php"
 
     <div class="test col-xxl-2 col-xl-6 col-12 ms-3 logo-area">
       <a href="index.php" data-bs-toggle="modal" data-bs-target="#myModal-2">
-        <img class="logo" src="./img/logo1.png" id="logo" style="transition:all 0.6s" width="85%" height="100%"></a>
+        <img class="logo" src="./img/logo1.png" id="logo" style="transition:all 1s" width="85%" height="100%"></a>
     </div>
     <div class="test col-xxl-2 col-xl-6 col-12 mt-4 pt-3 header-title">
 
       <a href="index.php">
-        <h2 style="font-weight:600;transition:all 0.6s" id="title">奇多喵合作社</h2>
+        <h2 style="font-weight:600;transition:all 1s" id="title">奇多喵合作社</h2>
       </a>
 
     </div>
-    <div class="col-xxl-4 col-xl-12 col-12 test-1 pt-5 header-group" id="header-pages" style="transition:all 0.6s">
+    <div class="col-xxl-4 col-xl-12 col-12 test-1 pt-5 header-group" id="header-pages" style="transition:all 1s">
       <div class="page-link ">
 
         <ul>
@@ -71,7 +71,7 @@ include_once "header_effect.php"
     <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:37px">
       <a class="shopping-cart-a" target="_blank">
         <a href="./cart.php">
-           <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 0.6s">
+           <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 1s">
           </i>
         </a>
         <p class="mt-1 shopping-cart-p hidden-words ms-2">Buy it !</p>
@@ -177,13 +177,13 @@ include_once "header_effect.php"
       </div>
       <div>
 
-        <i class="fa-regular fa-circle-user me-5 hidden-icon" style=" font-size: 2em;transition:all 0.6s;cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
+        <i class="fa-regular fa-circle-user me-5 hidden-icon" style=" font-size: 2em;transition:all 1s;cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
 
         <p class="mt-1 me-5 shopping-cart-p hidden-words">Menbership</p>
       </div>
       </button>
     </div>
-    <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:37px;transition:all 0.6s">
+    <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:37px;transition:all 1s">
       <form class="d-flex">
       <input class="search-wrapper me-2 myInput" id="searchInput" type="text" placeholder="Search Product">
         <button id="searchButton" class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>

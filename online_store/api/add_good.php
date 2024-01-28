@@ -30,12 +30,13 @@ if (isset($_SESSION['user'])) {
     echo "<pre>";
     print_r($customerResult);
     echo "</pre>";
-
     if (isset($_GET['cart'])) {
         header("location:../cart.php");
     } elseif (isset($_GET['mobile'])) {
         header("location:../index.php#onlineStore");
-    }else{
+    } elseif (isset($_GET['query'])) {
+        header("location:../search.php?query={$_GET['query']}");
+    } else {
         header("location:../index.php#store");
     }
 } else {

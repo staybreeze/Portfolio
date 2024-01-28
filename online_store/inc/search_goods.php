@@ -49,7 +49,8 @@
     }
 
     .item h2,
-    .good-header h3 {
+    .good-header h3,p {
+   
         font-family: 'Zen Maru Gothic', serif;
     }
 
@@ -139,88 +140,90 @@
                     $query = $_GET['query'];
 
                     $goods = $Good->q("SELECT * FROM goods WHERE name LIKE '%" . $query . "%'");
-
-
-                    foreach ($goods as $good) {
+                    if (empty($goods)) {
+                        echo '<p style="font-size:25px;color:red">　<b>抱歉，沒有搜尋到指定的商品！</b> </p>';
+                    } else {
+                        foreach ($goods as $good) {
 
                 ?>
 
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div id="product<?= $good['id']; ?>" class="single-product">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div id="product<?= $good['id']; ?>" class="single-product">
 
-                                <div class="part-1">
-                                    <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
-                                    <br><br>
-                                    <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
-                                    <?php
+                                    <div class="part-1">
+                                        <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
+                                        <br><br>
+                                        <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
+                                        <?php
 
-                                    if (!empty($good['discount'])) {
-                                        echo '<span class="discount">' . $good["discount"] . '% off</span>';
-                                    }
-                                    if (($good['new']) > 0) {
-                                        echo '<span class="new">new</span>';
-                                    }
-                                    if (isset($_SESSION['liked_products'])) {
-                                        $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
-                                    }
+                                        if (!empty($good['discount'])) {
+                                            echo '<span class="discount">' . $good["discount"] . '% off</span>';
+                                        }
+                                        if (($good['new']) > 0) {
+                                            echo '<span class="new">new</span>';
+                                        }
+                                        if (isset($_SESSION['liked_products'])) {
+                                            $isLiked = (in_array($good['id'], $_SESSION['liked_products'])) ? 'liked' : '';
+                                        }
 
-                                    ?>
-                                    <ul>
-                                        <li>
-                                            <?php if ($good['remain'] > 0) { ?>
+                                        ?>
+                                        <ul>
+                                            <li>
+                                                <?php if ($good['remain'] > 0) { ?>
 
-                                                <a href="./api/add_good.php?id=<?= $good['id']; ?>">
-                                                    <i class="fas fa-shopping-cart"></i>
-                                                </a>
+                                                    <a href="./api/add_good.php?id=<?= $good['id']; ?>">
+                                                        <i class="fas fa-shopping-cart"></i>
+                                                    </a>
 
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <a class="good-sold-out">
-                                                    <i class="fas fa-shopping-cart" style="color: gray;"></i>
-                                                </a>
-                                            <?php
-                                            }
-                                            ?>
-                                        </li>
-                                        <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
-                                        <li>
-                                            <?php if ($good['remain'] > 0) { ?>
-                                                <a href="./api/add_good.php?id=<?= $good['id']; ?>" class="plus-atag">
-                                                    <i class="fas fa-plus"></i>
-                                                </a>
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <a class="good-sold-out">
-                                                    <i class="fas fa-plus" style="color: gray;"></i>
-                                                </a>
-                                            <?php
-                                            }
-                                            ?>
-                                        </li>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <a class="good-sold-out">
+                                                        <i class="fas fa-shopping-cart" style="color: gray;"></i>
+                                                    </a>
+                                                <?php
+                                                }
+                                                ?>
+                                            </li>
+                                            <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
+                                            <li>
+                                                <?php if ($good['remain'] > 0) { ?>
+                                                    <a href="./api/add_good.php?id=<?= $good['id']; ?>&query=<?=$query;?>" class="plus-atag">
+                                                        <i class="fas fa-plus"></i>
+                                                    </a>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <a class="good-sold-out">
+                                                        <i class="fas fa-plus" style="color: gray;"></i>
+                                                    </a>
+                                                <?php
+                                                }
+                                                ?>
+                                            </li>
 
-                                        <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
-                                    </ul>
+                                            <li><a style="cursor:pointer" class="goodImgExpand"><i class="fas fa-expand" data-img="<?= $good['img']; ?>"></i></a></li>
+                                        </ul>
 
-                                </div>
-                                <div class="part-2">
-                                    <h3 class="product-title" style="font-weight:bold"><?= $good['name']; ?></h3>
+                                    </div>
+                                    <div class="part-2">
+                                        <h3 class="product-title" style="font-weight:bold"><?= $good['name']; ?></h3>
 
-                                    <?php
-                                    if (($good['old_price']) != ($good['price'])) {
-                                        echo '<span class="product-old-price">NTD  ' . $good["old_price"] . '</span>';
-                                    }
-                                    ?>
+                                        <?php
+                                        if (($good['old_price']) != ($good['price'])) {
+                                            echo '<span class="product-old-price">NTD  ' . $good["old_price"] . '</span>';
+                                        }
+                                        ?>
 
-                                    <h4 class="product-price">NTD <?= $good['price']; ?></h4>
-                                    <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
+                                        <h4 class="product-price">NTD <?= $good['price']; ?></h4>
+                                        <div><i class="fa-sharp fa-solid fa-boxes-stacked" style="font-size:smaller"><span style="font-size:smaller">&nbsp;&nbsp;&nbsp;<?= $good['remain']; ?></span></i></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                 <?php
 
+                        }
                     }
                 } ?>
                 <!-- Single Product -->
