@@ -37,8 +37,8 @@
     // }
   });
   $(document).ready(function() {
-    var scrollThreshold = 0;
-    var scrolltoTop = 100;
+    var scrollThreshold =100;
+    var scrolltoTop = 0;
 
     if (window.innerWidth > 450) {
       $(window).scroll(function() {
