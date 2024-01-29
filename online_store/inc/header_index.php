@@ -334,11 +334,22 @@ include_once "header_effect.php"
 $(document).ready(function() {
     $('#searchButton').click(function() {
         var searchQuery = $('#searchInput').val();
-     
         var encodedQuery = encodeURIComponent(searchQuery);
         var url = "search.php?query=" + encodedQuery;
         window.location.href = url;
     });
+    
+    $('#searchInput').on('keypress', function(event) {
+        if (event.keyCode === 13 || event.which === 13) {
+            event.preventDefault(); // 阻止默认提交行为
+            var searchQuery = $('#searchInput').val();
+            var encodedQuery = encodeURIComponent(searchQuery);
+            var url = "search.php?query=" + encodedQuery;
+            window.location.href = url;
+        }
+    });
 });
+
+
 
 </script>
