@@ -939,6 +939,7 @@ input#menu {
 
 .myBtn:hover {
   background-color: rgb(216, 162, 90);
+  color:rgb(165, 162, 162);
   color: #fff;
 }
 

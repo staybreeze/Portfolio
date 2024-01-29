@@ -248,7 +248,7 @@ if(isset($_GET['success'])){
               <input class="form-control" type="password" name="pw" id="pw">
             </div>
             <div>
-              <a href="./add.php" class="add" style="padding-left:230px;text-decoration:underline;color:cadetblue" class="ms-4">加入會員</a>
+              <a href="./add.php" class="add" style="padding-left:200px;text-decoration:underline;color:cadetblue"><i class="fa-solid fa-user-plus mt-1"></i>&nbsp;加入會員</a>
             </div>
             <div class="btn-group">
 
