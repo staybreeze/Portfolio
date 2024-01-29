@@ -173,7 +173,7 @@ include_once "header_effect.php"
 
         <p class="mt-1 me-5 shopping-cart-p hidden-words">Menbership</p>
       </div>
-      </button>
+
     </div>
     <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:37px;transition:all 1s">
       <form class="d-flex">
@@ -313,7 +313,7 @@ $(document).ready(function() {
     });
     $('#searchInput').on('keypress', function(event) {
         if (event.keyCode === 13 || event.which === 13) {
-            event.preventDefault(); // 阻止默认提交行为
+            event.preventDefault(); 
             var searchQuery = $('#searchInput').val();
             var encodedQuery = encodeURIComponent(searchQuery);
             var url = "search.php?query=" + encodedQuery;

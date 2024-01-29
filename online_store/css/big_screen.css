@@ -94,6 +94,7 @@ header .page-link li:hover span {
   color: #ffb71b
 }
 
+.fa-shield-cat,
 .shopping-cart,
 .shopping-cart-p,
 .fa-circle-user {
@@ -113,7 +114,7 @@ header .page-link li:hover span {
 
   transition: 0.5s
 }
-
+.fa-shield-cat:hover,
 .shopping-cart:hover,
 .fa-circle-user:hover {
   color: #ffb71b
@@ -393,6 +394,19 @@ footer .pages li a {
   -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
   animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
+.fa-shield-cat:hover{
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1)); }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 

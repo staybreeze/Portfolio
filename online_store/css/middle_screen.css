@@ -200,12 +200,13 @@ header .page-link-min li:hover span {
   left: 200px
 }
 
+.fa-shield-cat,
 .shopping-cart,
 .shopping-cart-p,
 .fa-circle-user {
-  color: #fff;
-  text-decoration: none;
-  font-size: smaller;
+  color: #fff ;
+  text-decoration: none ;
+  font-size: smaller ;
 }
 
 .shopping-cart-a {
@@ -213,7 +214,7 @@ header .page-link-min li:hover span {
 }
 
 
-.shopping-cart:hover,
+.shopping-cart:hover,.fa-shield-cat,
 .fa-circle-user:hover {
   color: #ffb71b
 }
@@ -517,6 +518,7 @@ footer .pages li a {
   -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
   animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 

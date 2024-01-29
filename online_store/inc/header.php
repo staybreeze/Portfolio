@@ -1,11 +1,7 @@
-<?php
-include_once "header_effect.php"
-?>
-
 <header class="h-11 bg-gray container-fluid header hide-header" id="header">
   <div class="row">
 
-    <div class="test col-xxl-1 col-xl-6 col-12 ms-3 logo-area">
+    <div class="test col-xxl-2 col-xl-6 col-12 ms-3 logo-area">
       <a href="index.php" data-bs-toggle="modal" data-bs-target="#myModal-2">
         <img class="logo" src="./img/logo1.png" id="logo" style="transition:all 1s" width="85%" height="100%"></a>
     </div>
@@ -69,10 +65,10 @@ include_once "header_effect.php"
 
     </div>
 
-    <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:20px">
+    <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:37px">
       <a class="shopping-cart-a" target="_blank">
         <a href="./cart.php">
-           <i class="fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 1s">
+           <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 1s">
           </i>
         </a>
         <p class="mt-1 shopping-cart-p hidden-words ms-2">Buy it !</p>
@@ -80,7 +76,8 @@ include_once "header_effect.php"
 
     </div>
 
-    <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:-30px;overflow:hidden" >
+
+    <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;overflow:hidden" >
 
       <div class="offcanvas offcanvas-end" data-bs-backdrop="true" id="demo">
         <div class="offcanvas-header" style="background-color:#12304a;text-align:center;padding-top:22.5px;color:#fff">
@@ -177,25 +174,13 @@ include_once "header_effect.php"
       </div>
       <div>
 
-        <i class="fa-regular fa-circle-user  hidden-icon" style=" font-size: 2em;transition:all 1s;cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
+        <i class="fa-regular fa-circle-user me-5 hidden-icon" style=" font-size: 2em;transition:all 1s;cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
 
-        <p class="mt-1  shopping-cart-p hidden-words">Menbership</p>
+        <p class="mt-1 me-5 shopping-cart-p hidden-words">Menbership</p>
       </div>
-
-      
+      </button>
     </div>
-    <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:-35px">
-      <a class="shopping-cart-a" target="_blank">
-        <a href="./adopt.php">
-    
-          <i class="fa-solid fa-shield-cat fa-l hidden-icon"style="font-size: 2em;transition:all 1s;"></i>
-
-        </a>
-        <p class="mt-1 shopping-cart-p hidden-words ms-2">Adoption</p>
-      </a>
-
-    </div>
-    <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:20px;transition:all 1s">
+    <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:37px;transition:all 1s">
       <form class="d-flex">
       <input class="search-wrapper me-2 myInput" id="searchInput" type="text" placeholder="Search Product">
         <button id="searchButton" class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>
@@ -203,162 +188,3 @@ include_once "header_effect.php"
     </div>
   </div>
 </header>
-<header class="h-11 bg-gray container-fluid header2" id="headerMobile">
-
-  <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
-  <h2 style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px" class="header-title-mobile"> <a href="index.php">奇多喵合作社</a></h2>
-  <a href="index.php">
-
-    <img class="logo2" src="./img/logo1.png" alt=""> </a>
-
-
-  <div class="header-title2">
-
-    <a class="shopping-cart-a" target="_blank" href="">
-      <a href="./cart.php"> <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l" style="  font-size: 2em;"></i></a>
-      <p class=" shopping-cart-p ps-1">Buy it !</p>
-    </a>
-  </div>
-  </div>
-  <div class="header-title3 ms-2 pb-2 ps-3 pt-1">
-    <?php
-
-    if (isset($_SESSION['user'])) {
-      echo '<a href="./member.php"><i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"></i></a>';
-    } else {
-      echo '<i class="fa-regular fa-circle-user ms-3" style="font-size: 2em;"  data-bs-toggle="modal" data-bs-target="#myModal"></i>';
-    }
-    ?>
-
-
-
-    <p class="mt-1 me-5 shopping-cart-p">Menbership</p>
-
-  </div>
-
-  </div>
-
-
-  <nav class="nav-box">
-    <input type="checkbox" id="menu">
-    <label for="menu" class="line">
-      <div class="menu"></div>
-    </label>
-
-    <div class="menu-list">
-      <div class="page-link ">
-
-        <ul>
-          <li class="nav-item me-3">
-            <a href="aboutUs.php">關於我們</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item  me-3" style="margin-left:36px">
-            <a href="./articles.php">文章</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item me-3" style="margin-left:36px">
-            <a href="#store">商城</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item me-3" style="margin-left:36px">
-            <span data-bs-toggle="modal" data-bs-target="#contact">聯絡我們</span>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item" style="margin-left:36px">
-
-
-            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">
-
-              <?php
-              if (isset($_SESSION['user'])) {
-                echo "<span> <a href='./api/logout.php'>登出</a></span>
-    <div class='unloading-bar'></div>
-    <div class='loading-bar'></div>";
-              } else {
-
-
-                echo '<span> 會員登入</span>
-      <div class="unloading-bar"></div>
-      <div class="loading-bar"></div>';
-              }
-              ?>
-
-            </a>
-
-          </li>
-        </ul>
-
-      </div>
-      <div class="page-link-min">
-
-        <ul>
-          <li class="nav-item me-3">
-            <a href="aboutUs.php">關於我們</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item  me-3" style="margin-left:-25px">
-            <a href="./articles.php">文章</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-          <li class="nav-item me-3" style="margin-left:-25px">
-            <a href="cart.php">購物車</a>
-            <div class="unloading-bar"></div>
-            <div class="loading-bar"></div>
-          </li>
-
-          <li class="nav-item" style="margin-left:-25px">
-
-
-            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">
-
-              <?php
-              if (isset($_SESSION['user'])) {
-                echo "<span> <a href='./api/logout.php'>登出</a></span>
-    <div class='unloading-bar'></div>
-    <div class='loading-bar'></div>";
-              } else {
-
-
-                echo '<span> 會員登入</span>
-      <div class="unloading-bar"></div>
-      <div class="loading-bar"></div>';
-              }
-              ?>
-
-            </a>
-
-          </li>
-        </ul>
-
-      </div>
-  </nav>
-
-</header>
-<script>
-$(document).ready(function() {
-    $('#searchButton').click(function() {
-        var searchQuery = $('#searchInput').val();
-        var encodedQuery = encodeURIComponent(searchQuery);
-        var url = "search.php?query=" + encodedQuery;
-        window.location.href = url;
-    });
-    
-    $('#searchInput').on('keypress', function(event) {
-        if (event.keyCode === 13 || event.which === 13) {
-            event.preventDefault(); 
-            var searchQuery = $('#searchInput').val();
-            var encodedQuery = encodeURIComponent(searchQuery);
-            var url = "search.php?query=" + encodedQuery;
-            window.location.href = url;
-        }
-    });
-});
-
-</script>
