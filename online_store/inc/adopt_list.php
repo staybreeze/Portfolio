@@ -117,10 +117,10 @@
 
 
     svg {
-        height: 110vh;
-        margin-top:-150px;
-        margin-left:300px;
-        transform: rotate(-90deg);
+        height: 80vh;
+        margin-top:-40px;
+        margin-left:50px;
+        transform: rotate(0deg);
     }
 
 
@@ -178,18 +178,18 @@
 <section class="section-products" id="store" style="background-color:#12304a">
     <div class="container goods">
         <div class="row justify-content-center text-center" id="storeBannerRow" style="margin-bottom:24px">
-            <div class="col-2">
+            <div class="col-4">
                 <div class="good-header" style="cursor:pointer" onclick="location.href='#onlineStore'">
                     <div class="banner" id="onlineStore">
                         <div class="item">
-                            <h2 id="locationTitle" style="font-size:90px;margin-top:450px;line-height:150px;font-weight:100">　<span style="color:#fff">領<br>養</span><span style="color:cadetblue">猫</span></h2>
+                            <h2 id="locationTitle" style="font-size:90px;margin-top:580px;line-height:150px;font-weight:100;margin-left:80px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;   background-image: linear-gradient(to bottom right, #ff0000, #0000ff);transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:cadetblue;font-size:200px">      猫</span></h2>
                         </div>
                     </div>
 
                 </div>
             </div>
             <!-- <div id="arrows"class="col-2" style="font-size:50px;margin-right:150px;margin-top:250px;color:beige">➤➤➤➤</div> -->
-            <div class="col-10">
+            <div class="col-8">
                 <svg id="cf503461-00bd-459a-aeb5-062ebc913211" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
                     <defs></defs>
 
