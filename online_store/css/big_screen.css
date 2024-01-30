@@ -626,3 +626,15 @@ a:hover {
   display: none !important;
 }
 
+
+::selection {
+  background-color: rgb(216, 162, 90); 
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: rgb(216, 162, 90); 
+  color: #fff; 
+}
+
+

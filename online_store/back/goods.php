@@ -249,7 +249,7 @@ include_once "../api/db.php"
         <h4 class="mt-5 color-gray" style="margin-left:107px" id="edit">編輯</h4>
         <?php
         $total = count($Good->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-        $div = 1;
+        $div = 3;
         $pages = ceil($total / $div);
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;

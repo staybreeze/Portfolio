@@ -16,7 +16,7 @@ include_once "header_effect.php"
       </a>
 
     </div>
-    <div class="col-xxl-4 col-xl-12 col-12 test-1 pt-5 header-group" id="header-pages" style="transition:all 1s">
+    <div class="col-xxl-3 col-xl-12 col-12 test-1 pt-5 header-group" id="header-pages" style="transition:all 1s">
       <div class="page-link ">
 
         <ul>
@@ -67,7 +67,7 @@ include_once "header_effect.php"
     </div>
 
 
-    <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:37px">
+    <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:20px">
 
       <div class="offcanvas offcanvas-end" id="demo" >
         <div class="offcanvas-header"  style="background-color:#12304a;text-align:center;padding-top:17.5px;color:#fff">
@@ -167,7 +167,18 @@ include_once "header_effect.php"
         <p class="mt-1 me-5 shopping-cart-p hidden-words">Menbership</p>
       </div>
     </div>
-    <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:37px;transition:all 1s">
+    <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:-35px">
+      <a class="shopping-cart-a" target="_blank">
+        <a href="./adopt.php">
+    
+          <i class="fa-solid fa-shield-cat fa-l hidden-icon"style="font-size: 2em;transition:all 1s;"></i>
+
+        </a>
+        <p class="mt-1 shopping-cart-p hidden-words ms-2">Adoption</p>
+      </a>
+
+    </div>
+    <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:80px;transition:all 1s">
       <form class="d-flex">
       <input class="search-wrapper me-2 myInput" id="searchInput" type="text" placeholder="Search Product">
          <button id="searchButton" class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>

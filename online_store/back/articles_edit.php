@@ -189,7 +189,7 @@ include_once "../api/db.php"
 
 
             $total = count($Article->all());  // 假設 $Good->all() 返回一個陣列，使用 count() 函数得到數量
-            $div = 1;
+            $div = 2;
             $pages = ceil($total / $div);
             $now = $_GET['p'] ?? 1;
             $start = ($now - 1) * $div;
