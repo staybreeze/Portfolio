@@ -168,6 +168,7 @@
         height: 35px;
         width: 80%;
         margin: auto;
+        color:gainsboro
     }
  
   
@@ -175,7 +176,7 @@
 <a href="#">
     <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
 </a>
-<section class="section-products" id="store" style="background-color:#12304a">
+<section class="section-products" id="store" style="background-color:gainsboro">
     <div class="container goods">
         <div class="row justify-content-center text-center" id="storeBannerRow" style="margin-bottom:24px">
             <div class="col-4">
@@ -286,7 +287,7 @@
         if ($(this).data('id') == 22) {
             $('#locationTitle').text('金門縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
@@ -295,154 +296,154 @@
         if ($(this).data('id') == 2) {
             $('#locationTitle').text('臺北市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 4) {
             $('#locationTitle').text('基隆市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 5) {
             $('#locationTitle').text('宜蘭縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 19) {
             $('#locationTitle').text('花蓮縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 20) {
             $('#locationTitle').text('臺東縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 17) {
             $('#locationTitle').text('高雄市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 18) {
             $('#locationTitle').text('屏東縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 16) {
             $('#locationTitle').text('臺南市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 15) {
             $('#locationTitle').text('嘉義市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 14) {
             $('#locationTitle').text('嘉義縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 13) {
             $('#locationTitle').text('雲林縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 12) {
             $('#locationTitle').text('南投縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 11) {
             $('#locationTitle').text('彰化縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 10) {
             $('#locationTitle').text('臺中市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 9) {
             $('#locationTitle').text('苗栗縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 8) {
             $('#locationTitle').text('新竹市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 7) {
             $('#locationTitle').text('新竹縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 6) {
             $('#locationTitle').text('桃園市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 3) {
             $('#locationTitle').text('新北市');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 22) {
             $('#locationTitle').text('金門縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 21) {
             $('#locationTitle').text('澎湖縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
         if ($(this).data('id') == 23) {
             $('#locationTitle').text('連江縣');
             $('#locationTitle').css({
-                'color': 'gold',
+                'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
