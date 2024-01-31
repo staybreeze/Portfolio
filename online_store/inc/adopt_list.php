@@ -102,14 +102,14 @@
     }
 
     :root {
-        --color-gold: #B99362;
+        --color-brown:rgb(107, 62, 2);
     }
 
 
     svg {
         height: 80vh;
         margin-top: -40px;
-        margin-left: 50px;
+        margin-left: -100px;
         transform: rotate(0deg);
     }
 
@@ -122,13 +122,18 @@
         cursor: pointer;
     }
 
-    path:hover {
-        fill: var(--color-gold);
+    path:not([data-id='23']):not([data-id='21']):not([data-id='22']):not([data-id='24']):hover {
+        fill: var(--color-brown);
         transform: translate(-5px, -5px);
     }
 
 
-
+    path[data-id='23']:hover,
+    path[data-id='21']:hover,
+    path[data-id='22']:hover,
+    path[data-id='24']:hover {
+        fill: palevioletred
+    }
 
     .forcast h2,
     .forcast h4,
@@ -186,25 +191,25 @@
 <section class="section-products" id="store" style="background-color:gainsboro">
     <div class="container goods">
         <div class="row justify-content-center text-center" id="storeBannerRow" style="margin-bottom:24px">
-            <div class="col-4">
+            <div class="col-7">
                 <div class="good-header" style="cursor:pointer">
                     <div class="banner" id="onlineStore">
                         <div class="item">
-                            <h2 id="locationTitle" style="font-size:90px;margin-top:580px;line-height:150px;font-weight:100;margin-left:80px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;   background-image: linear-gradient(to bottom right, #ff0000, #0000ff);transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:cadetblue;font-size:200px"> 猫</span></h2>
+                            <h2 id="locationTitle" style="font-size:90px;margin-top:580px;line-height:150px;font-weight:100;margin-left:-250px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;   background-image: linear-gradient(to bottom right, #ff0000, #0000ff);transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:cadetblue;font-size:200px"> 猫</span></h2>
                         </div>
                     </div>
 
                 </div>
             </div>
             <!-- <div id="arrows"class="col-2" style="font-size:50px;margin-right:150px;margin-top:250px;color:beige">➤➤➤➤</div> -->
-            <div class="col-8">
+            <div class="col-5">
                 <svg id="cf503461-00bd-459a-aeb5-062ebc913211" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
                     <defs></defs>
 
                     <path id="3bb77815-2bc3-4801-b8fc-d6e3a2443162" data-id="21" data-name="penghu_country" class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9" d="M77.44,422.09l-2,1.71-.79.24h-.92l.43.79v.92l-.18.85-1.22,1-.12.92.67.37,1.65-.73.67-.49,1,.06.61.43.55.61-1.83,2-.92.12-1.83-.31,1,1.16,1.4.61,1.1-.12.79-.49,2.74.06.55.73.3.79-.91,1.46-.12.49.79.55-.06.67-.73.73-.79-.06-.55-.49L78,436.3l-.91.12L76,438.74l-1,1.1.43.73,1.77.18,1-.12,1.22-.43,1-.06,1.1,1.22.79-.18.12-.79.73-.67.06-.85.3-.85-.73-.43-.12-.67.61-.67.43-.79,3-2.38.79-.12L89,431.06l.24-.73.67-.55,4.21-.12,1.28-.61.55.43.18.91.43.79.73.49.85-.18.67-.37h1l.37-.55L98,428.31l-.55-2,.24-.73v-.91l-.37-.79-1.64-1.77-.43-1.4-.49.55-.24,1.71-.85-.12-.43-.85-.55-.61.24-.55.49-.37-1.16-1.1-.79-.31-.55.55-1.16,2.13-.67-.12-.61.18-1,1-.18.73-.49.12-.06-2.74.67-1.46-1,.12-.55.37-3.54.61-.55.43.06.85.49.67v.91l-.37.61-.85.24-.55.67v1.89l-.49.55-.91-.43-.67-.61.12-1.22-1-.12-.12-.85.49-.79.06-.55-.61-.73h0Z" />
 
 
-                    <path id="4f83d8a6-50fd-42c9-b927-6a9680868ba7" data-id="20" data-name="path2527" class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9" d="M485.42,775.14l1,1.34,1.1,1h1.83l1.71.37.85-.24.49-1.34.85-1.1.24-1.58-1.59-.73-1.1-1.1-1.34-.36-2.93-2.56-.49-1.34.12-1.71,1.71-.12-.12-1.46-1-1-.24-1.58.85-1-.73-1.1-6.71.12-1.34.49h-3.66l-1.1-.73-1.1.24v1.22l1.34.85v5.37l.73,1.1,1.71.61,3.41,4.27h3.66l1.46,1,.36,1.1h0Z" />
+                    <path id="4f83d8a6-50fd-42c9-b927-6a9680868ba7" data-id="24" data-name="path2527" class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9" d="M485.42,775.14l1,1.34,1.1,1h1.83l1.71.37.85-.24.49-1.34.85-1.1.24-1.58-1.59-.73-1.1-1.1-1.34-.36-2.93-2.56-.49-1.34.12-1.71,1.71-.12-.12-1.46-1-1-.24-1.58.85-1-.73-1.1-6.71.12-1.34.49h-3.66l-1.1-.73-1.1.24v1.22l1.34.85v5.37l.73,1.1,1.71.61,3.41,4.27h3.66l1.46,1,.36,1.1h0Z" />
                     <path id="2b6aac2d-ce2d-4c48-89d5-ff2a81000e07" data-id="14" data-name="chiayi_country" class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9" d="M193.2,485l-.14-1.13-1.11-.43h-2.58l-.28-1,.11-3.46,2-4.74,1,.09,2.5-1,.87-3.44.68-1.13-.17-2.41-.43-.6-1,.85-.85-.68-.53-1-.09-1.28.7-2.16v-1.13l-1-.26.09-1.2,1.47-2.86h-1.13l-1.11-.6L192,454l.51-1v-1.39l.6-.77.34-1.22.53-.94v-1.3l-1-.43-3.88.26-1.2-.43-.6-1,.26-6.21,1.07-.6,2.63.09,4,1.55h2.59l1,1.55h2.59l1.9-.86,4.31,1.55,2.59.34,1.55-1.21,1.21-1.55.17-2.41-.52-2.07,1.38-1.38h2.24v2.24l2.41.86.69-1.9,3.28-1.9.52-2.41,1.21-1.38,4.31-1.72,1.9,1,1.21-4.14,1-1.72,2.76.17,1.72-.86.69-2.07,4-1.21.69-1.9,1.55-1.21,1.21-1.55,1.9.86,1.55,1.21,1.9.69,4-1.55h5.17l3.62-1.9L267,415l1,3.45,2.93,2.41,1,1.55,1.72,1,2.41.17,1.55,1.21,2.07.69,9.49,1,1.9-1,1.21-1.38,3.79.17-.34,2.59,1.38,2.24,1.38-1.38,2.24-.52,1.38,1.38,2.07-.17,1.9-.69,2.41.17,1.9,1,2.41.34.86-1.72v-2.41l-.52-2.07-1-1.55,1.12-1.64,4.4-.43,7.93,2.93h2.59l2.24.52.86,1.72.17,5.86-.52,2.24-1.9,1.55v2.59l1,1.72,1.55,1.38.34,5,1.72,4,1.38,1.55,7.76.86,3.79-1.55,7.59.69,1.9.69,5.83.15-.83.19-1.72.86-4.48.69-1.55,1-4.31.86-2.93,2.41-1,1.72-1.9.86-1.55,1.21-2.24.35-1.55,1.72-1.21,2.93-1.21,1-.69,1.9-1.21,1.38-.17,2.41-1.9.69h-2.59L327.51,475l-1,1.72-2.76,2.76-4.83.34-1.55,4-3.45,1.72-.69,1.9-4.48.34-.86,4.48-5.52-.17-1.55-1.38-5.35-.17-.86,7.93.86,1.9,1.38,1.72v2.59l-1.38,1.21-1.72-.86-4.31.86-2.07-.69-2.41-1.72-2.59,3.8-2.07.52-2.24-.17-2.93-2.07-4.14-1.21-.69-1.72,2.24-3.28-.52-1.72-1.38-2.24-.35-1.72.86-1.72-.69-1.9-.17-2.41,1-1.9,1.55-1.21.17-2.07-.69-1.9-2.41-.17-2.59-.86-.69-1.55,1.72-1.21-.17-2.24-5.35-.34v-2.24l1.72-1.21,1-1.55L264.21,468l-1.55.86-2.07-.52-1.72-1.38-2.24-.69-1.21-1.55-2.59-.69-.17.34-1.55,1-2.24.17-1.38-1.38-2.24.35-3.62,1.72h-5.17l-4.14,2.41-.17.17-1,1.72-4.31-.17.17,2.07-4.83.34-.34,2.24-.86,1.72-1.21,1-1.72-1-1.38,1.38.69,1.9-.34,1.21-6.55,3.28-.52,2.07-2.24,3.28-2.07.86-3.1-.86-.86-1.38v1.89l-1.72-.17-1.55-1.38-.69-2.07-2.59-.52L193.2,485h0Z" />
                     <path id="1e42a38a-74d1-495e-b9b2-11b728815577" data-id="23" data-name="path2421" class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9" d="M242.93,444.86l.34,2.24,2.07,2.07-1.38,3.1,6.9,1,.69,1.9,1.38,1.9,1.72.86,1.72-1,.86-1.72,3.1-2.41,1.38,1.21,3.1,1,.52-1.72,2.41-2.93L266.38,449l-.52-2.07-2.07-.52-.86-1.72-1.55-1-1.9.69-1.38-1.21-1.21-1.72-1.72-.86-2.07.52-4.83,3.45-2.07-.52-3.28.86h0Z" />
                     <path id="30e45b59-571b-4340-a006-0ba62460619a" data-id="10" data-name="taichung_city" class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9" d="M292.48,234.65l-1.2.3-.17,1.56-6.21,8.62-1.3,3.18.17,2.6-.09.34-.85,1.11-.36,1-1.88.85-.7,1.2-3.18,2.16.09.94.34.79.09,1.45-.6.7-1.64-.53,1.9.87.34.85-.68,1-.62.51-1.54-2-.62.34-.77.85-1.47.79.09,1.2-.51.87-1.9,1.11-.6,1,2.84,3.88-.09,1.11-.6.87-.26,1-.7-1.3.11-1.11-1,1.11-1-.09-.26-1.28.6-1.22-.09-1.2-.85.85-1.54,4.4,1.11.87.43.94.43.34.09-.17,1.2.77v1.3l-.43,1-2.65,3.86-.79.62-1,2.58.06,1.39,3,1.34,1.47,2.33.23,1.58.73,1.84.26,1.84,2.18,2.3-.85,1.11-.11,1.71.85,1.09,1.22.85h.36l1,1.58,1.34.62,1.09.85,1.47.36,1.32.73,7,1.6h1.71l1.11.85.23.6v3.67l1.09,1.45,1.22,1v1.94l-.6,1.34,1,4.76,1.71.13,1.09,1,2.43-.26.75-.49,3.88,3.31,6.1,2.2,1.47-.38h3.65l1.71.38,1.22,1.09,1.47-.13,2.92-1,4.4-4.74,2.56-6.72,2.2-2.2,3-.85.85-1.09-.23-4.5,2.56-5.12,1.11-.75,1.58.49.73,1.11,3.18.6,1.09,1v3.65l.73.38.49-1.11,1-.85.62-1.22.73-2.92,1.09,1,.26.36,1.94,1,1.71.26,1.71-.36,4.14-3.54,1.6-.23,1,.85,1.6.36,3.52-.13,1.22-.73L369,304.1l1.34-4.27,1-1,1.71-.36,2.92.36,1.09-.73h2.82l2.67-1.34.85-1.34,1.34-.85.85-1.09,1.22-.73.85-1.34.38-1.47,1.22-.6,7.19-.13,1-.85.85-1.34.47-1.34,1.71-.13.85-1.09,1.11-.73,1.34.6.85,1,2.92.85.6-1.22,1.24-.73h1.81L414,283l1.09.75,1.71.6,1.34-.49.85-1.45.36-1.47,1.58-2.56h.62l2.2,1.6.73,1.09,3.18.73h1.81l.75-1.09,3.29.36.85.85,4.4,1.22,1.22-1,.6-1.22-.11-1.71,2.56-1.09.73-1.11,1.84.13,1-.85.38-1.58-.62-3.18.85-1.34,1.58-.6,1.11-.73L451,266l1-1.09h1.81l1.22-.85,1-1.22,1.47-2.95.49-5,.6-1.34,1.58-.85.85-1-.85-1.45-1.09-.73-.73-1.22-1.47-.75-4.87.62-1.24.62-1.58.23-1.09.85-.85,1.09-1.84.26-1.22-.62-2.82-4.76h-3.29l-1.34-.49L435,243.62l.6-4.89-.36-1.45-.62-1.24-.85-1-.26-.15-1.17.62-.45.94L431,237l-4-.09-.85.45-4.46-.17,0,.55-1.22.62-1.34,1.09-1,1.24L418,242.4l-2.3,3.78V248l-1.47.38h-1.84l-1.22-1.71.62-1-1.84-.73-1.34.6L408.1,247l-.85,1.22-1.58.49-3.29,4.63-1.34.49h-3.65l-1.24.85-.47,1.34-.49.11-1.34,1.47-.26,1.71-1.45.36-2.33,1.94-1.45.38-3.41-.38-3.05,1.11-3.67,4.63-1.81.13-1.34-.75-2.2-2.07-.26-1.71-1.22-.85-1.81-2.67-1.11.23h-1.84l-1.32-.62-3.41-.23-4.16-1.47-3.29-.11-1.47.6-1,1v1.84l.6,1.34.26,3.41-.62,1.32-1.22,1-1.47.49L342.5,268l-1.34.6h-3.65L334,267.52l-2.2-2.07L331,264.1l-1.11-.85-7.68-1.47-2.3-1.94-1.71-.49-1-1.34-2.43-1.34-1-1.09-1.45-.49-.85-1.09-.62-.26-2.07-.23-.85-1.22-2.2-1.47-5.12-6.59h-.23l-.62-1.22-3.05-1.22-1.58-2.56-.26-1.34Z" />
@@ -286,16 +291,18 @@
 
 
             if (scrollPosition < scrolltoTop) {
+                let clicked = false;
                 $("#top").css('opacity', '0');
             } else {
                 $("#top").css('opacity', '1');
             }
 
-            if (scrollPosition < scrolltoDiscountBar) {
-                $("#top").css('opacity', '0');
+        });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() == 0) {
+                $("#top").css('opacity', '1');
             }
         });
-
         $(window).on('scroll', function() {
             $('.section-products').css('height', '90vh');
         });
@@ -318,171 +325,190 @@
             $(this).css('background-color', 'rgb(216, 162, 90)');
         });
     });
-    $('g').on('mouseover', function() {
+    $('g').on('mouseover click', function() {
         if ($(this).data('id') == 22) {
-            $('#locationTitle').text('金門縣');
+            $('#locationTitle').text('— 金門縣 —');
             $('#locationTitle').css({
                 'color': 'cadetblue',
                 'margin-top': '600px'
             });
         }
+    });
+
+    let clicked = false;
+
+    $('path').on('click', function() {
+        clicked = true;
+    });
+    $('g').on('click', function() {
+        clicked = true;
     });
     $('path').on('mouseover', function() {
-        if ($(this).data('id') == 2) {
-            $('#locationTitle').text('臺北市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 4) {
-            $('#locationTitle').text('基隆市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 5) {
-            $('#locationTitle').text('宜蘭縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 19) {
-            $('#locationTitle').text('花蓮縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 20) {
-            $('#locationTitle').text('臺東縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 17) {
-            $('#locationTitle').text('高雄市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 18) {
-            $('#locationTitle').text('屏東縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 16) {
-            $('#locationTitle').text('臺南市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 15) {
-            $('#locationTitle').text('嘉義市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 14) {
-            $('#locationTitle').text('嘉義縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 13) {
-            $('#locationTitle').text('雲林縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 12) {
-            $('#locationTitle').text('南投縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 11) {
-            $('#locationTitle').text('彰化縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 10) {
-            $('#locationTitle').text('臺中市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 9) {
-            $('#locationTitle').text('苗栗縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 8) {
-            $('#locationTitle').text('新竹市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 7) {
-            $('#locationTitle').text('新竹縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 6) {
-            $('#locationTitle').text('桃園市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 3) {
-            $('#locationTitle').text('新北市');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 22) {
-            $('#locationTitle').text('金門縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 21) {
-            $('#locationTitle').text('澎湖縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
-        }
-        if ($(this).data('id') == 23) {
-            $('#locationTitle').text('連江縣');
-            $('#locationTitle').css({
-                'color': 'cadetblue',
-                'margin-top': '600px'
-            });
+
+        if (!clicked) {
+            if (!clicked) {
+                if ($(this).data('id') == 2) {
+                    $('#locationTitle').text('— 臺北市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 4) {
+                    $('#locationTitle').text('— 基隆市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 5) {
+                    $('#locationTitle').text('— 宜蘭縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 19) {
+                    $('#locationTitle').text('— 花蓮縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 20 || $(this).data('id') == 24) {
+                    $('#locationTitle').text('— 臺東縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 17) {
+                    $('#locationTitle').text('— 高雄市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 18) {
+                    $('#locationTitle').text('— 屏東縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 16) {
+                    $('#locationTitle').text('— 臺南市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 15) {
+                    $('#locationTitle').text('— 嘉義市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 14) {
+                    $('#locationTitle').text('— 嘉義縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 13) {
+                    $('#locationTitle').text('— 雲林縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 12) {
+                    $('#locationTitle').text('— 南投縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 11) {
+                    $('#locationTitle').text('— 彰化縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 10) {
+                    $('#locationTitle').text('— 臺中市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 9) {
+                    $('#locationTitle').text('— 苗栗縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 8) {
+                    $('#locationTitle').text('— 新竹市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 7) {
+                    $('#locationTitle').text('— 新竹縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 6) {
+                    $('#locationTitle').text('— 桃園市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 3) {
+                    $('#locationTitle').text('— 新北市 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 22) {
+                    $('#locationTitle').text('— 金門縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 21) {
+                    $('#locationTitle').text('— 澎湖縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+                if ($(this).data('id') == 23) {
+                    $('#locationTitle').text('— 連江縣 —');
+                    $('#locationTitle').css({
+                        'color': 'cadetblue',
+                        'margin-top': '600px'
+                    });
+                }
+            }
         }
     });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() == 0) {
+            clicked = false;
+        }
+    })
 
     $('path').on('click', function() {
 
@@ -498,68 +524,148 @@
             let parsedRes = JSON.parse(res);
             console.log(parsedRes);
             render(parsedRes);
+
+            setTimeout(function() {
+                let targetElement = $('#dataCat');
+                let offsetTop = 180;
+                let targetOffset = targetElement.offset().top - offsetTop;
+                $('html, body').animate({
+                    scrollTop: targetOffset
+                }, 100);
+            }, 1000);
         });
 
     });
+
+
     function render(datas) {
-    $(".good-row").html("");
-    let data_layout;
-    datas.forEach((data, idx) => {
-        // Check if the image is valid
-        isImageValid(data.album_file).then(valid => {
-            let imageUrl = valid ? data.album_file : './img/logo1.png';
-            
-            data_layout =
-                '<div class="col-md-6 col-lg-4 col-xl-3 mt-5" id="dataCat">' +
-                '<div class="single-product">' +
-                '<div class="part-1">' +
-                `<img class="img-rotate" src="${imageUrl}" loading="lazy">` +
-                '</div>' +
-                '<div class="part-2">' +
-                `<div class="d-flex"><h3 class="data-title" style="font-weight:bolder;">${data.animal_Variety}</h3><div class="go-adopt"><i class="fa-solid fa-house"></i></div></div>` +
-                '<br>' +
-                `<h4 class="data-cats">${data.animal_sex === 'M' ? '男生' : '女生'}</h4>` +
-                '<br>' +
-                `<h4 class="data-cats">${data.animal_place}</h4>` +
-                '<br>' +
-                `<h4 class="data-cats">電話：${data.shelter_tel}</h4>` +
-                '<br>' +
-                `<h4 class="data-cats">收容日期：${data.animal_createtime}</h4>` +
-                '<br>' +
-                `<h4 class="data-cats">收容編號：${data.animal_subid}</h4>` +
-                '<div></div>' +
-                '</div>' +
-                '</div>';
-
-            $(".good-row").append(data_layout);
-            console.log(data_layout);
-            let targetElement = $('#dataCat');
-            let offsetTop = 150;
-            let targetOffset = targetElement.offset().top - offsetTop;
-            $('html, body').animate({
-                scrollTop: targetOffset
-            }, 100);
+        $(".good-row").html("");
+        datas.forEach((data, idx) => {
+            let imageUrl = data.album_file;
+            isImageValid(imageUrl)
+                .then(valid => {
+                    if (!valid) {
+                        imageUrl = './img/logo1.png';
+                    }
+                    let data_layout =
+                        '<div class="col-md-6 col-lg-4 col-xl-3 mt-5" id="dataCat">' +
+                        '<div class="single-product">' +
+                        '<div class="part-1">' +
+                        `<img class="img-rotate" src="${imageUrl}" loading="lazy">` +
+                        '</div>' +
+                        '<div class="part-2">' +
+                        `<div class="d-flex"><h3 class="data-title" style="font-weight:bolder;">${data.animal_Variety}   ${data.animal_sex === 'M' ? '<i class="fa-solid fa-mars"></i>' : '<i class="fa-solid fa-venus"></i>'}</h3><div class="go-adopt"><i class="fa-solid fa-house"></i></div></div>` +
+                        '<br>' +
+                
+                        '<br>' +
+                        `<h4 class="data-cats">${data.animal_place}</h4>` +
+                        '<br>' +
+                        `<h4 class="data-cats">電話：${data.shelter_tel}</h4>` +
+                        '<br>' +
+                        `<h4 class="data-cats">收容日期：${data.animal_createtime}</h4>` +
+                        '<br>' +
+                        `<h4 class="data-cats">收容編號：${data.animal_subid}</h4>` +
+                        '<div></div>' +
+                        '</div>' +
+                        '</div>';
+                    $(".good-row").append(data_layout);
+                })
+                .catch(error => {
+                    console.error('Error checking image validity:', error);
+                });
         });
-        
+    }
+
+    function isImageValid(url) {
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            img.onload = function() {
+                resolve(this.complete && this.naturalWidth !== 0);
+            };
+            img.onerror = function() {
+                resolve(false);
+            };
+     
+            img.src = url;
+        });
+    }
+</script>
+<!-- 引入 gsap 主程式 -->
+<script src="./gsap/gsap.js"></script>
+
+<script>
+    // 建立星星
+    function createstarWhite(starCount) {
+        for (let i = 0; i < starCount; i++) {
+            $('section').append(`<div class="white-star animate">❄</div>`)
+        }
+
+        $('.white-star').each(function(index, star) {
+            $(this).css({
+                position: 'absolute',
+                left: gsap.utils.random(0, 100) + '%',
+                top: gsap.utils.random(0, 100) + '%',
+                color: 'white',
+
+                // overflow:'hidden'
+            })
+        })
+    }
+
+    createstarWhite(20)
+
+    // 建立星星動畫
+    gsap.to('.white-star', {
+        'font-size': () => gsap.utils.random(1, 10),
+        filter: 'drop-shadow(0 0 30px rgba(255, 255, 0, 1))',
+        textShadow: '0 0 10px rgba(255, 255, 0, 0.8)',
+        left: '+=random(-10, 10)%',
+        x: 'random(-50,50)',
+        y: 'random(-50,50)',
+        rotationY: '-=180',
+        scale: () => gsap.utils.random(1, 2),
+        duration: () => gsap.utils.random(5, 10),
+        delay: () => gsap.utils.random(0, 5),
+        repeat: -1,
+        repeatRefresh: true,
+        ease: 'back',
+        stagger: 0.1,
     });
-}
+    // 建立星星
+    function createstarGold(starCount) {
+        for (let i = 0; i < starCount; i++) {
+            $('section').append(`<div class="gold-stars animate"><i class="fa-solid fa-star"></i></div>`)
+        }
 
-function isImageValid(url) {
-    return new Promise((resolve, reject) => {
-        let img = new Image();
-        img.onload = function() {
-            if (this.complete && this.naturalWidth !== 0) {
-                resolve(true); 
-            } else {
-                resolve(false); 
-            }
-        };
-        img.onerror = function() {
-            resolve(false); 
-        };
-        img.src = url;
+        $('.gold-stars').each(function(index, star) {
+            $(this).css({
+                position: 'absolute',
+                left: gsap.utils.random(0, 100) + '%',
+                top: gsap.utils.random(0, 100) + '%',
+                color: 'gold',
+
+                // overflow:'hidden'
+            })
+        })
+    }
+
+    //   createstarGold(20)
+
+    // 建立星星動畫
+    gsap.to('.gold-stars', {
+        'font-size': () => gsap.utils.random(10, 20),
+        filter: 'drop-shadow(0 0 30px rgba(255, 255, 0, 1))',
+        textShadow: '0 0 10px rgba(255, 255, 0, 0.8)',
+        left: '+=random(-10, 10)%',
+        x: 'random(-50,50)',
+        y: 'random(-50,50)',
+        rotationY: '-=180',
+        scale: () => gsap.utils.random(1, 2),
+        duration: () => gsap.utils.random(5, 10),
+        delay: () => gsap.utils.random(0, 5),
+        repeat: -1,
+        repeatRefresh: true,
+        ease: 'back',
+        stagger: 0.1,
     });
-}
-
-
 </script>
