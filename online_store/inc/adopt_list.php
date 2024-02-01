@@ -344,13 +344,13 @@
 </section>
 <script>
 window.addEventListener('scroll', function() {
-    // 获取页面高度
+
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    // 获取当前滚动位置
+
     const scrollTop = window.scrollY;
-    // 计算滚动比例
+
     const scrollProgress = (scrollTop / scrollHeight) * 100;
-    // 更新进度条宽度
+
     document.getElementById('progressBar').style.width = scrollProgress + '%';
 });
 </script>
