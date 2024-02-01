@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
 
@@ -142,7 +142,7 @@
     }
 
     :root {
-        --color-brown: rgb(107, 62, 2);
+        --color-brown: #B99362;
     }
 
 
@@ -157,7 +157,7 @@
 
     path {
         stroke: white;
-        fill: gray;
+        fill: rgb(181, 163, 163);
         transition: 0.5s;
         cursor: pointer;
     }
@@ -230,9 +230,9 @@
     }
     #loadingIndicator{
         position: absolute;
-        top:80%;
-        left:5%;
-        color:cadetblue;
+        top:78%;
+        left:39.2%;
+        color:#B99362;
         font-size: 10px;
         width:5px
     }
@@ -257,14 +257,14 @@
 <a href="#">
     <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
 </a>
-<section class="section-products" id="store" style="background-color:gainsboro">
+<section class="section-products" id="store" style="background-color:rgb(240, 240, 240)">
     <div class="container goods">
         <div class="row justify-content-center text-center" id="storeBannerRow" style="margin-bottom:24px">
             <div class="col-7">
                 <div class="good-header">
                     <div class="banner" id="onlineStore">
                         <div class="item">
-                            <h2 id="locationTitle" style="font-size:70px;margin-top:550px;line-height:150px;font-weight:100;margin-left:-250px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;   background-image: linear-gradient(to bottom right, #ff0000, #0000ff);transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:cadetblue;font-size:200px"> 猫</span></h2>
+                            <h2 id="locationTitle" style="font-size:100px;margin-top:550px;line-height:150px;font-weight:100;margin-left:-250px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;background-image: linear-gradient(to bottom right, brown, goldenrod);;transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:rgb(107, 62, 2);font-size:200px"> 猫</span></h2>
                             <div id="loadingIndicator" style="display: none;">
                                 <div class="spinner-grow spinner-grow-sm" role="status">
 
@@ -416,7 +416,7 @@ window.addEventListener('scroll', function() {
         if ($(this).data('id') == 22) {
             $('#locationTitle').text('— 金門縣 —');
             $('#locationTitle').css({
-                'color': 'cadetblue',
+                'color': 'rgb(107, 62, 2)',
                 'margin-top': '600px'
             });
         }
@@ -437,35 +437,35 @@ window.addEventListener('scroll', function() {
                 if ($(this).data('id') == 2) {
                     $('#locationTitle').text('— 臺北市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 4) {
                     $('#locationTitle').text('— 基隆市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 5) {
                     $('#locationTitle').text('— 宜蘭縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 19) {
                     $('#locationTitle').text('— 花蓮縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 20) {
                     $('#locationTitle').text('— 臺東縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
@@ -473,119 +473,119 @@ window.addEventListener('scroll', function() {
                 if ($(this).data('id') == 17) {
                     $('#locationTitle').text('— 高雄市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 18) {
                     $('#locationTitle').text('— 屏東縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 16) {
                     $('#locationTitle').text('— 臺南市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 15) {
                     $('#locationTitle').text('— 嘉義市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 14) {
                     $('#locationTitle').text('— 嘉義縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 13) {
                     $('#locationTitle').text('— 雲林縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 12) {
                     $('#locationTitle').text('— 南投縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 11) {
                     $('#locationTitle').text('— 彰化縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 10) {
                     $('#locationTitle').text('— 臺中市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 9) {
                     $('#locationTitle').text('— 苗栗縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 8) {
                     $('#locationTitle').text('— 新竹市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 7) {
                     $('#locationTitle').text('— 新竹縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 6) {
                     $('#locationTitle').text('— 桃園市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 3) {
                     $('#locationTitle').text('— 新北市 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 22) {
                     $('#locationTitle').text('— 金門縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 21) {
                     $('#locationTitle').text('— 澎湖縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
                 if ($(this).data('id') == 23) {
                     $('#locationTitle').text('— 連江縣 —');
                     $('#locationTitle').css({
-                        'color': 'cadetblue',
+                        'color': 'rgb(107, 62, 2)',
                         'margin-top': '600px'
                     });
                 }
@@ -602,7 +602,7 @@ window.addEventListener('scroll', function() {
     $('path').on('click', function() {
         let location = $(this).data('id');
 
-        // 显示加载指示器
+   
         showLoadingIndicator();
 
         $.get(`./api/file_get.php?location=${location}`, {
@@ -611,7 +611,7 @@ window.addEventListener('scroll', function() {
             let parsedRes = JSON.parse(res);
             render(parsedRes);
 
-            // 完成加载后隐藏加载指示器
+      
             setTimeout(function() {
                 let targetElement = $('#dataCat');
                 let offsetTop = 180;
@@ -637,15 +637,43 @@ window.addEventListener('scroll', function() {
 
 
     $(document).on('click', '.part-1', function() {
-        let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
-        alert('您想要領養的貓貓的' + animalSubid + '\n\n请在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續');
-        window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+    let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
+    let imgCat = $(this).find('.img-cat').attr('src');
+    Swal.fire({
+        title: "您貓貓的" + animalSubid ,
+        html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
+        imageUrl: imgCat,  
+        // imageWidth: 300,
+        // imageHeight: 200,
+        confirmButtonText: '領養GO！', 
+        confirmButtonColor: 'rgb(216, 162, 90)',
+    }).then((result) => {
+        if (result.isConfirmed) { 
+            window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+        }
     });
-    $(document).on('click', '.go-adopt', function() {
-        let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
-        alert('您想要領養的貓貓的' + animalSubid + '\n\n请在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續');
-        window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+});
+
+
+
+$(document).on('click', '.go-adopt', function() {
+    let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
+    let imgCat = $(this).parent().parent().parent().find('.img-cat').attr('src');
+    Swal.fire({
+        title: "您貓貓的" + animalSubid ,
+        html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
+        imageUrl: imgCat,  
+        // imageWidth: 300,
+        // imageHeight: 200,
+        confirmButtonText: '領養GO！', 
+        confirmButtonColor: 'rgb(216, 162, 90)',
+    }).then((result) => {
+        if (result.isConfirmed) { 
+            window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+        }
     });
+});
+
 
     function render(datas) {
         $(".good-row").html("");
@@ -706,7 +734,7 @@ window.addEventListener('scroll', function() {
     // 建立星星
     function createstarWhite(starCount) {
         for (let i = 0; i < starCount; i++) {
-            $('section').append(`<div class="white-star animate">❄</div>`)
+            $('.section-products').append(`<div class="white-star animate">❄</div>`)
         }
 
         $('.white-star').each(function(index, star) {
