@@ -2,9 +2,11 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
-section{
-    overflow: hidden;
-}
+
+    .container {
+        overflow-x: hidden;
+    }
+
     .liked {
         color: #fe302f
     }
@@ -23,7 +25,7 @@ section{
 
         }
 
-        .img-rotate {
+        .img-cat {
             width: 75%;
             margin-top: 20px;
             margin-left: 50px
@@ -77,34 +79,70 @@ section{
         transition: opacity 0.5s;
     }
 
-
-    .data-cats {
-        color: rgb(107, 62, 2);
-        font-weight: bold;
-    }
-
-
-    .img-rotate {
+    .img-cat {
         border-radius: 10px 10px 0 0;
         object-fit: cover;
 
     }
 
-    .part-1 img {
-
+    .part-1 {
+        position: relative;
         width: 69.5%;
-        height: 300px;
+        /* background-color: #fe302f; */
         margin-left: 50px;
     }
 
-    .img-rotate:hover {
-        border-radius: 10px;
-        transition: transform .8s;
-        transform: scale(0.8);
+    .part-1 img {
+
+        width: 100%;
+        height: 300px;
+        /* margin-left: 50px; */
+    }
+
+    .img-cat:hover {
+        /* border-radius: 10px; */
+        transition: all .5s;
+        /* transform: scale(0.8); */
+        opacity: 0.5;
+    }
+
+    .part-1::after {
+        width: 30%;
+        content: "Bring Me Home.";
+        /* font-family: 'Zen Maru Gothic', serif; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.2s;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .part-1:hover::after {
+        opacity: 1;
+        border-radius: 5px;
+        background-color: goldenrod;
+        color: #fff;
+        padding-left: 5px;
+    }
+
+    .img-cat:hover,
+    .img-cat:hover~.part-1::after {
+        /* 在.img-cat:hover或其后的.part-1::after上應用效果 */
+        /* border-radius: 10px; */
+        transition: all .2s;
+        /* transform: scale(0.8); */
+        opacity: 0.5;
+        border: 5px solid rgb(253, 214, 152);
     }
 
     :root {
-        --color-brown:rgb(107, 62, 2);
+        --color-brown: rgb(107, 62, 2);
     }
 
 
@@ -155,7 +193,11 @@ section{
     .data-cats {
         font-size: 1rem;
         line-height: 10px;
-        /* text-align: center; */
+        text-align: center;
+        padding-right: 18px;
+        width: 80%;
+        font-weight: bold;
+        color: #B99362;
         /* margin:auto */
     }
 
@@ -186,7 +228,16 @@ section{
     .part-2 {
         margin-left: 50px;
     }
+    #loadingIndicator{
+        position: absolute;
+        top:80%;
+        left:5%;
+        color:cadetblue;
+        font-size: 10px;
+        width:5px
+    }
 </style>
+
 <a href="#">
     <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
 </a>
@@ -194,14 +245,20 @@ section{
     <div class="container goods">
         <div class="row justify-content-center text-center" id="storeBannerRow" style="margin-bottom:24px">
             <div class="col-7">
-                <div class="good-header" style="cursor:pointer">
+                <div class="good-header">
                     <div class="banner" id="onlineStore">
                         <div class="item">
-                            <h2 id="locationTitle" style="font-size:90px;margin-top:580px;line-height:150px;font-weight:100;margin-left:-250px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;   background-image: linear-gradient(to bottom right, #ff0000, #0000ff);transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:cadetblue;font-size:200px"> 猫</span></h2>
+                            <h2 id="locationTitle" style="font-size:70px;margin-top:550px;line-height:150px;font-weight:100;margin-left:-250px"><span style="background-color:crimson;border-radius:100p;color:beige;font-size:50px;padding-left:-1px;   background-image: linear-gradient(to bottom right, #ff0000, #0000ff);transform: skew(-20deg);"><em>領養&nbsp;</em></span><br><span style="color:cadetblue;font-size:200px"> 猫</span></h2>
+                            <div id="loadingIndicator" style="display: none;">
+                                <div class="spinner-grow spinner-grow-sm" role="status">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
+
             </div>
             <!-- <div id="arrows"class="col-2" style="font-size:50px;margin-right:150px;margin-top:250px;color:beige">➤➤➤➤</div> -->
             <div class="col-5">
@@ -272,7 +329,6 @@ section{
 <script>
     $(document).ready(function() {
 
-
         $('#top').on('click', function() {
             if (window.innerWidth > 450) {
                 $(this).css('background', '#12304a');
@@ -302,7 +358,7 @@ section{
         });
         $(window).scroll(function() {
             if ($(this).scrollTop() == 0) {
-                $("#top").css('opacity', '1');
+                $("#top").css('opacity', '0');
             }
         });
         $(window).on('scroll', function() {
@@ -384,7 +440,7 @@ section{
                         'margin-top': '600px'
                     });
                 }
-   
+
                 if ($(this).data('id') == 17) {
                     $('#locationTitle').text('— 高雄市 —');
                     $('#locationTitle').css({
@@ -512,33 +568,55 @@ section{
             clicked = false;
         }
     })
+    let isLoading = false;
 
     $('path').on('click', function() {
-
         let location = $(this).data('id');
+
+        // 显示加载指示器
+        showLoadingIndicator();
 
         $.get(`./api/file_get.php?location=${location}`, {
             location
         }, (res) => {
-            console.log(typeof res);
-            console.log(res);
-
             let parsedRes = JSON.parse(res);
-            console.log(parsedRes);
             render(parsedRes);
 
+            // 完成加载后隐藏加载指示器
             setTimeout(function() {
                 let targetElement = $('#dataCat');
                 let offsetTop = 180;
                 let targetOffset = targetElement.offset().top - offsetTop;
                 $('html, body').animate({
                     scrollTop: targetOffset
-                }, 100);
+                }, 1000, function() {
+                    hideLoadingIndicator();
+                });
             }, 1000);
         });
-
     });
 
+    function showLoadingIndicator() {
+        isLoading = true;
+        document.getElementById('loadingIndicator').style.display = 'block';
+    }
+
+    function hideLoadingIndicator() {
+        isLoading = false;
+        document.getElementById('loadingIndicator').style.display = 'none';
+    }
+
+
+    $(document).on('click', '.part-1', function() {
+        let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
+        alert('您想要領養的貓貓的' + animalSubid + '\n\n请在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續');
+        window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+    });
+    $(document).on('click', '.go-adopt', function() {
+        let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
+        alert('您想要領養的貓貓的' + animalSubid + '\n\n请在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續');
+        window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+    });
 
     function render(datas) {
         $(".good-row").html("");
@@ -553,12 +631,11 @@ section{
                         '<div class="col-md-6 col-lg-4 col-xl-3 mt-5" id="dataCat">' +
                         '<div class="single-product">' +
                         '<div class="part-1">' +
-                        `<img class="img-rotate" src="${imageUrl}" loading="lazy">` +
+                        `<img class="img-cat" src="${imageUrl}" loading="lazy">` +
                         '</div>' +
                         '<div class="part-2">' +
                         `<div class="d-flex"><h3 class="data-title" style="font-weight:bolder;">${data.animal_Variety}   ${data.animal_sex === 'M' ? '<i class="fa-solid fa-mars"></i>' : '<i class="fa-solid fa-venus"></i>'}</h3><div class="go-adopt"><i class="fa-solid fa-house"></i></div></div>` +
                         '<br>' +
-                
                         '<br>' +
                         `<h4 class="data-cats">${data.animal_place}</h4>` +
                         '<br>' +
@@ -566,7 +643,7 @@ section{
                         '<br>' +
                         `<h4 class="data-cats">收容日期：${data.animal_createtime}</h4>` +
                         '<br>' +
-                        `<h4 class="data-cats">收容編號：${data.animal_subid}</h4>` +
+                        `<h4 class="data-cats animal-subid">收容編號：${data.animal_subid}</h4>` +
                         '<div></div>' +
                         '</div>' +
                         '</div>';
@@ -578,6 +655,7 @@ section{
         });
     }
 
+
     function isImageValid(url) {
         return new Promise((resolve, reject) => {
             let img = new Image();
@@ -587,7 +665,7 @@ section{
             img.onerror = function() {
                 resolve(false);
             };
-     
+
             img.src = url;
         });
     }
