@@ -236,8 +236,24 @@
         font-size: 10px;
         width:5px
     }
-</style>
+    .progress {
+        position: fixed;
+        width: 100%;
+        background-color: #f0f0f0;
+        height: 5px;
+        margin-bottom: 20px;
+        z-index: 999999;
+    }
 
+    .progress-bar {
+        height: 100%;
+        background-color:cadetblue;
+        width: 0%;
+    }
+</style>
+<div class="progress">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
 <a href="#">
     <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
 </a>
@@ -327,6 +343,19 @@
     </div>
 </section>
 <script>
+window.addEventListener('scroll', function() {
+    // 获取页面高度
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    // 获取当前滚动位置
+    const scrollTop = window.scrollY;
+    // 计算滚动比例
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    // 更新进度条宽度
+    document.getElementById('progressBar').style.width = scrollProgress + '%';
+});
+</script>
+<script>
+    
     $(document).ready(function() {
 
         $('#top').on('click', function() {
