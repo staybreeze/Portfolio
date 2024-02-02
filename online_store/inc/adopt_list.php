@@ -204,7 +204,7 @@
     .data-title {
         color: brown;
         background-color: papayawhip;
-        padding-top: 8px;
+        padding-top: 10px;
         height: 35px;
         width: 70%;
         font-size: 15px;
@@ -379,7 +379,7 @@
 
 
             if (scrollPosition < scrolltoTop) {
-                let clicked = false;
+
                 $("#top").css('opacity', '0');
             } else {
                 $("#top").css('opacity', '1');
@@ -435,166 +435,166 @@
     // });
     $('path').on('mouseover', function() {
 
-        if (!clicked) {
-            if (!clicked) {
-                if ($(this).data('id') == 2) {
-                    $('#locationTitle').text('— 臺北市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 4) {
-                    $('#locationTitle').text('— 基隆市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 5) {
-                    $('#locationTitle').text('— 宜蘭縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 19) {
-                    $('#locationTitle').text('— 花蓮縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 20) {
-                    $('#locationTitle').text('— 臺東縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
 
-                if ($(this).data('id') == 17) {
-                    $('#locationTitle').text('— 高雄市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 18) {
-                    $('#locationTitle').text('— 屏東縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 16) {
-                    $('#locationTitle').text('— 臺南市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 15) {
-                    $('#locationTitle').text('— 嘉義市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 14) {
-                    $('#locationTitle').text('— 嘉義縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 13) {
-                    $('#locationTitle').text('— 雲林縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 12) {
-                    $('#locationTitle').text('— 南投縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 11) {
-                    $('#locationTitle').text('— 彰化縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 10) {
-                    $('#locationTitle').text('— 臺中市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 9) {
-                    $('#locationTitle').text('— 苗栗縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 8) {
-                    $('#locationTitle').text('— 新竹市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 7) {
-                    $('#locationTitle').text('— 新竹縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 6) {
-                    $('#locationTitle').text('— 桃園市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 3) {
-                    $('#locationTitle').text('— 新北市 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 22) {
-                    $('#locationTitle').text('— 金門縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 21) {
-                    $('#locationTitle').text('— 澎湖縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
-                if ($(this).data('id') == 23) {
-                    $('#locationTitle').text('— 連江縣 —');
-                    $('#locationTitle').css({
-                        'color': 'rgb(107, 62, 2)',
-                        'margin-top': '600px'
-                    });
-                }
+        if (!clicked) {
+            if ($(this).data('id') == 2) {
+                $('#locationTitle').text('— 臺北市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 4) {
+                $('#locationTitle').text('— 基隆市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 5) {
+                $('#locationTitle').text('— 宜蘭縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 19) {
+                $('#locationTitle').text('— 花蓮縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 20) {
+                $('#locationTitle').text('— 臺東縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+
+            if ($(this).data('id') == 17) {
+                $('#locationTitle').text('— 高雄市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 18) {
+                $('#locationTitle').text('— 屏東縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 16) {
+                $('#locationTitle').text('— 臺南市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 15) {
+                $('#locationTitle').text('— 嘉義市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 14) {
+                $('#locationTitle').text('— 嘉義縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 13) {
+                $('#locationTitle').text('— 雲林縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 12) {
+                $('#locationTitle').text('— 南投縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 11) {
+                $('#locationTitle').text('— 彰化縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 10) {
+                $('#locationTitle').text('— 臺中市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 9) {
+                $('#locationTitle').text('— 苗栗縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 8) {
+                $('#locationTitle').text('— 新竹市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 7) {
+                $('#locationTitle').text('— 新竹縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 6) {
+                $('#locationTitle').text('— 桃園市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 3) {
+                $('#locationTitle').text('— 新北市 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 22) {
+                $('#locationTitle').text('— 金門縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 21) {
+                $('#locationTitle').text('— 澎湖縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
+            }
+            if ($(this).data('id') == 23) {
+                $('#locationTitle').text('— 連江縣 —');
+                $('#locationTitle').css({
+                    'color': 'rgb(107, 62, 2)',
+                    'margin-top': '600px'
+                });
             }
         }
-    });
+    })
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > 450) {
             clicked = false;
@@ -602,34 +602,42 @@
     })
     let isLoading = false;
 
+    let isProcessing = false;
+
     $('path').on('click', function() {
 
-        $('body').css('overflow', 'hidden');
+        if (!isProcessing) {
+            isProcessing = true;
 
-        let location = $(this).data('id');
+            $('body').css('overflow', 'hidden');
 
-        showLoadingIndicator();
+            let location = $(this).data('id');
 
-        $.get(`./api/file_get.php?location=${location}`, {
-            location
-        }, (res) => {
-            let parsedRes = JSON.parse(res);
-            render(parsedRes);
+            showLoadingIndicator();
 
-            setTimeout(function() {
-                let targetElement = $('#dataCat');
-                let offsetTop = 180;
-                let targetOffset = targetElement.offset().top - offsetTop;
-                $('html, body').animate({
-                    scrollTop: targetOffset
-                }, 1000, function() {
+            $.get(`./api/file_get.php?location=${location}`, {
+                location
+            }, (res) => {
+                let parsedRes = JSON.parse(res);
+                render(parsedRes);
 
-                    $('body').css('overflow', 'auto');
-                    hideLoadingIndicator();
-                });
-            }, 1000);
-        });
+                setTimeout(function() {
+                    let targetElement = $('#dataCat');
+                    let offsetTop = 180;
+                    let targetOffset = targetElement.offset().top - offsetTop;
+                    $('html, body').animate({
+                        scrollTop: targetOffset
+                    }, 1000, function() {
+                        $('body').css('overflow', 'auto');
+                        hideLoadingIndicator();
+
+                        isProcessing = false;
+                    });
+                }, 1000);
+            });
+        }
     });
+
 
     function showLoadingIndicator() {
         isLoading = true;
@@ -706,8 +714,8 @@
         let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
         let imgCat = $(this).find('.img-cat').attr('src');
         Swal.fire({
-            title: "您貓貓的" + animalSubid,
-            html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
+            title: "貓貓的" + animalSubid,
+            html: "<p style='line-height:50px'>請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i><p>",
             imageUrl: imgCat,
             // imageWidth: 300,
             // imageHeight: 200,
@@ -726,8 +734,8 @@
         let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
         let imgCat = $(this).parent().parent().parent().find('.img-cat').attr('src');
         Swal.fire({
-            title: "您貓貓的" + animalSubid,
-            html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
+            title: "貓貓的" + animalSubid,
+            html: "<p style='line-height:50px'>請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i></p>",
             imageUrl: imgCat,
             // imageWidth: 300,
             // imageHeight: 200,
@@ -818,9 +826,8 @@
         ease: 'back',
         stagger: 0.1,
     });
- if (window.innerWidth < 1600) {
-            alert('此網站不支援手機及平板瀏覽>"""<，請使用電腦開啟！');
-            window.location.href = 'index.php';
-        }
-  
+    if (window.innerWidth < 1600) {
+        alert('此網站不支援手機及平板瀏覽>"""<，請使用電腦開啟！');
+        window.location.href = 'index.php';
+    }
 </script>
