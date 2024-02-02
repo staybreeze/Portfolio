@@ -818,4 +818,9 @@
         ease: 'back',
         stagger: 0.1,
     });
+ if (window.innerWidth < 1600) {
+            alert('此網站不支援手機及平板瀏覽>"""<，請使用電腦開啟！');
+            window.location.href = 'index.php';
+        }
+  
 </script>

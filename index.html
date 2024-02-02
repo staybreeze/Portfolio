@@ -54,7 +54,9 @@
 
     }
 
-    .item, .item-second,.item-third {
+    .item,
+    .item-second,
+    .item-third {
       display: none;
       /* width: 100%; */
       font-size: 50px;
@@ -92,7 +94,9 @@
 
       }
 
-      .item, .item-second,.item-third {
+      .item,
+      .item-second,
+      .item-third {
 
         font-size: 30px;
 
@@ -108,6 +112,7 @@
     .hide-content {
       display: none;
     }
+
     /* .boxX4Y2,.boxX4Y3,.boxX4Y4,.boxX4Y5,.boxX4Y6,.boxX7Y2,.boxX7Y3,.boxX7Y5,.boxX7Y6,.boxX9Y6,.boxX9Y5,.boxX9Y4,.boxX9Y2{
 
 border-right:50px solid#8bafb4
@@ -115,8 +120,6 @@ border-right:50px solid#8bafb4
 .boxX5Y4,.boxX6Y4,.boxX7Y4{
   border-top:50px solid#8bafb4 !important
 } */
-
-
   </style>
 </head>
 
@@ -268,7 +271,7 @@ border-right:50px solid#8bafb4
         stagger: 0.5
       }, 0.5) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 
-      const tlSecond = gsap.timeline({
+    const tlSecond = gsap.timeline({
       // repeat: -1,
       // repeatDelay: 1
       delay: 3.2,
@@ -290,8 +293,8 @@ border-right:50px solid#8bafb4
         stagger: 0.5
       }, 0.5) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
 
-      
-      const tlThird = gsap.timeline({
+
+    const tlThird = gsap.timeline({
       // repeat: -1,
       // repeatDelay: 1
       delay: 4.2,
@@ -322,7 +325,7 @@ border-right:50px solid#8bafb4
       const languages = 100
 
       const tween = gsap.to('.bar', {
-        delay:5.7,
+        delay: 5.7,
         display: 'block',
         duration: 0.7,
         width: function (index, target, targets) {
@@ -353,7 +356,7 @@ border-right:50px solid#8bafb4
         for (var i = 0; i < rows; i++) {
           for (var j = 0; j < cols; j++) {
             var box = document.createElement('div');
-            box.className = 'box ' + 'box' + j + ' box-first' + i+' boxX'+j+'Y'+i;
+            box.className = 'box ' + 'box' + j + ' box-first' + i + ' boxX' + j + 'Y' + i;
             box.style.left = (j * (boxSize + spacing)) + 'px';
             box.style.top = (i * (boxSize + spacing)) + -100 + 'px';
             container.appendChild(box);

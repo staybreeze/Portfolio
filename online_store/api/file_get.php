@@ -11,7 +11,7 @@
 // }
 $location =$_GET['location'];
 
-$url = 'https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL';
+$url = '../data/pet.json';
 $data = file_get_contents($url);
 $decodedData = json_decode($data, true);
 
