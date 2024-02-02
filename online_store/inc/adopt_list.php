@@ -164,7 +164,7 @@
 
     path:not([data-id='23']):not([data-id='21']):not([data-id='22']):not([data-sub-id='24']):hover {
         fill: var(--color-brown);
-        transform: translate(-5px, -5px);
+        /* transform: translate(-5px, -5px); */
     }
 
 
@@ -192,7 +192,7 @@
 
     .data-cats {
         font-size: 1rem;
-        line-height: 10px;
+        line-height: 20px;
         text-align: center;
         padding-right: 18px;
         width: 80%;
@@ -228,14 +228,16 @@
     .part-2 {
         margin-left: 50px;
     }
-    #loadingIndicator{
+
+    #loadingIndicator {
         position: absolute;
-        top:78%;
-        left:39.2%;
-        color:#B99362;
+        top: 78%;
+        left: 39.2%;
+        color: #B99362;
         font-size: 10px;
-        width:5px
+        width: 5px
     }
+
     .progress {
         position: fixed;
         width: 100%;
@@ -247,12 +249,12 @@
 
     .progress-bar {
         height: 100%;
-        background-color:cadetblue;
+        background-color: cadetblue;
         width: 0%;
     }
 </style>
 <div class="progress">
-  <div class="progress-bar" id="progressBar"></div>
+    <div class="progress-bar" id="progressBar"></div>
 </div>
 <a href="#">
     <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
@@ -343,19 +345,18 @@
     </div>
 </section>
 <script>
-window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function() {
 
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-    const scrollTop = window.scrollY;
+        const scrollTop = window.scrollY;
 
-    const scrollProgress = (scrollTop / scrollHeight) * 100;
+        const scrollProgress = (scrollTop / scrollHeight) * 100;
 
-    document.getElementById('progressBar').style.width = scrollProgress + '%';
-});
+        document.getElementById('progressBar').style.width = scrollProgress + '%';
+    });
 </script>
 <script>
-    
     $(document).ready(function() {
 
         $('#top').on('click', function() {
@@ -387,7 +388,9 @@ window.addEventListener('scroll', function() {
         });
         $(window).scroll(function() {
             if ($(this).scrollTop() == 0) {
-                $("#top").css('opacity', '0');
+                // $("#top").css('opacity', '0');
+                window.location.reload();
+
             }
         });
         $(window).on('scroll', function() {
@@ -412,24 +415,24 @@ window.addEventListener('scroll', function() {
             $(this).css('background-color', 'rgb(216, 162, 90)');
         });
     });
-    $('g').on('mouseover click', function() {
-        if ($(this).data('id') == 22) {
-            $('#locationTitle').text('— 金門縣 —');
-            $('#locationTitle').css({
-                'color': 'rgb(107, 62, 2)',
-                'margin-top': '600px'
-            });
-        }
-    });
+    // $('g').on('mouseover click', function() {
+    //     if ($(this).data('id') == 22) {
+    //         $('#locationTitle').text('— 金門縣 —');
+    //         $('#locationTitle').css({
+    //             'color': 'rgb(107, 62, 2)',
+    //             'margin-top': '600px'
+    //         });
+    //     }
+    // });
 
     let clicked = false;
 
     $('path').on('click', function() {
         clicked = true;
     });
-    $('g').on('click', function() {
-        clicked = true;
-    });
+    // $('g').on('click', function() {
+    //     clicked = true;
+    // });
     $('path').on('mouseover', function() {
 
         if (!clicked) {
@@ -593,16 +596,18 @@ window.addEventListener('scroll', function() {
         }
     });
     $(window).scroll(function() {
-        if ($(this).scrollTop() == 0) {
+        if ($(this).scrollTop() > 450) {
             clicked = false;
         }
     })
     let isLoading = false;
 
     $('path').on('click', function() {
+
+        $('body').css('overflow', 'hidden');
+
         let location = $(this).data('id');
 
-   
         showLoadingIndicator();
 
         $.get(`./api/file_get.php?location=${location}`, {
@@ -611,7 +616,6 @@ window.addEventListener('scroll', function() {
             let parsedRes = JSON.parse(res);
             render(parsedRes);
 
-      
             setTimeout(function() {
                 let targetElement = $('#dataCat');
                 let offsetTop = 180;
@@ -619,6 +623,8 @@ window.addEventListener('scroll', function() {
                 $('html, body').animate({
                     scrollTop: targetOffset
                 }, 1000, function() {
+
+                    $('body').css('overflow', 'auto');
                     hideLoadingIndicator();
                 });
             }, 1000);
@@ -635,49 +641,20 @@ window.addEventListener('scroll', function() {
         document.getElementById('loadingIndicator').style.display = 'none';
     }
 
-
-    $(document).on('click', '.part-1', function() {
-    let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
-    let imgCat = $(this).find('.img-cat').attr('src');
-    Swal.fire({
-        title: "您貓貓的" + animalSubid ,
-        html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
-        imageUrl: imgCat,  
-        // imageWidth: 300,
-        // imageHeight: 200,
-        confirmButtonText: '領養GO！', 
-        confirmButtonColor: 'rgb(216, 162, 90)',
-    }).then((result) => {
-        if (result.isConfirmed) { 
-            window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
-        }
-    });
-});
-
-
-
-$(document).on('click', '.go-adopt', function() {
-    let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
-    let imgCat = $(this).parent().parent().parent().find('.img-cat').attr('src');
-    Swal.fire({
-        title: "您貓貓的" + animalSubid ,
-        html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
-        imageUrl: imgCat,  
-        // imageWidth: 300,
-        // imageHeight: 200,
-        confirmButtonText: '領養GO！', 
-        confirmButtonColor: 'rgb(216, 162, 90)',
-    }).then((result) => {
-        if (result.isConfirmed) { 
-            window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
-        }
-    });
-});
-
-
     function render(datas) {
         $(".good-row").html("");
         datas.forEach((data, idx) => {
+
+            let adoptionDateStr = data.animal_createtime;
+
+            let adoptionDate = new Date(adoptionDateStr);
+
+            let currentDate = new Date();
+
+            let timeDifference = currentDate.getTime() - adoptionDate.getTime();
+
+            let daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
             let imageUrl = data.album_file;
             isImageValid(imageUrl)
                 .then(valid => {
@@ -694,11 +671,11 @@ $(document).on('click', '.go-adopt', function() {
                         `<div class="d-flex"><h3 class="data-title" style="font-weight:bolder;">${data.animal_Variety}   ${data.animal_sex === 'M' ? '<i class="fa-solid fa-mars"></i>' : '<i class="fa-solid fa-venus"></i>'}</h3><div class="go-adopt"><i class="fa-solid fa-house"></i></div></div>` +
                         '<br>' +
                         '<br>' +
-                        `<h4 class="data-cats">${data.animal_place}</h4>` +
+                        `<h4 class="data-cats" style="line-height:30px">${data.animal_place}</h4>` +
                         '<br>' +
                         `<h4 class="data-cats">電話：${data.shelter_tel}</h4>` +
                         '<br>' +
-                        `<h4 class="data-cats">收容日期：${data.animal_createtime}</h4>` +
+                        `<h4 class="data-cats">我已經待了<span style="color:crimson;text-decoration:underline"> ${daysDifference} </span>天</h4>` +
                         '<br>' +
                         `<h4 class="data-cats animal-subid">收容編號：${data.animal_subid}</h4>` +
                         '<div></div>' +
@@ -712,7 +689,6 @@ $(document).on('click', '.go-adopt', function() {
         });
     }
 
-
     function isImageValid(url) {
         return new Promise((resolve, reject) => {
             let img = new Image();
@@ -722,10 +698,47 @@ $(document).on('click', '.go-adopt', function() {
             img.onerror = function() {
                 resolve(false);
             };
-
             img.src = url;
         });
     }
+
+    $(document).on('click', '.part-1', function() {
+        let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
+        let imgCat = $(this).find('.img-cat').attr('src');
+        Swal.fire({
+            title: "您貓貓的" + animalSubid,
+            html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
+            imageUrl: imgCat,
+            // imageWidth: 300,
+            // imageHeight: 200,
+            confirmButtonText: '領養GO！',
+            confirmButtonColor: 'rgb(216, 162, 90)',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+            }
+        });
+    });
+
+
+
+    $(document).on('click', '.go-adopt', function() {
+        let animalSubid = $(this).parent().parent().find('.animal-subid').text().trim();
+        let imgCat = $(this).parent().parent().parent().find('.img-cat').attr('src');
+        Swal.fire({
+            title: "您貓貓的" + animalSubid,
+            html: "請在接下来的網站找到相對應的欄位，填上收容編號後，完成領養手續 <i class='fa-solid fa-paw'> </i><i class='fa-solid fa-paw'></i>",
+            imageUrl: imgCat,
+            // imageWidth: 300,
+            // imageHeight: 200,
+            confirmButtonText: '領養GO！',
+            confirmButtonColor: 'rgb(216, 162, 90)',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.open('https://www.pet.gov.tw/AnimalApp/AnnounceMent.aspx?PageType=Adopt', '_blank');
+            }
+        });
+    });
 </script>
 <!-- 引入 gsap 主程式 -->
 <script src="./gsap/gsap.js"></script>
