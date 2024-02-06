@@ -1,5 +1,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/search_goods.css">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+    .liked {
+        color: #fe302f
+    }
+
+    #shoppingBtn,
+    #discountBanner {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 450px) {
+
+        #shoppingBtn,
+        #discountBanner {
+            display: block;
+
+        }
+
+        .img-rotate {
+            width: 75%;
+            margin-top: 20px;
+            margin-left: 50px
+        }
+
+    }
+
+    .disabled {
+        display: none;
+    }
+
+    .banner {
+
+        position: relative;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .item {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* opacity: 0; */
+    }
+
+    .item h2,
+    .good-header h3,p {
+   
+        font-family: 'Zen Maru Gothic', serif;
+    }
+
+    .top {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        padding-top: 1px;
+        text-align: center;
+        align-items: center;
+        right: 20px;
+        bottom: 200px;
+        background-color: rgb(216, 162, 90);
+        color: #fff;
+        /* font-weight: bold; */
+        font-size: 20px;
+        font-family: Rubik scribble;
+        /* border-bottom: 1px solid#00707f;   */
+        z-index: 99;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    #checkOutBtn {
+        z-index: 999;
+    }
+</style>
 <a href="#">
     <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
 </a>
@@ -210,4 +288,154 @@
         </div>
         <a href="cart.php"><button type="button" class="btn  close-btn mt-2" id="checkOutBtn"><em>CHECK OUT</em></button></a>
 </section>
-<script src="./js/search_goods.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('#top').on('click', function() {
+            if (window.innerWidth > 450) {
+                $(this).css('background', '#12304a');
+            }
+            setTimeout(function() {
+                $('#top').css('background', 'rgb(216, 162, 90)');
+            }, 800);
+        });
+
+
+
+        $(".good-sold-out").click(function() {
+
+            alert('商品賣完囉！拍謝～我們會盡快補貨～💛💛💛')
+        })
+
+        //         $(".fa-heart").click(function() {
+        //     location.reload();
+        // });
+
+        $(".like").click(function(event) {
+            let productId = $(this).data("id");
+
+            $.post("./api/add_like.php", {
+                'id': productId
+            }, (res) => {
+                console.log(res);
+
+                $("#" + productId).load(location.href + " #" + productId + " > *");
+                //   location.reload();
+            });
+        });
+    });
+
+    $(document).ready(function() {
+
+        $('.goodImgExpand').click(function() {
+            let imgName = $(this).find("i").data("img");
+            console.log('ok');
+            $("#imgModalSrc").attr("src", "./img/" + imgName);
+            $('#good').modal('show');
+        });
+
+
+    });
+
+    $("#shoppingBtn").click(function() {
+
+        $("#shoppingBtn").hide()
+    })
+
+    // 如果包含 'store' 參數，隱藏 #shoppingBtn
+
+
+    // $("#discountBanner").click(function() {
+    //     $(".good-row").css('border', '10px solid #d8a25a');
+    //     $("#discountBanner").css('border', '10px solid #d8a25a');
+    //     $("#discountBanner").css('background-color', '#d8a25a');
+    //     $("#discountBanner").css('color', '#fff');
+
+    // });
+    if (window.innerWidth > 450) {
+        let part2 = $(".part-2")
+        part2.find(".fa-sharp").addClass('disabled');
+    }
+    if (window.innerWidth < 450) {
+
+        if (window.location.hash.includes('store')) {
+            $("#shoppingBtn").hide();
+            $(".discount-p").removeClass('discount-p');
+            $(".good-row").css('border', '10px solid #d8a25a');
+            $("#discountBanner").css('border', '10px solid #d8a25a');
+            $("#discountBanner").css('background-color', '#d8a25a');
+            $("#discountBanner").css('color', '#fff');
+            $(".good-row").css('margin-top', '4.5px');
+        }
+    };
+    var scrollThreshold = 610;
+    var scrolltoTop = 100;
+    var scrolltoDiscountBar = 400;
+    $(window).scroll(function() {
+
+        var scrollPosition = $(this).scrollTop();
+        var documentHeight = $(document).height();
+        var windowHeight = $(this).height();
+
+        if (scrollPosition < scrolltoTop) {
+            var scrollPosition = $(this).scrollTop();
+            $("#top").css('opacity', '0')
+
+        } else {
+            $("#top").css('opacity', '1')
+        }
+
+        if (scrollPosition < scrolltoDiscountBar) {
+            $("#top").css('opacity', '0')
+
+        };
+
+        if (window.innerWidth < 450) {
+            var scrollPosition = $(this).scrollTop();
+            var documentHeight = $(document).height();
+            var windowHeight = $(this).height();
+
+            if (scrollPosition > scrollThreshold) {
+                $(".good-row").css('border', '10px solid #d8a25a ');
+                $("#discountBanner").css('background-color', '#d8a25a ');
+
+
+            } else {
+                $(".good-row").css('border', '10px solid rgb(148, 86, 6) ');
+                $("#discountBanner").css('border', '1px solid rgb(252, 233, 122) ');
+                $("#discountBanner").css('background-color', 'rgb(148, 86, 6) ');
+                $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
+                $(".good-row").css('margin-top', '4.5px');
+            }
+
+            if (scrollPosition < scrolltoTop) {
+                $(".good-row").css('border', '10px solid rgb(73, 42, 2) ');
+                $("#discountBanner").css('border', '1px solid d rgb(252, 233, 122) ');
+                $("#discountBanner").css('background-color', 'rgb(73, 42, 2) ');
+                $("#discountBanner").css('color', 'rgb(252, 233, 122) ');
+                $("#discountBanner").css('padding-top', '18px');
+                $("#storeBannerRow").css('margin-bottom', '14px');
+                $("#top").css('opacity', '0')
+                $("#top").css('margin-top', '50px')
+            } else {
+                $("#top").css('opacity', '1')
+            }
+
+            if (scrollPosition < scrolltoDiscountBar) {
+                $("#top").css('opacity', '0')
+                $("#top").css('margin-top', '50px')
+            };
+        }
+    });
+    $(document).ready(function() {
+
+        var windowWidth = $(window).width();
+
+        if (windowWidth < 450) {
+
+            $('.plus-atag').attr('href', './api/add_good.php?id=<?= $good['id']; ?>&mobile');
+        }
+
+    });
+</script>
