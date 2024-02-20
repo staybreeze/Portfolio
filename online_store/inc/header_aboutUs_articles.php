@@ -7,12 +7,12 @@ include_once "header_effect.php"
 
     <div class="test col-xxl-2 col-xl-6 col-12 ms-3 logo-area">
       <a href="index.php" data-bs-toggle="modal" data-bs-target="#myModal-2">
-      <img class="logo" src="./img/logo1.png" id="logo" style="transition:all 1s" width="85%" height="100%"></a>
+        <img class="logo" src="./img/logo1.png" id="logo" style="transition:all 1s" width="85%" height="100%"></a>
     </div>
     <div class="test col-xxl-2 col-xl-6 col-12 mt-4 pt-3 header-title">
 
       <a href="index.php">
-      <h2 style="font-weight:600;transition:all 1s" id="title">奇多喵合作社</h2>
+        <h2 style="font-weight:600;transition:all 1s" id="title">奇多喵合作社</h2>
       </a>
 
     </div>
@@ -58,10 +58,22 @@ include_once "header_effect.php"
 
     <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:37px">
       <a class="shopping-cart-a" target="_blank" href="">
-        <a href="./cart.php"> 
-        <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 1s">
-        </i></a>
-        <p class="mt-1 shopping-cart-p hidden-words ms-2">Buy it !</p>
+        <a href="./cart.php">
+          <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 1s">
+          </i>
+        </a>
+        <p class="mt-1 shopping-cart-p hidden-words ms-2">
+
+          <?php
+          if (isset($_SESSION['good'])) {
+          ?>
+            <span style="font-size:15px>">【 <span style="color:navy;font-size: 15px;font-weight:300"><?= count($_SESSION['good']); ?></span> 】</span>
+
+          <?php
+          } else {
+            echo "Buy it !";
+          } ?>
+        </p>
       </a>
 
     </div>
@@ -69,9 +81,9 @@ include_once "header_effect.php"
 
     <div class="test col-xxl-1 col-xl-2 col-2 pt-4  member-icon" style="margin-top:8px;margin-left:20px">
 
-      <div class="offcanvas offcanvas-end" id="demo" >
-        <div class="offcanvas-header"  style="background-color:#12304a;text-align:center;padding-top:17.5px;color:#fff">
-          <h2 class="offcanvas-title">會員中心<img  class="mb-2" src="./img/logo1.png" alt="" width="80px"></h2>
+      <div class="offcanvas offcanvas-end" id="demo">
+        <div class="offcanvas-header" style="background-color:#12304a;text-align:center;padding-top:17.5px;color:#fff">
+          <h2 class="offcanvas-title">會員中心<img class="mb-2" src="./img/logo1.png" alt="" width="80px"></h2>
 
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
@@ -147,22 +159,22 @@ include_once "header_effect.php"
             </div>
             </form>
             <!-- Modal body container end -->
-      
-          </div>
-        
-          <?php
-      if(isset($_SESSION['user'])){
-        // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
-      // echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
-        }else{
 
-          echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
-        }
+          </div>
+
+          <?php
+          if (isset($_SESSION['user'])) {
+            // echo ' <img class="mb" src="./img/cheetos19.jpg" width="383px" style="position:relative;top:30px">';
+            // echo ' <img class="mb" src="./img/cheetos21.jpg" width="300px">';
+          } else {
+
+            echo '<br> <br>   <br>   <br>   <br>   <img class="ms-3" src="./img/cheetos15.jpg" width="300px"alt="">';
+          }
           ?>
         </div>
       </div>
       <div>
-      <i class="fa-regular fa-circle-user me-5 hidden-icon" style=" font-size: 2em;transition:all 1s;cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
+        <i class="fa-regular fa-circle-user me-5 hidden-icon" style=" font-size: 2em;transition:all 1s;cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
 
         <p class="mt-1 me-5 shopping-cart-p hidden-words">Menbership</p>
       </div>
@@ -170,8 +182,8 @@ include_once "header_effect.php"
     <div class="col-xxl-1 col-xl-2 col-2 pt-4 test buy-icon" style="margin-top:8px;margin-left:-35px">
       <a class="shopping-cart-a" target="_blank">
         <a href="./adopt.php">
-    
-          <i class="fa-solid fa-shield-cat fa-l hidden-icon"style="font-size: 2em;transition:all 1s;"></i>
+
+          <i class="fa-solid fa-shield-cat fa-l hidden-icon" style="font-size: 2em;transition:all 1s;"></i>
 
         </a>
         <p class="mt-1 shopping-cart-p hidden-words ms-2">Adoption</p>
@@ -180,8 +192,8 @@ include_once "header_effect.php"
     </div>
     <div class="col-xxl-1 col-xl-2 col-2 test pt-4 search-icon" style="margin-top:20px;margin-left:80px;transition:all 1s">
       <form class="d-flex">
-      <input class="search-wrapper me-2 myInput" id="searchInput" type="text" placeholder="Search Product">
-         <button id="searchButton" class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>
+        <input class="search-wrapper me-2 myInput" id="searchInput" type="text" placeholder="Search Product">
+        <button id="searchButton" class="btn btn-primary rounded-pill btn-bg" style="width:130px" type="button">Search</button>
       </form>
     </div>
   </div>
@@ -189,12 +201,12 @@ include_once "header_effect.php"
 
 <header class="h-11 bg-gray container-fluid header2 ">
 
- <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
- <h2  style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px"  class="header-title-mobile">奇多喵合作社</h2>
+  <!-- <h2  style="font-weight:600;position:absolute;margin-left:155px;padding-top:42px">奇多喵合作社</h2> -->
+  <h2 style="font-weight:600;position:absolute;margin-left:145px;padding-top:42px" class="header-title-mobile">奇多喵合作社</h2>
 
 
-<a href="index.php">
-  <img class="logo2" src="./img/logo1.png" alt=""></a>
+  <a href="index.php">
+    <img class="logo2" src="./img/logo1.png" alt=""></a>
 
   <div class="header-title2">
 
@@ -265,52 +277,50 @@ include_once "header_effect.php"
       </div>
       <div class="page-link-min">
 
-<ul>
-  <li class="nav-item me-3">
-    <a href="./index.php">回首頁</a>
-    <div class="unloading-bar"></div>
-    <div class="loading-bar"></div>
-  </li>
-  <?php
-  if (isset($_SESSION['user'])) {
-    echo "<li>
+        <ul>
+          <li class="nav-item me-3">
+            <a href="./index.php">回首頁</a>
+            <div class="unloading-bar"></div>
+            <div class="loading-bar"></div>
+          </li>
+          <?php
+          if (isset($_SESSION['user'])) {
+            echo "<li>
     <span> <a href='./api/logout.php'>登出</a></span>
 <div class='unloading-bar'></div>
 <div class='loading-bar'></div>
 </li>
 ";
-  }
+          }
 
-  ?>
+          ?>
 
-  </a>
+          </a>
 
-  </li>
-</ul>
-</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
 </header>
 <script>
-
-$(document).ready(function() {
+  $(document).ready(function() {
     $('#searchButton').click(function() {
+      var searchQuery = $('#searchInput').val();
+
+      var encodedQuery = encodeURIComponent(searchQuery);
+      var url = "search.php?query=" + encodedQuery;
+      window.location.href = url;
+    });
+    $('#searchInput').on('keypress', function(event) {
+      if (event.keyCode === 13 || event.which === 13) {
+        event.preventDefault();
         var searchQuery = $('#searchInput').val();
-     
         var encodedQuery = encodeURIComponent(searchQuery);
         var url = "search.php?query=" + encodedQuery;
         window.location.href = url;
+      }
     });
-    $('#searchInput').on('keypress', function(event) {
-        if (event.keyCode === 13 || event.which === 13) {
-            event.preventDefault();
-            var searchQuery = $('#searchInput').val();
-            var encodedQuery = encodeURIComponent(searchQuery);
-            var url = "search.php?query=" + encodedQuery;
-            window.location.href = url;
-        }
-    });
-});
-
+  });
 </script>

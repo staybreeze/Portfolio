@@ -142,7 +142,7 @@
             ?>
 
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product<?=$good['id'];?>" class="single-product">
+                    <div id="product<?= $good['id']; ?>" class="single-product">
 
                         <div class="part-1">
                             <img class="img-rotate" src="./img/<?= $good['img']; ?>" width="80%">
@@ -179,12 +179,25 @@
                                     }
                                     ?>
                                 </li>
+                   
                                 <li><a style="cursor:pointer" class="like" id="<?= $good['id']; ?>" data-id="<?= $good['id']; ?>"><i class="fas fa-heart <?= $isLiked; ?>"></i></a></li>
                                 <li>
                                     <?php if ($good['remain'] > 0) { ?>
-                                        <a href="./api/add_good.php?id=<?= $good['id']; ?>" class="plus-atag">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
+                                        <?php
+                                        if (isset($_SESSION['user'])) {
+                                        ?>
+                                            <a href="./api/add_good.php?id=<?= $good['id']; ?>" class="plus-atag">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <a href="./api/add_good_session.php?id=<?= $good['id']; ?>" class="plus-atag">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                        <?php
+                                        }
+                                        ?>
                                     <?php
                                     } else {
                                     ?>
@@ -282,18 +295,17 @@
 </section>
 
 <script>
-  
-        $(document).ready(function() {
+    $(document).ready(function() {
 
-            $('#top').on('click', function() {
-                if (window.innerWidth > 450) {
-                    $(this).css('background', '#12304a');
-                }
-                setTimeout(function() {
-                    $('#top').css('background', 'rgb(216, 162, 90)');
-                }, 800);
-            });
-       
+        $('#top').on('click', function() {
+            if (window.innerWidth > 450) {
+                $(this).css('background', '#12304a');
+            }
+            setTimeout(function() {
+                $('#top').css('background', 'rgb(216, 162, 90)');
+            }, 800);
+        });
+
 
 
         $(".good-sold-out").click(function() {
@@ -465,5 +477,4 @@
             autoAlpha: 0,
             stagger: 4
         }, 4) // 第三參數指設定動畫在時間軸的位置，2.5 是絕對數值，直接將動畫放在時間軸 2.5 秒的位置
-
 </script>

@@ -63,10 +63,23 @@ include_once "header_effect.php"
       <a class="shopping-cart-a" target="_blank" href="">
         <a href="../cart.php"> 
         <i class="fa-sharp fa-solid fa-cart-shopping shopping-cart fa-l hidden-icon" style="font-size: 2em;transition:all 1s">
-        </i></a>
-        <p class="mt-1 shopping-cart-p hidden-words ms-2">Buy it !</p>
+        </i>
+        </a>
+        <p class="mt-1 shopping-cart-p hidden-words ms-2">
+          
+    <?php
+    if(isset($_SESSION['good'])){
+    ?>
+        <span  style="font-size:15px>">【 <span style="color:navy;font-size: 15px;font-weight:300"><?=count($_SESSION['good']);?></span>  】</span>
+      
+      <?php
+      }else{
+        echo "Buy it !";
+      }?>
+      </p>
       </a>
 
+      
     </div>
 
 

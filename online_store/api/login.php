@@ -45,7 +45,9 @@ if (empty($_POST['acc']) || empty($_POST['pw'])) {
 // echo $res;
 if($res){
     $_SESSION['user']=$acc;
-    header("location:../index.php");
+
+
+    header("location:session_to_cart.php");
 
   
 }else{

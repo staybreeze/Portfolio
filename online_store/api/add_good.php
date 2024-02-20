@@ -1,6 +1,7 @@
 <?php
 include_once "./db.php";
-
+$id=$_GET['id'];
+$_SESSION['good'][$id]=+1;
 if (isset($_SESSION['user'])) {
     $goodId = $_GET['id'];
 
