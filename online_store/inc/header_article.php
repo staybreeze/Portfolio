@@ -70,7 +70,7 @@ include_once "header_effect.php"
     <?php
     if(isset($_SESSION['good'])){
     ?>
-        <span  style="font-size:15px>">【 <span style="color:navy;font-size: 15px;font-weight:300"><?=count($_SESSION['good']);?></span>  】</span>
+        <span  style="font-size:15px>">【 <span style="color:navy;font-size: 12px;font-weight:300"><?=count($_SESSION['good']);?></span>  】</span>
       
       <?php
       }else{

@@ -226,7 +226,7 @@ if(isset($_SESSION['user'])){
 
           <?php
           if (isset($_GET['error'])) {
-
+echo "<br>";
             // echo "<span style='color:red'>請先登入會員再購買商品喔！</span>";
           }
 
