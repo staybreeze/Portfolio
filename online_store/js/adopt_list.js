@@ -281,7 +281,7 @@
                     let targetOffset = targetElement.offset().top - offsetTop;
                     $('html, body').animate({
                         scrollTop: targetOffset
-                    }, 1000, function() {
+                    }, 500, function() {
                         $('body').css('overflow', 'auto');
                         hideLoadingIndicator();
 
