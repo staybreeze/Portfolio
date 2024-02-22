@@ -117,7 +117,9 @@
    
  </footer>
  <div class="copyright">
-   <p>© WSL Web ALL Reserved.</p>
+ <p>© WSL Web All Rights Reserved. ／　<i class="fa-solid fa-users-viewfinder"></i>
+    進站總人數 : <?=$Total->find(1)['total'];?>
+    </p>
  </div>
  </div>
 
