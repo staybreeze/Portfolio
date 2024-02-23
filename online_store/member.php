@@ -210,23 +210,23 @@ include_once "./api/db.php";
           ?>
           <form action="./api/update.php" method="post" class="col-4 m-auto pt-3">
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100">帳號:</label>
+              <label class="col-4  input-group-text mt-3 w-100">帳號：</label>
               <input class="form-control" type="text" name="acc" id="acc" value="<?= $user['acc']; ?>" disabled>
             </div>
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100">密碼:</label>
+              <label class="col-4  input-group-text mt-3 w-100">密碼：</label>
               <input class="form-control" type="password" name="pw" id="pw" value="<?= $user['pw']; ?>">
             </div>
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100">姓名:</label>
+              <label class="col-4  input-group-text mt-3 w-100">姓名：</label>
               <input class="form-control" type="text" name="name" id="name" value="<?= $user['name']; ?>">
             </div>
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100">電子郵件:</label>
+              <label class="col-4  input-group-text mt-3 w-100">電子郵件：</label>
               <input class="form-control" type="text" name="email" id="email" value="<?= $user['email']; ?>">
             </div>
             <div class="input-group my-1">
-              <label class="col-4  input-group-text mt-3 w-100">居住地:</label>
+              <label class="col-4  input-group-text mt-3 w-100">居住地：</label>
               <input class="form-control" type="text" name="address" id="address" value="<?= $user['address']; ?>">
             </div>
             <div class="btn-group">

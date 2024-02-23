@@ -53,10 +53,9 @@ include_once "header_effect.php"
        ";
               } else {
 
-
                 echo '<span> 會員登入</span>
-              <div class="unloading-bar"></div>
-              <div class="loading-bar"></div>';
+                <div class="unloading-bar"></div>
+                <div class="loading-bar"></div>'; 
               }
               ?>
 
@@ -155,7 +154,7 @@ $img = captcha($_SESSION['ans']);
 ?>
 <img src="<?= $img; ?>">
 <input type="hidden" id="sessionAns" value="<?=$_SESSION['ans'];?>">
-<input type="text" id="ans" style="height:45px;margin-top:2px;width:150px">
+              <input type="text" id="ans" style="height:40px;margin-top:4px;margin-left:40px;width:150px;border:1px dotted brown;border-radius:5px">
 </div>
 <?php
                 echo 

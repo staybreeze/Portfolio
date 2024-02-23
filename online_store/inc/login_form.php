@@ -43,14 +43,14 @@
                           <a href="./add.php" style="padding-left:0px;text-decoration:underline;color:cadetblue" class="ms-3 mt-2"><i class="fa-solid mb-1 fa-user-plus"></i>&nbsp;加入會員</a>
                 </div>
             </div>
-            <div style="display:flex" class="mt-3"> <?php
+            <div style="display:flex" class="mt-3  ms-2"> <?php
 
                                                     $_SESSION['ans'] = code(5);
                                                     $img = captcha($_SESSION['ans']);
                                                     ?>
               <img src="<?= $img; ?>">
               <input type="hidden" id="sessionAns" value="<?=$_SESSION['ans'];?>">
-              <input type="text" id="ans" style="height:45px;margin-top:2px;width:150px">
+              <input type="text" id="ans" style="height:40px;margin-top:4px;margin-left:15px;width:150px;border:1px dotted brown;border-radius:5px">
             </div>
             <div class="row mt-4">
               <div class="col-12">

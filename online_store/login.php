@@ -213,7 +213,7 @@ if (isset($_SESSION['user'])) {
 <body>
   <?php
   include_once "./inc/mouse_squares.php";
-  include "./inc/header_aboutUs_articles.php"
+  include "./inc/header_login.php"
   ?>
   <!-- ---- -->
   <div class="container-fluid">
@@ -255,13 +255,14 @@ if (isset($_SESSION['user'])) {
             <div style="display:flex" class="mt-3"> <?php
 
                                                     $_SESSION['ans'] = code(5);
+                                                   
                                                     $img = captcha($_SESSION['ans']);
+                                                 
                                                     ?>
               <img src="<?= $img; ?>">
               <input type="hidden" id="sessionAns" value="<?=$_SESSION['ans'];?>">
-              <input type="text" id="ans" style="height:45px;margin-top:2px;width:150px">
+              <input type="text" id="ans" style="height:45px;margin-top:2px;width:150px;border:1px dotted brown;border-radius:5px">
             </div>
-
 
             <div class="btn-group">
 
@@ -360,6 +361,7 @@ if (isset($_SESSION['user'])) {
   <?php
   include "./inc/copyright.php";
   ?>
+  
 </body>
 
 </html>

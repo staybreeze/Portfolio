@@ -182,7 +182,7 @@ include_once "./api/db.php";
 
 
           echo '<tr>';
-          echo "<td style='padding-top:23px'>{$row['id']}</td>";
+          echo "<td style='padding-top:23px'>{$index}+1</td>";
           echo "<input type='hidden' name='name[]' value='{$row['id']}'>";
 
           echo "<td style='padding-top:23px'><img src='./img/{$row['img']}' width='50px' alt=''></td>";
