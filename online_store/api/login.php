@@ -32,27 +32,31 @@ $res=$User->count(['acc'=>$acc,'pw'=>$pw]);
 
 
 if (empty($_POST['acc']) || empty($_POST['pw'])) {
-    header('location:../index.php?error=請輸入帳號和密碼');
+    header('location:../index.php?error=請輸入正確的帳號、密碼及驗證碼');
     exit(); 
 }
 
-// if ($user) {
-//     $_SESSION['user'] = $acc;
-//     header("location:../index.php");
-// } else {
-//     header('location:../login_form.php?error=帳號密碼錯誤');
-// }
-// echo $res;
-if($res){
+$res = $User->count(['acc' => $_POST['acc'], 'pw' => $_POST['pw']]);
+
+if($res>0){
     $_SESSION['user']=$acc;
-
-
     header("location:session_to_cart.php");
+    echo 1;
+}else{
+    echo 0;
+}
+
+
+// if($res){
+//     $_SESSION['user']=$acc;
+
+
+//     header("location:session_to_cart.php");
 
   
-}else{
-    header('location:../index.php?error=帳號密碼錯誤');
-}
+// }else{
+//     header('location:../index.php?error=帳號密碼錯誤');
+// }
 
 
 ?>

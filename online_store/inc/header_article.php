@@ -70,7 +70,7 @@ include_once "header_effect.php"
     <?php
     if(isset($_SESSION['good'])){
     ?>
-        <span  style="font-size:15px>">【 <span style="color:navy;font-size: 12px;font-weight:300"><?=count($_SESSION['good']);?></span>  】</span>
+        <span  style="font-size:15px>">【 <span style="color:brown;font-size: 12px;font-weight:300;font-family: 'Orbitron', sans-serif;font-weight:600;"><?=count($_SESSION['good']);?></span>  】</span>
       
       <?php
       }else{
@@ -137,9 +137,21 @@ include_once "header_effect.php"
                     </div>
                   </div>
                   <a href="../add.php" style="text-align:left;text-decoration:underline;color:cadetblue"><i class="fa-solid fa-user-plus ms-1"></i>&nbsp;加入會員</a>
-                </div>
-
-                <div class="row mt-3">
+                  </div>'
+                  ?>
+                              <div style="display:flex" class="mt-3"> <?php
+                  
+                  $_SESSION['ans'] = code(5);
+                  $img = captcha_article($_SESSION['ans']);
+                  ?>
+                  <img src="<?= $img; ?>">
+                  <input type="hidden" id="sessionAns" value="<?=$_SESSION['ans'];?>">
+                  <input type="text" id="ans" style="height:45px;margin-top:2px;width:150px">
+                  </div>
+                  <?php
+                                  echo 
+                              
+                '<div class="row mt-3">
                   <div class="col-12 mt-1">
                     <div class="">
                       <div class="d-flex gap-2">
@@ -347,3 +359,4 @@ $(document).ready(function() {
 });
 
 </script>
+<script src="../js/login.js"></script>

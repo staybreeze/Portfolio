@@ -1,6 +1,6 @@
 <?php
 include_once "./api/db.php";
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
 
   header('location:member.php');
   exit();
@@ -155,6 +155,7 @@ if(isset($_SESSION['user'])){
       }
 
     }
+
     @media screen and (max-width: 410px) {
       .section {
         width: 100%;
@@ -200,9 +201,10 @@ if(isset($_SESSION['user'])){
       .modal input[type='submit'] {
         margin-left: 231px !important;
       }
-.footer{
-  height:96vh !important
-}
+
+      .footer {
+        height: 96vh !important
+      }
     }
   </style>
 </head>
@@ -210,7 +212,7 @@ if(isset($_SESSION['user'])){
 
 <body>
   <?php
-      include_once "./inc/mouse_squares.php";
+  include_once "./inc/mouse_squares.php";
   include "./inc/header_aboutUs_articles.php"
   ?>
   <!-- ---- -->
@@ -226,19 +228,19 @@ if(isset($_SESSION['user'])){
 
           <?php
           if (isset($_GET['error'])) {
-echo "<br>";
+            echo "<br>";
             // echo "<span style='color:red'>請先登入會員再購買商品喔！</span>";
           }
 
           ?>
-          <p class="mt-4" style="font-size:25px;font-weight:bold;text-align:center">會員登入</p>
+          <p style="font-size:25px;font-weight:bold;text-align:center">會員登入</p>
 
           <?php
-if(isset($_GET['success'])){
-  echo "<span style='color:#1084f7'>成功註冊會員，請登入</span>";
-}
-?>
-          <form action="./api/login.php" method="post" class=" col-12 col-sm-4 m-auto">
+          if (isset($_GET['success'])) {
+            echo "<span style='color:#1084f7'>成功註冊會員，請登入</span>";
+          }
+          ?>
+          <form class=" col-12 col-sm-4 m-auto">
             <div class="input-group my-1">
               <label class="col-xs-12 col-sm-4  input-group-text w-100">帳號:</label>
               <input class="form-control" type="text" name="acc" id="acc">
@@ -250,10 +252,21 @@ if(isset($_GET['success'])){
             <div>
               <a href="./add.php" class="add" style="padding-left:200px;text-decoration:underline;color:cadetblue"><i class="fa-solid fa-user-plus mt-1"></i>&nbsp;加入會員</a>
             </div>
+            <div style="display:flex" class="mt-3"> <?php
+
+                                                    $_SESSION['ans'] = code(5);
+                                                    $img = captcha($_SESSION['ans']);
+                                                    ?>
+              <img src="<?= $img; ?>">
+              <input type="hidden" id="sessionAns" value="<?=$_SESSION['ans'];?>">
+              <input type="text" id="ans" style="height:45px;margin-top:2px;width:150px">
+            </div>
+
+
             <div class="btn-group">
 
               <input class="btn btn-secondary mx-2 mt-4 sec" type="reset" value="重置">
-              <input class="btn btn-warning mx-2 mt-4" type="submit" value="送出">
+              <input class="btn btn-warning mx-2 mt-4" type="submit" onclick="log()" value="送出">
             </div>
 
             <br> <br> <br> <br>
@@ -270,11 +283,11 @@ if(isset($_GET['success'])){
   </div>
 
   <?php
-      include "./inc/login_form.php";
+  include "./inc/login_form.php";
   include "./inc/footer.php"
   ?>
   <div class=" mt-5 col-md-5 col" style="border-left:5px solid white;margin-left:-5px">
-  <ul class="pages">
+    <ul class="pages">
       <li>
         <a class="footer-header" href="./aboutUs.php">關於我們</a>
       </li>
@@ -345,8 +358,10 @@ if(isset($_GET['success'])){
 
   </div>
   <?php
-  include "./inc/copyright.php"
+  include "./inc/copyright.php";
   ?>
 </body>
 
 </html>
+
+<script src="./js/login.js"></script>
