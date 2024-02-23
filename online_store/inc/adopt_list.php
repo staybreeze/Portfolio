@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="./css/adopt_list.css">
+<link rel="preload" href="./data/pet.json" as="fetch" crossorigin="anonymous">
 <div class="progress">
     <div class="progress-bar" id="progressBar"></div>
 </div>
